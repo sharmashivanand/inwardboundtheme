@@ -1,0 +1,84 @@
+/* Color Palette */
+
+$cherry: #FF372F;
+$poppy: #FF5A5A;
+$blush: #FF978C;
+$barbie: #EF5DBF;
+$peony: #FFB9DD;
+$violet: #F2C1E8;
+$tangerine: #FF951F;
+$marigold: #FFB235;
+$sunflower: #FFB235;
+$forest: #005F47;
+$teal: #008075;
+$mint: #A4EDC6;
+$ocean: #217490;
+$sky: #5FA6E2;
+$bluejay: #8ECCDC;
+$lavender: #9691D8;
+$black: #000;
+$white: #fff;
+
+/* Color Palette tint */
+
+$cherry-tint: #FF8782;
+$poppy-tint: #FF9C9C;
+$blush-tint: #FFC1BA;
+$barbie-tint: #F59ED9;
+$peony-tint: #FFD5EB;
+$violet-tint: #F7DAF1;
+$tangerine-tint: #FFBF79;
+$marigold-tint: #FFD186;
+$sunflower-tint: #FFE485;
+$forest-tint: #669F91;
+$teal-tint: #66B3AC;
+$mint-tint: #C8F4DD;
+$ocean-tint: #7AACBC;
+$sky-tint: #9FCAEE;
+$bluejay-tint: #BBE0EA;
+$lavender-tint: #C0BDE8;
+
+/* Font Face Declaration */
+
+@font-face { 
+    font-family: "MADE Mirage Regular";
+    src: url('https://dev.clearscopedesign.com/inwardbound/wp-content/themes/ibme-lander-edge/assets/fonts/MADE-Mirage-Regular.woff2') format('woff2'),
+         url('https://dev.clearscopedesign.com/inwardbound/wp-content/themes/ibme-lander-edge/assets/fonts/MADE-Mirage-Regular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face { 
+    font-family: "MADE Mirage Black";
+    src: url('https://dev.clearscopedesign.com/inwardbound/wp-content/themes/ibme-lander-edge/assets/fonts/MADE-Mirage-Black.woff2') format('woff2'),
+         url('https://dev.clearscopedesign.com/inwardbound/wp-content/themes/ibme-lander-edge/assets/fonts/MADE-Mirage-Black.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face { 
+    font-family: "MADE Mirage Bold";
+    src: url('https://dev.clearscopedesign.com/inwardbound/wp-content/themes/ibme-lander-edge/assets/fonts/MADE-Mirage-Bold.woff2') format('woff2'),
+         url('https://dev.clearscopedesign.com/inwardbound/wp-content/themes/ibme-lander-edge/assets/fonts/MADE-Mirage-Bold.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face { 
+    font-family: "MADE Mirage Medium";
+    src: url('https://dev.clearscopedesign.com/inwardbound/wp-content/themes/ibme-lander-edge/assets/fonts/MADE-Mirage-Medium.woff2') format('woff2'),
+         url('https://dev.clearscopedesign.com/inwardbound/wp-content/themes/ibme-lander-edge/assets/fonts/MADE-Mirage-Medium.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face { 
+    font-family: "MADE Mirage Thin";
+    src: url('https://dev.clearscopedesign.com/inwardbound/wp-content/themes/ibme-lander-edge/assets/fonts/MADE-Mirage-Thin.woff2') format('woff2'),
+         url('https://dev.clearscopedesign.com/inwardbound/wp-content/themes/ibme-lander-edge/assets/fonts/MADE-Mirage-Thin.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+
+/* Other Variables */ 

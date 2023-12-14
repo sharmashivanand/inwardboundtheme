@@ -1,0 +1,1331 @@
+/* Site Specific CSS */  
+
+/* Generic Styles */
+
+
+/* Buttons */
+
+input[type="submit"], 
+input[type="reset"],
+button,
+.button,
+.button:link,
+a.button,
+.secondary-button, 
+a.secondary-button {
+    min-width: 140px;
+    min-height: 40px;
+    font-weight: 500;
+    font-size: 16px;
+    border-radius: 5px;
+    color: $black;
+    text-align: center;
+    display: inline-block;
+    text-transform: lowercase;
+    background-image: none;
+    font-variant: normal;
+    border: 2px solid;
+    padding: 0.15em 1em;
+}
+
+input[type="submit"]:hover, 
+input[type="reset"]:hover,
+button:hover,
+.button:hover,
+.button:link:hover,
+a.button:hover {
+    background-color: $white !important;
+    color: $black;
+    text-decoration: none;
+}
+
+.secondary-button.mint-button:hover, 
+a.secondary-button.mint-button:hover,
+.button.mint-button,
+.button.mint-button:link,
+.mint-button,
+a.mint-button {
+    background-color: $mint;
+    border-color: $mint;
+}
+
+.secondary-button.tangerine-button:hover, 
+a.secondary-button.tangerine-button:hover,
+.button.tangerine-button,
+.button.tangerine-button:link,
+.tangerine-button,
+a.tangerine-button {
+    background-color: $tangerine;
+    border-color: $tangerine;
+}
+
+.secondary-button.marigold-button:hover, 
+a.secondary-button.marigold-button:hover,
+.button.marigold-button,
+.button.marigold-button:link,
+.marigold-button,
+a.marigold-button {
+    background-color: $marigold;
+    border-color: $marigold;
+}
+
+.secondary-button.black-button:hover, 
+a.secondary-button.black-button:hover,
+.button.black-button,
+.button.black-button:link,
+.black-button,
+a.black-button {
+    background-color: $black;
+    border-color: $black;
+    color: $white;
+}
+
+.button.black-button:hover,
+.button.black-button:link:hover,
+.black-button:hover,
+a.black-button:hover {
+    color: $black;
+    background-color: #fff !important;
+    border-color: #fff;
+}
+
+.secondary-button.white-button:hover, 
+a.secondary-button.white-button:hover,
+.button.white-button,
+.button.white-button:link,
+.white-button,
+a.white-button {
+    background-color: $white;
+    border-color: $white;
+}
+
+.button.white-button:hover,
+.button.white-button:link:hover,
+.white-button:hover,
+a.white-button:hover {
+    background-color: transparent !important;
+    color: $white;
+    border-color: $white;
+}
+
+.secondary-button.bluejay-button:hover, 
+a.secondary-button.bluejay-button:hover,
+.button.bluejay-button,
+.button.bluejay-button:link,
+.bluejay-button,
+a.bluejay-button {
+    background-color: $bluejay;
+    border-color: $bluejay;
+}
+
+.secondary-button.lavender-button:hover, 
+a.secondary-button.lavender-button:hover,
+.button.lavender-button,
+.button.lavender-button:link,
+.lavender-button,
+a.lavender-button {
+    background-color: $lavender;
+    border-color: $lavender;
+}
+
+.secondary-button.barbie-button:hover, 
+a.secondary-button.barbie-button:hover,
+.button.barbie-button,
+.button.barbie-button:link,
+.barbie-button,
+a.barbie-button {
+    background-color: $barbie;
+    border-color: $barbie;
+}
+
+.secondary-button.blush-button:hover, 
+a.secondary-button.blush-button:hover,
+.button.blush-button,
+.button.blush-button:link,
+.blush-button,
+a.blush-button {
+    background-color: $blush;
+    border-color: $blush;
+}
+
+.secondary-button, 
+a.secondary-button, 
+.secondary-button.mint-button, 
+a.secondary-button.mint-button,
+.secondary-button.tangerine-button, 
+a.secondary-button.tangerine-button,
+.secondary-button.marigold-button, 
+a.secondary-button.marigold-button,
+.secondary-button.black-button, 
+a.secondary-button.black-button,
+.secondary-button.bluejay-button, 
+a.secondary-button.bluejay-button,
+.secondary-button.lavender-button, 
+a.secondary-button.lavender-button,
+.secondary-button.barbie-button, 
+a.secondary-button.barbie-button,
+.secondary-button.blush-button, 
+a.secondary-button.blush-button {
+    background-color: transparent;
+    text-decoration: none;
+}
+
+.secondary-button:hover, 
+a.secondary-button:hover {
+    color: $black;
+}
+
+.inline-buttons {
+    display: flex;
+
+    .button:first-child {
+        margin-right: 30px;
+        
+    }
+}
+
+/* Body Font */
+
+.ibme {
+    font-family: Inter, sans-serif;
+    font-weight: 300;
+    font-size: 18px;
+    line-height: 1.72em;
+    letter-spacing: 0.25px;
+}
+
+/* Structure */
+
+/* Site Container */
+
+.ibme {
+    .site-container {
+        margin-top: 0;
+        margin-bottom: 0;
+    }
+
+    .wrap {
+        width: 1440px;
+        margin: 0 auto;
+        padding-left: 100px;
+        padding-right: 100px;
+        box-sizing: border-box;
+    }
+}
+
+/* Site Header */
+
+.ibme {
+    .site-title {
+        a {
+            width: 250px;
+            height: 56px;
+            display: block;
+            background: url("assets/img/logo.svg") no-repeat center / contain;
+            text-indent: -9999px;
+        }
+    }
+
+    .site-description {
+        text-indent: -9999px;
+        height: 0;
+        margin: 0;
+    }
+
+    .site-header {
+        .wrap {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-top: 2em;
+            padding-bottom: 2em;
+        }
+
+        .menu {
+            li {
+                font-weight: 500;
+                text-transform: lowercase;
+                font-size: 15px;
+
+                a {
+                    margin-left: 0.75em;
+                    margin-right: 0.75em;
+                    padding-left: 0;
+                    padding-right: 0;
+                    padding-bottom: .9em;
+
+                    &:after {
+                        content: '';
+                        height: 3px;
+                        display: block;
+                        border-radius: 10px;
+                    }
+                }
+            }
+        }
+    }
+
+    .menu-primary .wrap {
+        width: auto;
+        padding: 0;
+    }
+}
+
+#menu-primary-items {
+
+    a {
+        margin-left: 0.75em;
+        margin-right: 0.75em;
+        padding-left: 0;
+        padding-right: 0;
+    }
+
+    .teen-retreats a:after {
+        background-color: $barbie;
+    }
+
+    .custom-programs a:after {
+        background-color: $bluejay;
+    }
+
+    .teacher-training a:after {
+        background-color: $marigold;
+    }
+
+    .community-care a:after {
+        background-color: $lavender;
+    }
+}
+
+#menu-top-nav-extended-menu {
+    list-style: none;
+    display: flex;
+    margin-top: 0;
+    margin-bottom: 0;
+    align-items: center;
+
+    a {
+        padding: .382em 0;
+        display: block;
+    }
+}
+
+.menu {
+
+    a:hover {
+        opacity: 0.75;
+        color: $black;
+        text-decoration: none;
+    }
+
+
+    .calendar {
+        a {
+            background: url("assets/img/icons/top-nav-calendar.svg") no-repeat center / contain;
+            width: 25px;
+            height: 25px;
+            display: block;
+            text-indent: -9999px;
+
+            &:hover {
+                opacity: 0.5;
+            }
+        }
+    }
+
+    .shop {
+        a {
+            background: url("assets/img/icons/top-nav-cart.svg") no-repeat center / contain;
+            width: 25px;
+            height: 25px;
+            display: block;
+            text-indent: -9999px;
+
+            &:hover {
+                opacity: 0.5;
+            }
+        }
+    }
+
+    .donate {
+        a {
+            margin-left: 0.75em;
+            margin-right: 0.75em;
+            padding-left: 0;
+            padding-right: 0;
+
+            &:after {
+                background-color: $sky;
+            }
+        }
+    }
+}
+
+#menu-primary-items :link:hover, 
+#menu-primary-items :visited:hover, 
+#menu-sub-terms-items :link:hover, 
+#menu-sub-terms-items :visited:hover {
+    background-color: transparent;
+    opacity: 0.75;
+    color: $black;
+}
+
+/** Site Footer */
+
+.site-footer {
+    background-color: $blush;
+    min-height: 500px;
+    position: absolute;
+    width: 100%;
+    line-height: 1.45em;
+
+    .wrap {
+        padding-top: 0;
+        padding-bottom: 0 !important;
+        position: relative;
+        top: -50px;
+    }
+}
+
+.site-footer:before {
+    content: '';
+    display: block;
+    width: 140px;
+    height: 126px;
+    background: url("assets/img/footer-floral-left.svg") no-repeat center / contain;
+    position: relative;
+    top: -15px;
+}
+
+/* Footer Widgets */
+
+.footer-widgets {
+    display: flex;
+    justify-content: space-between;
+    font-size: 15px;
+    margin-bottom: 60px;
+
+    .widgettitle  {
+        color: $black;
+        font-family: "MADE Mirage Thin";
+        text-transform: lowercase;
+        font-size: 1.2em;
+        margin-bottom: 0.618em;
+    }
+
+    .footer-widget {
+        width: 25%;
+    }
+
+    a:hover {
+        color: #fff;
+        opacity: 1;
+    }
+}
+
+.footer-widget-one {
+    text-align: left;
+    display: flex;
+    padding-top: 70px;
+
+    .widget {
+        width: 50%;
+    }
+
+    .menu {
+        list-style: none;
+        padding-left: 0;
+        font-weight: 500;
+        text-transform: lowercase;
+    }
+}
+
+.footer-widget-two {
+    .site-name {
+        width: 250px;
+        height: 56px;
+        display: block;
+        background: url("assets/img/logo.svg") no-repeat center / contain;
+        text-indent: -9999px;
+        margin: 0 auto 40px;
+    }
+}
+
+.footer-widget-three {
+    padding-top: 75px;
+
+    .donate-block {
+        background-color: #fff;
+        border-radius: 5px;
+        padding: 1.2em 1.2em 2.45em 1.2em;
+        position: relative;
+    }
+
+    .donate-block:after {
+        content: '';
+        display: inline-block;
+        width: 104px;
+        height: 128px;
+        background: url("assets/img/footer-floral-right.svg") no-repeat center / contain;
+        position: absolute;
+        right: -50px;
+        top: 90px;
+    }
+}
+
+/* Footer Columns */
+
+.footer-columns {
+    display: flex;
+    justify-content: space-between;
+    text-align: justify;
+    font-size: 15px;
+    align-items: center;
+
+    .footer-column {
+        width: 33.33%;
+    }
+
+    a:hover {
+        color: #fff;
+        opacity: 1;
+    }
+}
+
+.footer-column {
+    p, ul {
+        margin-bottom: 0;
+        margin-top: 0;
+        //line-height: 1.618em;
+    }
+
+    .contact-info {
+        a {
+            text-decoration: none;
+        }
+
+        a:first-child {
+            margin-right: 28px;
+        }
+    }
+}
+
+.footer-column-right {
+    text-align: right;
+}
+
+#menu-footer-menu {
+    list-style: none;
+    display: flex;
+    padding-left: 0;
+
+    li {
+        text-transform: lowercase;
+
+        a {
+            padding: 0 0.25em; 
+        }
+    }
+
+    li:first-child a {
+        padding-left: 0;
+    }
+}
+
+#menu-social-menu {
+    list-style: none;
+    display: flex;
+    padding-left: 0;
+    align-items: center;
+    justify-content: center;
+
+    a {
+        display: block;
+        text-indent: -9999px;
+        width: 42px;
+        height: 42px;
+        margin: 0 5px;
+
+        &:hover {
+            opacity: 0.75;
+        }
+    }
+    
+    .social-insta a {
+        background: url("assets/img/icons/instagram.svg") no-repeat center / cover;
+    }
+
+    .social-fb a {
+        background: url("assets/img/icons/facebook.svg") no-repeat center / cover;
+    }
+
+    .social-linkedin a {
+        background: url("assets/img/icons/linkedin.svg") no-repeat center / cover;
+    }
+
+    .social-youtube a {
+        background: url("assets/img/icons/youtube.svg") no-repeat center / cover;
+    }
+
+    .social-tiktok a {
+        background: url("assets/img/icons/tiktok.svg") no-repeat center / cover;
+    }
+}
+
+.ibme {
+
+    &.hide-page-title .entry-header {
+        text-indent: -9999px;
+        height: 0;
+        margin: 0;
+    }
+
+    .entry {
+        padding-bottom: 0;
+        border-bottom: none;
+        margin-bottom: 0;
+        overflow-x: visible;
+    }
+    
+    .full-width-section {
+        width: 100vw;
+        left: 50%;
+        right: 50%;
+        margin-left: -50vw;
+        margin-right: -50vw;
+        position: relative;
+
+        .inner-wrap {
+            width: 1440px;
+            margin: 0 auto;
+            padding-left: 100px;
+            padding-right: 100px;
+            box-sizing: border-box;
+
+        }
+    }
+}
+
+
+
+/* Front Page */
+
+.home {
+
+    .landing-section {
+        min-height: 760px;
+    }
+
+    .inner .wrap {
+        padding-top: 0;
+        padding-bottom: 0;
+    }
+}    
+
+.home-hero-section {
+    background: url("assets/img/home-hero.jpg") no-repeat center top;
+    background-size: 1920px auto;
+    
+    h2 {
+        font-family: "MADE Mirage Regular";
+        font-size: 84px;
+        line-height: 0.92em;
+        color: #fff;
+        width: 50%; 
+        font-weight: normal;
+        margin-top: 0;
+        padding-top: 150px;
+        margin-bottom: 0.5em;
+        text-transform: lowercase;
+    }
+
+    .button.barbie-button {
+        position: relative;
+        background-color: $barbie !important;
+    }
+
+    .button.barbie-button:after {
+        content: '';
+        background: url("assets/img/button-floral-white.svg") no-repeat left top / contain;
+        width: 181px;
+        height: 75px;
+        position: absolute;
+        top: -20px;
+        left: -29px;
+        opacity: 0;
+        visibility: hidden;
+        transition: all 0.4s;
+    }
+
+    .button.barbie-button:hover:after {
+        opacity: 1;
+        visibility: visible;
+    }
+}
+
+.home-mission-statement-section {
+    display: flex;
+    align-items: center;
+    text-align: center;
+    position: relative;
+
+    .inner-wrap:after {
+        content: '';
+        width: 134px;
+        height: 164px;
+        display: block;
+        background: url("assets/img/section-bg-2.svg") no-repeat center / contain;
+        position: absolute;
+        bottom: 150px;
+    }
+
+    h3 {
+        font-family: "MADE Mirage Regular";
+        font-size: 84px;
+        line-height: 1em;
+        font-weight: normal;
+        margin-top: 0;
+        margin-bottom: 0.25em;
+        text-transform: lowercase;
+    }
+
+    .landing-section-content {
+        width: 50%;
+        margin: 0 auto;
+
+        &:after {
+            content: '';
+            width: 210px;
+            height: 174px;
+            display: block;
+            background: url("assets/img/section-bg.svg") no-repeat center / contain;
+            position: absolute;
+            top: 10%;
+            left: 75%;
+        }
+    }
+
+    .inline-buttons {
+        justify-content: center;
+        margin-top: 2.618em;
+    }
+
+    .button.mint-button {
+        position: relative;
+        background-color: $mint !important;
+    }
+
+    .secondary-button.mint-button {
+        position: relative;
+    }
+
+    .secondary-button.mint-button:hover {
+        background-color: transparent;
+    }
+
+    .secondary-button.mint-button:after,
+    .button.mint-button:after {
+        content: '';
+        background: url("assets/img/button-floral.svg") no-repeat left top / contain;
+        width: 181px;
+        height: 75px;
+        position: absolute;
+        top: -20px;
+        left: -29px;
+        opacity: 0;
+        visibility: hidden;
+        transition: all 0.4s;
+    }
+
+    .secondary-button.mint-button:hover:after,
+    .button.mint-button:hover:after {
+        opacity: 1;
+        visibility: visible;
+    }
+}
+
+.ibme-communities {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    text-align: center;
+
+    img {
+        display: block;
+    }
+
+    .ibme-community {
+        width: 48%;
+        margin-bottom: 60px;
+    }
+
+    .ibme-community-title {
+        font-family: "MADE Mirage Regular";
+        font-size: 84px;
+        line-height: 1em;
+        font-weight: normal;
+        margin-top: 0;
+        margin-bottom: 0.25em;
+        text-transform: lowercase;
+    }
+
+    .inline-buttons {
+        justify-content: center;
+    }
+
+    .button.barbie-button {
+        background-color: $barbie !important;
+    }
+
+    .button.blush-button {
+        background-color: $blush !important;
+    }
+
+    .button.bluejay-button {
+        background-color: $bluejay !important;
+    }
+
+    .button.marigold-button {
+        background-color: $marigold !important;
+    }
+
+    .button.barbie-button,
+    .button.blush-button,
+    .button.bluejay-button,
+    .button.marigold-button,
+    .secondary-button.barbie-button,
+    .secondary-button.bluejay-button,
+    .secondary-button.marigold-button,
+    .secondary-button.blush-button {
+        position: relative;
+    }
+
+    .secondary-button.barbie-button:hover,
+    .secondary-button.blush-button:hover,
+    .secondary-button.bluejay-button:hover,
+    .secondary-button.marigold-button:hover {
+        background-color: transparent;
+    }
+
+    .secondary-button.barbie-button:after,
+    .secondary-button.blush-button:after,
+    .secondary-button.bluejay-button:after,
+    .secondary-button.marigold-button:after,
+    .button.barbie-button:after,
+    .button.bluejay-button:after,
+    .button.marigold-button:after,
+    .button.blush-button:after {
+        content: '';
+        background: url("assets/img/button-floral.svg") no-repeat left top / contain;
+        width: 181px;
+        height: 75px;
+        position: absolute;
+        top: -20px;
+        left: -29px;
+        opacity: 0;
+        visibility: hidden;
+        transition: all 0.4s;
+    }
+
+    .secondary-button.barbie-button:hover:after,
+    .secondary-button.blush-button:hover:after,
+    .secondary-button.bluejay-button:hover:after,
+    .secondary-button.marigold-button:hover:after,
+    .button.barbie-button:hover:after,
+    .button.bluejay-button:hover:after,
+    .button.marigold-button:hover:after,
+    .button.blush-button:hover:after {
+        opacity: 1;
+        visibility: visible;
+    }
+}
+
+.ibme-community-textual-content-wrap {
+    border-radius: 5px;
+    margin-top: -120px;
+}
+
+.barbie-bg-color .ibme-community-textual-content-wrap {
+    background-color: $barbie;
+}
+
+.blush-bg-color .ibme-community-textual-content-wrap {
+    background-color: $blush;
+}
+
+.bluejay-bg-color .ibme-community-textual-content-wrap {
+    background-color: $bluejay;
+}
+
+.marigold-bg-color .ibme-community-textual-content-wrap {
+    background-color: $marigold;
+}
+
+.ibme-community-textual-content {
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+    background: #fff;
+    padding: 1.618em 0.618em;
+    box-sizing: border-box;
+    border-radius: 5px;
+    position: relative;
+}
+
+.home-stats-section {
+    display: flex;
+    align-items: center;
+    background: url("assets/img/stats-bg.png") no-repeat left center / contain; 
+
+    .main-headline-title {
+        font-family: "MADE Mirage Regular";
+        font-size: 84px;
+        line-height: 1em;
+        font-weight: normal;
+        margin-top: 0;
+        margin-bottom: 0.25em;
+        text-transform: lowercase;
+    }
+
+    .stats-content-headline {
+        font-family: Inter, sans-serif;
+        font-weight: 500;
+        font-size: 84px;
+        line-height: 1em;
+        margin-top: 0;
+        margin-bottom: 0.25em;
+        text-transform: lowercase;
+    }
+
+    .landing-section-content {
+        display: flex;
+        justify-content: space-between;
+
+        .content-column {
+            width: 48%;
+        }
+    }
+
+    .button.blush-button {
+        position: relative;
+        background-color: $blush !important;
+    }
+
+    .secondary-button.blush-button {
+        position: relative;
+    }
+
+    .secondary-button.blush-button:hover {
+        background-color: transparent;
+    }
+
+    .button.blush-button:after,
+    .secondary-button.blush-button:after {
+        content: '';
+        background: url("assets/img/button-floral.svg") no-repeat left top / contain;
+        width: 181px;
+        height: 75px;
+        position: absolute;
+        top: -20px;
+        left: -29px;
+        opacity: 0;
+        visibility: hidden;
+        transition: all 0.4s;
+    }
+
+    .button.blush-button:hover:after,
+    .secondary-button.blush-button:hover:after {
+        opacity: 1;
+        visibility: visible;
+    }
+}
+
+.home .home-events-section {
+    min-height: 550px;
+}
+
+.home-events-section {
+
+    .ibme-events {
+        display: flex;
+        justify-content: space-between;
+        text-align: center;
+    }
+
+    .ibme-event {
+        width: 23%;
+        box-sizing: border-box;
+        padding: 50px 1.618em;
+        min-height: 500px;
+        border-radius: 5px;
+        display: flex;
+        flex-flow: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .ibme-event-title {
+        font-family: Inter, sans-serif;
+        font-weight: 500;
+        font-size: 24px;
+        line-height: 1em;
+        margin-top: 0;
+        margin-bottom: 0.25em;
+        text-transform: lowercase;
+        width: 65%;
+    }
+
+    .barbie-bg-color {
+        background-color: $barbie;
+    }
+
+    .marigold-bg-color {
+        background-color: $marigold;
+    }
+
+    .bluejay-bg-color {
+        background-color: $bluejay;
+    }
+
+    .lavender-bg-color {
+        background-color: $lavender; 
+    }
+
+    .black-button:hover {
+        border-color: $white;
+    }
+
+    .button.black-button:hover, 
+    .button.black-button:link:hover, 
+    .black-button:hover, 
+    a.black-button:hover {
+        background-color: #fff !important;
+    }
+}
+
+.home-testimonial-section {
+    display: flex;
+    align-items: center;
+
+    .testimonial-wrap {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .image-wrap {
+        background: url("assets/img/testimonial-photo-bg.svg") no-repeat center / contain;
+        width: 55%;
+        min-height: 613px;
+
+        img {
+            display: block;
+            margin-top: 87px;
+            margin-left: 30px;
+        }
+    }
+
+    .content-wrap {
+        width: 34%;
+    }
+
+    .testimonial-content {
+        font-family: "MADE Mirage Regular";
+        font-size: 41px;
+        color: $ocean;
+        line-height: 1.15em;
+        margin-bottom: 0;
+
+    }
+
+    .testimonial-by:before {
+        content: '—';
+        display: inline-block;
+        margin-right: 5px;
+
+    }
+}
+
+.home-upcoming-events-section {
+    background: url("assets/img/calendar-section-bg.jpg") no-repeat center top;
+    background-size: 1920px auto; 
+    display: flex;
+    align-items: center;
+
+    .landing-section-content {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .headline-column {
+        width: 30%;
+    }
+
+    .upcoming-events-list {
+        width: 62%;
+
+        .barbie-color {
+            .upcoming-event-date {
+                p {
+                    color: $barbie;
+                }
+            }
+        }
+
+        .lavender-color {
+            .upcoming-event-date {
+                p {
+                    color: $lavender;
+                }
+            }
+        }
+
+        .ocean-color {
+            .upcoming-event-date {
+                p {
+                    color: $ocean;
+                }
+            }
+        }
+    }
+
+    .headline-title {
+        font-family: "MADE Mirage Regular";
+        font-size: 84px;
+        line-height: 0.92em;
+        color: #fff;
+        //width: 50%; 
+        font-weight: normal;
+        margin-top: 0;
+        //padding-top: 150px;
+        margin-bottom: 0.5em;
+        text-transform: lowercase;
+    }
+
+    .upcoming-event-item {
+        background-color: $white;
+        padding: 1em 1.618em;
+        border-radius: 5px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin-bottom: 40px;
+        margin-top: 40px;
+        min-height: 140px;
+    }
+
+    .upcoming-event-date {
+        width: 20%;
+
+        p {
+            font-size: 20px;
+            font-weight: 500;
+            margin-top: 0;
+            margin-bottom: 0;
+        }
+
+        span {
+            display: block;
+        }
+    }
+
+    .upcoming-event-title-location {
+        width: 50%;
+    }
+
+    .upcoming-event-title {
+        font-weight: 500;
+        font-size: 24px;
+        text-transform: lowercase;
+        margin-top: 0;
+        margin-bottom: 0;
+    }
+
+    .upcoming-event-location {
+        text-transform: lowercase;
+        margin-top: 0;
+        margin-bottom: 0;
+    }
+
+    .upcoming-event-links {
+        width: 20%;
+
+        .button {
+            margin-bottom: 10px;
+        }
+    }
+
+    .button.barbie-button,
+    .button.lavender-button,
+    .button.bluejay-button {
+        position: relative;
+    }
+    
+    .button.barbie-button {
+        background-color: $barbie !important;
+    }
+
+    .button.lavender-button {
+        background-color: $lavender !important;
+    }
+
+    .button.bluejay-button {
+        background-color: $bluejay !important;
+    }
+
+    .button.barbie-button:after,
+    .button.lavender-button:after,
+    .button.bluejay-button:after {
+        content: '';
+        background: url("assets/img/button-floral.svg") no-repeat left top / contain;
+        width: 181px;
+        height: 75px;
+        position: absolute;
+        top: -20px;
+        left: -29px;
+        opacity: 0;
+        visibility: hidden;
+        transition: all 0.4s;
+    }
+
+    .button.barbie-button:hover:after,
+    .button.lavender-button:hover:after,
+    .button.bluejay-button:hover:after {
+        opacity: 1;
+        visibility: visible;
+    }
+}
+
+.home-subscribe-section {
+    display: flex;
+    align-items: center;
+
+    .landing-section-content {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        .content-column {
+            width: 48%;
+        }
+    }
+
+    .cta-columns {
+        display: flex;
+        justify-content: space-between;
+        text-align: center;
+
+        .cta-column {
+            width: 47%;
+            border-radius: 5px;
+        }
+
+        img {
+            display: block;
+        }
+    }
+
+    .cta-column-content {
+        padding: 0.618em;
+    }
+
+    .yellow-bg-color {
+        background-color: #FFD234;
+    }
+
+    .voilet-bg-color {
+        background-color: $violet;
+    }
+
+    .cta-column-title {
+        font-size: 24px;
+        text-transform: lowercase;
+        font-weight: 500;
+        margin-top: 0;
+        margin-bottom: 0;
+    }
+
+    .cta-column-text {
+        text-transform: lowercase;
+        line-height: 1.25em;
+        margin-top: 1em;
+        margin-bottom: 1em;
+    }
+
+    .cta-subscribe-headline {
+        font-family: "MADE Mirage Regular";
+        font-size: 84px;
+        line-height: 0.92em;
+        font-weight: normal;
+        margin-top: 0;
+        margin-bottom: 0.5em;
+        text-transform: lowercase;
+        width: 80%;
+    }
+
+    .cta-subscribe-form {
+        display: flex;
+        flex-wrap: wrap;
+
+        .form-field {
+            width: 50%;
+            
+            input, select, option {
+                padding: 0 0 5px 0;
+                border: none;
+                border-bottom: 3px solid $tangerine;
+                margin-bottom: 40px;
+                font-weight: 500;
+                text-transform: lowercase;
+                font-size: 15px;
+            }
+
+            select, option {
+                font-weight: 300;
+                width: 100%;
+            }
+        }
+
+        label {
+            padding: 0 0 5px 0;
+            border-bottom: 3px solid $tangerine;
+            margin-bottom: 40px;
+            font-weight: 500;
+            display: block;
+            font-size: 15px;
+            line-height: 1.68em;
+        }
+
+
+
+        .form-field input::placeholder {
+            font-size: 15px;
+            font-weight: 500;
+            color: #000;
+          }
+    }
+
+    .button.tangerine-button {
+        position: relative;
+        background-color: $tangerine !important;
+    }
+
+    .button.tangerine-button:after {
+        content: '';
+        background: url("assets/img/button-floral.svg") no-repeat left top / contain;
+        width: 181px;
+        height: 75px;
+        position: absolute;
+        top: -20px;
+        left: -29px;
+        opacity: 0;
+        visibility: hidden;
+        transition: all 0.4s;
+    }
+
+    .button.tangerine-button:hover:after {
+        opacity: 1;
+        visibility: visible;
+    }
+}
