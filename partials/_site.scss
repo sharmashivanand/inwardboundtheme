@@ -493,6 +493,11 @@ a.secondary-button:hover {
 }
 
 .footer-column {
+
+    .widget {
+        margin-bottom: 0;
+    }
+
     p, ul {
         margin-bottom: 0;
         margin-top: 0;
@@ -514,11 +519,14 @@ a.secondary-button:hover {
     text-align: right;
 }
 
-#menu-footer-menu {
-    list-style: none;
-    display: flex;
-    padding-left: 0;
+.menu-footer-menu-container {
 
+    .menu {
+        list-style: none;
+        display: flex;
+        padding-left: 0;
+    }
+    
     li {
         text-transform: lowercase;
 
@@ -530,27 +538,29 @@ a.secondary-button:hover {
     li:first-child a {
         padding-left: 0;
     }
-}
-
-#menu-social-menu {
-    list-style: none;
-    display: flex;
-    padding-left: 0;
-    align-items: center;
-    justify-content: center;
-
-    a {
-        display: block;
-        text-indent: -9999px;
-        width: 42px;
-        height: 42px;
-        margin: 0 5px;
-
-        &:hover {
-            opacity: 0.75;
-        }
-    }
     
+}
+.menu-social-menu-container {
+    .menu {
+        list-style: none;
+        display: flex;
+        padding-left: 0;
+        align-items: center;
+        justify-content: center;
+
+        a {
+            display: block;
+            text-indent: -9999px;
+            width: 42px;
+            height: 42px;
+            margin: 0 5px;
+
+            &:hover {
+                opacity: 0.75;
+            }
+        }
+    }    
+        
     .social-insta a {
         background: url("assets/img/icons/instagram.svg") no-repeat center / cover;
     }
@@ -570,6 +580,7 @@ a.secondary-button:hover {
     .social-tiktok a {
         background: url("assets/img/icons/tiktok.svg") no-repeat center / cover;
     }
+    
 }
 
 .ibme {

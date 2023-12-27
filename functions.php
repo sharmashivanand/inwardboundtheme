@@ -74,29 +74,22 @@ function ibme_custom_footer_content() {
 	</div>
 	<div class="footer-columns">
 		<div class="footer-column footer-column-left">
-			<p class="footer-copyrights">Inward Bound Mindfulness &copy; <?php echo date( 'Y' ); ?></p>
 			<?php
-			wp_nav_menu(
-				array(
-					'menu'  => 7,
-					'depth' => 1,
-				)
-			);
+			if ( is_active_sidebar( 'footer-widget-four' ) ) {
+				dynamic_sidebar( 'footer-widget-four' );  }
 			?>
 		</div>
 		<div class="footer-column footer-column-middle">
 			<?php
-				wp_nav_menu(
-					array(
-						'menu'  => 8,
-						'depth' => 1,
-					)
-				);
+			if ( is_active_sidebar( 'footer-widget-five' ) ) {
+				dynamic_sidebar( 'footer-widget-five' );  }
 			?>
 		</div>
 		<div class="footer-column footer-column-right">
-			<p class="contact-info"><a href="mailto:hi@inwardboundmindfulness.org">hi@inwardboundmindfulness.org</a> <a href="tel:508-250-0628">508-250-0628</a></p>
-			<p class="ibme-address">878 Washington St, Unit #1119, Attleboro, MA 02703</p>
+			<?php
+			if ( is_active_sidebar( 'footer-widget-six' ) ) {
+				dynamic_sidebar( 'footer-widget-six' );  }
+			?>
 		</div>
 	</div>
 	<?php
@@ -133,10 +126,40 @@ if ( function_exists( 'register_sidebar' ) ) {
 		'before_title'  => '<h4 class="widgettitle widget-title">',
 		'after_title'   => '</h4>',
 	);
+	$footer_widget_four = array(
+		'name'          => __( 'Footer Widget Four', 'textdomain' ),
+		'id'            => 'footer-widget-four',
+		'description'   => __( 'Footer Widget Area (Bottom Left)', 'textdomain' ),
+		'before_widget' => '<div class="widget %2$s">',
+		'after_widget'  => '</div>',
+		'before_title'  => '<h4 class="widgettitle widget-title">',
+		'after_title'   => '</h4>',
+	);
+	$footer_widget_five = array(
+		'name'          => __( 'Footer Widget Five', 'textdomain' ),
+		'id'            => 'footer-widget-five',
+		'description'   => __( 'Footer Widget Area (Bottom Middle)', 'textdomain' ),
+		'before_widget' => '<div class="widget %2$s">',
+		'after_widget'  => '</div>',
+		'before_title'  => '<h4 class="widgettitle widget-title">',
+		'after_title'   => '</h4>',
+	);
+	$footer_widget_six = array(
+		'name'          => __( 'Footer Widget Six', 'textdomain' ),
+		'id'            => 'footer-widget-six',
+		'description'   => __( 'Footer Widget Area (Bottom Right)', 'textdomain' ),
+		'before_widget' => '<div class="widget %2$s">',
+		'after_widget'  => '</div>',
+		'before_title'  => '<h4 class="widgettitle widget-title">',
+		'after_title'   => '</h4>',
+	);
 
 	register_sidebar( $footer_widget_one );
 	register_sidebar( $footer_widget_two );
 	register_sidebar( $footer_widget_three );
+	register_sidebar( $footer_widget_four );
+	register_sidebar( $footer_widget_five );
+	register_sidebar( $footer_widget_six );
 
 }
 
@@ -152,4 +175,14 @@ function ibme_redirect_home() {
 		wp_redirect( get_permalink( get_option( 'page_on_front' ) ), '302' );
 		exit;
 	}
+}
+
+add_shortcode('ibme-current-year', 'ibme_current_year_shortcode');
+
+function ibme_current_year_shortcode() {
+    // Get the current year
+    $current_year = date('Y');
+
+    // Return the current year
+    return $current_year;
 }

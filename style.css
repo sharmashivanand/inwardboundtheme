@@ -37,7 +37,7 @@ input:focus:-ms-input-placeholder, textarea:focus:-ms-input-placeholder {
 }
 
 /* Color Palette */
-/* Color Palette tint */
+/* Color Palette Tint */
 /* Font Face Declaration */
 @font-face {
   font-family: "MADE Mirage Regular";
@@ -1510,6 +1510,9 @@ a.secondary-button:hover {
   opacity: 1;
 }
 
+.footer-column .widget {
+  margin-bottom: 0;
+}
 .footer-column p, .footer-column ul {
   margin-bottom: 0;
   margin-top: 0;
@@ -1525,51 +1528,51 @@ a.secondary-button:hover {
   text-align: right;
 }
 
-#menu-footer-menu {
+.menu-footer-menu-container .menu {
   list-style: none;
   display: flex;
   padding-left: 0;
 }
-#menu-footer-menu li {
+.menu-footer-menu-container li {
   text-transform: lowercase;
 }
-#menu-footer-menu li a {
+.menu-footer-menu-container li a {
   padding: 0 0.25em;
 }
-#menu-footer-menu li:first-child a {
+.menu-footer-menu-container li:first-child a {
   padding-left: 0;
 }
 
-#menu-social-menu {
+.menu-social-menu-container .menu {
   list-style: none;
   display: flex;
   padding-left: 0;
   align-items: center;
   justify-content: center;
 }
-#menu-social-menu a {
+.menu-social-menu-container .menu a {
   display: block;
   text-indent: -9999px;
   width: 42px;
   height: 42px;
   margin: 0 5px;
 }
-#menu-social-menu a:hover {
+.menu-social-menu-container .menu a:hover {
   opacity: 0.75;
 }
-#menu-social-menu .social-insta a {
+.menu-social-menu-container .social-insta a {
   background: url("assets/img/icons/instagram.svg") no-repeat center/cover;
 }
-#menu-social-menu .social-fb a {
+.menu-social-menu-container .social-fb a {
   background: url("assets/img/icons/facebook.svg") no-repeat center/cover;
 }
-#menu-social-menu .social-linkedin a {
+.menu-social-menu-container .social-linkedin a {
   background: url("assets/img/icons/linkedin.svg") no-repeat center/cover;
 }
-#menu-social-menu .social-youtube a {
+.menu-social-menu-container .social-youtube a {
   background: url("assets/img/icons/youtube.svg") no-repeat center/cover;
 }
-#menu-social-menu .social-tiktok a {
+.menu-social-menu-container .social-tiktok a {
   background: url("assets/img/icons/tiktok.svg") no-repeat center/cover;
 }
 
