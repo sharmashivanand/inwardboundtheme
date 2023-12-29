@@ -186,3 +186,56 @@ function ibme_current_year_shortcode() {
     // Return the current year
     return $current_year;
 }
+
+// Register the shortcode
+add_shortcode('ibme-button', 'ibme_button_handler');
+
+// Define the shortcode function
+function ibme_button_handler($atts) {
+    // Extract shortcode attributes
+    $atts = shortcode_atts(
+        array(
+            'link'      		=> '#',
+            'text'      		=> 'Click Here',
+            'color'  			=> '',
+            'style'     		=> 'style-1',
+            'type'      		=> 'single',
+            'button-2-link'     => '', // Link for the second button
+            'button-2-text'     => '', // Text for the second button
+            'button-2-color' 	=> '', // BG color for the second button
+            'button-2-style' 	=> '', // Style for the second button
+        ),
+
+        $atts,
+        'ibme-button'
+    );
+
+    // Sanitize attributes
+    $link = esc_url($atts['link']);
+    $text = esc_html($atts['text']);
+    $color = esc_attr($atts['color']); // possible values: 'cherry', 'poppy', 'blush', 'barbie', 'peony', 'violet', 'tangerine', 'marigold', 'sunflower', 'forest', 'teal', 'mint', 'ocean', 'sky', 'bluejay', 'lavender', 'black', 'white', default set as 'mint'
+    $style = esc_attr($atts['style']); // possible values: 'style-1', 'style-2', 'style-3', 'style-4' and 'style-5', default set as 'style-1'
+    $type = esc_attr($atts['type']); // possible values: 'dual' or 'single', default set as single
+
+    // Handle "dual" type
+    if ($type === 'dual') {
+        // Sanitize attributes for the second button
+        $button_2_link = esc_url($atts['button-2-link']);
+        $button_2_text = esc_html($atts['button-2-text']);
+        $button_2_color = esc_attr($atts['button-2-color']);
+        $button_2_style = esc_attr($atts['button-2-style']);
+
+        // Generate HTML for the dual buttons
+        $button_html = '<div class="inline-buttons">';
+        $button_html .= '<a href="' . $link . '" class="ibme-button ' . $color . '-button ' . $style . '">' . $text . '</a>';
+        $button_html .= '<a href="' . $button_2_link . '" class="ibme-button ' . $button_2_color . '-button ' . $button_2_style . '">' . $button_2_text . '</a>';
+        $button_html .= '</div>';
+    } else {
+        // Generate HTML for a single button
+        $button_html = '<a href="' . $link . '" class="ibme-button ' . $color . '-button ' . $style . '">' . $text . '</a>';
+    }
+
+    return $button_html;
+}
+
+

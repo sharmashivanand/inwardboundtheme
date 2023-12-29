@@ -1084,15 +1084,8 @@ video {
 
 /* Site Specific CSS */
 /* Generic Styles */
-/* Buttons */
-input[type="submit"],
-input[type="reset"],
-button,
-.button,
-.button:link,
-a.button,
-.secondary-button,
-a.secondary-button {
+/* Button Styles */
+.ibme-button {
   min-width: 140px;
   min-height: 40px;
   font-weight: 500;
@@ -1102,163 +1095,421 @@ a.secondary-button {
   text-align: center;
   display: inline-block;
   text-transform: lowercase;
-  background-image: none;
   font-variant: normal;
   border: 2px solid;
   padding: 0.15em 1em;
 }
-
-input[type="submit"]:hover,
-input[type="reset"]:hover,
-button:hover,
-.button:hover,
-.button:link:hover,
-a.button:hover {
-  background-color: #fff !important;
-  color: #000;
+.ibme-button:hover {
   text-decoration: none;
+  color: #000 !important;
 }
 
-.secondary-button.mint-button:hover,
-a.secondary-button.mint-button:hover,
-.button.mint-button,
-.button.mint-button:link,
-.mint-button,
-a.mint-button {
-  background-color: #A4EDC6;
-  border-color: #A4EDC6;
+.style-1 {
+  /* Hover States for buttons */
 }
-
-.secondary-button.tangerine-button:hover,
-a.secondary-button.tangerine-button:hover,
-.button.tangerine-button,
-.button.tangerine-button:link,
-.tangerine-button,
-a.tangerine-button {
+.style-1.cherry-button {
+  background-color: #FF372F;
+  border-color: #FF372F;
+}
+.style-1.poppy-button {
+  background-color: #FF5A5A;
+  border-color: #FF5A5A;
+}
+.style-1.blush-button {
+  background-color: #FF978C;
+  border-color: #FF978C;
+}
+.style-1.barbie-button {
+  background-color: #EF5DBF;
+  border-color: #EF5DBF;
+}
+.style-1.peony-button {
+  background-color: #FFB9DD;
+  border-color: #FFB9DD;
+}
+.style-1.violet-button {
+  background-color: #F2C1E8;
+  border-color: #F2C1E8;
+}
+.style-1.tangerine-button {
   background-color: #FF951F;
   border-color: #FF951F;
 }
-
-.secondary-button.marigold-button:hover,
-a.secondary-button.marigold-button:hover,
-.button.marigold-button,
-.button.marigold-button:link,
-.marigold-button,
-a.marigold-button {
+.style-1.marigold-button {
   background-color: #FFB235;
   border-color: #FFB235;
 }
+.style-1.sunflower-button {
+  background-color: #FFD234;
+  border-color: #FFD234;
+}
+.style-1.forest-button {
+  background-color: #005F47;
+  border-color: #005F47;
+}
+.style-1.teal-button {
+  background-color: #008075;
+  border-color: #008075;
+}
+.style-1.mint-button {
+  background-color: #A4EDC6;
+  border-color: #A4EDC6;
+}
+.style-1.ocean-button {
+  background-color: #217490;
+  border-color: #217490;
+}
+.style-1.sky-button {
+  background-color: #5FA6E2;
+  border-color: #5FA6E2;
+}
+.style-1.bluejay-button {
+  background-color: #8ECCDC;
+  border-color: #8ECCDC;
+}
+.style-1.lavender-button {
+  background-color: #9691D8;
+  border-color: #9691D8;
+}
+.style-1.cherry-button:hover {
+  background-color: #FF8782;
+  border-color: #FF8782;
+}
+.style-1.poppy-button:hover {
+  background-color: #FF9C9C;
+  border-color: #FF9C9C;
+}
+.style-1.blush-button:hover {
+  background-color: #FFC1BA;
+  border-color: #FFC1BA;
+}
+.style-1.barbie-button:hover {
+  background-color: #F59ED9;
+  border-color: #F59ED9;
+}
+.style-1.peony-button:hover {
+  background-color: #FFD5EB;
+  border-color: #FFD5EB;
+}
+.style-1.violet-button:hover {
+  background-color: #F7DAF1;
+  border-color: #F7DAF1;
+}
+.style-1.tangerine-button:hover {
+  background-color: #FFBF79;
+  border-color: #FFBF79;
+}
+.style-1.marigold-button:hover {
+  background-color: #FFD186;
+  border-color: #FFD186;
+}
+.style-1.sunflower-button:hover {
+  background-color: #FFE485;
+  border-color: #FFE485;
+}
+.style-1.forest-button:hover {
+  background-color: #669F91;
+  border-color: #669F91;
+}
+.style-1.teal-button:hover {
+  background-color: #66B3AC;
+  border-color: #66B3AC;
+}
+.style-1.mint-button:hover {
+  background-color: #C8F4DD;
+  border-color: #C8F4DD;
+}
+.style-1.ocean-button:hover {
+  background-color: #7AACBC;
+  border-color: #7AACBC;
+}
+.style-1.sky-button:hover {
+  background-color: #9FCAEE;
+  border-color: #9FCAEE;
+}
+.style-1.bluejay-button:hover {
+  background-color: #BBE0EA;
+  border-color: #BBE0EA;
+}
+.style-1.lavender-button:hover {
+  background-color: #C0BDE8;
+  border-color: #C0BDE8;
+}
 
-.secondary-button.black-button:hover,
-a.secondary-button.black-button:hover,
-.button.black-button,
-.button.black-button:link,
-.black-button,
-a.black-button {
+.style-2.ibme-button {
+  background-color: #fff;
+  border-color: #fff;
+}
+.style-2.ibme-button:hover {
+  background-color: rgba(255, 255, 255, 0.8);
+  border-color: rgba(255, 255, 255, 0.8);
+}
+
+.style-3 {
+  position: relative;
+  /* Hover States for buttons */
+}
+.style-3:after {
+  content: '';
+  background: url("assets/img/button-specks-left.svg") no-repeat left top/contain;
+  width: 181px;
+  height: 75px;
+  position: absolute;
+  top: -10px;
+  left: -24px;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.4s;
+}
+.style-3:hover:after {
+  opacity: 1;
+  visibility: visible;
+}
+.style-3.cherry-button {
+  background-color: #FF372F;
+  border-color: #FF372F;
+}
+.style-3.poppy-button {
+  background-color: #FF5A5A;
+  border-color: #FF5A5A;
+}
+.style-3.blush-button {
+  background-color: #FF978C;
+  border-color: #FF978C;
+}
+.style-3.barbie-button {
+  background-color: #EF5DBF;
+  border-color: #EF5DBF;
+}
+.style-3.peony-button {
+  background-color: #FFB9DD;
+  border-color: #FFB9DD;
+}
+.style-3.violet-button {
+  background-color: #F2C1E8;
+  border-color: #F2C1E8;
+}
+.style-3.tangerine-button {
+  background-color: #FF951F;
+  border-color: #FF951F;
+}
+.style-3.marigold-button {
+  background-color: #FFB235;
+  border-color: #FFB235;
+}
+.style-3.sunflower-button {
+  background-color: #FFD234;
+  border-color: #FFD234;
+}
+.style-3.forest-button {
+  background-color: #005F47;
+  border-color: #005F47;
+}
+.style-3.teal-button {
+  background-color: #008075;
+  border-color: #008075;
+}
+.style-3.mint-button {
+  background-color: #A4EDC6;
+  border-color: #A4EDC6;
+}
+.style-3.ocean-button {
+  background-color: #217490;
+  border-color: #217490;
+}
+.style-3.sky-button {
+  background-color: #5FA6E2;
+  border-color: #5FA6E2;
+}
+.style-3.bluejay-button {
+  background-color: #8ECCDC;
+  border-color: #8ECCDC;
+}
+.style-3.lavender-button {
+  background-color: #9691D8;
+  border-color: #9691D8;
+}
+.style-3.cherry-button:hover {
+  background-color: #FF8782;
+  border-color: #FF8782;
+}
+.style-3.poppy-button:hover {
+  background-color: #FF9C9C;
+  border-color: #FF9C9C;
+}
+.style-3.blush-button:hover {
+  background-color: #FFC1BA;
+  border-color: #FFC1BA;
+}
+.style-3.barbie-button:hover {
+  background-color: #F59ED9;
+  border-color: #F59ED9;
+}
+.style-3.peony-button:hover {
+  background-color: #FFD5EB;
+  border-color: #FFD5EB;
+}
+.style-3.violet-button:hover {
+  background-color: #F7DAF1;
+  border-color: #F7DAF1;
+}
+.style-3.tangerine-button:hover {
+  background-color: #FFBF79;
+  border-color: #FFBF79;
+}
+.style-3.marigold-button:hover {
+  background-color: #FFD186;
+  border-color: #FFD186;
+}
+.style-3.sunflower-button:hover {
+  background-color: #FFE485;
+  border-color: #FFE485;
+}
+.style-3.forest-button:hover {
+  background-color: #669F91;
+  border-color: #669F91;
+}
+.style-3.teal-button:hover {
+  background-color: #66B3AC;
+  border-color: #66B3AC;
+}
+.style-3.mint-button:hover {
+  background-color: #C8F4DD;
+  border-color: #C8F4DD;
+}
+.style-3.ocean-button:hover {
+  background-color: #7AACBC;
+  border-color: #7AACBC;
+}
+.style-3.sky-button:hover {
+  background-color: #9FCAEE;
+  border-color: #9FCAEE;
+}
+.style-3.bluejay-button:hover {
+  background-color: #BBE0EA;
+  border-color: #BBE0EA;
+}
+.style-3.lavender-button:hover {
+  background-color: #C0BDE8;
+  border-color: #C0BDE8;
+}
+
+.style-4 {
+  background-color: #fff;
+  /* Hover States for buttons */
+}
+.style-4.cherry-button {
+  border-color: #FF372F;
+}
+.style-4.poppy-button {
+  border-color: #FF5A5A;
+}
+.style-4.blush-button {
+  border-color: #FF978C;
+}
+.style-4.barbie-button {
+  border-color: #EF5DBF;
+}
+.style-4.peony-button {
+  border-color: #FFB9DD;
+}
+.style-4.violet-button {
+  border-color: #F2C1E8;
+}
+.style-4.tangerine-button {
+  border-color: #FF951F;
+}
+.style-4.marigold-button {
+  border-color: #FFB235;
+}
+.style-4.sunflower-button {
+  border-color: #FFD234;
+}
+.style-4.forest-button {
+  border-color: #005F47;
+}
+.style-4.teal-button {
+  border-color: #008075;
+}
+.style-4.mint-button {
+  border-color: #A4EDC6;
+}
+.style-4.ocean-button {
+  border-color: #217490;
+}
+.style-4.sky-button {
+  border-color: #5FA6E2;
+}
+.style-4.bluejay-button {
+  border-color: #8ECCDC;
+}
+.style-4.lavender-button {
+  border-color: #9691D8;
+}
+.style-4.cherry-button:hover {
+  border-color: #FF8782;
+}
+.style-4.poppy-button:hover {
+  border-color: #FF9C9C;
+}
+.style-4.blush-button:hover {
+  border-color: #FFC1BA;
+}
+.style-4.barbie-button:hover {
+  border-color: #F59ED9;
+}
+.style-4.peony-button:hover {
+  border-color: #FFD5EB;
+}
+.style-4.violet-button:hover {
+  border-color: #F7DAF1;
+}
+.style-4.tangerine-button:hover {
+  border-color: #FFBF79;
+}
+.style-4.marigold-button:hover {
+  border-color: #FFD186;
+}
+.style-4.sunflower-button:hover {
+  border-color: #FFE485;
+}
+.style-4.forest-button:hover {
+  border-color: #669F91;
+}
+.style-4.teal-button:hover {
+  border-color: #66B3AC;
+}
+.style-4.mint-button:hover {
+  border-color: #C8F4DD;
+}
+.style-4.ocean-button:hover {
+  border-color: #7AACBC;
+}
+.style-4.sky-button:hover {
+  border-color: #9FCAEE;
+}
+.style-4.bluejay-button:hover {
+  border-color: #BBE0EA;
+}
+.style-4.lavender-button:hover {
+  border-color: #C0BDE8;
+}
+
+.style-5.ibme-button {
   background-color: #000;
   border-color: #000;
   color: #fff;
 }
-
-.button.black-button:hover,
-.button.black-button:link:hover,
-.black-button:hover,
-a.black-button:hover {
-  color: #000;
-  background-color: #fff !important;
-  border-color: #fff;
-}
-
-.secondary-button.white-button:hover,
-a.secondary-button.white-button:hover,
-.button.white-button,
-.button.white-button:link,
-.white-button,
-a.white-button {
+.style-5.ibme-button:hover {
   background-color: #fff;
   border-color: #fff;
-}
-
-.button.white-button:hover,
-.button.white-button:link:hover,
-.white-button:hover,
-a.white-button:hover {
-  background-color: transparent !important;
-  color: #fff;
-  border-color: #fff;
-}
-
-.secondary-button.bluejay-button:hover,
-a.secondary-button.bluejay-button:hover,
-.button.bluejay-button,
-.button.bluejay-button:link,
-.bluejay-button,
-a.bluejay-button {
-  background-color: #8ECCDC;
-  border-color: #8ECCDC;
-}
-
-.secondary-button.lavender-button:hover,
-a.secondary-button.lavender-button:hover,
-.button.lavender-button,
-.button.lavender-button:link,
-.lavender-button,
-a.lavender-button {
-  background-color: #9691D8;
-  border-color: #9691D8;
-}
-
-.secondary-button.barbie-button:hover,
-a.secondary-button.barbie-button:hover,
-.button.barbie-button,
-.button.barbie-button:link,
-.barbie-button,
-a.barbie-button {
-  background-color: #EF5DBF;
-  border-color: #EF5DBF;
-}
-
-.secondary-button.blush-button:hover,
-a.secondary-button.blush-button:hover,
-.button.blush-button,
-.button.blush-button:link,
-.blush-button,
-a.blush-button {
-  background-color: #FF978C;
-  border-color: #FF978C;
-}
-
-.secondary-button,
-a.secondary-button,
-.secondary-button.mint-button,
-a.secondary-button.mint-button,
-.secondary-button.tangerine-button,
-a.secondary-button.tangerine-button,
-.secondary-button.marigold-button,
-a.secondary-button.marigold-button,
-.secondary-button.black-button,
-a.secondary-button.black-button,
-.secondary-button.bluejay-button,
-a.secondary-button.bluejay-button,
-.secondary-button.lavender-button,
-a.secondary-button.lavender-button,
-.secondary-button.barbie-button,
-a.secondary-button.barbie-button,
-.secondary-button.blush-button,
-a.secondary-button.blush-button {
-  background-color: transparent;
-  text-decoration: none;
-}
-
-.secondary-button:hover,
-a.secondary-button:hover {
   color: #000;
 }
 
 .inline-buttons {
   display: flex;
 }
-.inline-buttons .button:first-child {
+.inline-buttons .ibme-button:first-child {
   margin-right: 30px;
 }
 
@@ -1449,6 +1700,13 @@ a.secondary-button:hover {
   color: #fff;
   opacity: 1;
 }
+.footer-widgets li a {
+  font-weight: 300;
+}
+.footer-widgets li a:hover {
+  font-weight: 500;
+  color: #000;
+}
 
 .footer-widget-one {
   text-align: left;
@@ -1557,23 +1815,35 @@ a.secondary-button:hover {
   height: 42px;
   margin: 0 5px;
 }
-.menu-social-menu-container .menu a:hover {
-  opacity: 0.75;
-}
 .menu-social-menu-container .social-insta a {
   background: url("assets/img/icons/instagram.svg") no-repeat center/cover;
+}
+.menu-social-menu-container .social-insta a:hover {
+  background-image: url("assets/img/icons/instagram-hover.svg");
 }
 .menu-social-menu-container .social-fb a {
   background: url("assets/img/icons/facebook.svg") no-repeat center/cover;
 }
+.menu-social-menu-container .social-fb a:hover {
+  background-image: url("assets/img/icons/facebook-hover.svg");
+}
 .menu-social-menu-container .social-linkedin a {
   background: url("assets/img/icons/linkedin.svg") no-repeat center/cover;
+}
+.menu-social-menu-container .social-linkedin a:hover {
+  background-image: url("assets/img/icons/linkedin-hover.svg");
 }
 .menu-social-menu-container .social-youtube a {
   background: url("assets/img/icons/youtube.svg") no-repeat center/cover;
 }
+.menu-social-menu-container .social-youtube a:hover {
+  background-image: url("assets/img/icons/youtube-hover.svg");
+}
 .menu-social-menu-container .social-tiktok a {
   background: url("assets/img/icons/tiktok.svg") no-repeat center/cover;
+}
+.menu-social-menu-container .social-tiktok a:hover {
+  background-image: url("assets/img/icons/tiktok-hover.svg");
 }
 
 .ibme.hide-page-title .entry-header {
@@ -1628,26 +1898,6 @@ a.secondary-button:hover {
   margin-bottom: 0.5em;
   text-transform: lowercase;
 }
-.home-hero-section .button.barbie-button {
-  position: relative;
-  background-color: #EF5DBF !important;
-}
-.home-hero-section .button.barbie-button:after {
-  content: '';
-  background: url("assets/img/button-floral-white.svg") no-repeat left top/contain;
-  width: 181px;
-  height: 75px;
-  position: absolute;
-  top: -20px;
-  left: -29px;
-  opacity: 0;
-  visibility: hidden;
-  transition: all 0.4s;
-}
-.home-hero-section .button.barbie-button:hover:after {
-  opacity: 1;
-  visibility: visible;
-}
 
 .home-mission-statement-section {
   display: flex;
@@ -1691,34 +1941,6 @@ a.secondary-button:hover {
   justify-content: center;
   margin-top: 2.618em;
 }
-.home-mission-statement-section .button.mint-button {
-  position: relative;
-  background-color: #A4EDC6 !important;
-}
-.home-mission-statement-section .secondary-button.mint-button {
-  position: relative;
-}
-.home-mission-statement-section .secondary-button.mint-button:hover {
-  background-color: transparent;
-}
-.home-mission-statement-section .secondary-button.mint-button:after,
-.home-mission-statement-section .button.mint-button:after {
-  content: '';
-  background: url("assets/img/button-floral.svg") no-repeat left top/contain;
-  width: 181px;
-  height: 75px;
-  position: absolute;
-  top: -20px;
-  left: -29px;
-  opacity: 0;
-  visibility: hidden;
-  transition: all 0.4s;
-}
-.home-mission-statement-section .secondary-button.mint-button:hover:after,
-.home-mission-statement-section .button.mint-button:hover:after {
-  opacity: 1;
-  visibility: visible;
-}
 
 .ibme-communities {
   display: flex;
@@ -1744,64 +1966,6 @@ a.secondary-button:hover {
 }
 .ibme-communities .inline-buttons {
   justify-content: center;
-}
-.ibme-communities .button.barbie-button {
-  background-color: #EF5DBF !important;
-}
-.ibme-communities .button.blush-button {
-  background-color: #FF978C !important;
-}
-.ibme-communities .button.bluejay-button {
-  background-color: #8ECCDC !important;
-}
-.ibme-communities .button.marigold-button {
-  background-color: #FFB235 !important;
-}
-.ibme-communities .button.barbie-button,
-.ibme-communities .button.blush-button,
-.ibme-communities .button.bluejay-button,
-.ibme-communities .button.marigold-button,
-.ibme-communities .secondary-button.barbie-button,
-.ibme-communities .secondary-button.bluejay-button,
-.ibme-communities .secondary-button.marigold-button,
-.ibme-communities .secondary-button.blush-button {
-  position: relative;
-}
-.ibme-communities .secondary-button.barbie-button:hover,
-.ibme-communities .secondary-button.blush-button:hover,
-.ibme-communities .secondary-button.bluejay-button:hover,
-.ibme-communities .secondary-button.marigold-button:hover {
-  background-color: transparent;
-}
-.ibme-communities .secondary-button.barbie-button:after,
-.ibme-communities .secondary-button.blush-button:after,
-.ibme-communities .secondary-button.bluejay-button:after,
-.ibme-communities .secondary-button.marigold-button:after,
-.ibme-communities .button.barbie-button:after,
-.ibme-communities .button.bluejay-button:after,
-.ibme-communities .button.marigold-button:after,
-.ibme-communities .button.blush-button:after {
-  content: '';
-  background: url("assets/img/button-floral.svg") no-repeat left top/contain;
-  width: 181px;
-  height: 75px;
-  position: absolute;
-  top: -20px;
-  left: -29px;
-  opacity: 0;
-  visibility: hidden;
-  transition: all 0.4s;
-}
-.ibme-communities .secondary-button.barbie-button:hover:after,
-.ibme-communities .secondary-button.blush-button:hover:after,
-.ibme-communities .secondary-button.bluejay-button:hover:after,
-.ibme-communities .secondary-button.marigold-button:hover:after,
-.ibme-communities .button.barbie-button:hover:after,
-.ibme-communities .button.bluejay-button:hover:after,
-.ibme-communities .button.marigold-button:hover:after,
-.ibme-communities .button.blush-button:hover:after {
-  opacity: 1;
-  visibility: visible;
 }
 
 .ibme-community-textual-content-wrap {
@@ -1866,34 +2030,6 @@ a.secondary-button:hover {
 .home-stats-section .landing-section-content .content-column {
   width: 48%;
 }
-.home-stats-section .button.blush-button {
-  position: relative;
-  background-color: #FF978C !important;
-}
-.home-stats-section .secondary-button.blush-button {
-  position: relative;
-}
-.home-stats-section .secondary-button.blush-button:hover {
-  background-color: transparent;
-}
-.home-stats-section .button.blush-button:after,
-.home-stats-section .secondary-button.blush-button:after {
-  content: '';
-  background: url("assets/img/button-floral.svg") no-repeat left top/contain;
-  width: 181px;
-  height: 75px;
-  position: absolute;
-  top: -20px;
-  left: -29px;
-  opacity: 0;
-  visibility: hidden;
-  transition: all 0.4s;
-}
-.home-stats-section .button.blush-button:hover:after,
-.home-stats-section .secondary-button.blush-button:hover:after {
-  opacity: 1;
-  visibility: visible;
-}
 
 .home .home-events-section {
   min-height: 550px;
@@ -1921,7 +2057,6 @@ a.secondary-button:hover {
   font-size: 24px;
   line-height: 1em;
   margin-top: 0;
-  margin-bottom: 0.25em;
   text-transform: lowercase;
   width: 65%;
 }
@@ -1936,15 +2071,6 @@ a.secondary-button:hover {
 }
 .home-events-section .lavender-bg-color {
   background-color: #9691D8;
-}
-.home-events-section .black-button:hover {
-  border-color: #fff;
-}
-.home-events-section .button.black-button:hover,
-.home-events-section .button.black-button:link:hover,
-.home-events-section .black-button:hover,
-.home-events-section a.black-button:hover {
-  background-color: #fff !important;
 }
 
 .home-testimonial-section {
@@ -2059,42 +2185,8 @@ a.secondary-button:hover {
 .home-upcoming-events-section .upcoming-event-links {
   width: 20%;
 }
-.home-upcoming-events-section .upcoming-event-links .button {
+.home-upcoming-events-section .upcoming-event-links .ibme-button {
   margin-bottom: 10px;
-}
-.home-upcoming-events-section .button.barbie-button,
-.home-upcoming-events-section .button.lavender-button,
-.home-upcoming-events-section .button.bluejay-button {
-  position: relative;
-}
-.home-upcoming-events-section .button.barbie-button {
-  background-color: #EF5DBF !important;
-}
-.home-upcoming-events-section .button.lavender-button {
-  background-color: #9691D8 !important;
-}
-.home-upcoming-events-section .button.bluejay-button {
-  background-color: #8ECCDC !important;
-}
-.home-upcoming-events-section .button.barbie-button:after,
-.home-upcoming-events-section .button.lavender-button:after,
-.home-upcoming-events-section .button.bluejay-button:after {
-  content: '';
-  background: url("assets/img/button-floral.svg") no-repeat left top/contain;
-  width: 181px;
-  height: 75px;
-  position: absolute;
-  top: -20px;
-  left: -29px;
-  opacity: 0;
-  visibility: hidden;
-  transition: all 0.4s;
-}
-.home-upcoming-events-section .button.barbie-button:hover:after,
-.home-upcoming-events-section .button.lavender-button:hover:after,
-.home-upcoming-events-section .button.bluejay-button:hover:after {
-  opacity: 1;
-  visibility: visible;
 }
 
 .home-subscribe-section {
@@ -2122,7 +2214,7 @@ a.secondary-button:hover {
   display: block;
 }
 .home-subscribe-section .cta-column-content {
-  padding: 0.618em;
+  padding: 0.618em 0.618em 1.618em;
 }
 .home-subscribe-section .yellow-bg-color {
   background-color: #FFD234;
@@ -2186,26 +2278,6 @@ a.secondary-button:hover {
   font-size: 15px;
   font-weight: 500;
   color: #000;
-}
-.home-subscribe-section .button.tangerine-button {
-  position: relative;
-  background-color: #FF951F !important;
-}
-.home-subscribe-section .button.tangerine-button:after {
-  content: '';
-  background: url("assets/img/button-floral.svg") no-repeat left top/contain;
-  width: 181px;
-  height: 75px;
-  position: absolute;
-  top: -20px;
-  left: -29px;
-  opacity: 0;
-  visibility: hidden;
-  transition: all 0.4s;
-}
-.home-subscribe-section .button.tangerine-button:hover:after {
-  opacity: 1;
-  visibility: visible;
 }
 
 /*# sourceMappingURL=style.css.map */

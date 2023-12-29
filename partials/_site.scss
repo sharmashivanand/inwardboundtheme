@@ -2,17 +2,9 @@
 
 /* Generic Styles */
 
+/* Button Styles */
 
-/* Buttons */
-
-input[type="submit"], 
-input[type="reset"],
-button,
-.button,
-.button:link,
-a.button,
-.secondary-button, 
-a.secondary-button {
+.ibme-button {
     min-width: 140px;
     min-height: 40px;
     font-weight: 500;
@@ -22,167 +14,535 @@ a.secondary-button {
     text-align: center;
     display: inline-block;
     text-transform: lowercase;
-    background-image: none;
     font-variant: normal;
     border: 2px solid;
     padding: 0.15em 1em;
+
+    &:hover {
+        text-decoration: none;
+        color: #000 !important;
+    }
 }
 
-input[type="submit"]:hover, 
-input[type="reset"]:hover,
-button:hover,
-.button:hover,
-.button:link:hover,
-a.button:hover {
-    background-color: $white !important;
-    color: $black;
-    text-decoration: none;
+.style-1 {
+
+    &.cherry-button {
+        background-color: $cherry;
+        border-color: $cherry;
+    }
+
+    &.poppy-button {
+        background-color: $poppy;
+        border-color: $poppy;
+    }
+
+    &.blush-button {
+        background-color: $blush;
+        border-color: $blush;
+    }
+
+    &.barbie-button {
+        background-color: $barbie;
+        border-color: $barbie;
+    }
+
+    &.peony-button {
+        background-color: $peony;
+        border-color: $peony;
+    }
+
+    &.violet-button {
+        background-color: $violet;
+        border-color: $violet;
+    }
+
+    &.tangerine-button {
+        background-color: $tangerine;
+        border-color: $tangerine;
+    }
+
+    &.marigold-button {
+        background-color: $marigold;
+        border-color: $marigold;
+    }
+
+    &.sunflower-button {
+        background-color: $sunflower;
+        border-color: $sunflower;
+    }
+
+    &.forest-button {
+        background-color: $forest;
+        border-color: $forest;
+    }
+
+    &.teal-button {
+        background-color: $teal;
+        border-color: $teal;
+    }
+
+    &.mint-button {
+        background-color: $mint;
+        border-color: $mint;
+    }
+
+    &.ocean-button {
+        background-color: $ocean;
+        border-color: $ocean;
+    }
+
+    &.sky-button {
+        background-color: $sky;
+        border-color: $sky;
+    }
+
+    &.bluejay-button {
+        background-color: $bluejay;
+        border-color: $bluejay;
+    }
+
+    &.lavender-button {
+        background-color: $lavender;
+        border-color: $lavender;
+    }
+
+    /* Hover States for buttons */
+
+    &.cherry-button:hover {
+        background-color: $cherry-tint;
+        border-color: $cherry-tint;
+    }
+
+    &.poppy-button:hover {
+        background-color: $poppy-tint;
+        border-color: $poppy-tint;
+    }
+
+    &.blush-button:hover {
+        background-color: $blush-tint;
+        border-color: $blush-tint;
+    }
+
+    &.barbie-button:hover {
+        background-color: $barbie-tint;
+        border-color: $barbie-tint;
+    }
+
+    &.peony-button:hover {
+        background-color: $peony-tint;
+        border-color: $peony-tint;
+    }
+
+    &.violet-button:hover {
+        background-color: $violet-tint;
+        border-color: $violet-tint;
+    }
+
+    &.tangerine-button:hover {
+        background-color: $tangerine-tint;
+        border-color: $tangerine-tint;
+    }
+
+    &.marigold-button:hover {
+        background-color: $marigold-tint;
+        border-color: $marigold-tint;
+    }
+
+    &.sunflower-button:hover {
+        background-color: $sunflower-tint;
+        border-color: $sunflower-tint;
+    }
+
+    &.forest-button:hover {
+        background-color: $forest-tint;
+        border-color: $forest-tint;
+    }
+
+    &.teal-button:hover {
+        background-color: $teal-tint;
+        border-color: $teal-tint;
+    }
+
+    &.mint-button:hover {
+        background-color: $mint-tint;
+        border-color: $mint-tint;
+    }
+
+    &.ocean-button:hover {
+        background-color: $ocean-tint;
+        border-color: $ocean-tint;
+    }
+
+    &.sky-button:hover {
+        background-color: $sky-tint;
+        border-color: $sky-tint;
+    }
+
+    &.bluejay-button:hover {
+        background-color: $bluejay-tint;
+        border-color: $bluejay-tint;
+    }
+
+    &.lavender-button:hover {
+        background-color: $lavender-tint;
+        border-color: $lavender-tint;
+    }
 }
 
-.secondary-button.mint-button:hover, 
-a.secondary-button.mint-button:hover,
-.button.mint-button,
-.button.mint-button:link,
-.mint-button,
-a.mint-button {
-    background-color: $mint;
-    border-color: $mint;
+.style-2 {
+    &.ibme-button {
+        background-color: #fff;
+        border-color: #fff;
+
+        &:hover {
+            background-color: rgba(255, 255, 255, 0.8);
+            border-color: rgba(255, 255, 255, 0.8);
+        }
+    }
 }
 
-.secondary-button.tangerine-button:hover, 
-a.secondary-button.tangerine-button:hover,
-.button.tangerine-button,
-.button.tangerine-button:link,
-.tangerine-button,
-a.tangerine-button {
-    background-color: $tangerine;
-    border-color: $tangerine;
+.style-3 {
+
+    position: relative;
+
+    &:after {
+        content: '';
+        background: url("assets/img/button-specks-left.svg") no-repeat left top / contain;
+        width: 181px;
+        height: 75px;
+        position: absolute;
+        top: -10px;
+        left: -24px;
+        opacity: 0;
+        visibility: hidden;
+        transition: all 0.4s;
+    }
+
+    &:hover:after {
+        opacity: 1;
+        visibility: visible;
+    }
+
+    &.cherry-button {
+        background-color: $cherry;
+        border-color: $cherry;
+    }
+
+    &.poppy-button {
+        background-color: $poppy;
+        border-color: $poppy;
+    }
+
+    &.blush-button {
+        background-color: $blush;
+        border-color: $blush;
+    }
+
+    &.barbie-button {
+        background-color: $barbie;
+        border-color: $barbie;
+    }
+
+    &.peony-button {
+        background-color: $peony;
+        border-color: $peony;
+    }
+
+    &.violet-button {
+        background-color: $violet;
+        border-color: $violet;
+    }
+
+    &.tangerine-button {
+        background-color: $tangerine;
+        border-color: $tangerine;
+    }
+
+    &.marigold-button {
+        background-color: $marigold;
+        border-color: $marigold;
+    }
+
+    &.sunflower-button {
+        background-color: $sunflower;
+        border-color: $sunflower;
+    }
+
+    &.forest-button {
+        background-color: $forest;
+        border-color: $forest;
+    }
+
+    &.teal-button {
+        background-color: $teal;
+        border-color: $teal;
+    }
+
+    &.mint-button {
+        background-color: $mint;
+        border-color: $mint;
+    }
+
+    &.ocean-button {
+        background-color: $ocean;
+        border-color: $ocean;
+    }
+
+    &.sky-button {
+        background-color: $sky;
+        border-color: $sky;
+    }
+
+    &.bluejay-button {
+        background-color: $bluejay;
+        border-color: $bluejay;
+    }
+
+    &.lavender-button {
+        background-color: $lavender;
+        border-color: $lavender;
+    }
+
+    /* Hover States for buttons */
+
+    &.cherry-button:hover {
+        background-color: $cherry-tint;
+        border-color: $cherry-tint;
+    }
+
+    &.poppy-button:hover {
+        background-color: $poppy-tint;
+        border-color: $poppy-tint;
+    }
+
+    &.blush-button:hover {
+        background-color: $blush-tint;
+        border-color: $blush-tint;
+    }
+
+    &.barbie-button:hover {
+        background-color: $barbie-tint;
+        border-color: $barbie-tint;
+    }
+
+    &.peony-button:hover {
+        background-color: $peony-tint;
+        border-color: $peony-tint;
+    }
+
+    &.violet-button:hover {
+        background-color: $violet-tint;
+        border-color: $violet-tint;
+    }
+
+    &.tangerine-button:hover {
+        background-color: $tangerine-tint;
+        border-color: $tangerine-tint;
+    }
+
+    &.marigold-button:hover {
+        background-color: $marigold-tint;
+        border-color: $marigold-tint;
+    }
+
+    &.sunflower-button:hover {
+        background-color: $sunflower-tint;
+        border-color: $sunflower-tint;
+    }
+
+    &.forest-button:hover {
+        background-color: $forest-tint;
+        border-color: $forest-tint;
+    }
+
+    &.teal-button:hover {
+        background-color: $teal-tint;
+        border-color: $teal-tint;
+    }
+
+    &.mint-button:hover {
+        background-color: $mint-tint;
+        border-color: $mint-tint;
+    }
+
+    &.ocean-button:hover {
+        background-color: $ocean-tint;
+        border-color: $ocean-tint;
+    }
+
+    &.sky-button:hover {
+        background-color: $sky-tint;
+        border-color: $sky-tint;
+    }
+
+    &.bluejay-button:hover {
+        background-color: $bluejay-tint;
+        border-color: $bluejay-tint;
+    }
+
+    &.lavender-button:hover {
+        background-color: $lavender-tint;
+        border-color: $lavender-tint;
+    }
 }
 
-.secondary-button.marigold-button:hover, 
-a.secondary-button.marigold-button:hover,
-.button.marigold-button,
-.button.marigold-button:link,
-.marigold-button,
-a.marigold-button {
-    background-color: $marigold;
-    border-color: $marigold;
+.style-4 {
+
+    background-color: #fff;
+
+    &.cherry-button {
+        border-color: $cherry;
+    }
+
+    &.poppy-button {
+        border-color: $poppy;
+    }
+
+    &.blush-button {
+        border-color: $blush;
+    }
+
+    &.barbie-button {
+        border-color: $barbie;
+    }
+
+    &.peony-button {
+        border-color: $peony;
+    }
+
+    &.violet-button {
+        border-color: $violet;
+    }
+
+    &.tangerine-button {
+        border-color: $tangerine;
+    }
+
+    &.marigold-button {
+        border-color: $marigold;
+    }
+
+    &.sunflower-button {
+        border-color: $sunflower;
+    }
+
+    &.forest-button {
+        border-color: $forest;
+    }
+
+    &.teal-button {
+        border-color: $teal;
+    }
+
+    &.mint-button {
+        border-color: $mint;
+    }
+
+    &.ocean-button {
+        border-color: $ocean;
+    }
+
+    &.sky-button {
+        border-color: $sky;
+    }
+
+    &.bluejay-button {
+        border-color: $bluejay;
+    }
+
+    &.lavender-button {
+        border-color: $lavender;
+    }
+
+    /* Hover States for buttons */
+
+    &.cherry-button:hover {
+        border-color: $cherry-tint;
+    }
+
+    &.poppy-button:hover {
+        border-color: $poppy-tint;
+    }
+
+    &.blush-button:hover {
+        border-color: $blush-tint;
+    }
+
+    &.barbie-button:hover {
+        border-color: $barbie-tint;
+    }
+
+    &.peony-button:hover {
+        border-color: $peony-tint;
+    }
+
+    &.violet-button:hover {
+        border-color: $violet-tint;
+    }
+
+    &.tangerine-button:hover {
+        border-color: $tangerine-tint;
+    }
+
+    &.marigold-button:hover {
+        border-color: $marigold-tint;
+    }
+
+    &.sunflower-button:hover {
+        border-color: $sunflower-tint;
+    }
+
+    &.forest-button:hover {
+        border-color: $forest-tint;
+    }
+
+    &.teal-button:hover {
+        border-color: $teal-tint;
+    }
+
+    &.mint-button:hover {
+        border-color: $mint-tint;
+    }
+
+    &.ocean-button:hover {
+        border-color: $ocean-tint;
+    }
+
+    &.sky-button:hover {
+        border-color: $sky-tint;
+    }
+
+    &.bluejay-button:hover {
+        border-color: $bluejay-tint;
+    }
+
+    &.lavender-button:hover {
+        border-color: $lavender-tint;
+    }
 }
 
-.secondary-button.black-button:hover, 
-a.secondary-button.black-button:hover,
-.button.black-button,
-.button.black-button:link,
-.black-button,
-a.black-button {
-    background-color: $black;
-    border-color: $black;
-    color: $white;
-}
+.style-5 {
+    &.ibme-button {
+        background-color: #000;
+        border-color: #000;
+        color: #fff;
 
-.button.black-button:hover,
-.button.black-button:link:hover,
-.black-button:hover,
-a.black-button:hover {
-    color: $black;
-    background-color: #fff !important;
-    border-color: #fff;
-}
-
-.secondary-button.white-button:hover, 
-a.secondary-button.white-button:hover,
-.button.white-button,
-.button.white-button:link,
-.white-button,
-a.white-button {
-    background-color: $white;
-    border-color: $white;
-}
-
-.button.white-button:hover,
-.button.white-button:link:hover,
-.white-button:hover,
-a.white-button:hover {
-    background-color: transparent !important;
-    color: $white;
-    border-color: $white;
-}
-
-.secondary-button.bluejay-button:hover, 
-a.secondary-button.bluejay-button:hover,
-.button.bluejay-button,
-.button.bluejay-button:link,
-.bluejay-button,
-a.bluejay-button {
-    background-color: $bluejay;
-    border-color: $bluejay;
-}
-
-.secondary-button.lavender-button:hover, 
-a.secondary-button.lavender-button:hover,
-.button.lavender-button,
-.button.lavender-button:link,
-.lavender-button,
-a.lavender-button {
-    background-color: $lavender;
-    border-color: $lavender;
-}
-
-.secondary-button.barbie-button:hover, 
-a.secondary-button.barbie-button:hover,
-.button.barbie-button,
-.button.barbie-button:link,
-.barbie-button,
-a.barbie-button {
-    background-color: $barbie;
-    border-color: $barbie;
-}
-
-.secondary-button.blush-button:hover, 
-a.secondary-button.blush-button:hover,
-.button.blush-button,
-.button.blush-button:link,
-.blush-button,
-a.blush-button {
-    background-color: $blush;
-    border-color: $blush;
-}
-
-.secondary-button, 
-a.secondary-button, 
-.secondary-button.mint-button, 
-a.secondary-button.mint-button,
-.secondary-button.tangerine-button, 
-a.secondary-button.tangerine-button,
-.secondary-button.marigold-button, 
-a.secondary-button.marigold-button,
-.secondary-button.black-button, 
-a.secondary-button.black-button,
-.secondary-button.bluejay-button, 
-a.secondary-button.bluejay-button,
-.secondary-button.lavender-button, 
-a.secondary-button.lavender-button,
-.secondary-button.barbie-button, 
-a.secondary-button.barbie-button,
-.secondary-button.blush-button, 
-a.secondary-button.blush-button {
-    background-color: transparent;
-    text-decoration: none;
-}
-
-.secondary-button:hover, 
-a.secondary-button:hover {
-    color: $black;
+        &:hover {
+            background-color: #fff;
+            border-color: #fff;
+            color: #000;
+        }
+    }
 }
 
 .inline-buttons {
     display: flex;
 
-    .button:first-child {
+    .ibme-button:first-child {
         margin-right: 30px;
-        
     }
 }
+
 
 /* Body Font */
 
@@ -421,6 +781,15 @@ a.secondary-button:hover {
         color: #fff;
         opacity: 1;
     }
+
+    li a {
+        font-weight: 300;
+
+        &:hover {
+            font-weight: 500;
+            color: #000;
+        }
+    }
 }
 
 .footer-widget-one {
@@ -554,31 +923,47 @@ a.secondary-button:hover {
             width: 42px;
             height: 42px;
             margin: 0 5px;
-
-            &:hover {
-                opacity: 0.75;
-            }
         }
     }    
         
     .social-insta a {
         background: url("assets/img/icons/instagram.svg") no-repeat center / cover;
+
+        &:hover {
+            background-image: url("assets/img/icons/instagram-hover.svg")
+        }
     }
 
     .social-fb a {
         background: url("assets/img/icons/facebook.svg") no-repeat center / cover;
+
+        &:hover {
+            background-image: url("assets/img/icons/facebook-hover.svg")
+        }
     }
 
     .social-linkedin a {
         background: url("assets/img/icons/linkedin.svg") no-repeat center / cover;
+
+        &:hover {
+            background-image: url("assets/img/icons/linkedin-hover.svg")
+        }
     }
 
     .social-youtube a {
         background: url("assets/img/icons/youtube.svg") no-repeat center / cover;
+
+        &:hover {
+            background-image: url("assets/img/icons/youtube-hover.svg")
+        }
     }
 
     .social-tiktok a {
         background: url("assets/img/icons/tiktok.svg") no-repeat center / cover;
+
+        &:hover {
+            background-image: url("assets/img/icons/tiktok-hover.svg")
+        }
     }
     
 }
@@ -649,29 +1034,6 @@ a.secondary-button:hover {
         margin-bottom: 0.5em;
         text-transform: lowercase;
     }
-
-    .button.barbie-button {
-        position: relative;
-        background-color: $barbie !important;
-    }
-
-    .button.barbie-button:after {
-        content: '';
-        background: url("assets/img/button-floral-white.svg") no-repeat left top / contain;
-        width: 181px;
-        height: 75px;
-        position: absolute;
-        top: -20px;
-        left: -29px;
-        opacity: 0;
-        visibility: hidden;
-        transition: all 0.4s;
-    }
-
-    .button.barbie-button:hover:after {
-        opacity: 1;
-        visibility: visible;
-    }
 }
 
 .home-mission-statement-section {
@@ -720,39 +1082,6 @@ a.secondary-button:hover {
         justify-content: center;
         margin-top: 2.618em;
     }
-
-    .button.mint-button {
-        position: relative;
-        background-color: $mint !important;
-    }
-
-    .secondary-button.mint-button {
-        position: relative;
-    }
-
-    .secondary-button.mint-button:hover {
-        background-color: transparent;
-    }
-
-    .secondary-button.mint-button:after,
-    .button.mint-button:after {
-        content: '';
-        background: url("assets/img/button-floral.svg") no-repeat left top / contain;
-        width: 181px;
-        height: 75px;
-        position: absolute;
-        top: -20px;
-        left: -29px;
-        opacity: 0;
-        visibility: hidden;
-        transition: all 0.4s;
-    }
-
-    .secondary-button.mint-button:hover:after,
-    .button.mint-button:hover:after {
-        opacity: 1;
-        visibility: visible;
-    }
 }
 
 .ibme-communities {
@@ -782,72 +1111,6 @@ a.secondary-button:hover {
 
     .inline-buttons {
         justify-content: center;
-    }
-
-    .button.barbie-button {
-        background-color: $barbie !important;
-    }
-
-    .button.blush-button {
-        background-color: $blush !important;
-    }
-
-    .button.bluejay-button {
-        background-color: $bluejay !important;
-    }
-
-    .button.marigold-button {
-        background-color: $marigold !important;
-    }
-
-    .button.barbie-button,
-    .button.blush-button,
-    .button.bluejay-button,
-    .button.marigold-button,
-    .secondary-button.barbie-button,
-    .secondary-button.bluejay-button,
-    .secondary-button.marigold-button,
-    .secondary-button.blush-button {
-        position: relative;
-    }
-
-    .secondary-button.barbie-button:hover,
-    .secondary-button.blush-button:hover,
-    .secondary-button.bluejay-button:hover,
-    .secondary-button.marigold-button:hover {
-        background-color: transparent;
-    }
-
-    .secondary-button.barbie-button:after,
-    .secondary-button.blush-button:after,
-    .secondary-button.bluejay-button:after,
-    .secondary-button.marigold-button:after,
-    .button.barbie-button:after,
-    .button.bluejay-button:after,
-    .button.marigold-button:after,
-    .button.blush-button:after {
-        content: '';
-        background: url("assets/img/button-floral.svg") no-repeat left top / contain;
-        width: 181px;
-        height: 75px;
-        position: absolute;
-        top: -20px;
-        left: -29px;
-        opacity: 0;
-        visibility: hidden;
-        transition: all 0.4s;
-    }
-
-    .secondary-button.barbie-button:hover:after,
-    .secondary-button.blush-button:hover:after,
-    .secondary-button.bluejay-button:hover:after,
-    .secondary-button.marigold-button:hover:after,
-    .button.barbie-button:hover:after,
-    .button.bluejay-button:hover:after,
-    .button.marigold-button:hover:after,
-    .button.blush-button:hover:after {
-        opacity: 1;
-        visibility: visible;
     }
 }
 
@@ -916,39 +1179,6 @@ a.secondary-button:hover {
             width: 48%;
         }
     }
-
-    .button.blush-button {
-        position: relative;
-        background-color: $blush !important;
-    }
-
-    .secondary-button.blush-button {
-        position: relative;
-    }
-
-    .secondary-button.blush-button:hover {
-        background-color: transparent;
-    }
-
-    .button.blush-button:after,
-    .secondary-button.blush-button:after {
-        content: '';
-        background: url("assets/img/button-floral.svg") no-repeat left top / contain;
-        width: 181px;
-        height: 75px;
-        position: absolute;
-        top: -20px;
-        left: -29px;
-        opacity: 0;
-        visibility: hidden;
-        transition: all 0.4s;
-    }
-
-    .button.blush-button:hover:after,
-    .secondary-button.blush-button:hover:after {
-        opacity: 1;
-        visibility: visible;
-    }
 }
 
 .home .home-events-section {
@@ -981,7 +1211,7 @@ a.secondary-button:hover {
         font-size: 24px;
         line-height: 1em;
         margin-top: 0;
-        margin-bottom: 0.25em;
+        //margin-bottom: 0.25em;
         text-transform: lowercase;
         width: 65%;
     }
@@ -1000,17 +1230,6 @@ a.secondary-button:hover {
 
     .lavender-bg-color {
         background-color: $lavender; 
-    }
-
-    .black-button:hover {
-        border-color: $white;
-    }
-
-    .button.black-button:hover, 
-    .button.black-button:link:hover, 
-    .black-button:hover, 
-    a.black-button:hover {
-        background-color: #fff !important;
     }
 }
 
@@ -1162,49 +1381,9 @@ a.secondary-button:hover {
     .upcoming-event-links {
         width: 20%;
 
-        .button {
+        .ibme-button {
             margin-bottom: 10px;
         }
-    }
-
-    .button.barbie-button,
-    .button.lavender-button,
-    .button.bluejay-button {
-        position: relative;
-    }
-    
-    .button.barbie-button {
-        background-color: $barbie !important;
-    }
-
-    .button.lavender-button {
-        background-color: $lavender !important;
-    }
-
-    .button.bluejay-button {
-        background-color: $bluejay !important;
-    }
-
-    .button.barbie-button:after,
-    .button.lavender-button:after,
-    .button.bluejay-button:after {
-        content: '';
-        background: url("assets/img/button-floral.svg") no-repeat left top / contain;
-        width: 181px;
-        height: 75px;
-        position: absolute;
-        top: -20px;
-        left: -29px;
-        opacity: 0;
-        visibility: hidden;
-        transition: all 0.4s;
-    }
-
-    .button.barbie-button:hover:after,
-    .button.lavender-button:hover:after,
-    .button.bluejay-button:hover:after {
-        opacity: 1;
-        visibility: visible;
     }
 }
 
@@ -1238,7 +1417,7 @@ a.secondary-button:hover {
     }
 
     .cta-column-content {
-        padding: 0.618em;
+        padding: 0.618em 0.618em 1.618em;
     }
 
     .yellow-bg-color {
@@ -1308,35 +1487,10 @@ a.secondary-button:hover {
             line-height: 1.68em;
         }
 
-
-
         .form-field input::placeholder {
             font-size: 15px;
             font-weight: 500;
             color: #000;
           }
-    }
-
-    .button.tangerine-button {
-        position: relative;
-        background-color: $tangerine !important;
-    }
-
-    .button.tangerine-button:after {
-        content: '';
-        background: url("assets/img/button-floral.svg") no-repeat left top / contain;
-        width: 181px;
-        height: 75px;
-        position: absolute;
-        top: -20px;
-        left: -29px;
-        opacity: 0;
-        visibility: hidden;
-        transition: all 0.4s;
-    }
-
-    .button.tangerine-button:hover:after {
-        opacity: 1;
-        visibility: visible;
     }
 }
