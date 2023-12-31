@@ -619,8 +619,47 @@
                         height: 3px;
                         display: block;
                         border-radius: 10px;
+                        transition: all 0.25s;
+                    }
+
+                    &:hover:after {
+                        opacity: 0;
+                        visibility: hidden;
+                    }
+
+                    &:before {
+                        content: '';
+                        display: block;
+                        position: absolute;
+                        opacity: 0;
+                        visibility: hidden;
+                        transition: all 0.25s;
+                    }
+
+                    &:hover:before {
+                        opacity: 1;
+                        visibility: visible;
                     }
                 }
+            }
+
+            li:hover a{
+                &:after {
+                    opacity: 0;
+                    visibility: hidden;
+                }
+
+                &:before {
+                    opacity: 1;
+                    visibility: visible;
+                }
+            }
+        }
+
+        .sub-menu {
+            li a:after,
+            li a:before {
+                content: none;
             }
         }
     }
@@ -639,43 +678,234 @@
         padding-left: 0;
         padding-right: 0;
     }
+}
 
-    .teen-retreats a:after {
-        background-color: $barbie;
+.teen-retreats a:after {
+    background-color: $barbie;
+}
+
+.custom-programs a:after {
+    background-color: $marigold;
+}
+
+.teacher-training a:after {
+    background-color: $bluejay;
+}
+
+.community-care a:after {
+    background-color: $lavender;
+}
+
+.teen-retreats > a:before {
+    width: 72px;
+    height: 35px;
+    background: url("assets/img/barbie-specks.svg") no-repeat center / contain;
+    left: 20px;
+    top: 5px;
+}
+
+.custom-programs > a:before {
+    width: 99px;
+    height: 35px;
+    background: url("assets/img/marigold-specks.svg") no-repeat center / contain;
+    left: 20px;
+    top: 5px;
+}
+
+.teacher-training > a:before {
+    width: 148px;
+    height: 24px;
+    background: url("assets/img/bluejay-specks.svg") no-repeat center / contain;
+    top: 10px;
+    left: -4px;
+}
+
+.community-care > a:before {
+    width: 136px;
+    height: 24px;
+    background: url("assets/img/lavender-specks.svg") no-repeat center / contain;
+    top: 12px;
+    left: 0;
+}
+
+/* Primary Menu Sub-menu Styles */
+
+#menu-primary-items {
+    .teen-retreats > .sub-menu,
+    .custom-programs > .sub-menu,
+    .teacher-training > .sub-menu,
+    .community-care > .sub-menu {
+        width: 550px;
+        display: flex;
+        border-top-left-radius: 5px;
+        border-top-right-radius: 5px;
     }
 
-    .custom-programs a:after {
-        background-color: $bluejay;
+    .teen-retreats {
+        .sub-menu {
+            background-color: $barbie;
+            
+        }
     }
 
-    .teacher-training a:after {
-        background-color: $marigold;
+    .custom-programs {
+        .sub-menu {
+            background-color: $marigold;
+        }
     }
 
-    .community-care a:after {
-        background-color: $lavender;
+    .teacher-training {
+        .sub-menu {
+            background-color: $bluejay;
+        }
+    }
+
+    .community-care {
+        .sub-menu {
+            background-color: $lavender;
+        }
+    }
+
+    .sub-menu-label {
+        
+        > a {
+            font-family: "MADE Mirage Regular";
+            font-size: 30px;
+            margin: 0;
+            padding: 35px 35px 25px;
+        }
+        
+        .sub-menu {
+            width: 100%;
+            top: 76px !important;
+            box-shadow: none;
+            padding-bottom: 35px;
+        }
+    }
+
+    .sub-menu-label:first-child {
+        width: 40%;
+
+        .sub-menu {
+            border-bottom-left-radius: 5px;
+        }
+    }
+
+    .sub-menu-label:last-child {
+        width: 60%;
+
+        .sub-menu {
+            border-bottom-right-radius: 5px;
+        }
+    }
+
+    .teen-retreats:hover,
+    .custom-programs:hover,
+    .teacher-training:hover,
+    .community-care:hover {
+        .sub-menu .sub-menu {
+            opacity: 1;
+            visibility: visible;
+        }
+    }
+    
+    .custom-programs,
+    .custom-programs:hover {
+        .sub-menu {
+            left: -117px;
+        }
+    }
+
+    .teacher-training,
+    .teacher-training:hover { 
+        .sub-menu {
+            left: -270px;
+        }
+    }
+    
+    .community-care,
+    .community-care:hover {
+        .sub-menu {
+            left: -410px;
+        }
+    }
+
+    .teen-retreats,
+    .teen-retreats:hover,
+    .custom-programs,
+    .custom-programs:hover,
+    .teacher-training,
+    .teacher-training:hover,
+    .community-care,
+    .community-care:hover {
+        .sub-menu .sub-menu {
+            left: 0;
+        }
+    }
+
+    .sub-menu .sub-menu li {
+        
+        a {
+            font-weight: 300;
+            padding: 0 35px;
+            margin: 0;
+            font-weight: 300;
+
+            &:hover {
+                font-weight: 400;
+            }
+        }
     }
 }
 
-#menu-top-nav-extended-menu {
-    list-style: none;
-    display: flex;
-    margin-top: 0;
-    margin-bottom: 0;
-    align-items: center;
 
+.ibme #menu-top-nav-extended-menu {
     a {
-        padding: .382em 0;
-        display: block;
+        padding: 0.382em 0;
+        
+        &:hover {
+            background-color: transparent;
+            color: #000;
+        }
     }
 }
 
 .menu {
 
     a:hover {
-        opacity: 0.75;
+        opacity: 1;
         color: $black;
         text-decoration: none;
+    }
+
+    .support {
+
+        a {
+            position: relative;
+        }
+
+        a:before {
+            width: 13px;
+            height: 12px;
+            background: url("assets/img/support-hover.svg") no-repeat center / contain;
+            top: 4px;
+            left: -8px;
+        }
+    }
+
+    .about {
+
+        a {
+            position: relative;
+        }
+
+        a:before {
+            width: 13px;
+            height: 12px;
+            background: url("assets/img/about-hover.svg") no-repeat center / contain;
+            top: 3px;
+            right: -10px;
+        }
     }
 
 
@@ -686,6 +916,7 @@
             height: 25px;
             display: block;
             text-indent: -9999px;
+            margin-top: 8px;
 
             &:hover {
                 opacity: 0.5;
@@ -700,6 +931,7 @@
             height: 25px;
             display: block;
             text-indent: -9999px;
+            margin-top: 8px;
 
             &:hover {
                 opacity: 0.5;
@@ -713,20 +945,124 @@
             margin-right: 0.75em;
             padding-left: 0;
             padding-right: 0;
+            position: relative;
 
             &:after {
                 background-color: $sky;
             }
+
+            &:before {
+                width: 13px;
+                height: 12px;
+                background: url("assets/img/donate-hover.svg") no-repeat center / contain;
+                top: 3px;
+                right: -10px;
+            }
         }
     }
 }
+
+#menu-top-nav-extended-menu {
+
+    .support > .sub-menu,
+    .about > .sub-menu {
+        width: 550px;
+        display: flex;
+        border-top-left-radius: 5px;
+        border-top-right-radius: 5px;
+    }
+
+    .support, .about {
+        .sub-menu {
+            background-color: $mint;
+            
+        }
+    }
+
+    .sub-menu-label {
+        
+        > a {
+            font-family: "MADE Mirage Regular";
+            font-size: 30px;
+            margin: 0;
+            padding: 35px 35px 25px;
+        }
+        
+        .sub-menu {
+            width: 100%;
+            top: 76px !important;
+            box-shadow: none;
+            padding-bottom: 35px;
+        }
+    }
+
+    .sub-menu-label:first-child {
+        width: 40%;
+
+        .sub-menu {
+            border-bottom-left-radius: 5px;
+        }
+    }
+
+    .sub-menu-label:last-child {
+        width: 60%;
+
+        .sub-menu {
+            border-bottom-right-radius: 5px;
+        }
+    }
+
+    .support:hover,
+    .about:hover {
+        .sub-menu .sub-menu {
+            opacity: 1;
+            visibility: visible;
+        }
+    }
+
+    .support,
+    .support:hover,
+    .about,
+    .about:hover {
+        .sub-menu {
+            right: 0;
+        }
+    }
+
+    .support,
+    .support:hover,
+    .about,
+    .about:hover {
+        .sub-menu .sub-menu {
+            left: 0;
+        }
+    }
+
+    .sub-menu .sub-menu li {
+        
+        a {
+            font-weight: 300;
+            padding: 0 35px;
+            margin: 0;
+            font-weight: 300;
+
+            &:hover {
+                font-weight: 400;
+            }
+        }
+    }
+
+    .sub-menu .sub-menu .current-menu-item a {
+        font-weight: 400;
+    }
+}    
 
 #menu-primary-items :link:hover, 
 #menu-primary-items :visited:hover, 
 #menu-sub-terms-items :link:hover, 
 #menu-sub-terms-items :visited:hover {
     background-color: transparent;
-    opacity: 0.75;
+    opacity: 1;
     color: $black;
 }
 
