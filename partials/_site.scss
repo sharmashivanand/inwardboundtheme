@@ -1358,27 +1358,21 @@
     background: url("assets/img/home-hero.jpg") no-repeat center top;
     background-size: 1920px auto;
     
-    h2 {
-        font-family: "MADE Mirage Regular";
-        font-size: 84px;
-        line-height: 0.92em;
+    .title {
         color: #fff;
         width: 50%; 
-        font-weight: normal;
-        margin-top: 0;
         padding-top: 150px;
-        margin-bottom: 0.5em;
         text-transform: lowercase;
     }
 }
 
-.home-mission-statement-section {
+.ibme-statement-1 {
     display: flex;
     align-items: center;
     text-align: center;
     position: relative;
 
-    .inner-wrap:after {
+    /*.inner-wrap:after {
         content: '';
         width: 134px;
         height: 164px;
@@ -1386,23 +1380,13 @@
         background: url("assets/img/section-bg-2.svg") no-repeat center / contain;
         position: absolute;
         bottom: 150px;
-    }
-
-    h3 {
-        font-family: "MADE Mirage Regular";
-        font-size: 84px;
-        line-height: 1em;
-        font-weight: normal;
-        margin-top: 0;
-        margin-bottom: 0.25em;
-        text-transform: lowercase;
-    }
+    }*/
 
     .landing-section-content {
         width: 50%;
         margin: 0 auto;
 
-        &:after {
+        /*&:after {
             content: '';
             width: 210px;
             height: 174px;
@@ -1411,7 +1395,7 @@
             position: absolute;
             top: 10%;
             left: 75%;
-        }
+        }*/
     }
 
     .inline-buttons {
@@ -1433,16 +1417,6 @@
     .ibme-community {
         width: 48%;
         margin-bottom: 60px;
-    }
-
-    .ibme-community-title {
-        font-family: "MADE Mirage Regular";
-        font-size: 84px;
-        line-height: 1em;
-        font-weight: normal;
-        margin-top: 0;
-        margin-bottom: 0.25em;
-        text-transform: lowercase;
     }
 
     .inline-buttons {
@@ -1487,26 +1461,6 @@
     align-items: center;
     background: url("assets/img/stats-bg.png") no-repeat left center / contain; 
 
-    .main-headline-title {
-        font-family: "MADE Mirage Regular";
-        font-size: 84px;
-        line-height: 1em;
-        font-weight: normal;
-        margin-top: 0;
-        margin-bottom: 0.25em;
-        text-transform: lowercase;
-    }
-
-    .stats-content-headline {
-        font-family: Inter, sans-serif;
-        font-weight: 500;
-        font-size: 84px;
-        line-height: 1em;
-        margin-top: 0;
-        margin-bottom: 0.25em;
-        text-transform: lowercase;
-    }
-
     .landing-section-content {
         display: flex;
         justify-content: space-between;
@@ -1517,20 +1471,25 @@
     }
 }
 
-.home .home-events-section {
+.cta_2_section {
+    
     min-height: 550px;
-}
 
-.home-events-section {
-
-    .ibme-events {
+    .cta_2-items {
         display: flex;
         justify-content: space-between;
         text-align: center;
     }
 
-    .ibme-event {
+    .cta-items-4 .cta_2-item {
         width: 23%;
+    } 
+
+    .cta-items-3 .cta_2-item {
+        width: 30%;
+    } 
+
+    .cta_2-item {
         box-sizing: border-box;
         padding: 50px 1.618em;
         min-height: 500px;
@@ -1541,23 +1500,64 @@
         align-items: center;
     }
 
-    .ibme-event-title {
-        font-family: Inter, sans-serif;
-        font-weight: 500;
-        font-size: 24px;
-        line-height: 1em;
-        margin-top: 0;
-        //margin-bottom: 0.25em;
-        text-transform: lowercase;
+    .header-3 {
         width: 65%;
+    }
+
+    .cherry-bg-color {
+        background-color: $cherry;
+    }
+
+    .poppy-bg-color {
+        background-color: $poppy;
+    } 
+
+    .blush-bg-color {
+        background-color: $blush;
     }
 
     .barbie-bg-color {
         background-color: $barbie;
     }
 
+    .peony-bg-color {
+        background-color: $peony;
+    }
+
+    .violet-bg-color {
+        background-color: $violet;
+    }
+
+    .tangerine-bg-color {
+        background-color: $tangerine;
+    }
+
     .marigold-bg-color {
         background-color: $marigold;
+    }
+
+    .sunflower-bg-color {
+        background-color: $sunflower;
+    }
+
+    .forest-bg-color {
+        background-color: $forest;
+    }
+
+    .teal-bg-color {
+        background-color: $teal;
+    }
+
+    .mint-bg-color {
+        background-color: $mint;
+    }
+
+    .ocean-bg-color {
+        background-color: $ocean;
+    }
+
+    .sky-bg-color {
+        background-color: $sky;
     }
 
     .bluejay-bg-color {
@@ -1567,6 +1567,7 @@
     .lavender-bg-color {
         background-color: $lavender; 
     }
+
 }
 
 .home-testimonial-section {
@@ -1596,12 +1597,7 @@
     }
 
     .testimonial-content {
-        font-family: "MADE Mirage Regular";
-        font-size: 41px;
         color: $ocean;
-        line-height: 1.15em;
-        margin-bottom: 0;
-
     }
 
     .testimonial-by:before {
@@ -1656,17 +1652,8 @@
         }
     }
 
-    .headline-title {
-        font-family: "MADE Mirage Regular";
-        font-size: 84px;
-        line-height: 0.92em;
+    .title {
         color: #fff;
-        //width: 50%; 
-        font-weight: normal;
-        margin-top: 0;
-        //padding-top: 150px;
-        margin-bottom: 0.5em;
-        text-transform: lowercase;
     }
 
     .upcoming-event-item {
@@ -1684,9 +1671,7 @@
     .upcoming-event-date {
         width: 20%;
 
-        p {
-            font-size: 20px;
-            font-weight: 500;
+        .header-4 {
             margin-top: 0;
             margin-bottom: 0;
         }
@@ -1700,11 +1685,7 @@
         width: 50%;
     }
 
-    .upcoming-event-title {
-        font-weight: 500;
-        font-size: 24px;
-        text-transform: lowercase;
-        margin-top: 0;
+    .header-3 {
         margin-bottom: 0;
     }
 
@@ -1764,11 +1745,7 @@
         background-color: $violet;
     }
 
-    .cta-column-title {
-        font-size: 24px;
-        text-transform: lowercase;
-        font-weight: 500;
-        margin-top: 0;
+    .header-3 {
         margin-bottom: 0;
     }
 
@@ -1779,14 +1756,7 @@
         margin-bottom: 1em;
     }
 
-    .cta-subscribe-headline {
-        font-family: "MADE Mirage Regular";
-        font-size: 84px;
-        line-height: 0.92em;
-        font-weight: normal;
-        margin-top: 0;
-        margin-bottom: 0.5em;
-        text-transform: lowercase;
+    .title {
         width: 80%;
     }
 

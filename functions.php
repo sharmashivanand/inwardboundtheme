@@ -177,6 +177,7 @@ function ibme_redirect_home() {
 	}
 }
 
+// Register the shortcode for outputing current year in the footer copyright
 add_shortcode('ibme-current-year', 'ibme_current_year_shortcode');
 
 function ibme_current_year_shortcode() {
@@ -187,7 +188,7 @@ function ibme_current_year_shortcode() {
     return $current_year;
 }
 
-// Register the shortcode
+// Register the shortcode for button
 add_shortcode('ibme-button', 'ibme_button_handler');
 
 // Define the shortcode function
@@ -238,4 +239,163 @@ function ibme_button_handler($atts) {
     return $button_html;
 }
 
+/**
+ * Registering shortcodes for various content blocks 
+ */
 
+
+// Register the shortcode for the "statement_1" block
+
+add_shortcode('ibme_statement_1', 'ibme_statement_1_handler');
+
+function ibme_statement_1_handler($atts) {
+	// Extract shortcode attributes
+	$atts = shortcode_atts(
+		array(
+			'title'      				=> '',
+			'text'      				=> '',
+			'button-type'      		=> 'single',
+			'button-link'      			=> '#',
+			'button-text'      			=> 'Click Here',
+			'button-color'  			=> '',
+			'button-style'     			=> 'style-3',
+			'button-2-link'      		=> '#',
+			'button-2-text'      		=> 'Click Here',
+			'button-2-color'  			=> '',
+			'button-2-style'     		=> 'style-4',
+			'top-illustration'     		=> 'heart',
+			'bottom-illustration'     	=> 'plant'
+		),
+
+		$atts,
+		'ibme_statement_1'
+	);
+
+	// Sanitize attributes
+	$title = esc_html($atts['title']);
+	$text = esc_html($atts['text']);
+	$button_type = esc_attr($atts['button-type']);
+	$button_link = esc_url($atts['button-link']);
+	$button_2_link = esc_url($atts['button-2-link']);
+	$button_text = esc_html($atts['button-text']);
+	$button_2_text = esc_html($atts['button-2-text']);
+	$button_color = esc_attr($atts['button-color']);
+	$button_2_color = esc_attr($atts['button-2-color']);
+	$button_style = esc_attr($atts['button-style']);
+	$button_2_style = esc_attr($atts['button-2-style']);
+	$top_illustration = esc_attr($atts['top-illustration']);
+	$bottom_illustration = esc_attr($atts['bottom-illustration']);
+
+	$top_illustration_class = 'top-'.$top_illustration.'-'.$button_color;
+	$bottom_illustration_class = 'bottom-'.$bottom_illustration.'-'.$button_color;
+
+	// Generate HTML for the statement_1 block
+	$statement_1_html = '<section class="full-width-section landing-section '.$top_illustration_class.' ibme-statement-1 '.$bottom_illustration_class.'"><div class="inner-wrap"><div class="landing-section-content">';
+	$statement_1_html .= '<h3 class="title">'.$title.'</h3>';
+	$statement_1_html .= '<p>'.$text.'</p>';
+	$statement_1_html .= do_shortcode('[ibme-button link="'.$button_link.'" text="'.$button_text.'" color="'.$button_color.'" style="'.$button_style.'" type="'.$button_type.'" button-2-link="'.$button_2_link.'" button-2-text="'.$button_2_text.'" button-2-color="'.$button_2_color.'" button-2-style="'.$button_2_style.'"]');
+	$statement_1_html .= '</div>';
+	$statement_1_html .= '</div>';
+	$statement_1_html .= '</section>';
+
+	return $statement_1_html;
+}
+
+// Register the shortcode for the "cta_2" block
+
+add_shortcode('ibme_cta_2', 'ibme_cta_2_handler');
+
+function ibme_cta_2_handler($atts) {
+	$class = 'cta-items-4';
+	$width = '';
+
+	// Extract shortcode attributes
+	$atts = shortcode_atts(
+		array(
+			'items'      				=> '4', // 3 or 4
+			'cta_item_1_color'      	=> '', // 'cherry', 'poppy', 'blush', 'barbie', 'peony', 'violet', 'tangerine', 'marigold', 'sunflower', 'forest', 'teal', 'mint', 'ocean', 'sky', 'bluejay', 'lavendar'
+			'cta_item_2_color'      	=> '', // 'cherry', 'poppy', 'blush', 'barbie', 'peony', 'violet', 'tangerine', 'marigold', 'sunflower', 'forest', 'teal', 'mint', 'ocean', 'sky', 'bluejay', 'lavendar'
+			'cta_item_3_color'      	=> '', // 'cherry', 'poppy', 'blush', 'barbie', 'peony', 'violet', 'tangerine', 'marigold', 'sunflower', 'forest', 'teal', 'mint', 'ocean', 'sky', 'bluejay', 'lavendar'
+			'cta_item_4_color'      	=> '', // 'cherry', 'poppy', 'blush', 'barbie', 'peony', 'violet', 'tangerine', 'marigold', 'sunflower', 'forest', 'teal', 'mint', 'ocean', 'sky', 'bluejay', 'lavendar'
+			'cta_item_1_illustration'    => '', // cabin, cloud, embrace, eye, face, fire, flower, heart-hug, heart, journal, music, plant, smiles, sun, sunglasses, talking, two-teens, walking, workshop, yoga
+			'cta_item_2_illustration'    => '', // cabin, cloud, embrace, eye, face, fire, flower, heart-hug, heart, journal, music, plant, smiles, sun, sunglasses, talking, two-teens, walking, workshop, yoga
+			'cta_item_3_illustration'    => '', // cabin, cloud, embrace, eye, face, fire, flower, heart-hug, heart, journal, music, plant, smiles, sun, sunglasses, talking, two-teens, walking, workshop, yoga
+			'cta_item_4_illustration'    => '', // cabin, cloud, embrace, eye, face, fire, flower, heart-hug, heart, journal, music, plant, smiles, sun, sunglasses, talking, two-teens, walking, workshop, yoga
+			'cta_item_1_title'          => '', 
+			'cta_item_2_title'          => '', 
+			'cta_item_3_title'          => '', 
+			'cta_item_4_title'          => '', 
+			'cta_item_1_button_text'    => '', 
+			'cta_item_2_button_text'    => '', 
+			'cta_item_3_button_text'    => '', 
+			'cta_item_4_button_text'    => '', 
+			'cta_item_1_button_link'    => '', 
+			'cta_item_2_button_link'    => '', 
+			'cta_item_3_button_link'    => '', 
+			'cta_item_4_button_link'    => '', 
+		),
+
+		$atts,
+		'ibme_cta_2'
+	);
+
+	// Sanitize attributes
+
+	$items = (int) esc_attr($atts['items']);
+	$cta_item_1_color = esc_attr($atts['cta_item_1_color']);
+	$cta_item_2_color = esc_attr($atts['cta_item_2_color']);
+	$cta_item_3_color = esc_attr($atts['cta_item_3_color']);
+	$cta_item_4_color = esc_attr($atts['cta_item_4_color']);
+	$cta_item_1_illustration = esc_attr($atts['cta_item_1_illustration']);
+	$cta_item_2_illustration = esc_attr($atts['cta_item_2_illustration']);
+	$cta_item_3_illustration = esc_attr($atts['cta_item_3_illustration']);
+	$cta_item_4_illustration = esc_attr($atts['cta_item_4_illustration']);
+	$cta_item_1_title = esc_html($atts['cta_item_1_title']);
+	$cta_item_2_title = esc_html($atts['cta_item_2_title']);
+	$cta_item_3_title = esc_html($atts['cta_item_3_title']);
+	$cta_item_4_title = esc_html($atts['cta_item_4_title']);
+	$cta_item_1_button_text = esc_html($atts['cta_item_1_button_text']);
+	$cta_item_2_button_text = esc_html($atts['cta_item_2_button_text']);
+	$cta_item_3_button_text = esc_html($atts['cta_item_3_button_text']);
+	$cta_item_4_button_text = esc_html($atts['cta_item_4_button_text']);
+	$cta_item_1_button_link = esc_url($atts['cta_item_1_button_link']);
+	$cta_item_2_button_link = esc_url($atts['cta_item_2_button_link']);
+	$cta_item_3_button_link = esc_url($atts['cta_item_3_button_link']);
+	$cta_item_4_button_link = esc_url($atts['cta_item_4_button_link']);
+
+	if($items == 3) {
+		$class = "cta-items-3";
+	}
+
+	// Generate HTML for the cta_2 block
+
+	$cta_2_html = '<section class="full-width-section landing-section cta_2_section"><div class="inner-wrap"><div class="landing-section-content"><div class="cta_2-items '.$class.'">';
+	for($i=1; $i<=$items; $i++) {
+		// Form the variable names dynamically
+		$cta_item_title = 'cta_item_'.$i.'_title';
+		$cta_item_illustration = 'cta_item_'.$i.'_illustration';
+		$cta_item_color = 'cta_item_'.$i.'_color';
+		$cta_item_button_text = 'cta_item_'.$i.'_button_text';
+		$cta_item_button_link = 'cta_item_'.$i.'_button_link';
+
+		if(in_array($$cta_item_illustration, array('fire', 'talking', 'yoga', 'smiles', 'music', 'cabin', 'heart-hug'))) {
+			$width = '195';
+		} else {
+			$width = '175';
+		}
+
+		$cta_2_html .= '<div class="cta_2-item '.$$cta_item_color.'-bg-color">';
+		$cta_2_html .= '<p><img src="'.get_stylesheet_directory_uri() . '/assets/img/cta2-illustrations/' . $$cta_item_illustration . '.svg" alt="'.$$cta_item_title.'" width="'.$width.'" height="155" /></p>';
+		$cta_2_html .= '<h3 class="header-3">'.$$cta_item_title.'</h3>';
+		$cta_2_html .= do_shortcode('[ibme-button link="'.$$cta_item_button_link.'" text="'.$$cta_item_button_text.'" style="style-5"]');
+		$cta_2_html .= '</div>';
+	}
+
+	$cta_2_html .= '</div>';
+	$cta_2_html .= '</div>';
+	$cta_2_html .= '</div>';
+	$cta_2_html .= '</section>';
+
+	return $cta_2_html;
+
+}

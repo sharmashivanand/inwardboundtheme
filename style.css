@@ -69,7 +69,50 @@ input:focus:-ms-input-placeholder, textarea:focus:-ms-input-placeholder {
   font-weight: normal;
   font-style: normal;
 }
-/* Other Variables */
+/* Header Styles */
+.title {
+  font-family: "MADE Mirage Regular";
+  font-size: 84px;
+  line-height: 0.95em;
+  font-weight: normal;
+  margin-top: 0;
+  margin-bottom: 0.5em;
+  text-transform: lowercase;
+}
+
+.header-1 {
+  font-family: Inter, sans-serif;
+  font-weight: 500;
+  font-size: 84px;
+  line-height: 1em;
+  margin-top: 0;
+  margin-bottom: 0.25em;
+  text-transform: lowercase;
+}
+
+.header-2 {
+  font-family: "MADE Mirage Regular";
+  font-size: 41px;
+  line-height: 1.15em;
+  margin-bottom: 0;
+}
+
+.header-3 {
+  font-family: Inter, sans-serif;
+  font-weight: 500;
+  font-size: 24px;
+  line-height: 1em;
+  margin-top: 0;
+  text-transform: lowercase;
+}
+
+.header-4 {
+  font-family: Inter, sans-serif;
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 1.45em;
+}
+
 /*! normalize.css v7.0.0 | MIT License | github.com/necolas/normalize.css */
 html {
   line-height: 1.15;
@@ -2140,58 +2183,43 @@ video {
   background: url("assets/img/home-hero.jpg") no-repeat center top;
   background-size: 1920px auto;
 }
-.home-hero-section h2 {
-  font-family: "MADE Mirage Regular";
-  font-size: 84px;
-  line-height: 0.92em;
+.home-hero-section .title {
   color: #fff;
   width: 50%;
-  font-weight: normal;
-  margin-top: 0;
   padding-top: 150px;
-  margin-bottom: 0.5em;
   text-transform: lowercase;
 }
 
-.home-mission-statement-section {
+.ibme-statement-1 {
   display: flex;
   align-items: center;
   text-align: center;
   position: relative;
+  /*.inner-wrap:after {
+      content: '';
+      width: 134px;
+      height: 164px;
+      display: block;
+      background: url("assets/img/section-bg-2.svg") no-repeat center / contain;
+      position: absolute;
+      bottom: 150px;
+  }*/
 }
-.home-mission-statement-section .inner-wrap:after {
-  content: '';
-  width: 134px;
-  height: 164px;
-  display: block;
-  background: url("assets/img/section-bg-2.svg") no-repeat center/contain;
-  position: absolute;
-  bottom: 150px;
-}
-.home-mission-statement-section h3 {
-  font-family: "MADE Mirage Regular";
-  font-size: 84px;
-  line-height: 1em;
-  font-weight: normal;
-  margin-top: 0;
-  margin-bottom: 0.25em;
-  text-transform: lowercase;
-}
-.home-mission-statement-section .landing-section-content {
+.ibme-statement-1 .landing-section-content {
   width: 50%;
   margin: 0 auto;
+  /*&:after {
+      content: '';
+      width: 210px;
+      height: 174px;
+      display: block;
+      background: url("assets/img/section-bg.svg") no-repeat center / contain;
+      position: absolute;
+      top: 10%;
+      left: 75%;
+  }*/
 }
-.home-mission-statement-section .landing-section-content:after {
-  content: '';
-  width: 210px;
-  height: 174px;
-  display: block;
-  background: url("assets/img/section-bg.svg") no-repeat center/contain;
-  position: absolute;
-  top: 10%;
-  left: 75%;
-}
-.home-mission-statement-section .inline-buttons {
+.ibme-statement-1 .inline-buttons {
   justify-content: center;
   margin-top: 2.618em;
 }
@@ -2208,15 +2236,6 @@ video {
 .ibme-communities .ibme-community {
   width: 48%;
   margin-bottom: 60px;
-}
-.ibme-communities .ibme-community-title {
-  font-family: "MADE Mirage Regular";
-  font-size: 84px;
-  line-height: 1em;
-  font-weight: normal;
-  margin-top: 0;
-  margin-bottom: 0.25em;
-  text-transform: lowercase;
 }
 .ibme-communities .inline-buttons {
   justify-content: center;
@@ -2259,24 +2278,6 @@ video {
   align-items: center;
   background: url("assets/img/stats-bg.png") no-repeat left center/contain;
 }
-.home-stats-section .main-headline-title {
-  font-family: "MADE Mirage Regular";
-  font-size: 84px;
-  line-height: 1em;
-  font-weight: normal;
-  margin-top: 0;
-  margin-bottom: 0.25em;
-  text-transform: lowercase;
-}
-.home-stats-section .stats-content-headline {
-  font-family: Inter, sans-serif;
-  font-weight: 500;
-  font-size: 84px;
-  line-height: 1em;
-  margin-top: 0;
-  margin-bottom: 0.25em;
-  text-transform: lowercase;
-}
 .home-stats-section .landing-section-content {
   display: flex;
   justify-content: space-between;
@@ -2285,17 +2286,21 @@ video {
   width: 48%;
 }
 
-.home .home-events-section {
+.cta_2_section {
   min-height: 550px;
 }
-
-.home-events-section .ibme-events {
+.cta_2_section .cta_2-items {
   display: flex;
   justify-content: space-between;
   text-align: center;
 }
-.home-events-section .ibme-event {
+.cta_2_section .cta-items-4 .cta_2-item {
   width: 23%;
+}
+.cta_2_section .cta-items-3 .cta_2-item {
+  width: 30%;
+}
+.cta_2_section .cta_2-item {
   box-sizing: border-box;
   padding: 50px 1.618em;
   min-height: 500px;
@@ -2305,25 +2310,55 @@ video {
   justify-content: center;
   align-items: center;
 }
-.home-events-section .ibme-event-title {
-  font-family: Inter, sans-serif;
-  font-weight: 500;
-  font-size: 24px;
-  line-height: 1em;
-  margin-top: 0;
-  text-transform: lowercase;
+.cta_2_section .header-3 {
   width: 65%;
 }
-.home-events-section .barbie-bg-color {
+.cta_2_section .cherry-bg-color {
+  background-color: #FF372F;
+}
+.cta_2_section .poppy-bg-color {
+  background-color: #FF5A5A;
+}
+.cta_2_section .blush-bg-color {
+  background-color: #FF978C;
+}
+.cta_2_section .barbie-bg-color {
   background-color: #EF5DBF;
 }
-.home-events-section .marigold-bg-color {
+.cta_2_section .peony-bg-color {
+  background-color: #FFB9DD;
+}
+.cta_2_section .violet-bg-color {
+  background-color: #F2C1E8;
+}
+.cta_2_section .tangerine-bg-color {
+  background-color: #FF951F;
+}
+.cta_2_section .marigold-bg-color {
   background-color: #FFB235;
 }
-.home-events-section .bluejay-bg-color {
+.cta_2_section .sunflower-bg-color {
+  background-color: #FFD234;
+}
+.cta_2_section .forest-bg-color {
+  background-color: #005F47;
+}
+.cta_2_section .teal-bg-color {
+  background-color: #008075;
+}
+.cta_2_section .mint-bg-color {
+  background-color: #A4EDC6;
+}
+.cta_2_section .ocean-bg-color {
+  background-color: #217490;
+}
+.cta_2_section .sky-bg-color {
+  background-color: #5FA6E2;
+}
+.cta_2_section .bluejay-bg-color {
   background-color: #8ECCDC;
 }
-.home-events-section .lavender-bg-color {
+.cta_2_section .lavender-bg-color {
   background-color: #9691D8;
 }
 
@@ -2350,11 +2385,7 @@ video {
   width: 34%;
 }
 .home-testimonial-section .testimonial-content {
-  font-family: "MADE Mirage Regular";
-  font-size: 41px;
   color: #217490;
-  line-height: 1.15em;
-  margin-bottom: 0;
 }
 .home-testimonial-section .testimonial-by:before {
   content: '—';
@@ -2388,15 +2419,8 @@ video {
 .home-upcoming-events-section .upcoming-events-list .ocean-color .upcoming-event-date p {
   color: #217490;
 }
-.home-upcoming-events-section .headline-title {
-  font-family: "MADE Mirage Regular";
-  font-size: 84px;
-  line-height: 0.92em;
+.home-upcoming-events-section .title {
   color: #fff;
-  font-weight: normal;
-  margin-top: 0;
-  margin-bottom: 0.5em;
-  text-transform: lowercase;
 }
 .home-upcoming-events-section .upcoming-event-item {
   background-color: #fff;
@@ -2412,9 +2436,7 @@ video {
 .home-upcoming-events-section .upcoming-event-date {
   width: 20%;
 }
-.home-upcoming-events-section .upcoming-event-date p {
-  font-size: 20px;
-  font-weight: 500;
+.home-upcoming-events-section .upcoming-event-date .header-4 {
   margin-top: 0;
   margin-bottom: 0;
 }
@@ -2424,11 +2446,7 @@ video {
 .home-upcoming-events-section .upcoming-event-title-location {
   width: 50%;
 }
-.home-upcoming-events-section .upcoming-event-title {
-  font-weight: 500;
-  font-size: 24px;
-  text-transform: lowercase;
-  margin-top: 0;
+.home-upcoming-events-section .header-3 {
   margin-bottom: 0;
 }
 .home-upcoming-events-section .upcoming-event-location {
@@ -2476,11 +2494,7 @@ video {
 .home-subscribe-section .voilet-bg-color {
   background-color: #F2C1E8;
 }
-.home-subscribe-section .cta-column-title {
-  font-size: 24px;
-  text-transform: lowercase;
-  font-weight: 500;
-  margin-top: 0;
+.home-subscribe-section .header-3 {
   margin-bottom: 0;
 }
 .home-subscribe-section .cta-column-text {
@@ -2489,14 +2503,7 @@ video {
   margin-top: 1em;
   margin-bottom: 1em;
 }
-.home-subscribe-section .cta-subscribe-headline {
-  font-family: "MADE Mirage Regular";
-  font-size: 84px;
-  line-height: 0.92em;
-  font-weight: normal;
-  margin-top: 0;
-  margin-bottom: 0.5em;
-  text-transform: lowercase;
+.home-subscribe-section .title {
   width: 80%;
 }
 .home-subscribe-section .cta-subscribe-form {
