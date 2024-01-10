@@ -1333,7 +1333,6 @@
             padding-left: 100px;
             padding-right: 100px;
             box-sizing: border-box;
-
         }
     }
 }
@@ -1920,10 +1919,12 @@
         display: flex;
         justify-content: space-between;
         text-align: center;
+        flex-wrap: wrap;
 
         .cta-column {
             width: 47%;
             border-radius: 5px;
+            margin-top: 2.618em;
         }
 
         img {

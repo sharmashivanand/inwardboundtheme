@@ -2626,10 +2626,12 @@ video {
   display: flex;
   justify-content: space-between;
   text-align: center;
+  flex-wrap: wrap;
 }
 .home-subscribe-section .cta-columns .cta-column {
   width: 47%;
   border-radius: 5px;
+  margin-top: 2.618em;
 }
 .home-subscribe-section .cta-columns img {
   display: block;

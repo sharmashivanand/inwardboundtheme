@@ -517,10 +517,10 @@ function ibme_testimonials_container_handler($atts, $content = null) {
 	return $testimonials_container_html;
 }
 
-// Register the container shortcode
+// Register the container shortcode for testimonials
 add_shortcode('ibme_testimonials_container', 'ibme_testimonials_container_handler');
 
-// Content block shortcode registration as a nested shortcode within the container
+// Testimonial block shortcode registration as a nested shortcode within the container
 add_shortcode('ibme_testimonial_block', 'ibme_testimonial_block_handler');
 
 
@@ -617,4 +617,126 @@ function ibme_upcoming_event_handler($atts) {
 
 	return $upcoming_event_html;
 
+}
+
+
+// Register the shortcode for the "cta_3" block
+
+function ibme_cta_3_content_block_handler($atts) {
+	
+	// Extract shortcode attributes
+	$atts = shortcode_atts(
+		array(
+			'color'      	=> '', // 'cherry', 'poppy', 'blush', 'barbie', 'peony', 'violet', 'tangerine', 'marigold', 'sunflower', 'forest', 'teal', 'mint', 'ocean', 'sky', 'bluejay', 'lavendar'
+			'title'         => '', 
+			'text'          => '', 
+			'image-url'     => '', 
+			'button-text'   => '', 
+			'button-link'   => '', 			
+		),
+		$atts,
+		'ibme_cta_3_content_block'
+	);
+
+	// Sanitize attributes
+
+	$color = esc_attr($atts['color']);
+	$title = esc_html($atts['title']);
+	$text = esc_html($atts['text']);
+	$image_url = esc_url($atts['image-url']);
+	$button_text = esc_html($atts['button-text']);
+	$button_link = esc_url($atts['button-link']);
+
+	// Generate HTML for the cta_2 block
+
+	$cta_3_content_block_html = '<div class="cta-column '.$color.'-bg-color"><img src="'.$image_url.'" alt="'.$title.'" width="280" />';
+	$cta_3_content_block_html .= '<div class="cta-column-content">'; 
+	$cta_3_content_block_html .= '<h3 class="header-3">'.$title.'</h3>'; 
+	$cta_3_content_block_html .= '<p class="cta-column-text">'.$text.'</p>'; 
+	$cta_3_content_block_html .= do_shortcode('[ibme-button link="'.$button_link.'" text="'.$button_text.'" style="style-5"]');
+	$cta_3_content_block_html .= '</div></div>';
+
+	return $cta_3_content_block_html;
+}
+
+function ibme_cta_3_content_blocks_handler($atts, $content = null) {
+	// Use a regular expression to match [ibme_cta_3_content_block] shortcodes
+	preg_match_all('/\[ibme_cta_3_content_block(.*?)\]/s', $content, $matches, PREG_SET_ORDER);
+	
+	// Generate HTML for the ibme_cta_3_content_blocks
+	$cta_3_content_blocks_html = '<div class="cta-columns content-column">';
+    
+	// Process and return the content
+	foreach ($matches as $match) {
+		$params = shortcode_parse_atts($match[1]); // Parse parameters
+		$content_block_content = do_shortcode('[ibme_cta_3_content_block' . $match[1] . ']'); // Process content within [ibme_cta_3_content_block]
+
+		// Process and use $params and $content_block_content as needed
+		$cta_3_content_blocks_html .= $content_block_content;
+	}
+
+	$cta_3_content_blocks_html .= '</div>';
+
+	return $cta_3_content_blocks_html;
+}
+
+// Register the container shortcode
+add_shortcode('ibme_cta_3_content_blocks', 'ibme_cta_3_content_blocks_handler');
+
+// Content block shortcode registration as a nested shortcode within the container
+add_shortcode('ibme_cta_3_content_block', 'ibme_cta_3_content_block_handler');
+
+// Register the shortcode for the "ibme_subscribe_block" block
+
+add_shortcode('ibme_subscribe_block', 'ibme_subscribe_block_handler');
+
+function ibme_subscribe_block_handler($atts) {
+	// Extract shortcode attributes
+	$atts = shortcode_atts(
+		array(
+			'title'         => '', 
+		),
+		$atts,
+		'ibme_subscribe_block'
+	);
+
+	// Sanitize attributes
+	$title = esc_html($atts['title']);
+	$form_html = wp_kses_post($atts['form-html']);
+
+	// Generate HTML for the ibme_subscribe_block block
+
+	$subscribe_block_html = '<div class="cta-subscribe content-column">';
+	$subscribe_block_html .= '<h2 class="title">'.$title.'</h2>';
+	$subscribe_block_html .= '<div class="cta-subscribe-form">
+	<div class="left-form-field form-field"><input name="first-name" type="text" placeholder="first name" /></div>
+	<div class="right-form-field form-field"><input name="last-name" type="last" placeholder="last name" /></div>
+	<div class="left-form-field form-field"><input name="email" type="email" placeholder="email" /></div>
+	<div class="right-form-field form-field"><select id="state" name="state">
+	<option value="blank-option">State</option>
+	<option value="state-1">State 1</option>
+	<option value="state-2">State 2</option>
+	<option value="state-3">State 3</option>
+	</select></div>
+	<div class="left-form-field form-field"><label for="retreats">Interested in (check all that apply):</label></div>
+	<div class="right-form-field form-field"><select id="retreats" name="retreats">
+	<option value="teen-retreats">Teen Retreats</option>
+	<option value="mindfulness-retreats">Mindfulness Retreats</option>
+	<option value="teacher-training">Teacher Training</option>
+	<option value="equity-conversation">Equity Conversation</option>
+	</select></div>
+	<div class="form-submit-button"></div>';
+	$subscribe_block_html .= do_shortcode('[ibme-button link="https://example.com/" text="Subscribe" color="tangerine" style="style-3"]');
+	$subscribe_block_html .= '</div></div>';
+
+	return $subscribe_block_html;
+
+}
+
+// Register the shortcode for the "ibme_cta_3_subscribe_container" container 
+
+add_action ('ibme_cta_3_subscribe_container','ibme_cta_3_subscribe_container_handler');
+
+function ibme_cta_3_subscribe_container_handler() {
+	
 }
