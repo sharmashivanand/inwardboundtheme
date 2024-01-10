@@ -193,6 +193,9 @@ add_shortcode('ibme-button', 'ibme_button_handler');
 
 // Define the shortcode function
 function ibme_button_handler($atts) {
+
+	$color_class = '';
+	$button_2_color_class = '';
     // Extract shortcode attributes
     $atts = shortcode_atts(
         array(
@@ -218,6 +221,12 @@ function ibme_button_handler($atts) {
     $style = esc_attr($atts['style']); // possible values: 'style-1', 'style-2', 'style-3', 'style-4' and 'style-5', default set as 'style-1'
     $type = esc_attr($atts['type']); // possible values: 'dual' or 'single', default set as single
 
+	if($color == '') {
+		$color_class = '';
+	} else {
+		$color_class = $color.'-button ';
+	}
+
     // Handle "dual" type
     if ($type === 'dual') {
         // Sanitize attributes for the second button
@@ -226,14 +235,20 @@ function ibme_button_handler($atts) {
         $button_2_color = esc_attr($atts['button-2-color']);
         $button_2_style = esc_attr($atts['button-2-style']);
 
+		if($button_2_color == '') {
+			$button_2_color_class = '';
+		} else {
+			$button_2_color_class = $button_2_color.'-button ';
+		}
+
         // Generate HTML for the dual buttons
         $button_html = '<div class="inline-buttons">';
-        $button_html .= '<a href="' . $link . '" class="ibme-button ' . $color . '-button ' . $style . '">' . $text . '</a>';
-        $button_html .= '<a href="' . $button_2_link . '" class="ibme-button ' . $button_2_color . '-button ' . $button_2_style . '">' . $button_2_text . '</a>';
+        $button_html .= '<a href="' . $link . '" class="ibme-button ' . $color_class . $style . '">' . $text . '</a>';
+        $button_html .= '<a href="' . $button_2_link . '" class="ibme-button ' . $button_2_color_class . $button_2_style . '">' . $button_2_text . '</a>';
         $button_html .= '</div>';
     } else {
         // Generate HTML for a single button
-        $button_html = '<a href="' . $link . '" class="ibme-button ' . $color . '-button ' . $style . '">' . $text . '</a>';
+        $button_html = '<a href="' . $link . '" class="ibme-button ' .  $color_class . $style . '">' . $text . '</a>';
     }
 
     return $button_html;
@@ -301,101 +316,305 @@ function ibme_statement_1_handler($atts) {
 	return $statement_1_html;
 }
 
+// Register the shortcode for the "cta_1" block
+
+function ibme_cta_1_content_block_handler($atts) {
+	// Extract shortcode attributes
+	$atts = shortcode_atts(
+		array(
+			'title'      				=> '',
+			'text'      				=> '',
+			'image-url'      			=> '',
+			'color'      				=> '', // 'cherry', 'poppy', 'blush', 'barbie', 'peony', 'violet', 'tangerine', 'marigold', 'sunflower', 'forest', 'teal', 'mint', 'ocean', 'sky', 'bluejay', 'lavendar'
+			'button-link'      			=> '#',
+			'button-text'      			=> 'Click Here',
+			'button-2-link'      		=> '#',
+			'button-2-text'      		=> 'Click Here',
+		),
+
+		$atts,
+		'ibme_cta_1_content_block'
+	);
+
+	// Sanitize attributes
+	$title = esc_html($atts['title']);
+	$text = esc_html($atts['text']);
+	$image_url = esc_url($atts['image-url']);
+	$color = esc_attr($atts['color']);
+	$button_link = esc_url($atts['button-link']);
+	$button_2_link = esc_url($atts['button-2-link']);
+	$button_text = esc_html($atts['button-text']);
+	$button_2_text = esc_html($atts['button-2-text']);
+
+	// Generate HTML for the ibme_cta_1_content_block
+	$cta_1_content_block_html = '<div class="ibme-cta_1-content-block '.$color.'-bg-color">';
+	$cta_1_content_block_html .= '<div class="ibme-cta_1-content-block-container">';
+	$cta_1_content_block_html .= '<div class="ibme-cta_1-image-content"><img src="'.$image_url.'" alt="'.$title.'" /></div>';
+	$cta_1_content_block_html .= '<div class="ibme-cta_1-textual-content-wrap"><div class="ibme-cta_1-textual-content">';
+	$cta_1_content_block_html .= '<h2 class="title">'.$title.'</h2>';
+	$cta_1_content_block_html .= '<p class="ibme-cta_1-content-description">'.$text.'</p>';
+	$cta_1_content_block_html .= do_shortcode('[ibme-button type="dual" link="'.$button_link.'" text="'.$button_text.'" color="'.$color.'" style="style-1" button-2-link="'.$button_2_link.'" button-2-text="'.$button_2_text.'" button-2-color="'.$color.'" button-2-style="style-4"]');
+	$cta_1_content_block_html .= '</div></div></div></div>';
+
+	return $cta_1_content_block_html;
+}
+
+function ibme_cta_1_container_handler($atts, $content = null) {
+	// Generate HTML for the ibme_cta_1_container
+	$cta_1_container_html = '<section class="full-width-section landing-section cta_1-section"><div class="inner-wrap"><div class="landing-section-content"><div class="ibme-cta_1-content-blocks">';
+    
+	// Use a regular expression to match [ibme_cta_1_content_block] shortcodes
+	preg_match_all('/\[ibme_cta_1_content_block(.*?)\]/s', $content, $matches, PREG_SET_ORDER);
+
+	// Process and return the content
+	foreach ($matches as $match) {
+		$params = shortcode_parse_atts($match[1]); // Parse parameters
+		$content_block_content = do_shortcode('[ibme_cta_1_content_block' . $match[1] . ']'); // Process content within [ibme_cta_1_content_block]
+
+		// Process and use $params and $content_block_content as needed
+		$cta_1_container_html .= $content_block_content;
+	}
+
+	$cta_1_container_html .= '</div></div></div></section>';
+
+	return $cta_1_container_html;
+}
+
+// Register the container shortcode
+add_shortcode('ibme_cta_1_container', 'ibme_cta_1_container_handler');
+
+// Content block shortcode registration as a nested shortcode within the container
+add_shortcode('ibme_cta_1_content_block', 'ibme_cta_1_content_block_handler');
+
+
 // Register the shortcode for the "cta_2" block
 
-add_shortcode('ibme_cta_2', 'ibme_cta_2_handler');
-
-function ibme_cta_2_handler($atts) {
-	$class = 'cta-items-4';
+function ibme_cta_2_content_block_handler($atts) {
 	$width = '';
 
 	// Extract shortcode attributes
 	$atts = shortcode_atts(
 		array(
-			'items'      				=> '4', // 3 or 4
-			'cta_item_1_color'      	=> '', // 'cherry', 'poppy', 'blush', 'barbie', 'peony', 'violet', 'tangerine', 'marigold', 'sunflower', 'forest', 'teal', 'mint', 'ocean', 'sky', 'bluejay', 'lavendar'
-			'cta_item_2_color'      	=> '', // 'cherry', 'poppy', 'blush', 'barbie', 'peony', 'violet', 'tangerine', 'marigold', 'sunflower', 'forest', 'teal', 'mint', 'ocean', 'sky', 'bluejay', 'lavendar'
-			'cta_item_3_color'      	=> '', // 'cherry', 'poppy', 'blush', 'barbie', 'peony', 'violet', 'tangerine', 'marigold', 'sunflower', 'forest', 'teal', 'mint', 'ocean', 'sky', 'bluejay', 'lavendar'
-			'cta_item_4_color'      	=> '', // 'cherry', 'poppy', 'blush', 'barbie', 'peony', 'violet', 'tangerine', 'marigold', 'sunflower', 'forest', 'teal', 'mint', 'ocean', 'sky', 'bluejay', 'lavendar'
-			'cta_item_1_illustration'    => '', // cabin, cloud, embrace, eye, face, fire, flower, heart-hug, heart, journal, music, plant, smiles, sun, sunglasses, talking, two-teens, walking, workshop, yoga
-			'cta_item_2_illustration'    => '', // cabin, cloud, embrace, eye, face, fire, flower, heart-hug, heart, journal, music, plant, smiles, sun, sunglasses, talking, two-teens, walking, workshop, yoga
-			'cta_item_3_illustration'    => '', // cabin, cloud, embrace, eye, face, fire, flower, heart-hug, heart, journal, music, plant, smiles, sun, sunglasses, talking, two-teens, walking, workshop, yoga
-			'cta_item_4_illustration'    => '', // cabin, cloud, embrace, eye, face, fire, flower, heart-hug, heart, journal, music, plant, smiles, sun, sunglasses, talking, two-teens, walking, workshop, yoga
-			'cta_item_1_title'          => '', 
-			'cta_item_2_title'          => '', 
-			'cta_item_3_title'          => '', 
-			'cta_item_4_title'          => '', 
-			'cta_item_1_button_text'    => '', 
-			'cta_item_2_button_text'    => '', 
-			'cta_item_3_button_text'    => '', 
-			'cta_item_4_button_text'    => '', 
-			'cta_item_1_button_link'    => '', 
-			'cta_item_2_button_link'    => '', 
-			'cta_item_3_button_link'    => '', 
-			'cta_item_4_button_link'    => '', 
+			'color'      	=> '', // 'cherry', 'poppy', 'blush', 'barbie', 'peony', 'violet', 'tangerine', 'marigold', 'sunflower', 'forest', 'teal', 'mint', 'ocean', 'sky', 'bluejay', 'lavendar'
+			'illustration'  => '', // cabin, cloud, embrace, eye, face, fire, flower, heart-hug, heart, journal, music, plant, smiles, sun, sunglasses, talking, two-teens, walking, workshop, yoga
+			'title'         => '', 
+			'button_text'   => '', 
+			'button_link'   => '', 			
 		),
-
 		$atts,
-		'ibme_cta_2'
+		'ibme_cta_2_content_block'
 	);
 
 	// Sanitize attributes
 
-	$items = (int) esc_attr($atts['items']);
-	$cta_item_1_color = esc_attr($atts['cta_item_1_color']);
-	$cta_item_2_color = esc_attr($atts['cta_item_2_color']);
-	$cta_item_3_color = esc_attr($atts['cta_item_3_color']);
-	$cta_item_4_color = esc_attr($atts['cta_item_4_color']);
-	$cta_item_1_illustration = esc_attr($atts['cta_item_1_illustration']);
-	$cta_item_2_illustration = esc_attr($atts['cta_item_2_illustration']);
-	$cta_item_3_illustration = esc_attr($atts['cta_item_3_illustration']);
-	$cta_item_4_illustration = esc_attr($atts['cta_item_4_illustration']);
-	$cta_item_1_title = esc_html($atts['cta_item_1_title']);
-	$cta_item_2_title = esc_html($atts['cta_item_2_title']);
-	$cta_item_3_title = esc_html($atts['cta_item_3_title']);
-	$cta_item_4_title = esc_html($atts['cta_item_4_title']);
-	$cta_item_1_button_text = esc_html($atts['cta_item_1_button_text']);
-	$cta_item_2_button_text = esc_html($atts['cta_item_2_button_text']);
-	$cta_item_3_button_text = esc_html($atts['cta_item_3_button_text']);
-	$cta_item_4_button_text = esc_html($atts['cta_item_4_button_text']);
-	$cta_item_1_button_link = esc_url($atts['cta_item_1_button_link']);
-	$cta_item_2_button_link = esc_url($atts['cta_item_2_button_link']);
-	$cta_item_3_button_link = esc_url($atts['cta_item_3_button_link']);
-	$cta_item_4_button_link = esc_url($atts['cta_item_4_button_link']);
+	$color = esc_attr($atts['color']);
+	$illustration = esc_attr($atts['illustration']);
+	$title = esc_html($atts['title']);
+	$button_text = esc_html($atts['button_text']);
+	$button_link = esc_url($atts['button_link']);
 
-	if($items == 3) {
-		$class = "cta-items-3";
+	/* Set width for illustration */
+
+	if(in_array($illustration, array('fire', 'talking', 'yoga', 'smiles', 'music', 'cabin', 'heart-hug'))) {
+		$width = '195';
+	} else {
+		$width = '175';
 	}
 
 	// Generate HTML for the cta_2 block
 
-	$cta_2_html = '<section class="full-width-section landing-section cta_2_section"><div class="inner-wrap"><div class="landing-section-content"><div class="cta_2-items '.$class.'">';
-	for($i=1; $i<=$items; $i++) {
-		// Form the variable names dynamically
-		$cta_item_title = 'cta_item_'.$i.'_title';
-		$cta_item_illustration = 'cta_item_'.$i.'_illustration';
-		$cta_item_color = 'cta_item_'.$i.'_color';
-		$cta_item_button_text = 'cta_item_'.$i.'_button_text';
-		$cta_item_button_link = 'cta_item_'.$i.'_button_link';
+	$cta_2_content_block_html .= '<div class="cta_2-item '.$color.'-bg-color">';
+	$cta_2_content_block_html .= '<p><img src="'.get_stylesheet_directory_uri() . '/assets/img/cta2-illustrations/' . $illustration . '.svg" alt="'.$title.'" width="'.$width.'" height="155" /></p>';
+	$cta_2_content_block_html .= '<h3 class="header-3">'.$title.'</h3>';
+	$cta_2_content_block_html .= do_shortcode('[ibme-button link="'.$button_link.'" text="'.$button_text.'" style="style-5"]');
+	$cta_2_content_block_html .= '</div>';
+	
+	return $cta_2_content_block_html;
 
-		if(in_array($$cta_item_illustration, array('fire', 'talking', 'yoga', 'smiles', 'music', 'cabin', 'heart-hug'))) {
-			$width = '195';
-		} else {
-			$width = '175';
-		}
+}
 
-		$cta_2_html .= '<div class="cta_2-item '.$$cta_item_color.'-bg-color">';
-		$cta_2_html .= '<p><img src="'.get_stylesheet_directory_uri() . '/assets/img/cta2-illustrations/' . $$cta_item_illustration . '.svg" alt="'.$$cta_item_title.'" width="'.$width.'" height="155" /></p>';
-		$cta_2_html .= '<h3 class="header-3">'.$$cta_item_title.'</h3>';
-		$cta_2_html .= do_shortcode('[ibme-button link="'.$$cta_item_button_link.'" text="'.$$cta_item_button_text.'" style="style-5"]');
-		$cta_2_html .= '</div>';
+function ibme_cta_2_container_handler($atts, $content = null) {
+	// Use a regular expression to match [ibme_cta_2_content_block] shortcodes
+	preg_match_all('/\[ibme_cta_2_content_block(.*?)\]/s', $content, $matches, PREG_SET_ORDER);
+
+	$class = 'cta-items-'.count($matches);
+	
+	// Generate HTML for the ibme_cta_2_container
+	$cta_2_container_html = '<section class="full-width-section landing-section cta_2_section"><div class="inner-wrap"><div class="landing-section-content"><div class="cta_2-items '.$class.'">';
+    
+	// Process and return the content
+	foreach ($matches as $match) {
+		$params = shortcode_parse_atts($match[1]); // Parse parameters
+		$content_block_content = do_shortcode('[ibme_cta_2_content_block' . $match[1] . ']'); // Process content within [ibme_cta_2_content_block]
+
+		// Process and use $params and $content_block_content as needed
+		$cta_2_container_html .= $content_block_content;
 	}
 
-	$cta_2_html .= '</div>';
-	$cta_2_html .= '</div>';
-	$cta_2_html .= '</div>';
-	$cta_2_html .= '</section>';
+	$cta_2_container_html .= '</div></div></div></section>';
 
-	return $cta_2_html;
+	return $cta_2_container_html;
+}
+
+// Register the container shortcode
+add_shortcode('ibme_cta_2_container', 'ibme_cta_2_container_handler');
+
+// Content block shortcode registration as a nested shortcode within the container
+add_shortcode('ibme_cta_2_content_block', 'ibme_cta_2_content_block_handler');
+
+// Register the shortcode for the "testimonial" block
+
+function ibme_testimonial_block_handler($atts) {
+	// Extract shortcode attributes
+	$atts = shortcode_atts(
+		array(
+			'color'      				=> '', // ocean, forest, teal
+			'image-url'      			=> '',
+			'testimonial'      			=> '',
+			'testimonial-by'      		=> '', 
+		),
+
+		$atts,
+		'ibme_testimonial_block_handler'
+	);
+
+	// Sanitize attributes
+	$color = esc_attr($atts['color']);
+	$image_url = esc_url($atts['image-url']);
+	$testimonial = esc_html($atts['testimonial']);
+	$testimonial_by = esc_html($atts['testimonial-by']);
+
+	// Generate HTML for the ibme_testimonial_block
+
+	$testimonial_block_html = '<div class="ibme-testimonial-wrap '.$color.'-testimonial">';
+	$testimonial_block_html .= '<div class="ibme-testimonial-image-wrap"><img src="'.$image_url.'" alt="Testimonial by '.$testimonial_by.'" width="556" height="550" /></div>';
+	$testimonial_block_html .= '<div class="testimonial-content-wrap"><p class="header-2">'.$testimonial.'</p>';
+	$testimonial_block_html .= '<p class="testimonial-by">'.$testimonial_by.'</p>';
+	$testimonial_block_html .= '</div></div>';
+
+	return $testimonial_block_html;
+
+}
+
+function ibme_testimonials_container_handler($atts, $content = null) {
+	// Generate HTML for the ibme_testimonials_container
+	$testimonials_container_html = '<section class="full-width-section landing-section ibme-testimonial-section"><div class="inner-wrap"><div class="landing-section-content"><div class="ibme-testimonials-slider">';
+    
+	// Use a regular expression to match [ibme_testimonial_block] shortcodes
+	preg_match_all('/\[ibme_testimonial_block(.*?)\]/s', $content, $matches, PREG_SET_ORDER);
+
+	// Process and return the content
+	foreach ($matches as $match) {
+		$params = shortcode_parse_atts($match[1]); // Parse parameters
+		$content_block_content = do_shortcode('[ibme_testimonial_block' . $match[1] . ']'); // Process content within [ibme_testimonial_block]
+
+		// Process and use $params and $content_block_content as needed
+		$testimonials_container_html .= $content_block_content;
+	}
+
+	$testimonials_container_html .= '</div></div></div></section>';
+
+	return $testimonials_container_html;
+}
+
+// Register the container shortcode
+add_shortcode('ibme_testimonials_container', 'ibme_testimonials_container_handler');
+
+// Content block shortcode registration as a nested shortcode within the container
+add_shortcode('ibme_testimonial_block', 'ibme_testimonial_block_handler');
+
+
+// Register the shortcode for the "ibme_upcoming_events" block (parent block) and "ibme_upcoming_event" block (child block)
+
+add_shortcode('ibme_upcoming_events', 'ibme_upcoming_events_handler');
+
+function ibme_upcoming_events_handler($atts, $content = null) {
+	// Extract shortcode attributes
+	$atts = shortcode_atts(
+		array(
+			'image-url'      			=> '',
+			'title'      			=> '',
+			'button-text'      		=> '', 
+			'button-link'      		=> '', 
+		),
+
+		$atts,
+		'ibme_upcoming_events'
+	);	
+
+	// Sanitize attributes
+	$image_url = esc_url($atts['image-url']);
+	$title = esc_html($atts['title']);
+	$button_text = esc_html($atts['button-text']);
+	$button_link = esc_url($atts['button-link']);
+
+	// Generate HTML for the ibme_upcoming_events block
+	$upcoming_events_html = '<section class="full-width-section landing-section upcoming-events-section" style="background-image: url(\'' . $image_url . '\')"><div class="inner-wrap"><div class="landing-section-content">';
+	$upcoming_events_html .= '<div class="headline-column content-column"><h2 class="headline-title title">'.$title.'</h2>';
+	$upcoming_events_html .= do_shortcode('[ibme-button link="'.$button_link.'" text="'.$button_text.'" style="style-2"]');
+	$upcoming_events_html .= '</div>';
+	$upcoming_events_html .= '<div class="upcoming-events-list content-column">';
+
+	preg_match_all('/\[ibme_upcoming_event(.*?)\]/s', $content, $matches, PREG_SET_ORDER);
+
+	// Process and return the content
+	foreach ($matches as $match) {
+		$params = shortcode_parse_atts($match[1]); // Parse parameters
+		$ibme_upcoming_event_block = do_shortcode('[ibme_upcoming_event' . $match[1] . ']'); // Process content within [ibme_upcoming_event]
+
+		// Process and use $params and $content_block_content as needed
+		$upcoming_events_html .= $ibme_upcoming_event_block;
+	}
+
+	$upcoming_events_html .= '</div></div></div></div></section>';
+
+	return $upcoming_events_html;
+}
+
+add_shortcode('ibme_upcoming_event', 'ibme_upcoming_event_handler');
+
+function ibme_upcoming_event_handler($atts) {
+	// Extract shortcode attributes
+	$atts = shortcode_atts(
+		array(
+			'color'      				=> '', // 'cherry', 'poppy', 'blush', 'barbie', 'peony', 'violet', 'tangerine', 'marigold', 'sunflower', 'forest', 'teal', 'mint', 'ocean', 'sky', 'bluejay', 'lavendar'
+			'date-time'      			=> '',
+			'event-name'      			=> '',
+			'event-location'      		=> '', 
+			'button-link'      		=> '', 
+			'button-text'      		=> '', 
+			'button-2-link'      		=> '', 
+			'button-2-text'      		=> '', 
+		),
+
+		$atts,
+		'ibme_upcoming_event'
+	);
+
+	// Sanitize attributes
+	$color = esc_attr($atts['color']);
+	$date_time = wp_kses_post($atts['date-time']);
+	$event_name = esc_html($atts['event-name']);
+	$event_location = esc_html($atts['event-location']);
+	$button_link = esc_url($atts['button-link']);
+	$button_text = esc_html($atts['button-text']);
+	$button_2_link = esc_url($atts['button-2-link']);
+	$button_2_text = esc_html($atts['button-2-text']);
+
+	// Generate HTML for the ibme_upcoming_event block
+
+	$upcoming_event_html = '<div class="upcoming-event-item '.$color.'-color">';
+	$upcoming_event_html .= '<div class="upcoming-event-date">';
+	$upcoming_event_html .= '<p class="header-4">'.$date_time.'</p>';
+	$upcoming_event_html .= '</div>';
+	$upcoming_event_html .= '<div class="upcoming-event-title-location">';
+	$upcoming_event_html .= '<h4 class="header-3">'.$event_name.'</h4>';
+	$upcoming_event_html .= '<p class="upcoming-event-location">'.$event_location.'</p>';
+	$upcoming_event_html .= '</div><div class="upcoming-event-links">';
+	$upcoming_event_html .= do_shortcode('[ibme-button color="'.$color.'" link="'.$button_link.'" text="'.$button_text.'" style="style-1"]');
+	$upcoming_event_html .= do_shortcode('[ibme-button color="'.$color.'" link="'.$button_2_link.'" text="'.$button_2_text.'" style="style-4"]');
+	$upcoming_event_html .= '</div></div>';
+
+	return $upcoming_event_html;
 
 }

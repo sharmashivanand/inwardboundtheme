@@ -1404,7 +1404,7 @@
     }
 }
 
-.ibme-communities {
+.ibme-cta_1-content-blocks {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
@@ -1414,7 +1414,7 @@
         display: block;
     }
 
-    .ibme-community {
+    .ibme-cta_1-content-block {
         width: 48%;
         margin-bottom: 60px;
     }
@@ -1424,28 +1424,76 @@
     }
 }
 
-.ibme-community-textual-content-wrap {
+.ibme-cta_1-textual-content-wrap {
     border-radius: 5px;
     margin-top: -120px;
 }
 
-.barbie-bg-color .ibme-community-textual-content-wrap {
-    background-color: $barbie;
+.cherry-bg-color .ibme-cta_1-textual-content-wrap {
+    background-color: $cherry;
 }
 
-.blush-bg-color .ibme-community-textual-content-wrap {
+.poppy-bg-color .ibme-cta_1-textual-content-wrap {
+    background-color: $poppy;
+}
+
+.blush-bg-color .ibme-cta_1-textual-content-wrap {
     background-color: $blush;
 }
 
-.bluejay-bg-color .ibme-community-textual-content-wrap {
-    background-color: $bluejay;
+.barbie-bg-color .ibme-cta_1-textual-content-wrap {
+    background-color: $barbie;
 }
 
-.marigold-bg-color .ibme-community-textual-content-wrap {
+.peony-bg-color .ibme-cta_1-textual-content-wrap {
+    background-color: $peony;
+}
+
+.violet-bg-color .ibme-cta_1-textual-content-wrap {
+    background-color: $violet;
+}
+
+.tangerine-bg-color .ibme-cta_1-textual-content-wrap {
+    background-color: $tangerine;
+}
+
+.marigold-bg-color .ibme-cta_1-textual-content-wrap {
     background-color: $marigold;
 }
 
-.ibme-community-textual-content {
+.sunflower-bg-color .ibme-cta_1-textual-content-wrap {
+    background-color: $sunflower;
+}
+
+.forest-bg-color .ibme-cta_1-textual-content-wrap {
+    background-color: $forest;
+}
+
+.teal-bg-color .ibme-cta_1-textual-content-wrap {
+    background-color: $teal;
+}
+
+.mint-bg-color .ibme-cta_1-textual-content-wrap {
+    background-color: $mint;
+}
+
+.ocean-bg-color .ibme-cta_1-textual-content-wrap {
+    background-color: $ocean;
+}
+
+.sky-bg-color .ibme-cta_1-textual-content-wrap {
+    background-color: $sky;
+}
+
+.bluejay-bg-color .ibme-cta_1-textual-content-wrap {
+    background-color: $bluejay;
+}
+
+.lavender-bg-color .ibme-cta_1-textual-content-wrap {
+    background-color: $lavender; 
+}
+
+.ibme-cta_1-textual-content {
     width: 80%;
     margin-left: auto;
     margin-right: auto;
@@ -1570,18 +1618,17 @@
 
 }
 
-.home-testimonial-section {
+.ibme-testimonial-section {
     display: flex;
     align-items: center;
 
-    .testimonial-wrap {
+    .ibme-testimonial-wrap {
         display: flex;
         justify-content: space-between;
         align-items: center;
     }
 
-    .image-wrap {
-        background: url("assets/img/testimonial-photo-bg.svg") no-repeat center / contain;
+    .ibme-testimonial-image-wrap {
         width: 55%;
         min-height: 613px;
 
@@ -1592,12 +1639,8 @@
         }
     }
 
-    .content-wrap {
+    .testimonial-content-wrap {
         width: 34%;
-    }
-
-    .testimonial-content {
-        color: $ocean;
     }
 
     .testimonial-by:before {
@@ -1608,8 +1651,91 @@
     }
 }
 
-.home-upcoming-events-section {
-    background: url("assets/img/calendar-section-bg.jpg") no-repeat center top;
+.ocean-testimonial {
+    .header-2 {
+        color: $ocean;
+    }
+
+    .ibme-testimonial-image-wrap  {
+        background: url("assets/img/ocean-sunrays.svg") no-repeat center / contain;
+    }
+}
+
+.teal-testimonial {
+    .header-2 {
+        color: $teal;
+    }
+    .ibme-testimonial-image-wrap  {
+        background: url("assets/img/teal-sunrays.svg") no-repeat center / contain;
+    }
+}
+
+.forest-testimonial {
+    .header-2 {
+        color: $forest;
+    }
+
+    .ibme-testimonial-image-wrap  {
+        background: url("assets/img/forest-sunrays.svg") no-repeat center / contain;
+    }
+}
+
+/* Testimonial Slider */
+
+.ibme-testimonials-slider {
+    display: flex;
+    overflow: hidden;
+    width: 100%; 
+}
+  
+.ibme-testimonial-wrap {
+    flex: 0 0 100%;
+    transition: transform 0.5s ease;
+}
+  
+/* Animation */
+
+@keyframes slide {
+    0%, 100% {
+        transform: translateX(0);
+    }
+
+    33.33% {
+        transform: translateX(0);
+    }
+
+    41.66% {
+        transform: translateX(-100%);
+    }
+
+    66.66% {
+        transform: translateX(-100%);
+    }
+
+    74.99% {
+        transform: translateX(-200%);
+    }
+
+    100% {
+        transform: translateX(-200%);
+    }
+}
+  
+  /* Apply animation to the slider */
+
+.ibme-testimonials-slider .ibme-testimonial-wrap {
+    animation: slide 25s infinite; /* Adjust the duration as needed */
+}
+
+/* Pause on hover */
+
+.ibme-testimonials-slider:hover .ibme-testimonial-wrap {
+    animation-play-state: paused;
+}
+
+.upcoming-events-section {
+    background-repeat: no-repeat;
+    background-position: center top;
     background-size: 1920px auto; 
     display: flex;
     align-items: center;
@@ -1627,27 +1753,99 @@
     .upcoming-events-list {
         width: 62%;
 
-        .barbie-color {
-            .upcoming-event-date {
-                p {
-                    color: $barbie;
-                }
+        .cherry-color {
+            .header-4 {
+                color: $cherry;
             }
         }
 
-        .lavender-color {
-            .upcoming-event-date {
-                p {
-                    color: $lavender;
-                }
+        .poppy-color {
+            .header-4 {
+                color: $poppy;
+            }
+        }
+
+        .blush-color {
+            .header-4 {
+                color: $blush;
+            }
+        }
+
+        .barbie-color {
+            .header-4 {
+                color: $barbie;
+            }
+        }
+
+        .peony-color {
+            .header-4 {
+                color: $peony;
+            }
+        }
+
+        .violet-color {
+            .header-4 {
+                color: $violet;
+            }
+        }
+
+        .tangerine-color {
+            .header-4 {
+                color: $tangerine;
+            }
+        }
+
+        .marigold-color {
+            .header-4 {
+                color: $marigold;
+            }
+        }
+
+        .sunflower-color {
+            .header-4 {
+                color: $sunflower;
+            }
+        }
+
+        .forest-color {
+            .header-4 {
+                color: $forest;
+            }
+        }
+
+        .teal-color {
+            .header-4 {
+                color: $teal;
+            }
+        }
+
+        .mint-color {
+            .header-4 {
+                color: $mint;
             }
         }
 
         .ocean-color {
-            .upcoming-event-date {
-                p {
-                    color: $ocean;
-                }
+            .header-4 {
+                color: $ocean;
+            }
+        }
+
+        .sky-color {
+            .header-4 {
+                color: $sky;
+            }
+        }
+
+        .bluejay-color {
+            .header-4 {
+                color: $bluejay;
+            }
+        }
+
+        .lavender-color {
+            .header-4 {
+                color: $lavender;
             }
         }
     }

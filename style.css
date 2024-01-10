@@ -2224,45 +2224,93 @@ video {
   margin-top: 2.618em;
 }
 
-.ibme-communities {
+.ibme-cta_1-content-blocks {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
   text-align: center;
 }
-.ibme-communities img {
+.ibme-cta_1-content-blocks img {
   display: block;
 }
-.ibme-communities .ibme-community {
+.ibme-cta_1-content-blocks .ibme-cta_1-content-block {
   width: 48%;
   margin-bottom: 60px;
 }
-.ibme-communities .inline-buttons {
+.ibme-cta_1-content-blocks .inline-buttons {
   justify-content: center;
 }
 
-.ibme-community-textual-content-wrap {
+.ibme-cta_1-textual-content-wrap {
   border-radius: 5px;
   margin-top: -120px;
 }
 
-.barbie-bg-color .ibme-community-textual-content-wrap {
-  background-color: #EF5DBF;
+.cherry-bg-color .ibme-cta_1-textual-content-wrap {
+  background-color: #FF372F;
 }
 
-.blush-bg-color .ibme-community-textual-content-wrap {
+.poppy-bg-color .ibme-cta_1-textual-content-wrap {
+  background-color: #FF5A5A;
+}
+
+.blush-bg-color .ibme-cta_1-textual-content-wrap {
   background-color: #FF978C;
 }
 
-.bluejay-bg-color .ibme-community-textual-content-wrap {
-  background-color: #8ECCDC;
+.barbie-bg-color .ibme-cta_1-textual-content-wrap {
+  background-color: #EF5DBF;
 }
 
-.marigold-bg-color .ibme-community-textual-content-wrap {
+.peony-bg-color .ibme-cta_1-textual-content-wrap {
+  background-color: #FFB9DD;
+}
+
+.violet-bg-color .ibme-cta_1-textual-content-wrap {
+  background-color: #F2C1E8;
+}
+
+.tangerine-bg-color .ibme-cta_1-textual-content-wrap {
+  background-color: #FF951F;
+}
+
+.marigold-bg-color .ibme-cta_1-textual-content-wrap {
   background-color: #FFB235;
 }
 
-.ibme-community-textual-content {
+.sunflower-bg-color .ibme-cta_1-textual-content-wrap {
+  background-color: #FFD234;
+}
+
+.forest-bg-color .ibme-cta_1-textual-content-wrap {
+  background-color: #005F47;
+}
+
+.teal-bg-color .ibme-cta_1-textual-content-wrap {
+  background-color: #008075;
+}
+
+.mint-bg-color .ibme-cta_1-textual-content-wrap {
+  background-color: #A4EDC6;
+}
+
+.ocean-bg-color .ibme-cta_1-textual-content-wrap {
+  background-color: #217490;
+}
+
+.sky-bg-color .ibme-cta_1-textual-content-wrap {
+  background-color: #5FA6E2;
+}
+
+.bluejay-bg-color .ibme-cta_1-textual-content-wrap {
+  background-color: #8ECCDC;
+}
+
+.lavender-bg-color .ibme-cta_1-textual-content-wrap {
+  background-color: #9691D8;
+}
+
+.ibme-cta_1-textual-content {
   width: 80%;
   margin-left: auto;
   margin-right: auto;
@@ -2362,67 +2410,168 @@ video {
   background-color: #9691D8;
 }
 
-.home-testimonial-section {
+.ibme-testimonial-section {
   display: flex;
   align-items: center;
 }
-.home-testimonial-section .testimonial-wrap {
+.ibme-testimonial-section .ibme-testimonial-wrap {
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
-.home-testimonial-section .image-wrap {
-  background: url("assets/img/testimonial-photo-bg.svg") no-repeat center/contain;
+.ibme-testimonial-section .ibme-testimonial-image-wrap {
   width: 55%;
   min-height: 613px;
 }
-.home-testimonial-section .image-wrap img {
+.ibme-testimonial-section .ibme-testimonial-image-wrap img {
   display: block;
   margin-top: 87px;
   margin-left: 30px;
 }
-.home-testimonial-section .content-wrap {
+.ibme-testimonial-section .testimonial-content-wrap {
   width: 34%;
 }
-.home-testimonial-section .testimonial-content {
-  color: #217490;
-}
-.home-testimonial-section .testimonial-by:before {
+.ibme-testimonial-section .testimonial-by:before {
   content: '—';
   display: inline-block;
   margin-right: 5px;
 }
 
-.home-upcoming-events-section {
-  background: url("assets/img/calendar-section-bg.jpg") no-repeat center top;
+.ocean-testimonial .header-2 {
+  color: #217490;
+}
+.ocean-testimonial .ibme-testimonial-image-wrap {
+  background: url("assets/img/ocean-sunrays.svg") no-repeat center/contain;
+}
+
+.teal-testimonial .header-2 {
+  color: #008075;
+}
+.teal-testimonial .ibme-testimonial-image-wrap {
+  background: url("assets/img/teal-sunrays.svg") no-repeat center/contain;
+}
+
+.forest-testimonial .header-2 {
+  color: #005F47;
+}
+.forest-testimonial .ibme-testimonial-image-wrap {
+  background: url("assets/img/forest-sunrays.svg") no-repeat center/contain;
+}
+
+/* Testimonial Slider */
+.ibme-testimonials-slider {
+  display: flex;
+  overflow: hidden;
+  width: 100%;
+}
+
+.ibme-testimonial-wrap {
+  flex: 0 0 100%;
+  transition: transform 0.5s ease;
+}
+
+/* Animation */
+@keyframes slide {
+  0%, 100% {
+    transform: translateX(0);
+  }
+  33.33% {
+    transform: translateX(0);
+  }
+  41.66% {
+    transform: translateX(-100%);
+  }
+  66.66% {
+    transform: translateX(-100%);
+  }
+  74.99% {
+    transform: translateX(-200%);
+  }
+  100% {
+    transform: translateX(-200%);
+  }
+}
+/* Apply animation to the slider */
+.ibme-testimonials-slider .ibme-testimonial-wrap {
+  animation: slide 25s infinite;
+  /* Adjust the duration as needed */
+}
+
+/* Pause on hover */
+.ibme-testimonials-slider:hover .ibme-testimonial-wrap {
+  animation-play-state: paused;
+}
+
+.upcoming-events-section {
+  background-repeat: no-repeat;
+  background-position: center top;
   background-size: 1920px auto;
   display: flex;
   align-items: center;
 }
-.home-upcoming-events-section .landing-section-content {
+.upcoming-events-section .landing-section-content {
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
-.home-upcoming-events-section .headline-column {
+.upcoming-events-section .headline-column {
   width: 30%;
 }
-.home-upcoming-events-section .upcoming-events-list {
+.upcoming-events-section .upcoming-events-list {
   width: 62%;
 }
-.home-upcoming-events-section .upcoming-events-list .barbie-color .upcoming-event-date p {
+.upcoming-events-section .upcoming-events-list .cherry-color .header-4 {
+  color: #FF372F;
+}
+.upcoming-events-section .upcoming-events-list .poppy-color .header-4 {
+  color: #FF5A5A;
+}
+.upcoming-events-section .upcoming-events-list .blush-color .header-4 {
+  color: #FF978C;
+}
+.upcoming-events-section .upcoming-events-list .barbie-color .header-4 {
   color: #EF5DBF;
 }
-.home-upcoming-events-section .upcoming-events-list .lavender-color .upcoming-event-date p {
-  color: #9691D8;
+.upcoming-events-section .upcoming-events-list .peony-color .header-4 {
+  color: #FFB9DD;
 }
-.home-upcoming-events-section .upcoming-events-list .ocean-color .upcoming-event-date p {
+.upcoming-events-section .upcoming-events-list .violet-color .header-4 {
+  color: #F2C1E8;
+}
+.upcoming-events-section .upcoming-events-list .tangerine-color .header-4 {
+  color: #FF951F;
+}
+.upcoming-events-section .upcoming-events-list .marigold-color .header-4 {
+  color: #FFB235;
+}
+.upcoming-events-section .upcoming-events-list .sunflower-color .header-4 {
+  color: #FFD234;
+}
+.upcoming-events-section .upcoming-events-list .forest-color .header-4 {
+  color: #005F47;
+}
+.upcoming-events-section .upcoming-events-list .teal-color .header-4 {
+  color: #008075;
+}
+.upcoming-events-section .upcoming-events-list .mint-color .header-4 {
+  color: #A4EDC6;
+}
+.upcoming-events-section .upcoming-events-list .ocean-color .header-4 {
   color: #217490;
 }
-.home-upcoming-events-section .title {
+.upcoming-events-section .upcoming-events-list .sky-color .header-4 {
+  color: #5FA6E2;
+}
+.upcoming-events-section .upcoming-events-list .bluejay-color .header-4 {
+  color: #8ECCDC;
+}
+.upcoming-events-section .upcoming-events-list .lavender-color .header-4 {
+  color: #9691D8;
+}
+.upcoming-events-section .title {
   color: #fff;
 }
-.home-upcoming-events-section .upcoming-event-item {
+.upcoming-events-section .upcoming-event-item {
   background-color: #fff;
   padding: 1em 1.618em;
   border-radius: 5px;
@@ -2433,31 +2582,31 @@ video {
   margin-top: 40px;
   min-height: 140px;
 }
-.home-upcoming-events-section .upcoming-event-date {
+.upcoming-events-section .upcoming-event-date {
   width: 20%;
 }
-.home-upcoming-events-section .upcoming-event-date .header-4 {
+.upcoming-events-section .upcoming-event-date .header-4 {
   margin-top: 0;
   margin-bottom: 0;
 }
-.home-upcoming-events-section .upcoming-event-date span {
+.upcoming-events-section .upcoming-event-date span {
   display: block;
 }
-.home-upcoming-events-section .upcoming-event-title-location {
+.upcoming-events-section .upcoming-event-title-location {
   width: 50%;
 }
-.home-upcoming-events-section .header-3 {
+.upcoming-events-section .header-3 {
   margin-bottom: 0;
 }
-.home-upcoming-events-section .upcoming-event-location {
+.upcoming-events-section .upcoming-event-location {
   text-transform: lowercase;
   margin-top: 0;
   margin-bottom: 0;
 }
-.home-upcoming-events-section .upcoming-event-links {
+.upcoming-events-section .upcoming-event-links {
   width: 20%;
 }
-.home-upcoming-events-section .upcoming-event-links .ibme-button {
+.upcoming-events-section .upcoming-event-links .ibme-button {
   margin-bottom: 10px;
 }
 
