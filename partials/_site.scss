@@ -1892,7 +1892,7 @@
         margin-bottom: 0;
     }
 
-    .upcoming-event-links {
+    .upcoming-event-links { 
         width: 20%;
 
         .ibme-button {
@@ -1901,7 +1901,7 @@
     }
 }
 
-.home-subscribe-section {
+.ibme_cta-3_subscribe_block {
     display: flex;
     align-items: center;
 
@@ -1915,13 +1915,13 @@
         }
     }
 
-    .cta-columns {
+    .cta-3_columns {
         display: flex;
         justify-content: space-between;
         text-align: center;
         flex-wrap: wrap;
 
-        .cta-column {
+        .cta-3_column {
             width: 47%;
             border-radius: 5px;
             margin-top: 2.618em;
@@ -1932,7 +1932,7 @@
         }
     }
 
-    .cta-column-content {
+    .cta-3_column-content {
         padding: 0.618em 0.618em 1.618em;
     }
 
@@ -1948,7 +1948,7 @@
         margin-bottom: 0;
     }
 
-    .cta-column-text {
+    .cta-3_column-text {
         text-transform: lowercase;
         line-height: 1.25em;
         margin-top: 1em;
@@ -1959,7 +1959,7 @@
         width: 80%;
     }
 
-    .cta-subscribe-form {
+    .ibme-subscribe-form {
         display: flex;
         flex-wrap: wrap;
 

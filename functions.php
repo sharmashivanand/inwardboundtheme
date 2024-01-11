@@ -649,10 +649,10 @@ function ibme_cta_3_content_block_handler($atts) {
 
 	// Generate HTML for the cta_2 block
 
-	$cta_3_content_block_html = '<div class="cta-column '.$color.'-bg-color"><img src="'.$image_url.'" alt="'.$title.'" width="280" />';
-	$cta_3_content_block_html .= '<div class="cta-column-content">'; 
+	$cta_3_content_block_html = '<div class="cta-3_column '.$color.'-bg-color"><img src="'.$image_url.'" alt="'.$title.'" width="280" />';
+	$cta_3_content_block_html .= '<div class="cta-3_column-content">'; 
 	$cta_3_content_block_html .= '<h3 class="header-3">'.$title.'</h3>'; 
-	$cta_3_content_block_html .= '<p class="cta-column-text">'.$text.'</p>'; 
+	$cta_3_content_block_html .= '<p class="cta-3_column-text">'.$text.'</p>'; 
 	$cta_3_content_block_html .= do_shortcode('[ibme-button link="'.$button_link.'" text="'.$button_text.'" style="style-5"]');
 	$cta_3_content_block_html .= '</div></div>';
 
@@ -664,7 +664,7 @@ function ibme_cta_3_content_blocks_handler($atts, $content = null) {
 	preg_match_all('/\[ibme_cta_3_content_block(.*?)\]/s', $content, $matches, PREG_SET_ORDER);
 	
 	// Generate HTML for the ibme_cta_3_content_blocks
-	$cta_3_content_blocks_html = '<div class="cta-columns content-column">';
+	$cta_3_content_blocks_html = '<div class="cta-3_columns content-column">';
     
 	// Process and return the content
 	foreach ($matches as $match) {
@@ -706,9 +706,9 @@ function ibme_subscribe_block_handler($atts) {
 
 	// Generate HTML for the ibme_subscribe_block block
 
-	$subscribe_block_html = '<div class="cta-subscribe content-column">';
+	$subscribe_block_html = '<div class="subscribe-block content-column">';
 	$subscribe_block_html .= '<h2 class="title">'.$title.'</h2>';
-	$subscribe_block_html .= '<div class="cta-subscribe-form">
+	$subscribe_block_html .= '<div class="ibme-subscribe-form">
 	<div class="left-form-field form-field"><input name="first-name" type="text" placeholder="first name" /></div>
 	<div class="right-form-field form-field"><input name="last-name" type="last" placeholder="last name" /></div>
 	<div class="left-form-field form-field"><input name="email" type="email" placeholder="email" /></div>
@@ -735,8 +735,22 @@ function ibme_subscribe_block_handler($atts) {
 
 // Register the shortcode for the "ibme_cta_3_subscribe_container" container 
 
-add_action ('ibme_cta_3_subscribe_container','ibme_cta_3_subscribe_container_handler');
+add_shortcode ('ibme_cta_3_subscribe_container','ibme_cta_3_subscribe_container_handler');
 
-function ibme_cta_3_subscribe_container_handler() {
-	
+function ibme_cta_3_subscribe_container_handler($atts, $content = null) {
+
+	// Use output buffering to capture the content within the shortcode
+    ob_start();
+    ?>
+    <section class="full-width-section landing-section ibme_cta-3_subscribe_block">
+		<div class="inner-wrap">
+			<div class="landing-section-content">
+        		<?php echo do_shortcode($content); // Output the content within the shortcode ?>
+			</div>
+		</div>
+	</section>
+    <?php
+
+    // Return the buffered content
+    return ob_get_clean();
 }
