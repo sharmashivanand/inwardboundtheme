@@ -1353,15 +1353,22 @@
     }
 }    
 
-.home-hero-section {
-    background: url("assets/img/home-hero.jpg") no-repeat center top;
+.hero_1_photo-section {
+    background-repeat: no-repeat;
+    background-position: center top;
     background-size: 1920px auto;
     
     .title {
-        color: #fff;
         width: 50%; 
         padding-top: 150px;
-        text-transform: lowercase;
+    }
+
+    .white-title {
+        color: #fff;
+    }
+
+    .black-title {
+        color: #000;
     }
 }
 
@@ -1503,12 +1510,12 @@
     position: relative;
 }
 
-.home-stats-section {
+.impact_1-section {
     display: flex;
     align-items: center;
-    background: url("assets/img/stats-bg.png") no-repeat left center / contain; 
+    //background: url("assets/img/stats-bg.png") no-repeat left center / contain; 
 
-    .landing-section-content {
+    .impact_1-slide {
         display: flex;
         justify-content: space-between;
 
@@ -1613,6 +1620,10 @@
 
     .lavender-bg-color {
         background-color: $lavender; 
+    }
+
+    .none-bg-color {
+        background-color: #fff; 
     }
 
 }
@@ -1914,88 +1925,468 @@
             width: 48%;
         }
     }
+}
 
-    .cta-3_columns {
-        display: flex;
-        justify-content: space-between;
-        text-align: center;
-        flex-wrap: wrap;
+.cta-3_columns {
+    display: flex;
+    justify-content: space-between;
+    text-align: center;
+    flex-wrap: wrap;
 
-        .cta-3_column {
-            width: 47%;
-            border-radius: 5px;
-            margin-top: 2.618em;
-        }
-
-        img {
-            display: block;
-        }
+    .cta-3_column {
+        width: 47%;
+        border-radius: 5px;
+        margin-top: 2.618em;
     }
 
-    .cta-3_column-content {
-        padding: 0.618em 0.618em 1.618em;
+    img {
+        display: block;
     }
+}
 
-    .yellow-bg-color {
-        background-color: #FFD234;
-    }
-
-    .voilet-bg-color {
-        background-color: $violet;
-    }
+.cta-3_column-content {
+    padding: 0.618em 0.618em 1.618em;
 
     .header-3 {
         margin-bottom: 0;
     }
+}
 
-    .cta-3_column-text {
-        text-transform: lowercase;
-        line-height: 1.25em;
-        margin-top: 1em;
-        margin-bottom: 1em;
-    }
+.cta-3_column.cherry-bg-color {
+    background-color: $cherry;
+}
 
-    .title {
-        width: 80%;
-    }
+.cta-3_column.poppy-bg-color {
+    background-color: $poppy;
+}
 
-    .ibme-subscribe-form {
-        display: flex;
-        flex-wrap: wrap;
+.cta-3_column.blush-bg-color {
+    background-color: $blush;
+}
 
-        .form-field {
-            width: 50%;
-            
-            input, select, option {
-                padding: 0 0 5px 0;
-                border: none;
-                border-bottom: 3px solid $tangerine;
-                margin-bottom: 40px;
-                font-weight: 500;
-                text-transform: lowercase;
-                font-size: 15px;
-            }
+.cta-3_column.barbie-bg-color {
+    background-color: $barbie;
+}
 
-            select, option {
-                font-weight: 300;
-                width: 100%;
-            }
-        }
+.cta-3_column.peony-bg-color {
+    background-color: $peony;
+}
 
-        label {
+.cta-3_column.voilet-bg-color {
+    background-color: $violet;
+}
+
+.cta-3_column.tangerine-bg-color {
+    background-color: $tangerine;
+}
+
+.cta-3_column.marigold-bg-color {
+    background-color: $marigold;
+}
+
+.cta-3_column.sunflower-bg-color {
+    background-color: $sunflower;
+}
+
+.cta-3_column.forest-bg-color {
+    background-color: $forest;
+}
+
+.cta-3_column.teal-bg-color {
+    background-color: $teal;
+}
+
+.cta-3_column.mint-bg-color {
+    background-color: $mint;
+}
+
+.cta-3_column.ocean-bg-color {
+    background-color: $ocean;
+}
+
+.cta-3_column.sky-bg-color {
+    background-color: $sky;
+}
+
+.cta-3_column.bluejay-bg-color {
+    background-color: $bluejay;
+}
+
+.cta-3_column.lavender-bg-color {
+    background-color: $lavender;
+}
+
+.cta-3_column.none-bg-color {
+    background-color: #fff;
+}
+
+.cta-3_column-text {
+    text-transform: lowercase;
+    line-height: 1.25em;
+    margin-top: 1em;
+    margin-bottom: 1em;
+}
+
+.subscribe-block .title {
+    width: 80%;
+}
+
+.ibme-subscribe-form {
+    display: flex;
+    flex-wrap: wrap;
+
+    .form-field {
+        width: 50%;
+        
+        input, select, option {
             padding: 0 0 5px 0;
+            border: none;
             border-bottom: 3px solid $tangerine;
             margin-bottom: 40px;
             font-weight: 500;
-            display: block;
+            text-transform: lowercase;
             font-size: 15px;
-            line-height: 1.68em;
         }
 
-        .form-field input::placeholder {
-            font-size: 15px;
-            font-weight: 500;
-            color: #000;
-          }
+        select, option {
+            font-weight: 300;
+            width: 100%;
+        }
+    }
+
+    label {
+        padding: 0 0 5px 0;
+        border-bottom: 3px solid $tangerine;
+        margin-bottom: 40px;
+        font-weight: 500;
+        display: block;
+        font-size: 15px;
+        line-height: 1.68em;
+    }
+
+    .form-field input::placeholder {
+        font-size: 15px;
+        font-weight: 500;
+        color: #000;
+    }
+}
+
+/* Hero_1 Slider Variation */
+
+.hero_1-slider-section {
+    width: 100%;
+    position: relative;
+    overflow: hidden;
+    height: 760px; 
+} 
+
+.hero_1-slides {
+    display: flex;
+    scroll-snap-type: x mandatory;
+}
+
+.hero_1-slide {
+    flex: none;
+    width: 100%;
+    height: 760px;
+    scroll-snap-align: start;
+    background-size: cover;
+    background-position: center;
+    opacity: 0; /* Hide all slides by default */
+    transition: opacity 1s ease-in-out; /* Fade effect */
+    position: absolute; /* Position slides on top of each other */
+}
+
+.hero_1-slider-content {
+    position: absolute;
+    top: 20%;
+    width: 50%;
+
+    .white-title {
+        color: #fff;
+    }
+
+    .black-title {
+        color: #000;
+    }
+    
+}
+
+.hero_1-navigation-dots {
+    position: absolute;
+    bottom: 10px;
+    transform: translate(-50%,-50%);
+    left: 50%;
+}
+
+.hero_1-dot {
+    height: 12px;
+    width: 12px;
+    margin: 0 5px;
+    display: inline-block;
+    background-color: #fff;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: background-color 0.6s ease;
+}
+
+.cherry-dots .active {
+    background-color: $cherry;
+}
+
+.poppy-dots .active {
+    background-color: $poppy;
+}
+
+.blush-dots .active {
+    background-color: $blush;
+}
+
+.barbie-dots .active {
+    background-color: $barbie;
+}
+
+.peony-dots .active {
+    background-color: $peony;
+}
+
+.violet-dots .active {
+    background-color: $violet;
+}
+
+.tangerine-dots .active {
+    background-color: $tangerine;
+}
+
+.marigold-dots .active {
+    background-color: $marigold;
+}
+
+.sunflower-dots .active {
+    background-color: $sunflower;
+}
+
+.forest-dots .active {
+    background-color: $forest;
+}
+
+.teal-dots .active {
+    background-color: $teal;
+}
+
+.mint-dots .active {
+    background-color: $mint;
+}
+
+.ocean-dots .active {
+    background-color: $ocean;
+}
+
+.sky-dots .active {
+    background-color: $sky;
+}
+
+.bluejay-dots .active {
+    background-color: $bluejay;
+}
+
+.lavender-dots .active {
+    background-color: $lavender;
+}
+
+/** impact_1_slider */
+
+.impact_1-slider {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+    min-height: 400px;
+}
+
+.impact_1-slides {
+    display: flex;
+    transition: transform 0.5s ease;
+}
+
+.impact_1-slide {
+    min-width: 100%;
+    /* Other styles for your slides */
+}
+
+.impact_1-navigation-dots {
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    /* Other styles for navigation dots container */
+}
+
+.impact_1-dot {
+    height: 12px;
+    width: 12px;
+    margin: 0 5px;
+    background-color: #000;
+    border-radius: 50%;
+    display: inline-block;
+    cursor: pointer;
+}
+
+.cherry-slider {
+    .header-1 {
+        color: $cherry;
+    }
+
+    .impact_1-dot.active {
+        background-color: $cherry;
+    }
+}
+
+.poppy-slider {
+    .header-1 {
+        color: $poppy;
+    }
+
+    .impact_1-dot.active {
+        background-color: $poppy;
+    }
+}
+
+.blush-slider {
+    .header-1 {
+        color: $blush;
+    }
+
+    .impact_1-dot.active {
+        background-color: $blush;
+    }
+}
+
+.barbie-slider {
+    .header-1 {
+        color: $barbie;
+    }
+
+    .impact_1-dot.active {
+        background-color: $barbie;
+    }
+}
+
+.peony-slider {
+    .header-1 {
+        color: $peony;
+    }
+
+    .impact_1-dot.active {
+        background-color: $peony;
+    }
+}
+
+.violet-slider {
+    .header-1 {
+        color: $violet;
+    }
+
+    .impact_1-dot.active {
+        background-color: $violet;
+    }
+}
+
+.tangerine-slider {
+    .header-1 {
+        color: $tangerine;
+    }
+
+    .impact_1-dot.active {
+        background-color: $tangerine;
+    }
+}
+
+.marigold-slider {
+    .header-1 {
+        color: $marigold;
+    }
+
+    .impact_1-dot.active {
+        background-color: $marigold;
+    }
+}
+
+.sunflower-slider {
+    .header-1 {
+        color: $sunflower;
+    }
+
+    .impact_1-dot.active {
+        background-color: $sunflower;
+    }
+}
+
+.forest-slider {
+    .header-1 {
+        color: $forest;
+    }
+
+    .impact_1-dot.active {
+        background-color: $forest;
+    }
+}
+
+.teal-slider {
+    .header-1 {
+        color: $teal;
+    }
+
+    .impact_1-dot.active {
+        background-color: $teal;
+    }
+}
+
+.mint-slider {
+    .header-1 {
+        color: $mint;
+    }
+
+    .impact_1-dot.active {
+        background-color: $mint;
+    }
+}
+
+.ocean-slider {
+    .header-1 {
+        color: $ocean;
+    }
+
+    .impact_1-dot.active {
+        background-color: $ocean;
+    }
+}
+
+.sky-slider {
+    .header-1 {
+        color: $sky;
+    }
+
+    .impact_1-dot.active {
+        background-color: $sky;
+    }
+}
+
+.bluejay-slider {
+    .header-1 {
+        color: $bluejay;
+    }
+
+    .impact_1-dot.active {
+        background-color: $bluejay;
+    }
+}
+
+.lavender-slider {
+    .header-1 {
+        color: $lavender;
+    }
+
+    .impact_1-dot.active {
+        background-color: $lavender;
     }
 }
