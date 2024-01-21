@@ -25,7 +25,7 @@ function ibme_page_content() {
 add_action('wp_enqueue_scripts', 'enqueue_google_fonts');
 
 function enqueue_google_fonts() {
-    wp_enqueue_style('google-font', '//fonts.googleapis.com/css2?family=Inter:wght@300;500&display=swap">', array(), null);
+    wp_enqueue_style('google-font', '//fonts.googleapis.com/css2?family=Inter:wght@300;400;500&display=swap">', array(), null);
 }
 
 /* Add Custom Body Class */
@@ -165,7 +165,7 @@ if ( function_exists( 'register_sidebar' ) ) {
 
 /* Redirect all the pages to homepage; for first review */
 
-add_action( 'template_redirect', 'ibme_redirect_home' );
+//add_action( 'template_redirect', 'ibme_redirect_home' );
 
 function ibme_redirect_home() {
 	if ( current_user_can( 'administrator' ) ) {
@@ -199,15 +199,17 @@ function ibme_button_handler($atts) {
     // Extract shortcode attributes
     $atts = shortcode_atts(
         array(
-            'link'      		=> '#',
-            'text'      		=> 'Click Here',
-            'color'  			=> '',
-            'style'     		=> 'style-1',
-            'type'      		=> 'single',
-            'button-2-link'     => '', // Link for the second button
-            'button-2-text'     => '', // Text for the second button
-            'button-2-color' 	=> '', // BG color for the second button
-            'button-2-style' 	=> '', // Style for the second button
+            'link'      				=> '',
+            'text'      				=> '',
+            'color'  					=> '',
+            'style'     				=> 'style-1', // style-1, style-2, style-3, style-4, style-5, style-6
+            'type'      				=> 'single',
+            'button-2-link'    			=> '', // Link for the second button
+            'button-2-text'     		=> '', // Text for the second button
+            'button-2-color' 			=> '', // BG color for the second button
+            'button-2-style' 			=> '', // Style for the second button
+            'text-color' 				=> 'black', 
+            'button-2-text-color' 		=> 'black', 
         ),
 
         $atts,
@@ -218,8 +220,9 @@ function ibme_button_handler($atts) {
     $link = esc_url($atts['link']);
     $text = esc_html($atts['text']);
     $color = esc_attr($atts['color']); // possible values: 'cherry', 'poppy', 'blush', 'barbie', 'peony', 'violet', 'tangerine', 'marigold', 'sunflower', 'forest', 'teal', 'mint', 'ocean', 'sky', 'bluejay', 'lavender', 'black', 'white', default set as 'mint'
-    $style = esc_attr($atts['style']); // possible values: 'style-1', 'style-2', 'style-3', 'style-4' and 'style-5', default set as 'style-1'
+    $style = esc_attr($atts['style']); // possible values: 'style-1', 'style-2', 'style-3', 'style-4', 'style-5' and 'style-6', default set as 'style-1'
     $type = esc_attr($atts['type']); // possible values: 'dual' or 'single', default set as single
+	$text_color = esc_attr($atts['text-color']); // possible values: 'cherry', 'poppy', 'blush', 'barbie', 'peony', 'violet', 'tangerine', 'marigold', 'sunflower', 'forest', 'teal', 'mint', 'ocean', 'sky', 'bluejay', 'lavender', 'black', 'white', default set as 'mint'
 
 	if($color == '') {
 		$color_class = '';
@@ -227,29 +230,42 @@ function ibme_button_handler($atts) {
 		$color_class = $color.'-button ';
 	}
 
+	// Check if the link is external
+    $is_external = (strpos($link, home_url()) === false);
+	// Add the target attribute based on whether it's internal or external
+    $target_attribute = $is_external ? 'target="_blank"' : '';
+
+	if(!empty($link)) {
     // Handle "dual" type
-    if ($type === 'dual') {
-        // Sanitize attributes for the second button
-        $button_2_link = esc_url($atts['button-2-link']);
-        $button_2_text = esc_html($atts['button-2-text']);
-        $button_2_color = esc_attr($atts['button-2-color']);
-        $button_2_style = esc_attr($atts['button-2-style']);
+		if ($type === 'dual') {
+			// Sanitize attributes for the second button
+			$button_2_link = esc_url($atts['button-2-link']);
+			$button_2_text = esc_html($atts['button-2-text']);
+			$button_2_color = esc_attr($atts['button-2-color']);
+			$button_2_style = esc_attr($atts['button-2-style']);
+			$button_2_text_color = esc_attr($atts['button-2-text-color']);
 
-		if($button_2_color == '') {
-			$button_2_color_class = '';
+			if($button_2_color == '') {
+				$button_2_color_class = '';
+			} else {
+				$button_2_color_class = $button_2_color.'-button ';
+			}
+
+			// Check if the button_2_link is external
+			$is_external_2 = (strpos($button_2_link, home_url()) === false);
+			// Add the target attribute based on whether it's internal or external
+			$target_attribute_2 = $is_external_2 ? 'target="_blank"' : '';
+
+			// Generate HTML for the dual buttons
+			$button_html = '<div class="inline-buttons">';
+			$button_html .= '<a href="' . $link . '" class="ibme-button ' . $color_class . $style . ' '.$text_color.'-text" '. $target_attribute.'>' . $text . '</a>';
+			$button_html .= '<a href="' . $button_2_link . '" class="ibme-button ' . $button_2_color_class . $button_2_style . ' '.$button_2_text_color.'-text" '. $target_attribute_2.'>' . $button_2_text . '</a>';
+			$button_html .= '</div>';
 		} else {
-			$button_2_color_class = $button_2_color.'-button ';
+			// Generate HTML for a single button
+			$button_html = '<a href="' . $link . '" class="ibme-button ' .  $color_class . $style . ' '.$text_color.'-text" '. $target_attribute.'>' . $text . '</a>';
 		}
-
-        // Generate HTML for the dual buttons
-        $button_html = '<div class="inline-buttons">';
-        $button_html .= '<a href="' . $link . '" class="ibme-button ' . $color_class . $style . '">' . $text . '</a>';
-        $button_html .= '<a href="' . $button_2_link . '" class="ibme-button ' . $button_2_color_class . $button_2_style . '">' . $button_2_text . '</a>';
-        $button_html .= '</div>';
-    } else {
-        // Generate HTML for a single button
-        $button_html = '<a href="' . $link . '" class="ibme-button ' .  $color_class . $style . '">' . $text . '</a>';
-    }
+	}
 
     return $button_html;
 }
@@ -269,17 +285,20 @@ function ibme_statement_1_handler($atts) {
 		array(
 			'title'      				=> '',
 			'text'      				=> '',
-			'button-type'      		=> 'single',
-			'button-link'      			=> '#',
-			'button-text'      			=> 'Click Here',
+			'text-color'      			=> 'black', // black, white
+			'button-type'      			=> 'single',
+			'button-link'      			=> '',
+			'button-text'      			=> '',
 			'button-color'  			=> '',
 			'button-style'     			=> 'style-3',
-			'button-2-link'      		=> '#',
-			'button-2-text'      		=> 'Click Here',
+			'button-text-color'     	=> 'black', // cherry, poppy, blush, barbie, peony, violet, tangerine, marigold, sunflower, forest, teal, mint, ocean, sky, bluejay, lavender, black
+			'button-2-link'      		=> '',
+			'button-2-text'      		=> '',
 			'button-2-color'  			=> '',
 			'button-2-style'     		=> 'style-4',
-			'top-illustration'     		=> 'heart',
-			'bottom-illustration'     	=> 'plant'
+			'button-2-text-color'     		=> 'barbie', // cherry, poppy, blush, barbie, peony, violet, tangerine, marigold, sunflower, forest, teal, mint, ocean, sky, bluejay, lavender, white
+			'top-illustration'     		=> 'face-blush',
+			'bottom-illustration'     	=> 'plant-blush'
 		),
 
 		$atts,
@@ -289,26 +308,29 @@ function ibme_statement_1_handler($atts) {
 	// Sanitize attributes
 	$title = esc_html($atts['title']);
 	$text = esc_html($atts['text']);
+	$text_color = esc_attr($atts['text-color']);
 	$button_type = esc_attr($atts['button-type']);
 	$button_link = esc_url($atts['button-link']);
 	$button_2_link = esc_url($atts['button-2-link']);
 	$button_text = esc_html($atts['button-text']);
 	$button_2_text = esc_html($atts['button-2-text']);
 	$button_color = esc_attr($atts['button-color']);
+	$button_text_color = esc_attr($atts['button-text-color']);
 	$button_2_color = esc_attr($atts['button-2-color']);
+	$button_2_text_color = esc_attr($atts['button-2-text-color']);
 	$button_style = esc_attr($atts['button-style']);
 	$button_2_style = esc_attr($atts['button-2-style']);
 	$top_illustration = esc_attr($atts['top-illustration']);
 	$bottom_illustration = esc_attr($atts['bottom-illustration']);
 
-	$top_illustration_class = 'top-'.$top_illustration.'-'.$button_color;
-	$bottom_illustration_class = 'bottom-'.$bottom_illustration.'-'.$button_color;
+	$top_illustration_class = 'top-illustration '.$top_illustration;
+	$bottom_illustration_class = 'bottom-illustration '.$bottom_illustration;
 
 	// Generate HTML for the statement_1 block
-	$statement_1_html = '<section class="full-width-section landing-section '.$top_illustration_class.' ibme-statement-1 '.$bottom_illustration_class.'"><div class="inner-wrap"><div class="landing-section-content">';
+	$statement_1_html = '<section class="full-width-section landing-section '.$text_color.'-text ibme-statement-1"><div class="inner-wrap '.$top_illustration_class.'"><div class="landing-section-content '.$bottom_illustration_class.'">';
 	$statement_1_html .= '<h3 class="title">'.$title.'</h3>';
 	$statement_1_html .= '<p>'.$text.'</p>';
-	$statement_1_html .= do_shortcode('[ibme_button link="'.$button_link.'" text="'.$button_text.'" color="'.$button_color.'" style="'.$button_style.'" type="'.$button_type.'" button-2-link="'.$button_2_link.'" button-2-text="'.$button_2_text.'" button-2-color="'.$button_2_color.'" button-2-style="'.$button_2_style.'"]');
+	$statement_1_html .= do_shortcode('[ibme_button link="'.$button_link.'" text="'.$button_text.'" color="'.$button_color.'" style="'.$button_style.'" text-color="'.$button_text_color.'" type="'.$button_type.'" button-2-link="'.$button_2_link.'" button-2-text="'.$button_2_text.'" button-2-color="'.$button_2_color.'" button-2-text-color="'.$button_2_text_color.'" button-2-style="'.$button_2_style.'"]');
 	$statement_1_html .= '</div>';
 	$statement_1_html .= '</div>';
 	$statement_1_html .= '</section>';
@@ -326,10 +348,10 @@ function ibme_cta_1_content_block_handler($atts) {
 			'text'      				=> '',
 			'image-url'      			=> '',
 			'color'      				=> '', // 'cherry', 'poppy', 'blush', 'barbie', 'peony', 'violet', 'tangerine', 'marigold', 'sunflower', 'forest', 'teal', 'mint', 'ocean', 'sky', 'bluejay', 'lavendar'
-			'button-link'      			=> '#',
-			'button-text'      			=> 'Click Here',
-			'button-2-link'      		=> '#',
-			'button-2-text'      		=> 'Click Here',
+			'button-link'      			=> '',
+			'button-text'      			=> '',
+			'button-2-link'      		=> '',
+			'button-2-text'      		=> '',
 		),
 
 		$atts,
@@ -391,6 +413,7 @@ add_shortcode('ibme_cta_1_content_block', 'ibme_cta_1_content_block_handler');
 
 function ibme_cta_2_content_block_handler($atts) {
 	$width = '';
+	$path = '';
 
 	// Extract shortcode attributes
 	$atts = shortcode_atts(
@@ -398,8 +421,11 @@ function ibme_cta_2_content_block_handler($atts) {
 			'color'      	=> '', // 'cherry', 'poppy', 'blush', 'barbie', 'peony', 'violet', 'tangerine', 'marigold', 'sunflower', 'forest', 'teal', 'mint', 'ocean', 'sky', 'bluejay', 'lavendar', 'none'
 			'illustration'  => '', // cabin, cloud, embrace, eye, face, fire, flower, heart-hug, heart, journal, music, plant, smiles, sun, sunglasses, talking, two-teens, walking, workshop, yoga
 			'title'         => '', 
-			'button_text'   => '', 
-			'button_link'   => '', 			
+			'button-text'   => '', 
+			'button-link'   => '', 					
+			'button-style'   => 'style-5', 			
+			'text-color'   => 'black', //black, white			
+			'button-text-color'   => 'black', // 'cherry', 'poppy', 'blush', 'barbie', 'peony', 'violet', 'tangerine', 'marigold', 'sunflower', 'forest', 'teal', 'mint', 'ocean', 'sky', 'bluejay', 'lavendar', 'black'			
 		),
 		$atts,
 		'ibme_cta_2_content_block'
@@ -410,8 +436,17 @@ function ibme_cta_2_content_block_handler($atts) {
 	$color = esc_attr($atts['color']);
 	$illustration = esc_attr($atts['illustration']);
 	$title = esc_html($atts['title']);
-	$button_text = esc_html($atts['button_text']);
-	$button_link = esc_url($atts['button_link']);
+	$button_text = esc_html($atts['button-text']);
+	$button_link = esc_url($atts['button-link']);
+	$button_style = esc_attr($atts['button-style']);
+	$text_color = esc_attr($atts['text-color']);
+	$button_text_color = esc_attr($atts['button-text-color']);
+
+	if($text_color == 'black') {
+		$path = '/assets/img/cta2-illustrations/';
+	} else {
+		$path = '/assets/img/cta2-illustrations/white/';
+	}
 
 	/* Set width for illustration */
 
@@ -423,10 +458,10 @@ function ibme_cta_2_content_block_handler($atts) {
 
 	// Generate HTML for the cta_2 block
 
-	$cta_2_content_block_html .= '<div class="cta_2-item '.$color.'-bg-color">';
-	$cta_2_content_block_html .= '<p><img src="'.get_stylesheet_directory_uri() . '/assets/img/cta2-illustrations/' . $illustration . '.svg" alt="'.$title.'" width="'.$width.'" height="155" /></p>';
+	$cta_2_content_block_html .= '<div class="cta_2-item '.$color.'-bg-color '.$text_color.'-text">';
+	$cta_2_content_block_html .= '<p><img src="'.get_stylesheet_directory_uri() . $path . $illustration . '.svg" alt="'.$title.'" width="'.$width.'" height="155" /></p>';
 	$cta_2_content_block_html .= '<h3 class="header-3">'.$title.'</h3>';
-	$cta_2_content_block_html .= do_shortcode('[ibme_button link="'.$button_link.'" text="'.$button_text.'" style="style-5"]');
+	$cta_2_content_block_html .= do_shortcode('[ibme_button link="'.$button_link.'" text="'.$button_text.'" style="'.$button_style.'" text-color="'.$button_text_color.'"]');
 	$cta_2_content_block_html .= '</div>';
 	
 	return $cta_2_content_block_html;
@@ -468,10 +503,11 @@ function ibme_testimonial_block_handler($atts) {
 	// Extract shortcode attributes
 	$atts = shortcode_atts(
 		array(
-			'color'      				=> '', // ocean, forest, teal
+			'color'      				=> '', // ocean, forest, teal, white
 			'image-url'      			=> '',
 			'testimonial'      			=> '',
 			'testimonial-by'      		=> '', 
+			'testimonial-by-color'      => 'black', // black, white
 		),
 
 		$atts,
@@ -483,13 +519,14 @@ function ibme_testimonial_block_handler($atts) {
 	$image_url = esc_url($atts['image-url']);
 	$testimonial = esc_html($atts['testimonial']);
 	$testimonial_by = esc_html($atts['testimonial-by']);
+	$testimonial_by_color = esc_attr($atts['testimonial-by-color']);
 
 	// Generate HTML for the ibme_testimonial_block
 
 	$testimonial_block_html = '<div class="ibme-testimonial-wrap '.$color.'-testimonial">';
 	$testimonial_block_html .= '<div class="ibme-testimonial-image-wrap"><img src="'.$image_url.'" alt="Testimonial by '.$testimonial_by.'" width="556" height="550" /></div>';
 	$testimonial_block_html .= '<div class="testimonial-content-wrap"><p class="header-2">'.$testimonial.'</p>';
-	$testimonial_block_html .= '<p class="testimonial-by">'.$testimonial_by.'</p>';
+	$testimonial_block_html .= '<p class="testimonial-by '.$testimonial_by_color.'-text">'.$testimonial_by.'</p>';
 	$testimonial_block_html .= '</div></div>';
 
 	return $testimonial_block_html;
@@ -532,10 +569,11 @@ function ibme_upcoming_events_handler($atts, $content = null) {
 	// Extract shortcode attributes
 	$atts = shortcode_atts(
 		array(
-			'image-url'      			=> '',
+			'image-url'      		=> '',
 			'title'      			=> '',
 			'button-text'      		=> '', 
 			'button-link'      		=> '', 
+			'button-text-color'      		=> 'black', // black, cherry, poppy, blush, barbie, peony, violet, tangerine, marigold, sunflower, forest, teal, mint, ocean, sky, bluejay, lavender
 		),
 
 		$atts,
@@ -547,11 +585,12 @@ function ibme_upcoming_events_handler($atts, $content = null) {
 	$title = esc_html($atts['title']);
 	$button_text = esc_html($atts['button-text']);
 	$button_link = esc_url($atts['button-link']);
+	$button_text_color = esc_attr($atts['button-text-color']);
 
 	// Generate HTML for the ibme_upcoming_events block
 	$upcoming_events_html = '<section class="full-width-section landing-section upcoming-events-section" style="background-image: url(\'' . $image_url . '\')"><div class="inner-wrap"><div class="landing-section-content">';
 	$upcoming_events_html .= '<div class="headline-column content-column"><h2 class="headline-title title">'.$title.'</h2>';
-	$upcoming_events_html .= do_shortcode('[ibme_button link="'.$button_link.'" text="'.$button_text.'" style="style-2"]');
+	$upcoming_events_html .= do_shortcode('[ibme_button text-color="'.$button_text_color.'" link="'.$button_link.'" text="'.$button_text.'" style="style-2"]');
 	$upcoming_events_html .= '</div>';
 	$upcoming_events_html .= '<div class="upcoming-events-list content-column">';
 
@@ -566,7 +605,7 @@ function ibme_upcoming_events_handler($atts, $content = null) {
 		$upcoming_events_html .= $ibme_upcoming_event_block;
 	}
 
-	$upcoming_events_html .= '</div></div></div></div></section>';
+	$upcoming_events_html .= '</div></div></div></section>';
 
 	return $upcoming_events_html;
 }
@@ -581,8 +620,8 @@ function ibme_upcoming_event_handler($atts) {
 			'date-time'      			=> '',
 			'event-name'      			=> '',
 			'event-location'      		=> '', 
-			'button-link'      		=> '', 
-			'button-text'      		=> '', 
+			'button-link'      			=> '', 
+			'button-text'      			=> '', 
 			'button-2-link'      		=> '', 
 			'button-2-text'      		=> '', 
 		),
@@ -627,12 +666,15 @@ function ibme_cta_3_content_block_handler($atts) {
 	// Extract shortcode attributes
 	$atts = shortcode_atts(
 		array(
-			'color'      	=> '', // 'cherry', 'poppy', 'blush', 'barbie', 'peony', 'violet', 'tangerine', 'marigold', 'sunflower', 'forest', 'teal', 'mint', 'ocean', 'sky', 'bluejay', 'lavendar', 'none'
-			'title'         => '', 
-			'text'          => '', 
-			'image-url'     => '', 
-			'button-text'   => '', 
-			'button-link'   => '', 			
+			'color'      			=> '', // 'cherry', 'poppy', 'blush', 'barbie', 'peony', 'violet', 'tangerine', 'marigold', 'sunflower', 'forest', 'teal', 'mint', 'ocean', 'sky', 'bluejay', 'lavendar', 'none'
+			'title'        			=> '', 
+			'text'          		=> '', 
+			'image-url'     		=> '', 
+			'button-text'   		=> '', 
+			'button-link'   		=> '', 
+			'button-style' 			=> 'style-5', // style-5, style-2
+			'text-color'    		=> 'black', // black, white
+			'button-text-color'     => 'black', // cherry, poppy, blush, barbie, peony, violet, tangerine, marigold, sunflower, forest, teal, mint, ocean, sky, bluejay, lavender, black
 		),
 		$atts,
 		'ibme_cta_3_content_block'
@@ -646,14 +688,17 @@ function ibme_cta_3_content_block_handler($atts) {
 	$image_url = esc_url($atts['image-url']);
 	$button_text = esc_html($atts['button-text']);
 	$button_link = esc_url($atts['button-link']);
+	$button_style = esc_attr($atts['button-style']);
+	$text_color = esc_attr($atts['text-color']);
+	$button_text_color = esc_attr($atts['button-text-color']);
 
 	// Generate HTML for the cta_2 block
 
-	$cta_3_content_block_html = '<div class="cta-3_column '.$color.'-bg-color"><img src="'.$image_url.'" alt="'.$title.'" width="280" />';
+	$cta_3_content_block_html = '<div class="cta-3_column '.$color.'-bg-color"><img class="aligncenter" src="'.$image_url.'" alt="'.$title.'" />';
 	$cta_3_content_block_html .= '<div class="cta-3_column-content">'; 
-	$cta_3_content_block_html .= '<h3 class="header-3">'.$title.'</h3>'; 
-	$cta_3_content_block_html .= '<p class="cta-3_column-text">'.$text.'</p>'; 
-	$cta_3_content_block_html .= do_shortcode('[ibme_button link="'.$button_link.'" text="'.$button_text.'" style="style-5"]');
+	$cta_3_content_block_html .= '<h3 class="header-3 '.$text_color.'-text">'.$title.'</h3>'; 
+	$cta_3_content_block_html .= '<p class="cta-3_column-text '.$text_color.'-text">'.$text.'</p>'; 
+	$cta_3_content_block_html .= do_shortcode('[ibme_button text-color="'.$button_text_color.'" link="'.$button_link.'" text="'.$button_text.'" style="'.$button_style.'"]');
 	$cta_3_content_block_html .= '</div></div>';
 
 	return $cta_3_content_block_html;
@@ -662,9 +707,10 @@ function ibme_cta_3_content_block_handler($atts) {
 function ibme_cta_3_content_blocks_handler($atts, $content = null) {
 	// Use a regular expression to match [ibme_cta_3_content_block] shortcodes
 	preg_match_all('/\[ibme_cta_3_content_block(.*?)\]/s', $content, $matches, PREG_SET_ORDER);
+	$class = 'cta-items-'.count($matches);
 	
 	// Generate HTML for the ibme_cta_3_content_blocks
-	$cta_3_content_blocks_html = '<div class="cta-3_columns content-column">';
+	$cta_3_content_blocks_html = '<div class="cta-3_columns content-column '.$class.'">';
     
 	// Process and return the content
 	foreach ($matches as $match) {
@@ -726,7 +772,7 @@ function ibme_subscribe_block_handler($atts) {
 	<option value="equity-conversation">Equity Conversation</option>
 	</select></div>
 	<div class="form-submit-button"></div>';
-	$subscribe_block_html .= do_shortcode('[ibme_button link="https://example.com/" text="Subscribe" color="tangerine" style="style-3"]');
+	$subscribe_block_html .= do_shortcode('[ibme_button link="https://example.com/" text="Subscribe" color="tangerine" style="style-1"]');
 	$subscribe_block_html .= '</div></div>';
 
 	return $subscribe_block_html;
@@ -771,6 +817,7 @@ function hero_1_photo_handler($atts) {
 			'button-2-text'   	=> '', 
 			'button-link'   	=> '', 			
 			'button-2-link'   	=> '', 			
+			'button-2-text-color'   	=> 'black', //cherry, poppy, blush, barbie, peony, violet, tangerine, marigold, sunflower, forest, teal, mint, ocean, sky, bluejay, lavender, black 			
 		),
 		$atts,
 		'hero_1_photo'
@@ -785,12 +832,13 @@ function hero_1_photo_handler($atts) {
 	$button_2_text = esc_html($atts['button-2-text']);
 	$button_link = esc_url($atts['button-link']);
 	$button_2_link = esc_url($atts['button-2-link']);
+	$button_2_text_color = esc_attr($atts['button-2-text-color']);
 
 	// Generate HTML for the hero_1_photo block
 
 	$hero_1_photo_html = '<section class="full-width-section landing-section hero_1_photo-section" style="background-image: url(\'' . $image_url . '\')"><div class="inner-wrap"><div class="landing-section-content">';
 	$hero_1_photo_html .= '<h2 class="title '.$title_color.'-title">'.$title.'</h2>';
-	$hero_1_photo_html .= do_shortcode('[ibme_button type="dual" link="'.$button_link.'" text="'.$button_text.'" color="'.$button_color.'" style="style-1" button-2-link="'.$button_2_link.'" button-2-text="'.$button_2_text.'" button-2-style="style-2"]');
+	$hero_1_photo_html .= do_shortcode('[ibme_button type="dual" link="'.$button_link.'" text="'.$button_text.'" color="'.$button_color.'" style="style-1" button-2-link="'.$button_2_link.'" button-2-text="'.$button_2_text.'" button-2-style="style-2" button-2-text-color="'.$button_2_text_color.'"]');
 	$hero_1_photo_html .= '</div></div></section>';
 
 	return $hero_1_photo_html;
@@ -867,6 +915,7 @@ function hero_1_slider_handler($atts, $content = null) {
 			'button-2-text'   	=> '', 
 			'button-link'   	=> '', 			
 			'button-2-link'   	=> '', 			
+			'button-2-text-color'   	=> 'black', //cherry, poppy, blush, barbie, peony, violet, tangerine, marigold, sunflower, forest, teal, mint, ocean, sky, bluejay, lavender, black 			
 		),
 		$atts,
 		'hero_1_slider'
@@ -880,8 +929,9 @@ function hero_1_slider_handler($atts, $content = null) {
 	$button_2_text = esc_html($atts['button-2-text']);
 	$button_link = esc_url($atts['button-link']);
 	$button_2_link = esc_url($atts['button-2-link']);
+	$button_2_text_color = esc_attr($atts['button-2-text-color']);
 
-	// Use a regular expression to match [ibme_cta_3_content_block] shortcodes
+	// Use a regular expression to match [hero_1_slide] shortcodes
 	preg_match_all('/\[hero_1_slide(.*?)\]/s', $content, $matches, PREG_SET_ORDER);
 	$slide_count = count($matches);
 
@@ -903,7 +953,7 @@ function hero_1_slider_handler($atts, $content = null) {
 	$hero_1_slider_html .= '<div class="landing-section-content">';
 	$hero_1_slider_html .= '<div class="hero_1-slider-content">';
 	$hero_1_slider_html .= '<h2 class="title '.$title_color.'-title">'.$title.'</h2>';
-	$hero_1_slider_html .= do_shortcode('[ibme_button type="dual" link="'.$button_link.'" text="'.$button_text.'" color="'.$button_color.'" style="style-1" button-2-link="'.$button_2_link.'" button-2-text="'.$button_2_text.'" button-2-style="style-2"]');
+	$hero_1_slider_html .= do_shortcode('[ibme_button type="dual" link="'.$button_link.'" text="'.$button_text.'" color="'.$button_color.'" style="style-1" button-2-link="'.$button_2_link.'" button-2-text="'.$button_2_text.'" button-2-style="style-2" button-2-text-color="'.$button_2_text_color.'"]');
 	$hero_1_slider_html .= '</div>';
 	$hero_1_slider_html .= '<div class="hero_1-navigation-dots '.$button_color.'-dots">';
 
@@ -953,6 +1003,8 @@ function impact_1_slider_handler($atts, $content = null) {
 	$atts = shortcode_atts(
 		array(
 			'slide-color'         	=> '', 	
+			'dot-color'         	=> 'black', // black, white
+			'illustration'         	=> 'no-illustration',
 		),
 		$atts,
 		'impact_1_slider'
@@ -961,9 +1013,11 @@ function impact_1_slider_handler($atts, $content = null) {
 	// Sanitize attributes
 
 	$slide_color = esc_attr($atts['slide-color']);
+	$dot_color = esc_attr($atts['dot-color']);
+	$illustration = esc_attr($atts['illustration']);
 
 	// Generate HTML for the impact_1_slider
-	$impact_1_slider_html = '<section class="full-width-section landing-section impact_1-section"><div class="inner-wrap"><div class="landing-section-content"><div class="impact_1-slider '.$slide_color.'-slider"><div class="impact_1-slides">';
+	$impact_1_slider_html = '<section class="full-width-section landing-section impact_1-section '.$illustration.'"><div class="inner-wrap"><div class="landing-section-content"><div class="impact_1-slider '.$slide_color.'-slider"><div class="impact_1-slides">';
 	
 	// Use a regular expression to match [impact_1_slide] shortcodes
 	preg_match_all('/\[impact_1_slide(.*?)\]/s', $content, $matches, PREG_SET_ORDER);
@@ -979,7 +1033,7 @@ function impact_1_slider_handler($atts, $content = null) {
 	}
 
 	$impact_1_slider_html .= '</div>';
-	$impact_1_slider_html .= '<div class="impact_1-navigation-dots">';
+	$impact_1_slider_html .= '<div class="impact_1-navigation-dots '.$dot_color.'-dots">';
 
 	// Loop for generating navigation dots
 	for ($i = 1; $i <= $slide_count; $i++) {
@@ -998,15 +1052,22 @@ function impact_1_slide_handler($atts) {
 	$atts = shortcode_atts(
 		array(
 			'title'         	=> '', 
-			'headline'       	=> '', 
+			'title-color'       => 'black', // black, white 
+			'headline'       	=> '',  
+			'headline-color'    => 'slider-color', // black, white 
 			'text'   			=> '', 
+			'text-color'   		=> 'black', // black, white
 			'button-type'   	=> '', 
 			'button-text'   	=> '', 
 			'button-color'   	=> '', 
+			'button-text-color'   	=> 'black', // cherry, poppy, blush, barbie, peony, violet, tangerine, marigold, sunflower, forest, teal, mint, ocean, sky, bluejay, lavender, black 
 			'button-link'   	=> '', 
 			'button-2-text'   	=> '', 
 			'button-2-color'   	=> '', 
 			'button-2-link'   	=> '', 
+			'button-2-text-color'   	=> 'barbie', // cherry, poppy, blush, barbie, peony, violet, tangerine, marigold, sunflower, forest, teal, mint, ocean, sky, bluejay, lavender, white 
+			'button-style'   	=> 'style-3', 
+			'button-2-style'   	=> 'style-4', 
 				
 		),
 		$atts,
@@ -1015,8 +1076,11 @@ function impact_1_slide_handler($atts) {
 
 	// Sanitize attributes
 	$title = esc_html($atts['title']);
-	$headline = esc_html($atts['headline']);
-	$text = esc_html($atts['text']);
+	$title_color = esc_attr($atts['title-color']);
+	$headline = esc_html($atts['headline']); 
+	$headline_color = esc_attr($atts['headline-color']); 
+	$text = esc_html($atts['text']); 
+	$text_color = esc_attr($atts['text-color']); 
 	$button_type = esc_attr($atts['button-type']);
 	$button_text = esc_html($atts['button-text']);
 	$button_color = esc_attr($atts['button-color']);
@@ -1024,16 +1088,20 @@ function impact_1_slide_handler($atts) {
 	$button_2_text = esc_html($atts['button-2-text']);
 	$button_2_color = esc_attr($atts['button-2-color']);
 	$button_2_link = esc_url($atts['button-2-link']);
+	$button_style = esc_attr($atts['button-style']);
+	$button_2_style = esc_attr($atts['button-2-style']);
+	$button_text_color = esc_attr($atts['button-text-color']);
+	$button_2_text_color = esc_attr($atts['button-2-text-color']);
 
 	// Generate HTML for the impact_1_slide block
 
 	$impact_1_slide_html = '<div class="impact_1-slide">';
 	$impact_1_slide_html .= '<div class="left-column content-column">';
-	$impact_1_slide_html .= '<h2 class="title">'.$title.'</h2>';
+	$impact_1_slide_html .= '<h2 class="title '.$title_color.'-title">'.$title.'</h2>';
 	$impact_1_slide_html .= '</div>';
-	$impact_1_slide_html .= '<div class="right-column content-column"><h3 class="header-1">'.$headline.'</h3>';
-	$impact_1_slide_html .= '<p>'.$text.'</p>';
-	$impact_1_slide_html .= do_shortcode('[ibme_button type="'.$button_type.'" link="'.$button_link.'" text="'.$button_text.'" color="'.$button_color.'" style="style-3" button-2-link="'.$button_2_link.'" button-2-text="'.$button_2_text.'" button-2-color="'.$button_2_color.'" button-2-style="style-4"]');
+	$impact_1_slide_html .= '<div class="right-column content-column"><h3 class="'.$headline_color.' header-1">'.$headline.'</h3>';
+	$impact_1_slide_html .= '<p class="'.$text_color.'-text">'.$text.'</p>';
+	$impact_1_slide_html .= do_shortcode('[ibme_button type="'.$button_type.'" link="'.$button_link.'" text="'.$button_text.'" color="'.$button_color.'" text-color="'.$button_text_color.'" style="'.$button_style.'" button-2-link="'.$button_2_link.'" button-2-text="'.$button_2_text.'" button-2-color="'.$button_2_color.'" button-2-text-color="'.$button_2_text_color.'" button-2-style="'.$button_2_style.'"]');
 	$impact_1_slide_html .= '</div></div>';
 
 	return $impact_1_slide_html;
@@ -1075,7 +1143,7 @@ function impact_1_slider_script() {
         updateSlidePosition();
     }
 
-    let slideInterval = setInterval(nextSlide, 1500);
+    let slideInterval = setInterval(nextSlide, 4000);
 
     function currentImpactSlide(n) {
         currentIndex = n - 1;
@@ -1085,7 +1153,7 @@ function impact_1_slider_script() {
 
     function resetInterval() {
         clearInterval(slideInterval);
-        slideInterval = setInterval(nextSlide, 1500);
+        slideInterval = setInterval(nextSlide, 4000);
     }
 
     dots.forEach((dot, index) => {

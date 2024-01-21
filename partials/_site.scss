@@ -20,7 +20,7 @@
 
     &:hover {
         text-decoration: none;
-        color: #000 !important;
+        color: #000;
     }
 }
 
@@ -198,6 +198,91 @@
             background-color: rgba(255, 255, 255, 0.8);
             border-color: rgba(255, 255, 255, 0.8);
         }
+    }
+
+    &.cherry-text,
+    &.cherry-text:hover {
+        color: $cherry;
+    }
+
+    &.poppy-text,
+    &.poppy-text:hover {
+        color: $poppy;
+    }
+
+    &.blush-text,
+    &.blush-text:hover {
+        color: $blush;
+    }
+
+    &.barbie-text,
+    &.barbie-text:hover {
+        color: $barbie;
+    }
+
+    &.peony-text,
+    &.peony-text:hover {
+        color: $peony;
+    }
+
+    &.violet-text,
+    &.violet-text:hover {
+        color: $violet;
+    }
+
+    &.tangerine-text,
+    &.tangerine-text:hover {
+        color: $tangerine;
+    }
+
+    &.marigold-text,
+    &.marigold-text:hover {
+        color: $marigold;
+    }
+
+    &.sunflower-text,
+    &.sunflower-text:hover {
+        color: $sunflower;
+    }
+
+    &.forest-text,
+    &.forest-text:hover {
+        color: $forest;
+    }
+
+    &.teal-text,
+    &.teal-text:hover {
+        color: $teal;
+    }
+
+    &.mint-text,
+    &.mint-text:hover {
+        color: $mint;
+    }
+
+    &.ocean-text,
+    &.ocean-text:hover {
+        color: $ocean;
+    }
+
+    &.sky-text,
+    &.sky-text:hover {
+        color: $sky;
+    }
+
+    &.bluejay-text,
+    &.bluejay-text:hover {
+        color: $bluejay
+    }
+
+    &.lavender-text,
+    &.lavender-text:hover {
+        color: $lavender;
+    }
+
+    &.black-text,
+    &.black-text:hover {
+        color: $black;
     }
 }
 
@@ -388,7 +473,7 @@
 
 .style-4 {
 
-    background-color: #fff;
+    background-color: transparent; 
 
     &.cherry-button {
         border-color: $cherry;
@@ -535,6 +620,229 @@
     }
 }
 
+.style-6 {
+    background-color: transparent;
+
+    &.cherry-button {
+        border-color: $cherry;
+    }
+
+    &.poppy-button {
+        border-color: $poppy;
+    }
+
+    &.blush-button {
+        border-color: $blush;
+    }
+
+    &.barbie-button {
+        border-color: $barbie;
+    }
+
+    &.peony-button {
+        border-color: $peony;
+    }
+
+    &.violet-button {
+        border-color: $violet;
+    }
+
+    &.tangerine-button {
+        border-color: $tangerine;
+    }
+
+    &.marigold-button {
+        border-color: $marigold;
+    }
+
+    &.sunflower-button {
+        border-color: $sunflower;
+    }
+
+    &.forest-button {
+        border-color: $forest;
+    }
+
+    &.teal-button {
+        border-color: $teal;
+    }
+
+    &.mint-button {
+        border-color: $mint;
+    }
+
+    &.ocean-button {
+        border-color: $ocean;
+    }
+
+    &.sky-button {
+        border-color: $sky;
+    }
+
+    &.bluejay-button {
+        border-color: $bluejay;
+    }
+
+    &.white-button {
+        border-color: #fff;
+    }
+
+    /* Hover States for buttons */
+
+    &.cherry-button:hover {
+        border-color: $cherry-tint;
+    }
+
+    &.poppy-button:hover {
+        border-color: $poppy-tint;
+    }
+
+    &.blush-button:hover {
+        border-color: $blush-tint;
+    }
+
+    &.barbie-button:hover {
+        border-color: $barbie-tint;
+    }
+
+    &.peony-button:hover {
+        border-color: $peony-tint;
+    }
+
+    &.violet-button:hover {
+        border-color: $violet-tint;
+    }
+
+    &.tangerine-button:hover {
+        border-color: $tangerine-tint;
+    }
+
+    &.marigold-button:hover {
+        border-color: $marigold-tint;
+    }
+
+    &.sunflower-button:hover {
+        border-color: $sunflower-tint;
+    }
+
+    &.forest-button:hover {
+        border-color: $forest-tint;
+    }
+
+    &.teal-button:hover {
+        border-color: $teal-tint;
+    }
+
+    &.mint-button:hover {
+        border-color: $mint-tint;
+    }
+
+    &.ocean-button:hover {
+        border-color: $ocean-tint;
+    }
+
+    &.sky-button:hover {
+        border-color: $sky-tint;
+    }
+
+    &.bluejay-button:hover {
+        border-color: $bluejay-tint;
+    }
+
+    &.lavender-button:hover {
+        border-color: $lavender-tint;
+    }
+
+    &.white-button:hover {
+        border-color: $white;
+    }
+
+    &.cherry-text,
+    &.cherry-text:hover {
+        color: $cherry;
+    }
+
+    &.poppy-text,
+    &.poppy-text:hover {
+        color: $poppy;
+    }
+
+    &.blush-text,
+    &.blush-text:hover {
+        color: $blush;
+    }
+
+    &.barbie-text,
+    &.barbie-text:hover {
+        color: $barbie;
+    }
+
+    &.peony-text,
+    &.peony-text:hover {
+        color: $peony;
+    }
+
+    &.violet-text,
+    &.violet-text:hover {
+        color: $violet;
+    }
+
+    &.tangerine-text,
+    &.tangerine-text:hover {
+        color: $tangerine;
+    }
+
+    &.marigold-text,
+    &.marigold-text:hover {
+        color: $marigold;
+    }
+
+    &.sunflower-text,
+    &.sunflower-text:hover {
+        color: $sunflower;
+    }
+
+    &.forest-text,
+    &.forest-text:hover {
+        color: $forest;
+    }
+
+    &.teal-text,
+    &.teal-text:hover {
+        color: $teal;
+    }
+
+    &.mint-text,
+    &.mint-text:hover {
+        color: $mint;
+    }
+
+    &.ocean-text,
+    &.ocean-text:hover {
+        color: $ocean;
+    }
+
+    &.sky-text,
+    &.sky-text:hover {
+        color: $sky;
+    }
+
+    &.bluejay-text,
+    &.bluejay-text:hover {
+        color: $bluejay
+    }
+
+    &.lavender-text,
+    &.lavender-text:hover {
+        color: $lavender;
+    }
+
+    &.white-text,
+    &.white-text:hover {
+        color: $white;
+    }
+}
+
 .inline-buttons {
     display: flex;
 
@@ -643,6 +951,18 @@
                 }
             }
 
+            .current-menu-ancestor a:before,
+            .current-menu-item a:before {
+                opacity: 1;
+                visibility: visible;
+            }
+
+            .current-menu-item a:after,
+            .current-menu-ancestor a:after {
+                opacity: 0;
+                visibility: hidden;
+            }
+
             li:hover a{
                 &:after {
                     opacity: 0;
@@ -677,6 +997,7 @@
         margin-right: 0.75em;
         padding-left: 0;
         padding-right: 0;
+        letter-spacing: 0.15px;
     }
 }
 
@@ -705,26 +1026,26 @@
 }
 
 .custom-programs > a:before {
-    width: 99px;
-    height: 35px;
-    background: url("assets/img/marigold-specks.svg") no-repeat center / contain;
-    left: 20px;
-    top: 5px;
+    width: 152px;
+    height: 26px;
+    background: url("assets/img/marigold-specks-new.svg") no-repeat center / contain;
+    left: 0;
+    top: 10px;
 }
 
 .teacher-training > a:before {
-    width: 148px;
-    height: 24px;
-    background: url("assets/img/bluejay-specks.svg") no-repeat center / contain;
-    top: 10px;
-    left: -4px;
+    width: 99px;
+    height: 35px;
+    background: url("assets/img/bluejay-specks-new.svg") no-repeat center / contain;
+    top: 4px;
+    left: 20px;
 }
 
 .community-care > a:before {
-    width: 136px;
-    height: 24px;
+    width: 142px;
+    height: 27px;
     background: url("assets/img/lavender-specks.svg") no-repeat center / contain;
-    top: 12px;
+    top: 10px;
     left: 0;
 }
 
@@ -735,10 +1056,11 @@
     .custom-programs > .sub-menu,
     .teacher-training > .sub-menu,
     .community-care > .sub-menu {
-        width: 550px;
+        width: 535px;
         display: flex;
         border-top-left-radius: 5px;
         border-top-right-radius: 5px;
+        min-height: 240px;
     }
 
     .teen-retreats {
@@ -784,7 +1106,7 @@
     }
 
     .sub-menu-label:first-child {
-        width: 40%;
+        width: 45%;
 
         .sub-menu {
             border-bottom-left-radius: 5px;
@@ -792,7 +1114,7 @@
     }
 
     .sub-menu-label:last-child {
-        width: 60%;
+        width: 55%;
 
         .sub-menu {
             border-bottom-right-radius: 5px;
@@ -844,18 +1166,27 @@
     }
 
     .sub-menu .sub-menu li {
+        padding-top: 10px;
+        padding-bottom: 10px;
         
         a {
-            font-weight: 300;
+            font-size: 13px;
             padding: 0 35px;
             margin: 0;
             font-weight: 300;
-
+            line-height: 1em;
+            
             &:hover {
-                font-weight: 400;
+                font-weight: 500;
             }
         }
+
+        &.current-menu-item a {
+            font-weight: 500;
+        }
     }
+
+    
 }
 
 
@@ -966,10 +1297,11 @@
 
     .support > .sub-menu,
     .about > .sub-menu {
-        width: 550px;
+        width: 535px;
         display: flex;
         border-top-left-radius: 5px;
         border-top-right-radius: 5px;
+        min-height: 240px;
     }
 
     .support, .about {
@@ -997,7 +1329,7 @@
     }
 
     .sub-menu-label:first-child {
-        width: 40%;
+        width: 45%;
 
         .sub-menu {
             border-bottom-left-radius: 5px;
@@ -1005,7 +1337,7 @@
     }
 
     .sub-menu-label:last-child {
-        width: 60%;
+        width: 55%;
 
         .sub-menu {
             border-bottom-right-radius: 5px;
@@ -1041,19 +1373,19 @@
     .sub-menu .sub-menu li {
         
         a {
-            font-weight: 300;
+            font-size: 13px;
             padding: 0 35px;
             margin: 0;
             font-weight: 300;
 
             &:hover {
-                font-weight: 400;
+                font-weight: 500;
             }
         }
     }
 
     .sub-menu .sub-menu .current-menu-item a {
-        font-weight: 400;
+        font-weight: 500;
     }
 }    
 
@@ -1125,6 +1457,10 @@
             font-weight: 500;
             color: #000;
         }
+    }
+
+    .ibme-button:hover {
+        color: #000;
     }
 }
 
@@ -1337,26 +1673,23 @@
     }
 }
 
+.home .inner .wrap {
+    padding-top: 0;
+    padding-bottom: 0;
+}
+   
+/* Landing Section Style across the site */
 
+.landing-section {
+    min-height: 760px;
+}
 
-/* Front Page */
-
-.home {
-
-    .landing-section {
-        min-height: 760px;
-    }
-
-    .inner .wrap {
-        padding-top: 0;
-        padding-bottom: 0;
-    }
-}    
-
+/* hero_1_photo*/
 .hero_1_photo-section {
     background-repeat: no-repeat;
     background-position: center top;
     background-size: 1920px auto;
+    background-attachment: fixed;
     
     .title {
         width: 50%; 
@@ -1372,43 +1705,221 @@
     }
 }
 
+/* ibme-statement-1*/
 .ibme-statement-1 {
     display: flex;
     align-items: center;
     text-align: center;
     position: relative;
 
-    /*.inner-wrap:after {
-        content: '';
-        width: 134px;
-        height: 164px;
-        display: block;
-        background: url("assets/img/section-bg-2.svg") no-repeat center / contain;
-        position: absolute;
-        bottom: 150px;
-    }*/
-
     .landing-section-content {
         width: 50%;
         margin: 0 auto;
-
-        /*&:after {
-            content: '';
-            width: 210px;
-            height: 174px;
-            display: block;
-            background: url("assets/img/section-bg.svg") no-repeat center / contain;
-            position: absolute;
-            top: 10%;
-            left: 75%;
-        }*/
     }
 
     .inline-buttons {
         justify-content: center;
         margin-top: 2.618em;
     }
+
+    &.black-text {
+        .title, p {
+            color: #000;
+        }
+    }
+
+    &.white-text {
+        .title, p {
+            color: #fff;
+        }
+    }
+
+    .bottom-illustration:after {
+        content: '';
+        width: 134px;
+        height: 164px;
+        display: block;
+        //background: url("assets/img/section-bg-2.svg") no-repeat center / contain;
+        position: absolute;
+        bottom: 150px;
+        left: 15%;
+    }
+
+    .top-illustration {
+        &:after {
+            content: '';
+            width: 210px;
+            height: 174px;
+            display: block;
+            //background: url("assets/img/section-bg.svg") no-repeat center / contain;
+            position: absolute;
+            top: 10%;
+            left: 75%;
+        }
+    }    
+
+    .cabin-blue:after {
+        background: url("assets/img/background-illustrations/cabin-blue.svg") no-repeat center / contain;
+    }
+    
+    .cabin-blush:after {
+        background: url("assets/img/background-illustrations/cabin-blush.svg") no-repeat center / contain;
+    }
+    
+    .cabin-mint:after {
+        background: url("assets/img/background-illustrations/cabin-mint.svg") no-repeat center / contain;
+    }
+    
+    .cabin-peony:after {
+        background: url("assets/img/background-illustrations/cabin-peony.svg") no-repeat center / contain;
+    }
+    
+    .cabin-sunflower:after {
+        background: url("assets/img/background-illustrations/cabin-sunflower.svg") no-repeat center / contain;
+    }
+    
+    .eye-blue:after {
+        background: url("assets/img/background-illustrations/eye-blue.svg") no-repeat center / contain;
+    }
+    
+    .eye-blush:after {
+        background: url("assets/img/background-illustrations/eye-blush.svg") no-repeat center / contain;
+    }
+    
+    .eye-mint:after {
+        background: url("assets/img/background-illustrations/eye-mint.svg") no-repeat center / contain;
+    }
+    
+    .eye-peony:after {
+        background: url("assets/img/background-illustrations/eye-peony.svg") no-repeat center / contain;
+    }
+    
+    .eye-sunflower:after {
+        background: url("assets/img/background-illustrations/eye-sunflower.svg") no-repeat center / contain;
+    }
+    
+    .face-blue:after {
+        background: url("assets/img/background-illustrations/face-blue.svg") no-repeat center / contain;
+    }
+    
+    .face-blush:after {
+        background: url("assets/img/background-illustrations/face-blush.svg") no-repeat center / contain;
+    }
+    
+    .face-mint:after {
+        background: url("assets/img/background-illustrations/face-mint.svg") no-repeat center / contain;
+    }
+    
+    .face-peony:after {
+        background: url("assets/img/background-illustrations/face-peony.svg") no-repeat center / contain;
+    }
+    
+    .face-sunflower:after {
+        background: url("assets/img/background-illustrations/face-sunflower.svg") no-repeat center / contain;
+    }
+    
+    .fire-blue:after {
+        background: url("assets/img/background-illustrations/fire-blue.svg") no-repeat center / contain;
+    }
+    
+    .fire-blush:after {
+        background: url("assets/img/background-illustrations/fire-blush.svg") no-repeat center / contain;
+    }
+    
+    .fire-mint:after {
+        background: url("assets/img/background-illustrations/fire-mint.svg") no-repeat center / contain;
+    }
+    
+    .fire-peony:after {
+        background: url("assets/img/background-illustrations/fire-peony.svg") no-repeat center / contain;
+    }
+    
+    .fire-sunflower:after {
+        background: url("assets/img/background-illustrations/fire-sunflower.svg") no-repeat center / contain;
+    }
+    
+    .journal-blue:after {
+        background: url("assets/img/background-illustrations/journal-blue.svg") no-repeat center / contain;
+    }
+    
+    .journal-blush:after {
+        background: url("assets/img/background-illustrations/journal-blush.svg") no-repeat center / contain;
+    }
+    
+    .journal-mint:after {
+        background: url("assets/img/background-illustrations/journal-mint.svg") no-repeat center / contain;
+    }
+    
+    .journal-peony:after {
+        background: url("assets/img/background-illustrations/journal-peony.svg") no-repeat center / contain;
+    }
+    
+    .journal-sunflower:after {
+        background: url("assets/img/background-illustrations/journal-sunflower.svg") no-repeat center / contain;
+    }
+    
+    .plant-blue:after {
+        background: url("assets/img/background-illustrations/plant-blue.svg") no-repeat center / contain;
+    }
+    
+    .plant-blush:after {
+        background: url("assets/img/background-illustrations/plant-blush.svg") no-repeat center / contain;
+    }
+    
+    .plant-mint:after {
+        background: url("assets/img/background-illustrations/plant-mint.svg") no-repeat center / contain;
+    }
+    
+    .plant-peony:after {
+        background: url("assets/img/background-illustrations/plant-peony.svg") no-repeat center / contain;
+    }
+    
+    .plant-sunflower:after {
+        background: url("assets/img/background-illustrations/plant-sunflower.svg") no-repeat center / contain;
+    }
+    
+    .teens-blue:after {
+        background: url("assets/img/background-illustrations/teens-blue.svg") no-repeat center / contain;
+    }
+    
+    .teens-blush:after {
+        background: url("assets/img/background-illustrations/teens-blush.svg") no-repeat center / contain;
+    }
+    
+    .teens-mint:after {
+        background: url("assets/img/background-illustrations/teens-mint.svg") no-repeat center / contain;
+    }
+    
+    .teens-peony:after {
+        background: url("assets/img/background-illustrations/teens-peony.svg") no-repeat center / contain;
+    }
+    
+    .teens-sunflower:after {
+        background: url("assets/img/background-illustrations/teens-sunflower.svg") no-repeat center / contain;
+    }
+    
+    .yoga-blue:after {
+        background: url("assets/img/background-illustrations/yoga-blue.svg") no-repeat center / contain;
+    }
+    
+    .yoga-blush:after {
+        background: url("assets/img/background-illustrations/yoga-blush.svg") no-repeat center / contain;
+    }
+    
+    .yoga-mint:after {
+        background: url("assets/img/background-illustrations/yoga-mint.svg") no-repeat center / contain;
+    }
+    
+    .yoga-peony:after {
+        background: url("assets/img/background-illustrations/yoga-peony.svg") no-repeat center / contain;
+    }
+    
+    .yoga-sunflower:after {
+        background: url("assets/img/background-illustrations/yoga-sunflower.svg") no-repeat center / contain;
+    }
 }
+
+
 
 .ibme-cta_1-content-blocks {
     display: flex;
@@ -1510,24 +2021,9 @@
     position: relative;
 }
 
-.impact_1-section {
-    display: flex;
-    align-items: center;
-    //background: url("assets/img/stats-bg.png") no-repeat left center / contain; 
-
-    .impact_1-slide {
-        display: flex;
-        justify-content: space-between;
-
-        .content-column {
-            width: 48%;
-        }
-    }
-}
-
 .cta_2_section {
     
-    min-height: 550px;
+    min-height: 550px; 
 
     .cta_2-items {
         display: flex;
@@ -1623,7 +2119,23 @@
     }
 
     .none-bg-color {
-        background-color: #fff; 
+        background-color: transparent; 
+        padding-left: 0;
+        padding-right: 0;
+    }
+
+    .cta_2-item {
+        &.black-text {
+            .header-3 {
+                color: #000;
+            }
+        }
+
+        &.white-text {
+            .header-3 {
+                color: #fff;
+            }
+        }
     }
 
 }
@@ -1631,34 +2143,42 @@
 .ibme-testimonial-section {
     display: flex;
     align-items: center;
+}
 
-    .ibme-testimonial-wrap {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
+.ibme-testimonial-wrap {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.ibme-testimonial-image-wrap {
+    width: 55%;
+    min-height: 613px;
+
+    img {
+        display: block;
+        margin-top: 87px;
+        margin-left: 30px;
     }
+}
 
-    .ibme-testimonial-image-wrap {
-        width: 55%;
-        min-height: 613px;
+.testimonial-content-wrap {
+    width: 34%;
+}
 
-        img {
-            display: block;
-            margin-top: 87px;
-            margin-left: 30px;
-        }
-    }
+.testimonial-by:before {
+    content: '—';
+    display: inline-block;
+    margin-right: 5px;
 
-    .testimonial-content-wrap {
-        width: 34%;
-    }
+}
 
-    .testimonial-by:before {
-        content: '—';
-        display: inline-block;
-        margin-right: 5px;
+.testimonial-by.black-text {
+    color: #000;
+}
 
-    }
+.testimonial-by.white-text {
+    color: #fff;
 }
 
 .ocean-testimonial {
@@ -1687,6 +2207,16 @@
 
     .ibme-testimonial-image-wrap  {
         background: url("assets/img/forest-sunrays.svg") no-repeat center / contain;
+    }
+}
+
+.white-testimonial {
+    .header-2 {
+        color: $white;
+    }
+
+    .ibme-testimonial-image-wrap  {
+        background: url("assets/img/white-sunrays.svg") no-repeat center / contain;
     }
 }
 
@@ -1747,6 +2277,7 @@
     background-repeat: no-repeat;
     background-position: center top;
     background-size: 1920px auto; 
+    background-attachment: fixed;
     display: flex;
     align-items: center;
 
@@ -1934,21 +2465,49 @@
     flex-wrap: wrap;
 
     .cta-3_column {
-        width: 47%;
         border-radius: 5px;
         margin-top: 2.618em;
     }
 
     img {
         display: block;
+        border-radius: 5px;
+    }
+
+    .aligncenter {
+        margin-bottom: 0;
     }
 }
+
+.cta-3_columns.cta-items-2 .cta-3_column {
+    width: 47%;
+} 
+
+.cta-3_columns.cta-items-4 .cta-3_column {
+    width: 23%;
+} 
+
+.cta-3_columns.cta-items-3 .cta-3_column {
+    width: 30%;
+} 
+
+.cta-3_columns.cta-items-2 .cta-3_column {
+    width: 47%;
+} 
 
 .cta-3_column-content {
     padding: 0.618em 0.618em 1.618em;
 
     .header-3 {
         margin-bottom: 0;
+
+        &.black-text {
+            color: #000;
+        }
+
+        &.white-text {
+            color: #fff;
+        }
     }
 }
 
@@ -1972,7 +2531,7 @@
     background-color: $peony;
 }
 
-.cta-3_column.voilet-bg-color {
+.cta-3_column.violet-bg-color {
     background-color: $violet;
 }
 
@@ -2017,7 +2576,7 @@
 }
 
 .cta-3_column.none-bg-color {
-    background-color: #fff;
+    background-color: transparent;
 }
 
 .cta-3_column-text {
@@ -2025,6 +2584,14 @@
     line-height: 1.25em;
     margin-top: 1em;
     margin-bottom: 1em;
+
+    &.black-text {
+        color: #000;
+    }
+
+    &.white-text {
+        color: #fff;
+    }
 }
 
 .subscribe-block .title {
@@ -2062,6 +2629,7 @@
         display: block;
         font-size: 15px;
         line-height: 1.68em;
+        text-transform: lowercase;
     }
 
     .form-field input::placeholder {
@@ -2196,11 +2764,178 @@
 
 /** impact_1_slider */
 
+.impact_1-section {
+    display: flex;
+    align-items: center;
+    background-repeat: no-repeat;
+    background-position: left center;
+    background-size: contain;
+    //background: url("assets/img/stats-bg.png") no-repeat left center / contain; 
+
+    .impact_1-slide {
+        display: flex;
+        justify-content: space-between;
+
+        .content-column {
+            width: 48%;
+        }
+    }    
+}
+
+.impact_1-section.cabin-blue {
+    background-image: url("assets/img/background-illustrations/cabin-blue.svg");
+}
+
+.impact_1-section.cabin-blush {
+    background-image: url("assets/img/background-illustrations/cabin-blush.svg");
+}
+
+.impact_1-section.cabin-mint {
+    background-image: url("assets/img/background-illustrations/cabin-mint.svg");
+}
+
+.impact_1-section.cabin-peony {
+    background-image: url("assets/img/background-illustrations/cabin-peony.svg");
+}
+
+.impact_1-section.cabin-sunflower {
+    background-image: url("assets/img/background-illustrations/cabin-sunflower.svg");
+}
+
+.impact_1-section.eye-blue {
+    background-image: url("assets/img/background-illustrations/eye-blue.svg");
+}
+
+.impact_1-section.eye-blush {
+    background-image: url("assets/img/background-illustrations/eye-blush.svg");
+}
+
+.impact_1-section.eye-mint {
+    background-image: url("assets/img/background-illustrations/eye-mint.svg");
+}
+
+.impact_1-section.eye-peony {
+    background-image: url("assets/img/background-illustrations/eye-peony.svg");
+}
+
+.impact_1-section.eye-sunflower:after {
+    background-image: url("assets/img/background-illustrations/eye-sunflower.svg");
+}
+
+.impact_1-section.face-blue {
+    background-image: url("assets/img/background-illustrations/face-blue.svg");
+}
+
+.impact_1-section.fire-blush {
+    background-image: url("assets/img/background-illustrations/fire-blush.svg");
+}
+
+.impact_1-section.fire-mint {
+    background-image: url("assets/img/background-illustrations/fire-mint.svg");
+}
+
+.impact_1-section.fire-peony {
+    background-image: url("assets/img/background-illustrations/fire-peony.svg");
+}
+
+.impact_1-section.fire-sunflower {
+    background-image: url("assets/img/background-illustrations/fire-sunflower.svg");
+}
+
+.impact_1-section.journal-blue {
+    background-image: url("assets/img/background-illustrations/journal-blue.svg");
+}
+
+.impact_1-section.journal-blush {
+    background-image: url("assets/img/background-illustrations/journal-blush.svg");
+}
+
+.impact_1-section.journal-mint {
+    background-image: url("assets/img/background-illustrations/journal-mint.svg");
+}
+
+.impact_1-section.journal-peony {
+    background-image: url("assets/img/background-illustrations/journal-peony.svg");
+}
+
+.impact_1-section.journal-sunflower {
+    background-image: url("assets/img/background-illustrations/journal-sunflower.svg");
+}
+
+.impact_1-section.plant-blue {
+    background-image: url("assets/img/background-illustrations/plant-blue.svg");
+}
+
+.impact_1-section.plant-blush {
+    background-image: url("assets/img/background-illustrations/plant-blush.svg");
+}
+
+.impact_1-section.plant-mint {
+    background-image: url("assets/img/background-illustrations/plant-mint.svg");
+}
+
+.impact_1-section.plant-peony {
+    background-image: url("assets/img/background-illustrations/plant-peony.svg");
+}
+
+.impact_1-section.plant-sunflower {
+    background-image: url("assets/img/background-illustrations/plant-sunflower.svg");
+}
+
+.impact_1-section.teens-blue {
+    background-image: url("assets/img/background-illustrations/teens-blue.svg");
+}
+
+.impact_1-section.teens-blush {
+    background-image: url("assets/img/background-illustrations/teens-blush.svg");
+}
+
+.impact_1-section.teens-mint {
+    background-image: url("assets/img/background-illustrations/teens-mint.svg");
+}
+
+.impact_1-section.teens-peony {
+    background-image: url("assets/img/background-illustrations/teens-peony.svg");
+}
+
+.impact_1-section.teens-sunflower {
+    background-image: url("assets/img/background-illustrations/teens-sunflower.svg");
+}
+
+.impact_1-section.yoga-blue {
+    background-image: url("assets/img/background-illustrations/yoga-blue.svg");
+}
+
+.impact_1-section.yoga-blush {
+    background-image: url("assets/img/background-illustrations/yoga-blush.svg");
+}
+
+.impact_1-section.yoga-mint {
+    background-image: url("assets/img/background-illustrations/yoga-mint.svg");
+}
+
+.impact_1-section.yoga-peony {
+    background-image: url("assets/img/background-illustrations/yoga-peony.svg");
+}
+
+.impact_1-section.yoga-sunflower {
+    background-image: url("assets/img/background-illustrations/yoga-sunflower.svg");
+}
+
 .impact_1-slider {
     position: relative;
     width: 100%;
     overflow: hidden;
     min-height: 400px;
+
+    .header-1.black {
+        color: #000;
+    }
+
+    .header-1.white {
+        color: #fff;
+    }
+
 }
 
 .impact_1-slides {
@@ -2210,7 +2945,16 @@
 
 .impact_1-slide {
     min-width: 100%;
-    /* Other styles for your slides */
+
+    .black-title,
+    .black-text {
+        color: #000;
+    }
+
+    .white-title,
+    .white-text {
+        color: #fff;
+    }
 }
 
 .impact_1-navigation-dots {
@@ -2218,17 +2962,23 @@
     bottom: 10px;
     left: 50%;
     transform: translateX(-50%);
-    /* Other styles for navigation dots container */
 }
 
 .impact_1-dot {
     height: 12px;
     width: 12px;
     margin: 0 5px;
-    background-color: #000;
     border-radius: 50%;
     display: inline-block;
     cursor: pointer;
+}
+
+.black-dots .impact_1-dot {
+    background-color: #000;
+}
+
+.white-dots .impact_1-dot {
+    background-color: #fff;
 }
 
 .cherry-slider {
