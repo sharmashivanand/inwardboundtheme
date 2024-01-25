@@ -14,6 +14,9 @@ function ibme_remove_lander_theme_support() {
 	remove_action( 'lander_footer', 'lander_footer_content' );
 }
 
+// Include forms.php file
+include_once get_stylesheet_directory().'/includes/forms.php';
+
 add_action('lander_before','ibme_page_content');
 
 function ibme_page_content() {
@@ -210,6 +213,8 @@ function ibme_button_handler($atts) {
             'button-2-style' 			=> '', // Style for the second button
             'text-color' 				=> 'black', 
             'button-2-text-color' 		=> 'black', 
+            'new-tab' 					=> 'no', // yes, no
+            'button-2-new-tab' 			=> 'no', // yes, no
         ),
 
         $atts,
@@ -223,6 +228,8 @@ function ibme_button_handler($atts) {
     $style = esc_attr($atts['style']); // possible values: 'style-1', 'style-2', 'style-3', 'style-4', 'style-5' and 'style-6', default set as 'style-1'
     $type = esc_attr($atts['type']); // possible values: 'dual' or 'single', default set as single
 	$text_color = esc_attr($atts['text-color']); // possible values: 'cherry', 'poppy', 'blush', 'barbie', 'peony', 'violet', 'tangerine', 'marigold', 'sunflower', 'forest', 'teal', 'mint', 'ocean', 'sky', 'bluejay', 'lavender', 'black', 'white', default set as 'mint'
+	$new_tab = esc_attr($atts['new-tab']); // possible values: 'yes' or 'no', default set as 'no'
+	
 
 	if($color == '') {
 		$color_class = '';
@@ -235,6 +242,10 @@ function ibme_button_handler($atts) {
 	// Add the target attribute based on whether it's internal or external
     $target_attribute = $is_external ? 'target="_blank"' : '';
 
+	if ($new_tab === 'yes') {
+		$target_attribute = 'target="_blank"';
+	}
+
 	if(!empty($link)) {
     // Handle "dual" type
 		if ($type === 'dual') {
@@ -244,6 +255,7 @@ function ibme_button_handler($atts) {
 			$button_2_color = esc_attr($atts['button-2-color']);
 			$button_2_style = esc_attr($atts['button-2-style']);
 			$button_2_text_color = esc_attr($atts['button-2-text-color']);
+			$button_2_new_tab = esc_attr($atts['button-2-new-tab']); 
 
 			if($button_2_color == '') {
 				$button_2_color_class = '';
@@ -255,6 +267,10 @@ function ibme_button_handler($atts) {
 			$is_external_2 = (strpos($button_2_link, home_url()) === false);
 			// Add the target attribute based on whether it's internal or external
 			$target_attribute_2 = $is_external_2 ? 'target="_blank"' : '';
+
+			if ($button_2_new_tab === 'yes') {
+				$target_attribute_2 = 'target="_blank"';
+			}
 
 			// Generate HTML for the dual buttons
 			$button_html = '<div class="inline-buttons">';
@@ -414,6 +430,7 @@ add_shortcode('ibme_cta_1_content_block', 'ibme_cta_1_content_block_handler');
 function ibme_cta_2_content_block_handler($atts) {
 	$width = '';
 	$path = '';
+	$cta_2_content_block_html = '';
 
 	// Extract shortcode attributes
 	$atts = shortcode_atts(
@@ -748,7 +765,7 @@ function ibme_subscribe_block_handler($atts) {
 
 	// Sanitize attributes
 	$title = esc_html($atts['title']);
-	$form_html = wp_kses_post($atts['form-html']);
+	//$form_html = wp_kses_post($atts['form-html']);
 
 	// Generate HTML for the ibme_subscribe_block block
 
@@ -1017,7 +1034,7 @@ function impact_1_slider_handler($atts, $content = null) {
 	$illustration = esc_attr($atts['illustration']);
 
 	// Generate HTML for the impact_1_slider
-	$impact_1_slider_html = '<section class="full-width-section landing-section impact_1-section '.$illustration.'"><div class="inner-wrap"><div class="landing-section-content"><div class="impact_1-slider '.$slide_color.'-slider"><div class="impact_1-slides">';
+	$impact_1_slider_html = '<section class="full-width-section landing-section impact-section impact_1-section '.$illustration.'"><div class="inner-wrap"><div class="landing-section-content"><div class="impact_1-slider '.$slide_color.'-slider"><div class="impact_1-slides">';
 	
 	// Use a regular expression to match [impact_1_slide] shortcodes
 	preg_match_all('/\[impact_1_slide(.*?)\]/s', $content, $matches, PREG_SET_ORDER);
@@ -1037,7 +1054,7 @@ function impact_1_slider_handler($atts, $content = null) {
 
 	// Loop for generating navigation dots
 	for ($i = 1; $i <= $slide_count; $i++) {
-		$impact_1_slider_html .= '<span class="impact_1-dot" onclick="currentImpactSlide('.$i.')"></span>'; 
+		$impact_1_slider_html .= '<span class="impact_1-dot impact-dot" onclick="currentImpactSlide('.$i.')"></span>'; 
 	}
 
 	$impact_1_slider_html .= '</div></div></div></div></section>';
@@ -1166,4 +1183,400 @@ function impact_1_slider_script() {
 
 	</script>	
 	<?php
+}
+
+// Register the shortcode for the "hero_2" block
+
+add_shortcode( 'hero_2', 'hero_2_handler' );
+
+function hero_2_handler($atts) {
+	// Extract shortcode attributes
+	$atts = shortcode_atts(
+		array(
+			'image-url'      	=> '', // jpg, png, gif
+			'title'         	=> '', 
+			'text'         		=> '', 
+			'text-color'       	=> '', // white, black
+			'button-color'   	=> '', 
+			'button-2-color'   	=> '', 
+			'button-text'   	=> '', 
+			'button-2-text'   	=> '', 
+			'button-link'   	=> '', 			
+			'button-2-link'   	=> '',	
+		),
+		$atts,
+		'hero_2'
+	);
+
+	// Sanitize attributes
+	$image_url = esc_url($atts['image-url']);
+	$title = esc_html($atts['title']);
+	$text = esc_html($atts['text']);
+	$text_color = esc_attr($atts['text-color']);
+	$button_color = esc_attr($atts['button-color']);
+	$button_2_color = esc_attr($atts['button-2-color']);
+	$button_text = esc_html($atts['button-text']);
+	$button_2_text = esc_html($atts['button-2-text']);
+	$button_link = esc_url($atts['button-link']);
+	$button_2_link = esc_url($atts['button-2-link']);
+
+
+	// Generate HTML for the hero_2 block
+
+	$hero_2_html = '<section class="full-width-section landing-section hero_2-section" style="background-image: url(\'' . $image_url . '\')"><div class="inner-wrap"><div class="landing-section-content">';
+	$hero_2_html .= '<h2 class="title '.$button_color.'-title">'.$title.'</h2>';
+	$hero_2_html .= do_shortcode('[ibme_button type="dual" link="'.$button_link.'" text="'.$button_text.'" color="'.$button_color.'" style="style-3" button-2-link="'.$button_2_link.'" button-2-text="'.$button_2_text.'" button-2-style="style-4" button-2-color="'.$button_2_color.'"]');
+	$hero_2_html .= '<p class="description '.$text_color.'-text">'.$text.'</p>';
+	$hero_2_html .= '</div></div></section>';
+
+	return $hero_2_html;
+}
+
+/* Shortcode for Collapsible Content (carried forward from old site) */
+
+add_shortcode('collapsible-content', 'collapsible_content');
+
+function collapsible_content($atts, $content = null) {
+	
+	extract(shortcode_atts(array (
+		'caption' => 'Parent Collapsible Block',
+		'state' => 'close',
+		'id' => '',
+		'class' => ''
+	), $atts ));
+	
+	$id = ($id != '') ? " id='" . esc_attr( $id ) . "'" : '';
+	$class = ($class != '') ? esc_attr( ' ' . $class ) : '';
+	
+	$divClass = ($state == 'close') ? 'collapsible-content' : 'collapsible-content open';
+	$hClass = ($state == 'close') ? 'collapsible-heading' : 'collapsible-heading open';
+	
+	$output = '<h3 class="'.$hClass.'"><a>'. esc_html( $caption ) . '</a></h3><div'. $id .' class="'.$divClass.''.$class.'" style="display: none;"><div class="collapsed-content">'.do_shortcode($content).'</div></div>';
+
+	return $output;
+}
+
+add_action('wp_head', 'ibme_jquery');
+
+function ibme_jquery() {
+	?>
+	<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+	<?php
+}
+
+/* Script for Collapsible Content */
+
+add_action('wp_footer', 'ibme_collapsible_content');
+
+function ibme_collapsible_content() {
+	?>
+
+	<script type="text/javascript">
+		var $j = jQuery.noConflict();
+		
+		// Collapsible Content
+		$j(document).ready(function() {
+			
+			/* Collasible divs */
+			$j('.collapsible-heading.open').addClass('opened');
+			$j('.collapsible-content.open').css('display','block');
+				
+			$j('.collapsible-heading').on('click',function(event){
+				var cc = $j(this).next();
+				// If the title is clicked and the collapsible content is not currently animated,
+				// start an animation with the slideToggle() method.				
+				$j('.collapsible-heading.opened').next().slideToggle();	//show/hide  collapsible content inside collapsible-heading.opened
+				$j('.collapsible-heading.opened').toggleClass('opened');	//remove class opened
+
+				if(!cc.is(':animated')){
+					cc.slideToggle();
+					$j(this).toggleClass('opened');	 
+				}
+			});
+		});
+	</script>
+	<?php
+}
+
+// Register shortcode for statement_2 block
+
+add_shortcode('ibme_statement_2', 'ibme_statement_2_handler');
+
+function ibme_statement_2_handler($atts) {
+	// Extract shortcode attributes
+	$atts = shortcode_atts(
+		array(
+			'orientation'      		=> '', // 'center', 'left', 'right
+			'title'      			=> '',
+			'title-color'      		=> '', // black, white
+			'text'      			=> '', 
+			'text-color'      		=> '', // black, white
+			'bg-color'      		=> '', // 'cherry', 'poppy', 'blush', 'barbie', 'peony', 'violet', 'tangerine', 'marigold', 'sunflower', 'forest', 'teal', 'mint', 'ocean', 'sky', 'bluejay', 'lavendar'
+			'button-text'      		=> '', 
+			'button-link'      		=> '', 
+			'button-style'      	=> '', // style-5, style-2
+			'button-text-color'     => '', // black, cherry, poppy, blush, barbie, peony, violet, tangerine, marigold, sunflower, forest, teal, mint, ocean, sky, bluejay, lavender
+		),
+
+		$atts,
+		'ibme_statement_2'
+	);
+
+	// Sanitize attributes
+	$orientation = esc_attr($atts['orientation']);
+	$title = esc_html($atts['title']);
+	$title_color = esc_attr($atts['title-color']);
+	$text = esc_html($atts['text']);
+	$text_color = esc_attr($atts['text-color']);
+	$bg_color = esc_attr($atts['bg-color']);
+	$button_text = esc_html($atts['button-text']);
+	$button_link = esc_url($atts['button-link']);
+	$button_style = esc_attr($atts['button-style']);
+	$button_text_color = esc_attr($atts['button-text-color']);
+
+	if($button_text) {
+		$button_html = do_shortcode('[ibme_button link="'.$button_link.'" text="'.$button_text.'" style="'.$button_style.'" text-color="'.$button_text_color.'"]');
+	} else {
+		$button_html = '';
+	}
+
+	// Generate HTML for the ibme_statement_2 block
+
+	$statement_2_html = '<section class="full-width-section landing-section '.$bg_color.'-background ibme-statement-2 '.$orientation.'-layout"><div class="inner-wrap"><div class="landing-section-content">';
+	$statement_2_html .= '<div class="ibme-statement-2-column title-column"><h3 class="header-2 '.$title_color.'-title">'.$title.'</h3></div>';
+	$statement_2_html .= '<div class="ibme-statement-2-column text-column"><p class="ibme-statement-2-text '.$text_color.'-text">'.$text.'</p>';
+	$statement_2_html .= $button_html;
+	$statement_2_html .= '</div>';
+	$statement_2_html .= '</div>';
+	$statement_2_html .= '</div>';
+	$statement_2_html .= '</section>';
+
+	return $statement_2_html;
+	
+}
+
+// Register the shortcode for the "impact_2_slider" block
+
+add_shortcode( 'impact_2_slider', 'impact_2_slider_handler' );
+
+function impact_2_slider_handler($atts, $content = null) {
+
+	// Extract shortcode attributes
+	$atts = shortcode_atts(
+		array(
+			'slide-color'         	=> '', 	
+			'dot-color'         	=> 'black', // black, white
+			'illustration'         	=> 'no-illustration',
+			'title'         	    => '',
+            'title-color'       => 'black', // black, white 
+		),
+		$atts,
+		'impact_2_slider'
+	);
+
+	// Sanitize attributes
+
+	$slide_color = esc_attr($atts['slide-color']);
+	$dot_color = esc_attr($atts['dot-color']);
+	$illustration = esc_attr($atts['illustration']);
+    $title = esc_html($atts['title']);
+	$title_color = esc_attr($atts['title-color']);
+
+	// Generate HTML for the impact_2_slider
+	$impact_2_slider_html = '<section class="full-width-section landing-section impact-section impact_2-section '.$illustration.'"><div class="inner-wrap"><div class="landing-section-content"><div class="impact_2-content"><div class="left-column content-column"><h2 class="title '.$title_color.'-title">'.$title.'</h2></div><div class="right-column content-column"><div class="impact_2-slider '.$slide_color.'-slider"><div class="impact_2-slides">';
+	
+	// Use a regular expression to match [impact_2_slide] shortcodes
+	preg_match_all('/\[impact_2_slide(.*?)\]/s', $content, $matches, PREG_SET_ORDER);
+	$slide_count = count($matches);
+
+	// Process and return the content
+	foreach ($matches as $match) {
+		$params = shortcode_parse_atts($match[1]); // Parse parameters
+		$content_block_content = do_shortcode('[impact_2_slide' . $match[1] . ']'); // Process content within [impact_2_slide]
+
+		// Process and use $params and $content_block_content as needed
+		$impact_2_slider_html .= $content_block_content;
+	}
+
+	$impact_2_slider_html .= '</div>';
+	$impact_2_slider_html .= '<div class="impact_2-navigation-dots '.$dot_color.'-dots">';
+
+	// Loop for generating navigation dots
+	for ($i = 1; $i <= $slide_count; $i++) {
+		$impact_2_slider_html .= '<span class="impact_2-dot impact-dot" onclick="currentImpact2Slide('.$i.')"></span>'; 
+	}
+
+	$impact_2_slider_html .= '</div></div></div></div></div></section>';
+
+	return $impact_2_slider_html;
+}
+
+add_shortcode('impact_2_slide', 'impact_2_slide_handler');
+
+function impact_2_slide_handler($atts) {
+	// Extract shortcode attributes
+	$atts = shortcode_atts(
+		array(
+			'headline'       	=> '',  
+			'headline-color'    => 'slider-color', // black, white 
+			'text'   			=> '', 
+			'text-color'   		=> 'black', // black, white
+			'button-type'   	=> '', 
+			'button-text'   	=> '', 
+			'button-color'   	=> '', 
+			'button-text-color'   	=> 'black', // cherry, poppy, blush, barbie, peony, violet, tangerine, marigold, sunflower, forest, teal, mint, ocean, sky, bluejay, lavender, black 
+			'button-link'   	=> '', 
+			'button-2-text'   	=> '', 
+			'button-2-color'   	=> '', 
+			'button-2-link'   	=> '', 
+			'button-2-text-color'   	=> 'barbie', // cherry, poppy, blush, barbie, peony, violet, tangerine, marigold, sunflower, forest, teal, mint, ocean, sky, bluejay, lavender, white 
+			'button-style'   	=> 'style-3', 
+			'button-2-style'   	=> 'style-4', 
+				
+		),
+		$atts,
+		'impact_2_slide'
+	);
+
+	// Sanitize attributes
+	$headline = esc_html($atts['headline']); 
+	$headline_color = esc_attr($atts['headline-color']); 
+	$text = esc_html($atts['text']); 
+	$text_color = esc_attr($atts['text-color']); 
+	$button_type = esc_attr($atts['button-type']);
+	$button_text = esc_html($atts['button-text']);
+	$button_color = esc_attr($atts['button-color']);
+	$button_link = esc_url($atts['button-link']);
+	$button_2_text = esc_html($atts['button-2-text']);
+	$button_2_color = esc_attr($atts['button-2-color']);
+	$button_2_link = esc_url($atts['button-2-link']);
+	$button_style = esc_attr($atts['button-style']);
+	$button_2_style = esc_attr($atts['button-2-style']);
+	$button_text_color = esc_attr($atts['button-text-color']);
+	$button_2_text_color = esc_attr($atts['button-2-text-color']);
+
+	// Generate HTML for the impact_2_slide block
+
+	$impact_2_slide_html = '<div class="impact_2-slide">';
+	$impact_2_slide_html .= '<h3 class="'.$headline_color.' header-1">'.$headline.'</h3>';
+	$impact_2_slide_html .= '<p class="'.$text_color.'-text">'.$text.'</p>';
+	$impact_2_slide_html .= do_shortcode('[ibme_button type="'.$button_type.'" link="'.$button_link.'" text="'.$button_text.'" color="'.$button_color.'" text-color="'.$button_text_color.'" style="'.$button_style.'" button-2-link="'.$button_2_link.'" button-2-text="'.$button_2_text.'" button-2-color="'.$button_2_color.'" button-2-text-color="'.$button_2_text_color.'" button-2-style="'.$button_2_style.'"]');
+	$impact_2_slide_html .= '</div>';
+
+	return $impact_2_slide_html;
+	
+}
+
+/** Script for impact_2_slider */
+
+add_action('wp_footer', 'impact_2_slider_script');
+
+function impact_2_slider_script() {
+    ?>
+    <script type="text/javascript">
+        document.addEventListener('DOMContentLoaded', function () {
+		var slidesContainer = document.querySelector('.impact_2-slides');
+
+		if (!slidesContainer) {
+			return;
+		}	
+
+		var totalSlides = document.querySelectorAll('.impact_2-slide').length;
+		var currentSlide = 1;
+		var autoScrollInterval;
+
+		// Set up initial state
+		updateSlider();
+
+		// Function to update the slider based on currentSlide
+		function updateSlider() {
+			slidesContainer.style.transform = 'translateY(' + -100 * (currentSlide - 1) + '%)';
+			updateDots();
+		}
+
+		// Function to update navigation dots
+		function updateDots() {
+			var dots = document.querySelectorAll('.impact_2-dot');
+			dots.forEach(function (dot, index) {
+			dot.classList.toggle('active', index === (currentSlide - 1));
+			});
+		}
+
+		// Function to move to a specific slide
+		window.currentImpact2Slide = function (slideNumber) {
+			currentSlide = slideNumber; 
+			updateSlider();
+		};
+
+		// Automatic scrolling
+		function startAutoScroll() {
+			autoScrollInterval = setInterval(function () {
+			currentSlide = (currentSlide % totalSlides) + 1;
+			updateSlider();
+			}, 4000); // Adjust the interval (in milliseconds) as needed
+		}
+
+		function stopAutoScroll() {
+			clearInterval(autoScrollInterval);
+		}
+
+		// Start auto-scroll on page load
+		startAutoScroll();
+
+		// Pause auto-scroll on hover
+		var sliderContainer = document.querySelector('.impact_2-slider');
+		sliderContainer.addEventListener('mouseover', stopAutoScroll);
+		sliderContainer.addEventListener('mouseout', startAutoScroll);
+		});
+
+    </script>    
+    <?php
+}
+
+// Register the shortcode for the "hero_3" block
+
+add_shortcode( 'hero_3', 'hero_3_handler' );
+
+function hero_3_handler($atts) {
+	// Extract shortcode attributes
+	$atts = shortcode_atts(
+		array(
+			'image-url'      	=> '', // jpg, png, gif
+			'bg-color'      	=> '', // all the colors from palette
+			'title'         	=> '', 
+			'title-color'       => 'black', // black, white 
+			'text'         		=> '', 
+			'text-color'       	=> 'black', // white, black
+			'button-text'   	=> '', 
+			'button-style'   	=> 'style-5', //style-5, style-2
+			'button-link'   	=> '', 			
+			'button-text-color'   	=> '', 			
+			
+		),
+		$atts,
+		'hero_3'
+	);
+
+	// Sanitize attributes
+	$image_url = esc_url($atts['image-url']);
+	$bg_color = esc_attr($atts['bg-color']);
+	$title = esc_html($atts['title']);
+	$title_color = esc_attr($atts['title-color']);
+	$text = esc_html($atts['text']);
+	$text_color = esc_attr($atts['text-color']);
+	$button_text = esc_html($atts['button-text']);
+	$button_style = esc_attr($atts['button-style']);
+	$button_link = esc_url($atts['button-link']);
+	$button_text_color = esc_attr($atts['button-text-color']);
+
+	// Generate HTML for the hero_3 block
+
+	$hero_3_html = '<section class="full-width-section landing-section hero_3-section" style="background-image: url(\'' . $image_url . '\')"><div class="inner-wrap"><div class="landing-section-content">';
+	$hero_3_html .= '<div class="content-area '.$bg_color.'-bg">';
+	$hero_3_html .= '<h2 class="title '.$title_color.'-title">'.$title.'</h2>';
+	$hero_3_html .= '<p class="description '.$text_color.'-text">'.$text.'</p>';
+	$hero_3_html .= do_shortcode('[ibme_button link="'.$button_link.'" text="'.$button_text.'" style="'.$button_style.'" text-color="'.$button_text_color.'"]');
+	$hero_3_html .= '</div></div></div></section>';
+
+	return $hero_3_html;
 }

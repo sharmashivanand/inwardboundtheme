@@ -2,6 +2,62 @@
 
 /* Generic Styles */
 
+/* Collapsible Content */
+
+.collapsible-heading {
+    font-size: 1em;
+	margin: 1em 0 0.618em !important;
+    text-transform: lowercase;
+    color: #000;
+    font-weight: 500;
+    max-width: 1140px;
+}
+
+.collapsible-heading a {
+    color: #000;
+    display: block;
+    cursor: pointer;
+    border: 2px solid $blush;
+    border-radius: 5px;
+    padding: 17px;
+    margin-bottom: 40px;
+    display: flex;
+    align-items: center;
+}
+
+.collapsible-heading.opened a {
+    border-bottom: 0;
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+}
+
+.collapsible-heading a:before {
+    display: inline-block;
+    content:"";
+    width: 20px;
+    height: 20px;
+    background: url("assets/img/cc-plus.svg") no-repeat center / contain;
+    margin-right: 10px;
+}
+
+.collapsible-heading.opened a:before {
+    background: url("assets/img/cc-minus.svg") no-repeat center / contain;
+    height: 4px;
+}
+
+.collapsible-content {
+    background-color: #fff;
+    border: 2px solid $blush;
+    border-radius: 5px;
+    padding: 0 50px 10px;
+    margin-top: -40px;
+    margin-bottom: 40px;
+    border-top: 0;
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+    max-width: 1140px;
+}
+
 /* Button Styles */
 
 .ibme-button {
@@ -16,7 +72,8 @@
     text-transform: lowercase;
     font-variant: normal;
     border: 2px solid;
-    padding: 0.15em 1em;
+    padding: 0.3em 1em;
+    transition: all 0.25s;
 
     &:hover {
         text-decoration: none;
@@ -845,6 +902,7 @@
 
 .inline-buttons {
     display: flex;
+    align-items: start;
 
     .ibme-button:first-child {
         margin-right: 30px;
@@ -858,7 +916,7 @@
     font-family: Inter, sans-serif;
     font-weight: 300;
     font-size: 18px;
-    line-height: 1.72em;
+    line-height: 1.3em;
     letter-spacing: 0.25px;
 }
 
@@ -1172,9 +1230,9 @@
         a {
             font-size: 13px;
             padding: 0 35px;
+            line-height: 1em;
             margin: 0;
             font-weight: 300;
-            line-height: 1em;
             
             &:hover {
                 font-weight: 500;
@@ -1371,12 +1429,15 @@
     }
 
     .sub-menu .sub-menu li {
+        padding-top: 10px;
+        padding-bottom: 10px;
         
         a {
             font-size: 13px;
             padding: 0 35px;
             margin: 0;
             font-weight: 300;
+            line-height: 1em;
 
             &:hover {
                 font-weight: 500;
@@ -1694,6 +1755,7 @@
     .title {
         width: 50%; 
         padding-top: 150px;
+        margin-bottom: 40px;
     }
 
     .white-title {
@@ -1701,6 +1763,104 @@
     }
 
     .black-title {
+        color: #000;
+    }
+}
+
+/* hero_2*/
+.hero_2-section {
+    background-repeat: no-repeat;
+    background-position: center top;
+    background-size: 1920px auto;
+    background-attachment: fixed;
+    
+    .title {
+        width: 50%; 
+        padding-top: 150px;
+    }
+
+    .description {
+        width: 50%; 
+        padding-top: 1.2em;
+    }
+
+    .barbie-title {
+        color: $barbie;
+    }
+
+    .peony-title {
+        color: $peony;
+    }
+
+    .sunflower-title {
+        color: $sunflower;
+    }
+
+    .mint-title {
+        color: $mint;
+    }
+
+    .bluejay-title {
+        color: $bluejay;
+    }
+
+    .lavender-title {
+        color: $lavender;
+    }
+
+    .sky-title {
+        color: $sky;
+    }
+
+    .ocean-title {
+        color: $ocean;
+    }
+
+    .teal-title {
+        color: $teal;
+    }
+
+    .forest-title {
+        color: $forest;
+    }
+
+    .poppy-title {
+        color: $poppy;
+    }
+
+    .cherry-title {
+        color: $cherry;
+    }
+
+    .blush-title {
+        color: $blush;
+    }
+
+    .violet-title {
+        color: $violet;
+    }
+
+    .tangerine-title {
+        color: $tangerine;
+    }
+
+    .marigold-title {
+        color: $marigold;
+    }
+
+    .white-title {
+        color: #fff;
+    }
+
+    .black-title {
+        color: #000;
+    }
+
+    .white-text {
+        color: #fff;
+    }
+
+    .black-text {
         color: #000;
     }
 }
@@ -1715,6 +1875,10 @@
     .landing-section-content {
         width: 50%;
         margin: 0 auto;
+    }
+
+    p {
+        margin-bottom: 40px;
     }
 
     .inline-buttons {
@@ -1934,6 +2098,7 @@
     .ibme-cta_1-content-block {
         width: 48%;
         margin-bottom: 60px;
+        min-width: 600px;
     }
 
     .inline-buttons {
@@ -1944,6 +2109,10 @@
 .ibme-cta_1-textual-content-wrap {
     border-radius: 5px;
     margin-top: -120px;
+}
+
+.ibme-cta_1-content-description {
+    margin-bottom: 40px;
 }
 
 .cherry-bg-color .ibme-cta_1-textual-content-wrap {
@@ -2011,14 +2180,15 @@
 }
 
 .ibme-cta_1-textual-content {
-    width: 80%;
+    width: 90%;
     margin-left: auto;
     margin-right: auto;
     background: #fff;
-    padding: 1.618em 0.618em;
+    padding: 20px 0.618em;
     box-sizing: border-box;
     border-radius: 5px;
     position: relative;
+    max-width: 530px;
 }
 
 .cta_2_section {
@@ -2032,7 +2202,8 @@
     }
 
     .cta-items-4 .cta_2-item {
-        width: 23%;
+        width: 22.5%;
+        min-width: 280px;
     } 
 
     .cta-items-3 .cta_2-item {
@@ -2052,6 +2223,7 @@
 
     .header-3 {
         width: 65%;
+        margin-bottom: 20px;
     }
 
     .cherry-bg-color {
@@ -2230,7 +2402,7 @@
   
 .ibme-testimonial-wrap {
     flex: 0 0 100%;
-    transition: transform 0.5s ease;
+    transition: transform 1.5s ease;
 }
   
 /* Animation */
@@ -2292,7 +2464,7 @@
     }
 
     .upcoming-events-list {
-        width: 62%;
+        width: 62.5%;
 
         .cherry-color {
             .header-4 {
@@ -2481,14 +2653,20 @@
 
 .cta-3_columns.cta-items-2 .cta-3_column {
     width: 47%;
+    min-width: 280px;
+    min-height: 500px;
 } 
 
 .cta-3_columns.cta-items-4 .cta-3_column {
     width: 23%;
+    min-width: 280px;
+    min-height: 500px;
 } 
 
 .cta-3_columns.cta-items-3 .cta-3_column {
     width: 30%;
+    min-width: 385px;
+    min-height: 500px;
 } 
 
 .cta-3_columns.cta-items-2 .cta-3_column {
@@ -2496,7 +2674,7 @@
 } 
 
 .cta-3_column-content {
-    padding: 0.618em 0.618em 1.618em;
+    padding: 0.75em 0.75em 1.618em;
 
     .header-3 {
         margin-bottom: 0;
@@ -2583,7 +2761,7 @@
     text-transform: lowercase;
     line-height: 1.25em;
     margin-top: 1em;
-    margin-bottom: 1em;
+    margin-bottom: 20px;
 
     &.black-text {
         color: #000;
@@ -2764,7 +2942,7 @@
 
 /** impact_1_slider */
 
-.impact_1-section {
+.impact-section {
     display: flex;
     align-items: center;
     background-repeat: no-repeat;
@@ -2777,156 +2955,166 @@
         justify-content: space-between;
 
         .content-column {
-            width: 48%;
+            width: 48.5%;
         }
     }    
 }
 
-.impact_1-section.cabin-blue {
+.impact-section.cabin-blue {
     background-image: url("assets/img/background-illustrations/cabin-blue.svg");
 }
 
-.impact_1-section.cabin-blush {
+.impact-section.cabin-blush {
     background-image: url("assets/img/background-illustrations/cabin-blush.svg");
 }
 
-.impact_1-section.cabin-mint {
+.impact-section.cabin-mint {
     background-image: url("assets/img/background-illustrations/cabin-mint.svg");
 }
 
-.impact_1-section.cabin-peony {
+.impact-section.cabin-peony {
     background-image: url("assets/img/background-illustrations/cabin-peony.svg");
 }
 
-.impact_1-section.cabin-sunflower {
+.impact-section.cabin-sunflower {
     background-image: url("assets/img/background-illustrations/cabin-sunflower.svg");
 }
 
-.impact_1-section.eye-blue {
+.impact-section.eye-blue {
     background-image: url("assets/img/background-illustrations/eye-blue.svg");
 }
 
-.impact_1-section.eye-blush {
+.impact-section.eye-blush {
     background-image: url("assets/img/background-illustrations/eye-blush.svg");
 }
 
-.impact_1-section.eye-mint {
+.impact-section.eye-mint {
     background-image: url("assets/img/background-illustrations/eye-mint.svg");
 }
 
-.impact_1-section.eye-peony {
+.impact-section.eye-peony {
     background-image: url("assets/img/background-illustrations/eye-peony.svg");
 }
 
-.impact_1-section.eye-sunflower:after {
+.impact-section.eye-sunflower:after {
     background-image: url("assets/img/background-illustrations/eye-sunflower.svg");
 }
 
-.impact_1-section.face-blue {
+.impact-section.face-blue {
     background-image: url("assets/img/background-illustrations/face-blue.svg");
 }
 
-.impact_1-section.fire-blush {
+.impact-section.fire-blush {
     background-image: url("assets/img/background-illustrations/fire-blush.svg");
 }
 
-.impact_1-section.fire-mint {
+.impact-section.fire-mint {
     background-image: url("assets/img/background-illustrations/fire-mint.svg");
 }
 
-.impact_1-section.fire-peony {
+.impact-section.fire-peony {
     background-image: url("assets/img/background-illustrations/fire-peony.svg");
 }
 
-.impact_1-section.fire-sunflower {
+.impact-section.fire-sunflower {
     background-image: url("assets/img/background-illustrations/fire-sunflower.svg");
 }
 
-.impact_1-section.journal-blue {
+.impact-section.journal-blue {
     background-image: url("assets/img/background-illustrations/journal-blue.svg");
 }
 
-.impact_1-section.journal-blush {
+.impact-section.journal-blush {
     background-image: url("assets/img/background-illustrations/journal-blush.svg");
 }
 
-.impact_1-section.journal-mint {
+.impact-section.journal-mint {
     background-image: url("assets/img/background-illustrations/journal-mint.svg");
 }
 
-.impact_1-section.journal-peony {
+.impact-section.journal-peony {
     background-image: url("assets/img/background-illustrations/journal-peony.svg");
 }
 
-.impact_1-section.journal-sunflower {
+.impact-section.journal-sunflower {
     background-image: url("assets/img/background-illustrations/journal-sunflower.svg");
 }
 
-.impact_1-section.plant-blue {
+.impact-section.plant-blue {
     background-image: url("assets/img/background-illustrations/plant-blue.svg");
 }
 
-.impact_1-section.plant-blush {
+.impact-section.plant-blush {
     background-image: url("assets/img/background-illustrations/plant-blush.svg");
 }
 
-.impact_1-section.plant-mint {
+.impact-section.plant-mint {
     background-image: url("assets/img/background-illustrations/plant-mint.svg");
 }
 
-.impact_1-section.plant-peony {
+.impact-section.plant-peony {
     background-image: url("assets/img/background-illustrations/plant-peony.svg");
 }
 
-.impact_1-section.plant-sunflower {
+.impact-section.plant-sunflower {
     background-image: url("assets/img/background-illustrations/plant-sunflower.svg");
 }
 
-.impact_1-section.teens-blue {
+.impact-section.teens-blue {
     background-image: url("assets/img/background-illustrations/teens-blue.svg");
 }
 
-.impact_1-section.teens-blush {
+.impact-section.teens-blush {
     background-image: url("assets/img/background-illustrations/teens-blush.svg");
 }
 
-.impact_1-section.teens-mint {
+.impact-section.teens-mint {
     background-image: url("assets/img/background-illustrations/teens-mint.svg");
 }
 
-.impact_1-section.teens-peony {
+.impact-section.teens-peony {
     background-image: url("assets/img/background-illustrations/teens-peony.svg");
 }
 
-.impact_1-section.teens-sunflower {
+.impact-section.teens-sunflower {
     background-image: url("assets/img/background-illustrations/teens-sunflower.svg");
 }
 
-.impact_1-section.yoga-blue {
+.impact-section.yoga-blue {
     background-image: url("assets/img/background-illustrations/yoga-blue.svg");
 }
 
-.impact_1-section.yoga-blush {
+.impact-section.yoga-blush {
     background-image: url("assets/img/background-illustrations/yoga-blush.svg");
 }
 
-.impact_1-section.yoga-mint {
+.impact-section.yoga-mint {
     background-image: url("assets/img/background-illustrations/yoga-mint.svg");
 }
 
-.impact_1-section.yoga-peony {
+.impact-section.yoga-peony {
     background-image: url("assets/img/background-illustrations/yoga-peony.svg");
 }
 
-.impact_1-section.yoga-sunflower {
+.impact-section.yoga-sunflower {
     background-image: url("assets/img/background-illustrations/yoga-sunflower.svg");
 }
 
-.impact_1-slider {
-    position: relative;
-    width: 100%;
-    overflow: hidden;
-    min-height: 400px;
+.impact-section {
+    .black-title,
+    .black-text {
+        color: #000;
+    }
+
+    .black-text,
+    .white-text {
+        margin-bottom: 40px;
+    }
+
+    .white-title,
+    .white-text {
+        color: #fff;
+    }
 
     .header-1.black {
         color: #000;
@@ -2935,7 +3123,13 @@
     .header-1.white {
         color: #fff;
     }
+}
 
+.impact_1-slider {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+    min-height: 400px;
 }
 
 .impact_1-slides {
@@ -2945,16 +3139,6 @@
 
 .impact_1-slide {
     min-width: 100%;
-
-    .black-title,
-    .black-text {
-        color: #000;
-    }
-
-    .white-title,
-    .white-text {
-        color: #fff;
-    }
 }
 
 .impact_1-navigation-dots {
@@ -2964,7 +3148,7 @@
     transform: translateX(-50%);
 }
 
-.impact_1-dot {
+.impact-dot {
     height: 12px;
     width: 12px;
     margin: 0 5px;
@@ -2973,11 +3157,11 @@
     cursor: pointer;
 }
 
-.black-dots .impact_1-dot {
+.black-dots .impact-dot {
     background-color: #000;
 }
 
-.white-dots .impact_1-dot {
+.white-dots .impact-dot {
     background-color: #fff;
 }
 
@@ -2986,7 +3170,7 @@
         color: $cherry;
     }
 
-    .impact_1-dot.active {
+    .impact-dot.active {
         background-color: $cherry;
     }
 }
@@ -2996,7 +3180,7 @@
         color: $poppy;
     }
 
-    .impact_1-dot.active {
+    .impact-dot.active {
         background-color: $poppy;
     }
 }
@@ -3006,7 +3190,7 @@
         color: $blush;
     }
 
-    .impact_1-dot.active {
+    .impact-dot.active {
         background-color: $blush;
     }
 }
@@ -3016,7 +3200,7 @@
         color: $barbie;
     }
 
-    .impact_1-dot.active {
+    .impact-dot.active {
         background-color: $barbie;
     }
 }
@@ -3026,7 +3210,7 @@
         color: $peony;
     }
 
-    .impact_1-dot.active {
+    .impact-dot.active {
         background-color: $peony;
     }
 }
@@ -3036,7 +3220,7 @@
         color: $violet;
     }
 
-    .impact_1-dot.active {
+    .impact-dot.active {
         background-color: $violet;
     }
 }
@@ -3046,7 +3230,7 @@
         color: $tangerine;
     }
 
-    .impact_1-dot.active {
+    .impact-dot.active {
         background-color: $tangerine;
     }
 }
@@ -3056,7 +3240,7 @@
         color: $marigold;
     }
 
-    .impact_1-dot.active {
+    .impact-dot.active {
         background-color: $marigold;
     }
 }
@@ -3066,7 +3250,7 @@
         color: $sunflower;
     }
 
-    .impact_1-dot.active {
+    .impact-dot.active {
         background-color: $sunflower;
     }
 }
@@ -3076,7 +3260,7 @@
         color: $forest;
     }
 
-    .impact_1-dot.active {
+    .impact-dot.active {
         background-color: $forest;
     }
 }
@@ -3086,7 +3270,7 @@
         color: $teal;
     }
 
-    .impact_1-dot.active {
+    .impact-dot.active {
         background-color: $teal;
     }
 }
@@ -3096,7 +3280,7 @@
         color: $mint;
     }
 
-    .impact_1-dot.active {
+    .impact-dot.active {
         background-color: $mint;
     }
 }
@@ -3106,7 +3290,7 @@
         color: $ocean;
     }
 
-    .impact_1-dot.active {
+    .impact-dot.active {
         background-color: $ocean;
     }
 }
@@ -3116,7 +3300,7 @@
         color: $sky;
     }
 
-    .impact_1-dot.active {
+    .impact-dot.active {
         background-color: $sky;
     }
 }
@@ -3126,7 +3310,7 @@
         color: $bluejay;
     }
 
-    .impact_1-dot.active {
+    .impact-dot.active {
         background-color: $bluejay;
     }
 }
@@ -3136,7 +3320,469 @@
         color: $lavender;
     }
 
-    .impact_1-dot.active {
+    .impact-dot.active {
         background-color: $lavender;
     }
+}
+
+/* ibme_statement_2 */
+
+.ibme-statement-2 {
+    &.cherry-background {
+        background-color: $cherry;
+    }
+    
+    &.poppy-background {
+        background-color: $poppy;
+    }
+    
+    &.blush-background {
+        background-color: $blush;
+    }
+
+    &.barbie-background {
+        background-color: $barbie;
+    }
+
+    &.peony-background {
+        background-color: $peony;
+    }
+
+    &.violet-background {
+        background-color: $violet;
+    }
+
+    &.tangerine-background {
+        background-color: $tangerine;
+    }
+
+    &.sunflower-background {
+        background-color: $sunflower;
+    }
+
+    &.marigold-background {
+        background-color: $marigold;
+    }
+
+    &.forest-background {
+        background-color: $forest;
+    }
+
+    &.lavender-background {
+        background-color: $lavender;
+    }
+
+    &.mint-background {
+        background-color: $mint;
+    }
+
+    &.ocean-background {
+        background-color: $ocean;
+    }
+
+    &.sky-background {
+        background-color: $sky;
+    }
+
+    &.bluejay-background {
+        background-color: $bluejay;
+    }
+
+    &.teal-background {
+        background-color: $teal;
+    }
+
+    &.landing-section {
+        min-height: 380px;
+    }
+
+    .inner-wrap {
+        padding-top: 80px;
+        padding-bottom: 80px;
+    }
+
+    &.center-layout {
+        text-align: center;
+
+        .landing-section-content {
+            width: 50%;
+            margin: 0 auto;
+        }
+    }
+
+    &.right-layout,
+    &.left-layout {
+        .landing-section-content {
+            display: flex;
+            align-items: center;
+
+            .title-column {
+                width: 36%;
+            }
+
+            .text-column {
+                width: 56%;
+            }
+        }
+    }
+
+    &.left-layout {
+        .title-column {
+            margin-right: 4%;
+        }
+
+        .text-column {
+            margin-left: 4%;
+        }
+    }
+
+
+    &.right-layout {
+        .landing-section-content {
+            flex-direction: row-reverse;
+        }
+
+        .title-column {
+            margin-left: 4%;
+        }
+
+        .text-column {
+            margin-right: 4%;
+        }
+    }
+
+    .ibme-statement-2-text {
+        padding-bottom: 1em;
+    }
+
+    .header-2 {
+        margin-top: 0;
+    }
+
+    .white-text,
+    .white-title {
+        color: #fff;
+    }
+
+    .black-text,
+    .black-title {
+        color: #000;
+    }
+}
+
+/* impact_2 */
+
+.impact_2-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    
+    .left-column {
+        width: 40%;
+    }
+
+    .right-column {
+        width: 55%;
+    }
+}
+
+.impact_2-slider {
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+    height: 340px; /* Set your preferred height */
+}
+
+.impact_2-slides {
+    display: flex;
+    height: 100%;
+    transition: transform 0.5s ease-in-out;
+}
+
+.impact_2-slide {
+    flex: 0 0 100%;
+    overflow-y: auto;
+    box-sizing: border-box;
+    padding-left: 5%;
+    padding-right: 5%;
+}
+
+/* Add the following styles to make it a vertical slider */
+.impact_2-slides {
+    flex-direction: column;
+}
+
+/* Navigation dots styling */
+.impact_2-navigation-dots {
+    position: absolute;
+    top: 40%;
+    right: 0;
+    transform: translateX(-50%);
+    display: flex;
+    flex-direction: column;
+}
+
+.impact_2-dot {
+    margin: 5px 0;
+}
+  
+.html-text-block {
+    display: flex;
+    align-items: center;
+}  
+
+/* hero_3 */
+
+.hero_3-section {
+
+    margin-bottom: 70px;
+    min-height: 570px;
+
+    .content-area {
+        padding: 40px;
+        text-align: center;
+        width: 60%;
+        max-width: 730px;
+        min-height: 280px;
+        border-radius: 5px;
+        margin: 0 auto;
+        position: absolute;
+        bottom: -70px;
+        left: 0;
+        right: 0;
+    }
+
+    .description {
+        margin-bottom: 40px;
+    }
+
+    .cherry-bg {
+        background-color: $cherry;
+    }
+
+    .poppy-bg {
+        background-color: $poppy;
+    }
+
+    .blush-bg {
+        background-color: $blush;
+    }
+
+    .barbie-bg {
+        background-color: $barbie;
+    }
+
+    .peony-bg {
+        background-color: $peony;
+    }
+
+    .violet-bg {
+        background-color: $violet;
+    }
+
+    .tangerine-bg {
+        background-color: $tangerine;
+    }
+
+    .marigold-bg {
+        background-color: $marigold;
+    }
+
+    .sunflower-bg {
+        background-color: $sunflower;
+    }
+
+    .forest-bg {
+        background-color: $forest;
+    }
+
+    .teal-bg {
+        background-color: $teal;
+    }
+
+    .mint-bg {
+        background-color: $mint;
+    }
+
+    .ocean-bg {
+        background-color: $ocean;
+    }
+
+    .sky-bg {
+        background-color: $sky;
+    }
+
+    .bluejay-bg {
+        background-color: $bluejay;
+    }
+
+    .lavender-bg {
+        background-color: $lavender;
+    }
+}
+  
+/* details block */
+
+.details-block {
+    padding: 60px 40px 0;
+    border-radius: 5px;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    max-width: 860px;
+    min-height: 500px;
+    margin: 0 auto;
+    justify-content: center;
+
+    .one-third {
+        margin-bottom: 60px;
+        width: 28%;
+        margin-left: 7.33%;
+    }
+
+    .one-third.first {
+        margin-left: 0;
+    }
+
+    &.cherry-bg {
+        background-color: $cherry;
+    }
+
+    &.poppy-bg {
+        background-color: $poppy;
+    }
+
+    &.blush-bg {
+        background-color: $blush;
+    }
+
+    &.barbie-bg {
+        background-color: $barbie;
+    }
+
+    &.peony-bg {
+        background-color: $peony;
+    }
+
+    &.violet-bg {
+        background-color: $violet;
+    }
+
+    &.tangerine-bg {
+        background-color: $tangerine;
+    }
+
+    &.marigold-bg {
+        background-color: $marigold;
+    }
+
+    &.sunflower-bg {
+        background-color: $sunflower;
+    }
+
+    &.forest-bg {
+        background-color: $forest;
+    }
+
+    &.teal-bg {
+        background-color: $teal;
+    }
+
+    &.mint-bg {
+        background-color: $mint;
+    }
+
+    &.ocean-bg {
+        background-color: $ocean;
+    }
+
+    &.sky-bg {
+        background-color: $sky;
+    }
+
+    &.bluejay-bg {
+        background-color: $bluejay;
+    }
+
+    &.lavender-bg {
+        background-color: $lavender;
+    }
+}
+
+/* Funraiser */
+
+.ibme .campaign-cards .campaign-card-display {
+    background-color: $lightcream;
+    border: none;
+    border-radius: 5px;
+    margin-left: 0;
+    margin-right: 0;
+    width: 31%;
+    min-height: 540px;
+}
+
+.ibme .campaign-cards .campaign-card-display:nth-child(2) {
+    margin-left: 40px;
+    margin-right: 40px;
+}
+
+.campaign-cards .campaign-card-img img {
+    border-radius: 5px;
+}
+
+.ibme .campaign-stats .sf-progress,
+.ibme .campaign-cards .sf-progress {
+    background-color: $mint;
+    position: relative;
+
+    &:after {
+        content: '';
+        width: 24px;
+        height: 24px;
+        display: block;
+        border-radius: 50%;
+        background-color: $sunflower;
+        position: absolute;
+        left: 100%;
+        top: -12px;
+    }
+}
+
+.ibme .campaign-stats .sf-progress-marker {
+    height: 24px;
+    width: 24px;
+    top: -12px;
+    background-color: $sunflower;
+    margin-top: 0;
+    margin-left: 0;
+}
+
+.ibme .campaign-stats .sf-progress-bar,
+.ibme .campaign-cards .campaign-card-content .sf-progress-bar {
+    background-color: #DBF8E8 !important;
+    height: 6px;
+}
+
+.ibme .campaign-stats .sf-progress-bar {
+    max-width: 1040px;
+}
+
+.campaign-cards .page_link a {
+    border-bottom: 1px solid;
+
+    &:hover {
+        border-color: transparent;
+        color: #000;
+        opacity: 0.75;
+        text-decoration: none;
+    }
+}
+
+.campaign-cards .scholarships-remaining {
+    margin-bottom: 40px;
+}
+
+.ibme .campaign-note,
+.ibme .campaign-amount-raised {
+    color: #000 !important;
 }
