@@ -2,22 +2,236 @@
 
 /* Generic Styles */
 
+:link {
+    border-bottom: 1px solid;
+    color: $teal;
+
+    &:hover {
+        border-color: transparent;
+        color: $teal;
+        text-decoration: none;
+    }
+}
+
+.ibme .campaign-cards .page_link a:hover {
+    color: $teal;
+    opacity: 1;
+}
+
+.display-mobile {
+    display: none;
+}
+
+.display-desktop {
+    display: block;
+}
+
+@media screen and (max-width: 767px) {
+    .display-mobile {
+        display: block;
+    }
+
+    .display-desktop {
+        display: none;
+    }
+}
+
+.singular-page {
+    .entry .entry-title {
+        text-indent: -9999px;
+        height: 0;
+        margin: 0;
+    }
+}
+
 /* Collapsible Content */
+
+.collapsible-content-wrapper {
+    max-width: 1140px;
+    margin-left: auto;
+    margin-right: auto;
+
+    /* Text Color */
+
+    &.black-text {
+        color: $black;
+
+        .collapsible-heading,
+        .collapsible-heading a,
+        .collapsible-content  {
+            color: $black;
+        }
+    }
+
+    &.white-text {
+        color: $white;
+
+        .collapsible-heading,
+        .collapsible-heading a,
+        .collapsible-content  {
+            color: $white;
+        }
+    }
+
+    /* Sign Color */
+
+    &.black-sign {
+        .collapsible-heading a:before {
+            background: url("assets/img/cc-plus-black.svg") no-repeat center / contain;
+        }
+        
+        .collapsible-heading.opened a:before {
+            background: url("assets/img/cc-minus-black.svg") no-repeat center / contain;
+        }
+    }
+
+    &.white-sign {
+        .collapsible-heading a:before {
+            background: url("assets/img/cc-plus-white.svg") no-repeat center / contain;
+        }
+        
+        .collapsible-heading.opened a:before {
+            background: url("assets/img/cc-minus-white.svg") no-repeat center / contain;
+        }
+    }
+
+    /* Outline */
+
+    &.cherry-outline {
+        .collapsible-heading a,
+        .collapsible-content {
+            border-color: $cherry;
+        }
+    }
+
+    &.poppy-outline {
+        .collapsible-heading a,
+        .collapsible-content {
+            border-color: $poppy;
+        }
+    }
+
+    &.blush-outline {
+        .collapsible-heading a,
+        .collapsible-content {
+            border-color: $blush;
+        }
+    }
+
+    &.barbie-outline {
+        .collapsible-heading a,
+        .collapsible-content {
+            border-color: $barbie;
+        }
+    }
+
+    &.peony-outline {
+        .collapsible-heading a,
+        .collapsible-content {
+            border-color: $peony;
+        }
+    }
+
+    &.violet-outline {
+        .collapsible-heading a,
+        .collapsible-content {
+            border-color: $violet;
+        }
+    }
+
+    &.tangerine-outline {
+        .collapsible-heading a,
+        .collapsible-content {
+            border-color: $tangerine;
+        }
+    }
+
+    &.marigold-outline {
+        .collapsible-heading a,
+        .collapsible-content {
+            border-color: $marigold;
+        }
+    }
+
+    &.sunflower-outline {
+        .collapsible-heading a,
+        .collapsible-content {
+            border-color: $sunflower;
+        }
+    }
+
+    &.forest-outline {
+        .collapsible-heading a,
+        .collapsible-content {
+            border-color: $forest;
+        }
+    }
+
+    &.teal-outline {
+        .collapsible-heading a,
+        .collapsible-content {
+            border-color: $teal;
+        }
+    }
+
+    &.mint-outline {
+        .collapsible-heading a,
+        .collapsible-content {
+            border-color: $mint;
+        }
+    }
+
+    &.ocean-outline {
+        .collapsible-heading a,
+        .collapsible-content {
+            border-color: $ocean;
+        }
+    }
+
+    &.sky-outline {
+        .collapsible-heading a,
+        .collapsible-content {
+            border-color: $sky;
+        }
+    }
+
+    &.bluejay-outline {
+        .collapsible-heading a,
+        .collapsible-content {
+            border-color: $bluejay;
+        }
+    }
+
+    &.lavender-outline {
+        .collapsible-heading a,
+        .collapsible-content {
+            border-color: $lavender;
+        }
+    }
+
+    &.white-outline {
+        .collapsible-heading a,
+        .collapsible-content {
+            border-color: $white;
+        }
+    }
+
+}
 
 .collapsible-heading {
     font-size: 1em;
 	margin: 1em 0 0.618em !important;
     text-transform: lowercase;
-    color: #000;
     font-weight: 500;
-    max-width: 1140px;
+    
 }
 
 .collapsible-heading a {
-    color: #000;
     display: block;
     cursor: pointer;
-    border: 2px solid $blush;
+    text-decoration: none;
+    border-width: 2px;
+    border-style: solid;
     border-radius: 5px;
     padding: 17px;
     margin-bottom: 40px;
@@ -36,18 +250,18 @@
     content:"";
     width: 20px;
     height: 20px;
-    background: url("assets/img/cc-plus.svg") no-repeat center / contain;
+    background: url("assets/img/cc-plus-black.svg") no-repeat center / contain;
     margin-right: 10px;
 }
 
 .collapsible-heading.opened a:before {
-    background: url("assets/img/cc-minus.svg") no-repeat center / contain;
+    background: url("assets/img/cc-minus-black.svg") no-repeat center / contain;
     height: 4px;
 }
 
 .collapsible-content {
-    background-color: #fff;
-    border: 2px solid $blush;
+    border-width: 2px;
+    border-style: solid;
     border-radius: 5px;
     padding: 0 50px 10px;
     margin-top: -40px;
@@ -55,7 +269,6 @@
     border-top: 0;
     border-top-left-radius: 0;
     border-top-right-radius: 0;
-    max-width: 1140px;
 }
 
 /* Button Styles */
@@ -68,7 +281,9 @@
     border-radius: 5px;
     color: $black;
     text-align: center;
-    display: inline-block;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
     text-transform: lowercase;
     font-variant: normal;
     border: 2px solid;
@@ -163,6 +378,16 @@
         border-color: $lavender;
     }
 
+    &.black-button {
+        background-color: $black;
+        border-color: $black;
+    }
+
+    &.white-button {
+        background-color: $white;
+        border-color: $white;
+    }
+
     /* Hover States for buttons */
 
     &.cherry-button:hover {
@@ -244,9 +469,111 @@
         background-color: $lavender-tint;
         border-color: $lavender-tint;
     }
+
+    &.black-button:hover {
+        background-color: $black_opacity;
+        border-color: transparent;
+    }
+
+    &.white-button:hover {
+        background-color: $white_opacity;
+        border-color: transparent;
+    }
+
+    /* Text Color States for buttons */
+
+    &.cherry-text,
+    &.cherry-text:hover {
+        color: $cherry;
+    }
+
+    &.poppy-text,
+    &.poppy-text:hover {
+        color: $poppy;
+    }
+
+    &.blush-text,
+    &.blush-text:hover {
+        color: $blush;
+    }
+
+    &.barbie-text,
+    &.barbie-text:hover {
+        color: $barbie;
+    }
+
+    &.peony-text,
+    &.peony-text:hover {
+        color: $peony;
+    }
+
+    &.violet-text,
+    &.violet-text:hover {
+        color: $violet;
+    }
+
+    &.tangerine-text,
+    &.tangerine-text:hover {
+        color: $tangerine;
+    }
+
+    &.marigold-text,
+    &.marigold-text:hover {
+        color: $marigold;
+    }
+
+    &.sunflower-text,
+    &.sunflower-text:hover {
+        color: $sunflower;
+    }
+
+    &.forest-text,
+    &.forest-text:hover {
+        color: $forest;
+    }
+
+    &.teal-text,
+    &.teal-text:hover {
+        color: $teal;
+    }
+
+    &.mint-text,
+    &.mint-text:hover {
+        color: $mint;
+    }
+
+    &.ocean-text,
+    &.ocean-text:hover {
+        color: $ocean;
+    }
+
+    &.sky-text,
+    &.sky-text:hover {
+        color: $sky;
+    }
+
+    &.bluejay-text,
+    &.bluejay-text:hover {
+        color: $bluejay
+    }
+
+    &.lavender-text,
+    &.lavender-text:hover {
+        color: $lavender;
+    }
+
+    &.black-text,
+    &.black-text:hover {
+        color: $black;
+    }
+
+    &.white-text,
+    &.white-text:hover {
+        color: $white;
+    }
 }
 
-.style-2 {
+/*.style-2 {
     &.ibme-button {
         background-color: #fff;
         border-color: #fff;
@@ -341,7 +668,7 @@
     &.black-text:hover {
         color: $black;
     }
-}
+}*/
 
 .style-3 {
 
@@ -596,6 +923,10 @@
         border-color: $lavender;
     }
 
+    &.white-button {
+        border-color: $white;
+    }
+
     /* Hover States for buttons */
 
     &.cherry-button:hover {
@@ -661,6 +992,102 @@
     &.lavender-button:hover {
         border-color: $lavender-tint;
     }
+
+    &.white-button:hover {
+        border-color: $white_opacity;
+    }
+
+    /* Text Color States for buttons */
+
+    &.cherry-text,
+    &.cherry-text:hover {
+        color: $cherry;
+    }
+
+    &.poppy-text,
+    &.poppy-text:hover {
+        color: $poppy;
+    }
+
+    &.blush-text,
+    &.blush-text:hover {
+        color: $blush;
+    }
+
+    &.barbie-text,
+    &.barbie-text:hover {
+        color: $barbie;
+    }
+
+    &.peony-text,
+    &.peony-text:hover {
+        color: $peony;
+    }
+
+    &.violet-text,
+    &.violet-text:hover {
+        color: $violet;
+    }
+
+    &.tangerine-text,
+    &.tangerine-text:hover {
+        color: $tangerine;
+    }
+
+    &.marigold-text,
+    &.marigold-text:hover {
+        color: $marigold;
+    }
+
+    &.sunflower-text,
+    &.sunflower-text:hover {
+        color: $sunflower;
+    }
+
+    &.forest-text,
+    &.forest-text:hover {
+        color: $forest;
+    }
+
+    &.teal-text,
+    &.teal-text:hover {
+        color: $teal;
+    }
+
+    &.mint-text,
+    &.mint-text:hover {
+        color: $mint;
+    }
+
+    &.ocean-text,
+    &.ocean-text:hover {
+        color: $ocean;
+    }
+
+    &.sky-text,
+    &.sky-text:hover {
+        color: $sky;
+    }
+
+    &.bluejay-text,
+    &.bluejay-text:hover {
+        color: $bluejay
+    }
+
+    &.lavender-text,
+    &.lavender-text:hover {
+        color: $lavender;
+    }
+
+    &.black-text,
+    &.black-text:hover {
+        color: $black;
+    }
+
+    &.white-text,
+    &.white-text:hover {
+        color: $white;
+    }
 }
 
 .style-5 {
@@ -677,7 +1104,7 @@
     }
 }
 
-.style-6 {
+/*.style-6 {
     background-color: transparent;
 
     &.cherry-button {
@@ -742,11 +1169,11 @@
 
     &.white-button {
         border-color: #fff;
-    }
+    } */
 
     /* Hover States for buttons */
 
-    &.cherry-button:hover {
+    /* &.cherry-button:hover {
         border-color: $cherry-tint;
     }
 
@@ -898,7 +1325,7 @@
     &.white-text:hover {
         color: $white;
     }
-}
+} */
 
 .inline-buttons {
     display: flex;
@@ -949,6 +1376,7 @@
             display: block;
             background: url("assets/img/logo.svg") no-repeat center / contain;
             text-indent: -9999px;
+            border-bottom: none;
         }
     }
 
@@ -1057,7 +1485,17 @@
         padding-right: 0;
         letter-spacing: 0.15px;
     }
+
+    .teen-retreats a {
+        margin-left: 0; 
+    }
+    
+    .community-care a {
+        margin-right: 0;
+    }
 }
+
+
 
 .teen-retreats a:after {
     background-color: $barbie;
@@ -1080,7 +1518,7 @@
     height: 35px;
     background: url("assets/img/barbie-specks.svg") no-repeat center / contain;
     left: 20px;
-    top: 5px;
+    top: -1px;
 }
 
 .custom-programs > a:before {
@@ -1088,14 +1526,14 @@
     height: 26px;
     background: url("assets/img/marigold-specks-new.svg") no-repeat center / contain;
     left: 0;
-    top: 10px;
+    top: 5px;
 }
 
 .teacher-training > a:before {
     width: 99px;
     height: 35px;
     background: url("assets/img/bluejay-specks-new.svg") no-repeat center / contain;
-    top: 4px;
+    top: -1px;
     left: 20px;
 }
 
@@ -1103,7 +1541,7 @@
     width: 142px;
     height: 27px;
     background: url("assets/img/lavender-specks.svg") no-repeat center / contain;
-    top: 10px;
+    top: 5px;
     left: 0;
 }
 
@@ -1114,11 +1552,12 @@
     .custom-programs > .sub-menu,
     .teacher-training > .sub-menu,
     .community-care > .sub-menu {
-        width: 535px;
+        width: 525px;
         display: flex;
-        border-top-left-radius: 5px;
-        border-top-right-radius: 5px;
-        min-height: 240px;
+        border-radius: 5px;
+        min-height: 290px;
+        top: 48px;
+        z-index: 99;
     }
 
     .teen-retreats {
@@ -1192,21 +1631,21 @@
     .custom-programs,
     .custom-programs:hover {
         .sub-menu {
-            left: -117px;
+            left: -106px;
         }
     }
 
     .teacher-training,
     .teacher-training:hover { 
         .sub-menu {
-            left: -270px;
+            left: -256px;
         }
     }
     
     .community-care,
     .community-care:hover {
         .sub-menu {
-            left: -410px;
+            left: -394px;
         }
     }
 
@@ -1224,15 +1663,16 @@
     }
 
     .sub-menu .sub-menu li {
-        padding-top: 10px;
-        padding-bottom: 10px;
+        padding-top: 11px;
+        padding-bottom: 11px;
         
         a {
-            font-size: 13px;
+            font-size: 15px;
             padding: 0 35px;
             line-height: 1em;
             margin: 0;
             font-weight: 300;
+            border-bottom: none;
             
             &:hover {
                 font-weight: 500;
@@ -1251,6 +1691,7 @@
 .ibme #menu-top-nav-extended-menu {
     a {
         padding: 0.382em 0;
+        border-bottom: none;
         
         &:hover {
             background-color: transparent;
@@ -1355,11 +1796,12 @@
 
     .support > .sub-menu,
     .about > .sub-menu {
-        width: 535px;
+        width: 525px;
         display: flex;
-        border-top-left-radius: 5px;
-        border-top-right-radius: 5px;
-        min-height: 240px;
+        border-radius: 5px;
+        min-height: 290px;
+        top: 48px;
+        z-index: 99;
     }
 
     .support, .about {
@@ -1415,7 +1857,8 @@
     .about,
     .about:hover {
         .sub-menu {
-            right: 0;
+            //right: 0;
+            right: 10px;
         }
     }
 
@@ -1429,15 +1872,16 @@
     }
 
     .sub-menu .sub-menu li {
-        padding-top: 10px;
-        padding-bottom: 10px;
+        padding-top: 11px;
+        padding-bottom: 11px;
         
         a {
-            font-size: 13px;
+            font-size: 15px;
             padding: 0 35px;
             margin: 0;
             font-weight: 300;
             line-height: 1em;
+            border-bottom: none;
 
             &:hover {
                 font-weight: 500;
@@ -1513,6 +1957,8 @@
 
     li a {
         font-weight: 300;
+        color: #000;
+        border-bottom: none;
 
         &:hover {
             font-weight: 500;
@@ -1549,7 +1995,7 @@
         display: block;
         background: url("assets/img/logo.svg") no-repeat center / contain;
         text-indent: -9999px;
-        margin: 0 auto 40px;
+        margin: 0 auto 48px;
     }
 }
 
@@ -1559,8 +2005,12 @@
     .donate-block {
         background-color: #fff;
         border-radius: 5px;
-        padding: 1.2em 1.2em 2.45em 1.2em;
+        padding: 26px 1.2em 2.45em 1.2em;
         position: relative;
+
+        p {
+            margin-top: 0;
+        }
     }
 
     .donate-block:after {
@@ -1589,7 +2039,7 @@
     }
 
     a:hover {
-        color: #fff;
+        font-weight: 500;
         opacity: 1;
     }
 }
@@ -1609,6 +2059,8 @@
     .contact-info {
         a {
             text-decoration: none;
+            border-bottom: none;
+            color: #000;
         }
 
         a:first-child {
@@ -1634,6 +2086,8 @@
 
         a {
             padding: 0 0.25em; 
+            color: #000;
+            border-bottom: none;
         }
     }
 
@@ -1656,6 +2110,7 @@
             width: 42px;
             height: 42px;
             margin: 0 5px;
+            border-bottom: none;
         }
     }    
         
@@ -1755,7 +2210,7 @@
     .title {
         width: 50%; 
         padding-top: 150px;
-        margin-bottom: 40px;
+        margin-bottom: 22px;
     }
 
     .white-title {
@@ -1875,6 +2330,10 @@
     .landing-section-content {
         width: 50%;
         margin: 0 auto;
+    }
+
+    .title {
+        margin-bottom: 22px;
     }
 
     p {
@@ -2104,6 +2563,10 @@
     .inline-buttons {
         justify-content: center;
     }
+
+    .title {
+        margin-bottom: 22px;
+    }
 }
 
 .ibme-cta_1-textual-content-wrap {
@@ -2184,7 +2647,7 @@
     margin-left: auto;
     margin-right: auto;
     background: #fff;
-    padding: 20px 0.618em;
+    padding: 40px;
     box-sizing: border-box;
     border-radius: 5px;
     position: relative;
@@ -2565,6 +3028,7 @@
 
     .title {
         color: #fff;
+        margin-bottom: 22px;
     }
 
     .upcoming-event-item {
@@ -2609,7 +3073,7 @@
     .upcoming-event-links { 
         width: 20%;
 
-        .ibme-button {
+        .ibme-button:first-child {
             margin-bottom: 10px;
         }
     }
@@ -2847,6 +3311,10 @@
     position: absolute;
     top: 20%;
     width: 50%;
+
+    .title {
+        margin-bottom: 22px;
+    }
 
     .white-title {
         color: #fff;
@@ -3397,8 +3865,8 @@
     }
 
     .inner-wrap {
-        padding-top: 80px;
-        padding-bottom: 80px;
+        padding-top: 100px;
+        padding-bottom: 100px;
     }
 
     &.center-layout {
@@ -3407,14 +3875,16 @@
         .landing-section-content {
             width: 50%;
             margin: 0 auto;
+            max-width: 450px;
         }
+
     }
 
     &.right-layout,
     &.left-layout {
         .landing-section-content {
             display: flex;
-            align-items: center;
+            //align-items: center;
 
             .title-column {
                 width: 36%;
@@ -3452,7 +3922,12 @@
     }
 
     .ibme-statement-2-text {
-        padding-bottom: 1em;
+        margin-bottom: 0;
+        margin-top: 0;
+    }
+
+    .ibme-statement-2-column .ibme-button {
+        margin-top: 36px;
     }
 
     .header-2 {
@@ -3529,6 +4004,14 @@
 .html-text-block {
     display: flex;
     align-items: center;
+
+    p {
+        margin-bottom: 40px;
+    }
+
+    img {
+        border-radius: 5px;
+    }
 }  
 
 /* hero_3 */
@@ -3537,6 +4020,10 @@
 
     margin-bottom: 70px;
     min-height: 570px;
+    background-repeat: no-repeat;
+    background-position: center top;
+    background-size: 1920px auto;
+    background-attachment: fixed;
 
     .content-area {
         padding: 40px;
@@ -3554,6 +4041,10 @@
 
     .description {
         margin-bottom: 40px;
+    }
+
+    .title {
+        margin-bottom: 22px;
     }
 
     .cherry-bg {
@@ -3619,6 +4110,16 @@
     .lavender-bg {
         background-color: $lavender;
     }
+
+    .black-title,
+    .black-body-text {
+        color: #000;
+    }
+
+    .white-title,
+    .white-body-text {
+        color: #fff;
+    }
 }
   
 /* details block */
@@ -3642,6 +4143,34 @@
 
     .one-third.first {
         margin-left: 0;
+    }
+
+    &.black-header {
+        .header-3 {
+            color: #000;
+        }
+    }
+
+    &.white-header {
+        .header-3 {
+            color: #fff;
+        }
+    }
+
+    &.black-text {
+        color: #000;
+
+       p {
+            color: #000;
+        }
+    }
+
+    &.white-text {
+        color: #fff;
+
+        p {
+            color: #fff;
+        }
     }
 
     &.cherry-bg {
@@ -3707,6 +4236,10 @@
     &.lavender-bg {
         background-color: $lavender;
     }
+
+    &.white-bg {
+        background-color: $white;
+    }
 }
 
 /* Funraiser */
@@ -3744,7 +4277,7 @@
         background-color: $sunflower;
         position: absolute;
         left: 100%;
-        top: -12px;
+        top: -11px;
     }
 }
 
@@ -3786,3 +4319,17 @@
 .ibme .campaign-amount-raised {
     color: #000 !important;
 }
+
+.donate-bar {
+    text-align: center;
+
+    .sf-progress-bar {
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
+
+body.ibme .ibme-donate-button { //override
+    padding: 0.3em 1em; 
+}
+

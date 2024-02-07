@@ -23,22 +23,25 @@ $lightcream: #FFF5F5;
 
 /* Color Palette Tint */
 
-$cherry-tint: #FF8782;
-$poppy-tint: #FF9C9C;
-$blush-tint: #FFC1BA;
-$barbie-tint: #F59ED9;
-$peony-tint: #FFD5EB;
-$violet-tint: #F7DAF1;
-$tangerine-tint: #FFBF79;
-$marigold-tint: #FFD186;
-$sunflower-tint: #FFE485;
-$forest-tint: #669F91;
-$teal-tint: #66B3AC;
-$mint-tint: #C8F4DD;
-$ocean-tint: #7AACBC;
-$sky-tint: #9FCAEE;
-$bluejay-tint: #BBE0EA;
-$lavender-tint: #C0BDE8;
+$cherry-tint: #FF9B97;
+$poppy-tint: #FFACAC;
+$blush-tint: #FFCBC5;
+$barbie-tint: #F7AEDF;
+$peony-tint: #FFDCEE;
+$violet-tint: #F8E0F3;
+$tangerine-tint: #FFCA8F;
+$marigold-tint: #FFD89A;
+$sunflower-tint: #FFE899;
+$forest-tint: #80AFA3;
+$teal-tint: #80BFBA;
+$mint-tint: #D1F6E2;
+$ocean-tint: #90B9C7;
+$sky-tint: #AFD2F0;
+$bluejay-tint: #C6E5ED;
+$lavender-tint: #CAC8EB;
+
+$black_opacity: rgba(0, 0, 0, 0.7);
+$white_opacity: rgba(255, 255, 255, 0.7);
 
 /* Font Face Declaration */
 
@@ -110,6 +113,7 @@ $lavender-tint: #C0BDE8;
     font-size: 41px;
     line-height: 1.15em;
     margin-bottom: 0;
+    font-weight: normal;
 }
 
 .header-3 {
