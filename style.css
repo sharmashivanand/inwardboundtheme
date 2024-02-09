@@ -84,7 +84,7 @@ input:focus:-ms-input-placeholder, textarea:focus:-ms-input-placeholder {
   font-family: Inter, sans-serif;
   font-weight: 500;
   font-size: 84px;
-  line-height: 1em;
+  line-height: 0.95em;
   margin-top: 0;
   margin-bottom: 0.25em;
   text-transform: lowercase;
@@ -1152,6 +1152,26 @@ video {
   text-decoration: none;
 }
 
+input[type=date] input[type=datetime-local],
+input[type=email],
+input[type=file],
+input[type=month],
+input[type=number],
+input[type=password],
+input[type=range],
+input[type=search],
+input[type=tel],
+input[type=text],
+input[type=time],
+input[type=url],
+input[type=week], textarea {
+  border: 2px solid #D1F6E2;
+  border-radius: 5px;
+  text-transform: lowercase;
+  font-size: 16px;
+  font-weight: 500;
+}
+
 .ibme .campaign-cards .page_link a:hover {
   color: #008075;
   opacity: 1;
@@ -1339,6 +1359,25 @@ video {
 }
 
 /* Button Styles */
+input[type="submit"],
+input[type="reset"],
+input[type="button"],
+.button,
+.button:link {
+  background-image: none;
+  background-color: transparent;
+  width: auto;
+}
+input[type="submit"]:hover,
+input[type="reset"]:hover,
+input[type="button"]:hover,
+.button:hover,
+.button:link:hover {
+  background-image: none;
+  background-color: transparent;
+}
+
+input[type="submit"], input[type="reset"], input[type="button"], .button, .button:link,
 .ibme-button {
   min-width: 140px;
   min-height: 40px;
@@ -1355,7 +1394,9 @@ video {
   border: 2px solid;
   padding: 0.3em 1em;
   transition: all 0.25s;
+  cursor: pointer;
 }
+input[type="submit"]:hover, input[type="reset"]:hover, input[type="button"]:hover, .button:hover, .button:link:hover,
 .ibme-button:hover {
   text-decoration: none;
   color: #000;
@@ -2211,7 +2252,8 @@ video {
 }
 
 /* Body Font */
-.ibme {
+.ibme,
+input, button, select, textarea {
   font-family: Inter, sans-serif;
   font-weight: 300;
   font-size: 18px;
@@ -4298,7 +4340,7 @@ video {
 .impact_2-content {
   display: flex;
   justify-content: space-between;
-  align-items: center;
+  align-items: flex-start;
 }
 .impact_2-content .left-column {
   width: 40%;
@@ -4620,6 +4662,350 @@ video {
 
 body.ibme .ibme-donate-button {
   padding: 0.3em 1em;
+}
+
+/* iBme Tuition Fee Calculator */
+.ibme .ibme_calc_form {
+  margin-bottom: 50px;
+  max-width: 640px;
+  margin: 0 auto;
+}
+.ibme .ibme_calc_form_container {
+  padding: 0;
+  border: none;
+  margin-bottom: 1em;
+  display: grid;
+  -webkit-align-items: center;
+  align-items: center;
+  grid-gap: .75em;
+  grid-template-columns: 2fr 3fr;
+}
+.ibme .ibme_calc_form_field {
+  display: flex;
+}
+.ibme .ibme_calc_form_curr_sym {
+  padding: 8px 16px;
+  background-color: #D1F6E2;
+  border: 1px solid #D1F6E2;
+  border-right: none;
+  border-top-left-radius: 5px;
+  border-bottom-left-radius: 5px;
+  font-weight: 500;
+  font-size: 16px;
+}
+.ibme #tuition_fees,
+.ibme #annual_family_income {
+  border: 2px solid #D1F6E2;
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
+  text-transform: lowercase;
+  font-size: 16px;
+  font-weight: 500;
+}
+.ibme .ibme_calc_form_buttons {
+  display: flex;
+  grid-gap: 0.5em;
+}
+.ibme .ibme_calc_output {
+  height: 0;
+  opacity: 0;
+  visibility: hidden;
+}
+.ibme #tuition_calculate:hover {
+  cursor: pointer;
+}
+.ibme .ibmecalcError {
+  animation: ibmecalcErrorBf 1s infinite normal linear;
+}
+@keyframes ibmecalcErrorBf {
+  0% {
+    background: #ff000080;
+  }
+  25% {
+    background: #fff;
+  }
+  50% {
+    background: #ff000080;
+  }
+  75% {
+    background: #fff;
+  }
+  100% {
+    background: #ff000080;
+  }
+}
+.op-side-panel-container {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.3);
+  visibility: hidden;
+  transition: visibility 0s 0.6s;
+  transform: translate3d(100%, 0, 0);
+}
+.op-side-panel-container p {
+  margin: 0 0 1.318em !important;
+}
+.op-side-panel-container .op-side-panel {
+  width: 64%;
+  position: absolute;
+  transition: transform 0.25s 0.25s;
+  right: 0;
+  transform: translate3d(100%, 0, 0);
+  box-shadow: -2px 0 10px rgba(0, 0, 0, 0.2);
+  top: 0;
+  bottom: 0;
+  height: 100%;
+  background-color: #fff;
+  align-items: center;
+  justify-content: center;
+  max-width: 450px;
+}
+.op-side-panel-container .op-side-panel.full-form {
+  max-width: 800px;
+  height: auto;
+}
+.op-side-panel-container .op-side-panel.full-form iframe {
+  width: 100%;
+  border: none;
+  height: 100vh;
+}
+.op-side-panel-container .panel-close {
+  position: absolute;
+  top: 25px;
+  right: 45px;
+  padding: 7px 6px 6px;
+  background-color: #fff;
+  box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.5);
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  transition: none;
+}
+.op-side-panel-container svg {
+  filter: invert(30%) sepia(99%) saturate(271%) hue-rotate(156deg) brightness(95%) contrast(88%);
+}
+.op-side-panel-container svg:hover {
+  filter: invert(65%) sepia(75%) saturate(356%) hue-rotate(152deg) brightness(81%) contrast(89%);
+}
+.op-side-panel-container .wForm {
+  width: 100%;
+  padding: 3.618em;
+}
+.op-side-panel-container.no-iframe .op-side-panel {
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+.op-side-panel-container.no-iframe .panel-close {
+  top: 25px;
+  position: sticky;
+  left: 84%;
+}
+
+.ibme .op-side-panel-container .op-side-panel .blue-text {
+  text-align: center;
+  margin-bottom: 20px !important;
+  font-size: 23px;
+}
+.ibme .op-side-panel-container .op-side-panel .blue-btn {
+  padding: 12px 30px;
+  background-color: #34657f !important;
+}
+.ibme .op-side-panel-container .op-side-panel .blue-btn:hover {
+  background-color: #2d576d !important;
+}
+.ibme .op-side-panel-container .op-side-panel .actions {
+  width: 100% !important;
+}
+
+.op-side-panel-container.is-visible {
+  visibility: visible;
+  transition: visibility 0s 0s;
+  transform: translate3d(0, 0, 0);
+  z-index: 99;
+}
+.op-side-panel-container.is-visible .op-side-panel {
+  transform: translate3d(0, 0, 0);
+}
+
+@media all and (max-width: 900px) {
+  .op-side-panel-container .op-side-panel {
+    width: 75%;
+  }
+}
+@media all and (max-width: 630px) {
+  .op-side-panel-container .op-side-panel {
+    width: 100%;
+  }
+}
+.text-center,
+.center-align {
+  text-align: center;
+}
+
+.bears {
+  opacity: 0;
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 0;
+  width: 0;
+  z-index: -1;
+}
+
+.subscribe-form .form-inputs {
+  display: flex;
+  flex-wrap: wrap;
+}
+.subscribe-form .one-half {
+  width: 50%;
+  float: none;
+  margin: 0;
+}
+.subscribe-form .form-field input,
+.subscribe-form .form-field select,
+.subscribe-form .form-field option {
+  padding: 0 0 5px 0;
+  border: none;
+  border-bottom: 3px solid #ffd234;
+  margin-bottom: 30px;
+}
+.subscribe-form select {
+  -moz-appearance: none;
+  text-indent: 0.01px;
+  padding-left: 8px;
+  text-overflow: "";
+  background-position: right center;
+  padding-right: 16px;
+  width: 100%;
+}
+.subscribe-form input[type="text"],
+.subscribe-form textarea {
+  padding: 5px 5px;
+}
+.subscribe-form input[type="text"],
+.subscribe-form textarea,
+.subscribe-form select {
+  font-size: 16px;
+  font-weight: 500;
+}
+.subscribe-form input[type="checkbox"] {
+  width: auto;
+  margin-right: 2px;
+}
+.subscribe-form .checkboxes .preField {
+  font-size: 16px;
+  font-weight: 500;
+}
+.subscribe-form .checkboxes .inputWrapper {
+  display: flex;
+  flex-wrap: wrap;
+  padding-top: 4px;
+}
+.subscribe-form .checkboxes .inputWrapper label {
+  margin-right: 12px;
+  font-size: 16px;
+}
+.subscribe-form .checkboxes .oneChoice {
+  width: 33.33%;
+  padding-bottom: 3px;
+}
+.subscribe-form .actions {
+  padding-top: 25px;
+}
+.subscribe-form input[type="submit"] {
+  font-size: 18px;
+  background: #ffd234;
+  color: #000;
+  font-variant: none;
+  text-transform: lowercase;
+  font-weight: 500;
+}
+.subscribe-form input[type="submit"]:hover {
+  background: #ffdc3e;
+}
+.subscribe-form input::placeholder {
+  /* Chrome, Firefox, Opera, Safari 10.1+ */
+  color: #000;
+  opacity: 1;
+  /* Firefox */
+}
+.subscribe-form input:-ms-input-placeholder {
+  /* Internet Explorer 10-11 */
+  color: #000;
+}
+.subscribe-form input::-ms-input-placeholder {
+  /* Microsoft Edge */
+  color: #000;
+}
+.subscribe-form input, .subscribe-form select, .subscribe-form textarea {
+  color: #000;
+}
+.subscribe-form input:focus, .subscribe-form textarea:focus {
+  color: #444;
+}
+.subscribe-form select {
+  transition: none;
+}
+
+.subscribe-form select {
+  height: 33px;
+  line-height: 18px;
+  margin: 0;
+  padding: 3px;
+  background: transparent none no-repeat;
+  cursor: pointer;
+}
+@media screen and (min-width: 0) {
+  .subscribe-form {
+    /* for relatively modern browsers including IE 8+ */
+  }
+  .subscribe-form select {
+    background-image: url("data:image/gif;base64,iVBORw0KGgoAAAANSUhEUgAAABwAAAAaCAYAAACkVDyJAAAAlElEQVRIx+2VwQ3AIAhFwTiFi7KC7uYGHo1z0Et7MWkjaEiaQOJBDzy/wgdqrXwHWKyAiGAZDnSgHBhC+IfCUgqbKXxgGqhY4QyRQkUK35KLoK01iZd+xZKXRuEfbvdQPPGkAABEhMeLhohE5yfaAufk93791r13zQDmnLNqcOMYg1NKmoJgTRHtmDeaWZvPQweaAi8PXSmZJU3QRAAAAABJRU5ErkJggg==");
+    background-position: -50px -50px;
+  }
+}
+@media screen and (-webkit-min-device-pixel-ratio: 0) {
+  .subscribe-form {
+    /* for Webkit */
+  }
+  .subscribe-form select {
+    -webkit-appearance: none;
+    background-position: right center;
+  }
+}
+@-moz-document url-prefix() {
+  .subscribe-form {
+    /* for Firefox */
+    /* hides the dotted outline on focus in FF (See SO#3773430) */
+  }
+  .subscribe-form select {
+    -moz-appearance: none;
+    text-indent: 0.01px;
+    padding-left: 8px;
+    text-overflow: "";
+    background-position: right center;
+    padding-right: 16px;
+  }
+  .subscribe-form select:-moz-focusring {
+    color: transparent;
+    text-shadow: 0 0 0 #4c4c4e;
+  }
+}
+@media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+  .subscribe-form {
+    /* for IE10+ */
+  }
+  .subscribe-form select::-ms-expand {
+    display: none;
+  }
+  .subscribe-form select {
+    background-position: right center;
+    padding-right: 30px;
+  }
 }
 
 /*# sourceMappingURL=style.css.map */

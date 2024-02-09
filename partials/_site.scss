@@ -13,6 +13,26 @@
     }
 }
 
+input[type=date] input[type=datetime-local], 
+input[type=email], 
+input[type=file], 
+input[type=month], 
+input[type=number], 
+input[type=password], 
+input[type=range], 
+input[type=search], 
+input[type=tel], 
+input[type=text], 
+input[type=time], 
+input[type=url], 
+input[type=week], textarea {
+    border: 2px solid $mint-tint;
+    border-radius: 5px;
+    text-transform: lowercase;
+    font-size: 16px;
+    font-weight: 500;
+}
+
 .ibme .campaign-cards .page_link a:hover {
     color: $teal;
     opacity: 1;
@@ -273,6 +293,22 @@
 
 /* Button Styles */
 
+input[type="submit"], 
+input[type="reset"], 
+input[type="button"], 
+.button, 
+.button:link {
+    background-image: none;
+    background-color: transparent;
+    width: auto; 
+
+    &:hover {
+        background-image: none;
+        background-color: transparent;
+    }
+}
+
+input[type="submit"], input[type="reset"], input[type="button"], .button, .button:link,
 .ibme-button {
     min-width: 140px;
     min-height: 40px;
@@ -289,6 +325,7 @@
     border: 2px solid;
     padding: 0.3em 1em;
     transition: all 0.25s;
+    cursor: pointer;
 
     &:hover {
         text-decoration: none;
@@ -1339,13 +1376,16 @@
 
 /* Body Font */
 
-.ibme {
+.ibme,
+input, button, select, textarea {
     font-family: Inter, sans-serif;
     font-weight: 300;
     font-size: 18px;
     line-height: 1.3em;
     letter-spacing: 0.25px;
 }
+
+ 
 
 /* Structure */
 
@@ -3950,7 +3990,7 @@
 .impact_2-content {
     display: flex;
     justify-content: space-between;
-    align-items: center;
+    align-items: flex-start;
     
     .left-column {
         width: 40%;
@@ -4333,3 +4373,239 @@ body.ibme .ibme-donate-button { //override
     padding: 0.3em 1em; 
 }
 
+
+/* iBme Tuition Fee Calculator */
+
+.ibme {
+
+	.ibme_calc_form {
+		margin-bottom: 50px;
+        max-width: 640px;
+		margin: 0 auto;
+	}
+
+	.ibme_calc_form_container {
+		padding: 0;
+		border: none;
+		margin-bottom: 1em;
+		display: grid;
+		-webkit-align-items: center;
+		align-items: center;
+		grid-gap: .75em;
+		grid-template-columns: 2fr 3fr;
+	}
+
+	.ibme_calc_form_field {
+		display: flex;
+	}
+
+	.ibme_calc_form_curr_sym {
+		padding: 8px 16px;
+		background-color: $mint-tint;
+		border: 1px solid $mint-tint;
+		border-right: none;	
+        border-top-left-radius: 5px;
+        border-bottom-left-radius: 5px;
+        font-weight: 500;
+        font-size: 16px;
+	}
+
+    #tuition_fees,
+    #annual_family_income {
+        border: 2px solid $mint-tint;
+        border-top-right-radius: 5px;
+        border-bottom-right-radius: 5px;
+        text-transform: lowercase;
+        font-size: 16px;
+        font-weight: 500;
+    }
+
+	.ibme_calc_form_buttons {
+		display: flex;
+		grid-gap: 0.5em;
+    }
+
+	.ibme_calc_output {
+		height: 0;
+		opacity: 0;
+		visibility: hidden;
+	}
+
+	#tuition_calculate {
+		&:hover {
+			cursor: pointer;
+		}
+	}
+
+	.ibmecalcError {
+		animation: ibmecalcErrorBf 1s infinite normal linear;
+
+	}
+
+	@keyframes ibmecalcErrorBf {
+		0% {
+			background: #ff000080;
+		}
+		25% {
+			background: #fff;
+		}
+		50% {
+			background: #ff000080;
+		}
+		75% {
+			background: #fff;
+		}
+		100% {
+			background: #ff000080;
+		}
+	}
+
+}
+
+.op-side-panel-container {
+	position: fixed;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	width: 100%;
+	height: 100%;
+	background-color: rgba(0, 0, 0, 0.3);
+	visibility: hidden;
+	transition: visibility 0s 0.6s;
+	//transition: transform 0.25s 0.25s;
+	transform: translate3d(100%, 0, 0);
+
+	p {
+		margin: 0 0 1.318em !important;
+	}
+
+	.op-side-panel {
+		width: 64%;
+		position: absolute;
+		transition: transform 0.25s 0.25s;
+		right: 0;
+		transform: translate3d(100%, 0, 0);
+		box-shadow: -2px 0 10px rgba(0, 0, 0, 0.2);
+		// height: 100vh;
+		top: 0;
+		bottom: 0;
+		height: 100%;
+		background-color: #fff;
+		// display: flex;
+		align-items: center;
+		justify-content: center;
+		max-width: 450px;
+	}
+
+	.op-side-panel.full-form {
+		max-width: 800px;
+		height: auto;
+
+		iframe {
+			width: 100%;
+			border: none;
+			height: 100vh;
+		}
+	}
+
+	.panel-close {
+		position: absolute;
+		top: 25px;
+		right: 45px;
+		padding: 7px 6px 6px;
+		// background-color: rgba(0,0,0,0.15);
+		background-color: #fff;
+		box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.5);
+		width: 40px;
+		height: 40px;
+		border-radius: 50%;
+		transition: none;
+	}
+
+	svg {
+		filter: invert(30%) sepia(99%) saturate(271%) hue-rotate(156deg) brightness(95%) contrast(88%);
+
+		&:hover {
+			filter: invert(65%) sepia(75%) saturate(356%) hue-rotate(152deg) brightness(81%) contrast(89%);
+			//transition: all .05s ease-in-out;
+		}
+	}
+
+	.wForm {
+		width: 100%;
+		padding: 3.618em;
+	}
+
+	&.no-iframe {
+
+		.op-side-panel {
+			overflow-y: auto;
+			overflow-x: hidden;
+		}
+
+		.panel-close {
+			top: 25px;
+			position: sticky;
+			left: 84%;
+		}
+
+	}
+
+}
+
+.ibme {
+
+	.op-side-panel-container {
+
+		.op-side-panel {
+
+			.blue-text {
+				text-align: center;
+				margin-bottom: 20px !important;
+				font-size: 23px;
+			}
+
+			.blue-btn {
+				padding: 12px 30px;
+				background-color: #34657f !important;
+
+				&:hover {
+					background-color: #2d576d !important;
+				}
+			}
+
+			.actions {
+				width: 100% !important;
+			}
+
+		}
+
+	}
+}
+
+.op-side-panel-container.is-visible {
+	visibility: visible;
+	transition: visibility 0s 0s;
+	transform: translate3d(0, 0, 0);
+	//transition-delay: 0.25s;
+	z-index: 99;
+
+	.op-side-panel {
+		transform: translate3d(0, 0, 0);
+		//transition-delay: 0.25s;
+	}
+}
+
+@media all and (max-width: 900px) {
+    .op-side-panel-container .op-side-panel {
+		width: 75%;
+	}
+}
+
+@media all and (max-width: 630px) {
+
+	.op-side-panel-container .op-side-panel {
+		width: 100%;
+	}
+
+}

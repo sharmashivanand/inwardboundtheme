@@ -3,25 +3,26 @@
 add_action( 'wp_footer', 'ibme_flyout_widget_scripts' );
 
 function ibme_flyout_widget_scripts() {
-	?>
-	<script type="text/javascript">
-		$ = jQuery.noConflict();
-		$(".ibme-optin-form-trigger").click(function(event){
-			$(this).siblings('.op-side-panel-container').addClass('is-visible');
-			$('body').addClass('overflow-hidden');
-			event.stopPropagation();
-		});
-		
-		$(".panel-close").click(function(event){
-			$('.op-side-panel-container').removeClass('is-visible');
-			$('body').removeClass('overflow-hidden');
-			event.stopPropagation();
-		});
-		
-		
-	</script>
-	<?php
+    ?>
+    <script type="text/javascript">
+    (function($){
+        $(".ibme-optin-form-trigger").click(function(event){
+            $(this).siblings('.op-side-panel-container').addClass('is-visible');
+            $('body').addClass('overflow-hidden');
+            event.stopPropagation();
+        });
+        
+        $(".panel-close").click(function(event){
+            $('.op-side-panel-container').removeClass('is-visible');
+            $('body').removeClass('overflow-hidden');
+            event.stopPropagation();
+        });
+        
+    })(jQuery);
+    </script>
+    <?php
 }
+
 
 /* Join email list opt-in widget */
 // https://dev.to/felipperegazio/how-to-create-a-simple-honeypot-to-protect-your-web-forms-from-spammers--25n8
@@ -210,7 +211,7 @@ function more_info_shortcode_widget($atts) {
 
 	$form_output = <<<IELS
 	
-	<a class="ibme-optin-form-trigger blue-btn $btn_class">$btn_text</a>
+	<a class="ibme-optin-form-trigger ibme-button mint-button style-1 $btn_class">$btn_text</a>
 
 	<!-- FORM: HEAD SECTION -->
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
@@ -918,7 +919,7 @@ function app_start_shortcode_widget($atts) {
 
 	$form_output = <<<IELS
 	
-	<a class="ibme-optin-form-trigger blue-btn $btn_class">$btn_text</a>
+	<a class="ibme-optin-form-trigger ibme-button mint-button style-3 $btn_class">$btn_text</a>
 
 	<!-- FORM: HEAD SECTION -->
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
@@ -966,7 +967,7 @@ function custom_program_inquiry_widget($atts) {
 
 	$form_output = <<<IELS
 	
-	<a class="ibme-optin-form-trigger blue-btn $btn_class">$btn_text</a>
+	<a class="ibme-optin-form-trigger ibme-button mint-button style-1 $btn_class">$btn_text</a>
 
 	<!-- FORM: HEAD SECTION -->
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />

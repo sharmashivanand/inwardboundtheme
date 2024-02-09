@@ -16,6 +16,122 @@ function ibme_remove_lander_theme_support() {
 	add_action( 'lander_after_branding_markup', 'ibme_extended_top_nav' );
 	// Remove default footer
 	remove_action( 'lander_footer', 'lander_footer_content' );
+	add_shortcode( 'ibme_calculator', 'ibme_calculator' );
+}
+
+function ibme_calculator($atts) {
+	$max_limit = '';
+	$min_limit = '';
+	extract(shortcode_atts(array('max' => '', 'min' => '', 'cap' => ''), $atts));
+	if(empty($max)) {
+		$max_limit = 2500;
+	} else {
+		$max_limit = $max;
+	}
+	if(empty($min)) {
+		$min_limit = 250;
+	} else {
+		$min_limit = $min;
+	}
+	if(empty($cap)) {
+		$cap = 1500;
+	} else {
+		$cap = $cap;
+	}
+	ob_start();
+	?>
+	<form class="ibme_calc_form">
+		<fieldset class="ibme_calc_form_container">
+			<div class="ibme_calc_form_container_title header-3">Annual Family Income</div>
+			<div class="ibme_calc_form_field">
+				<span class="ibme_calc_form_curr_sym">$</span>
+				<input type="number" id="annual_family_income" min='0' placeholder="Enter Your Annual Family Income" />
+			</div>
+		</fieldset>
+		<fieldset class="ibme_calc_form_container">
+			<div class="ibme_calc_form_container_title"></div>
+			<div class="inline-buttons">
+				<input type="button" id="tuition_calculate" class="ibme-button style-1 mint-button" value="Calculate" />
+				<input type="reset" class="ibme-button style-4 mint-button" id="reset">
+			</div>
+		</fieldset>
+		<fieldset class="ibme_calc_form_container ibme_calc_output">
+			<div class="ibme_calc_form_container_title header-3">Your Tuition</div>	
+			<div class="ibme_calc_form_field">
+				<span class="ibme_calc_form_curr_sym">$</span>
+				<input type="text" readonly="" id="tuition_fees" placeholder="Your Tuition" />
+			</div>
+		</fieldset>
+	</form>
+	<script type="text/javascript">
+
+			jQuery(document).ready(function($) {
+				console.dir('ready');
+
+				$('#tuition_calculate').click(function(e){
+					e.preventDefault();
+					$('.ibme_calc_output').css({
+						"visibility": "visible",
+						"height": "auto",
+						"opacity": "1",
+						"transition": "all 0.25s ease-in-out" 
+					});
+					var annual_income =  $('#annual_family_income').val();
+					if(!annual_income){
+						$('#annual_family_income').toggleClass('ibmecalcError');
+						setTimeout(() => {
+							$('#annual_family_income').toggleClass('ibmecalcError');
+						}, 2000);
+						$('.ibme_calc_output').css({
+							"visibility": "hidden",
+							"opacity": "0",
+							"height": "0",
+						});
+						return;
+					}
+					/*
+					if( annual_income < 50000 ) {
+						tuition_fees = 250;
+					} else if ( annual_income < 100000 ) {
+						tuition_fees = 750;
+					} else if ( annual_income < 200000 ) {
+						tuition_fees = 1350;
+					} else if ( annual_income < 250000 ) {
+						tuition_fees = 2000;
+					} else {
+						tuition_fees = '<?php echo $max_limit; ?>';
+					}*/
+
+					tuition_fees = Math.round(annual_income * .01);
+
+					if (tuition_fees >= '<?php echo $cap; ?>') {
+						tuition_fees = '<?php echo $max_limit; ?>';
+					} else if (tuition_fees > '<?php echo $max_limit; ?>') {
+						tuition_fees = '<?php echo $max_limit; ?>';
+					} else if (tuition_fees < '<?php echo $min_limit; ?>') {
+						tuition_fees = '<?php echo $min_limit; ?>';
+					} else {
+						tuition_fees = Math.round(annual_income * .01);
+					}
+					
+					$('#tuition_fees').val(tuition_fees);
+
+				});
+
+				$('#reset').click(function(e){
+					$('.ibme_calc_output').css({
+						"visibility": "hidden",
+						"opacity": "0",
+						"height": "0",
+					});
+				});
+
+			});
+		
+		
+	</script>
+	<?php
+	return ob_get_clean();
 }
 
 // Include forms.php file
@@ -1177,7 +1293,7 @@ function impact_1_slide_handler($atts) {
 
 add_action('wp_footer', 'impact_1_slider_script');
 
-function impact_1_slider_script() {
+/* function impact_1_slider_script() {
 	?>
 	<script type="text/javascript">
 		document.addEventListener('DOMContentLoaded', function () {
@@ -1231,7 +1347,72 @@ function impact_1_slider_script() {
 
 	</script>	
 	<?php
+} */
+
+function impact_1_slider_script() {
+    ?>
+    <script type="text/javascript">
+        document.addEventListener('DOMContentLoaded', function () {
+            const sliderElement = document.querySelector('.impact_1-slider');
+            if (!sliderElement) {
+                return;
+            }
+
+            let currentIndex = 0;
+            const slides = document.querySelectorAll('.impact_1-slide');
+            const dots = document.querySelectorAll('.impact_1-dot');
+            const totalSlides = slides.length;
+            const sliderContainer = document.querySelector('.impact_1-slides');
+
+            function updateSlidePosition() {
+                sliderContainer.style.transform = 'translateX(' + (-100 * currentIndex) + '%)';
+                dots.forEach((dot, index) => {
+                    dot.classList.remove('active');
+                    const effectiveIndex = currentIndex % totalSlides;
+                    if (index === effectiveIndex) {
+                        dot.classList.add('active');
+                    }
+                });
+            }
+
+            function nextSlide() {
+                currentIndex = (currentIndex + 1) % totalSlides;
+                updateSlidePosition();
+            }
+
+            let slideInterval = setInterval(nextSlide, 4000);
+
+            function currentImpactSlide(n) {
+                currentIndex = n - 1;
+                updateSlidePosition();
+                resetInterval();
+            }
+
+            function resetInterval() {
+                clearInterval(slideInterval);
+                slideInterval = setInterval(nextSlide, 4000);
+            }
+
+            dots.forEach((dot, index) => {
+                dot.addEventListener('click', () => currentImpactSlide(index + 1));
+            });
+
+            // Pause slider on hover
+            sliderElement.addEventListener('mouseenter', function() {
+                clearInterval(slideInterval);
+            });
+
+            // Resume slider on mouse leave
+            sliderElement.addEventListener('mouseleave', function() {
+                resetInterval();
+            });
+
+            window.currentImpactSlide = currentImpactSlide;
+        });
+    </script>	
+    <?php
 }
+
 
 // Register the shortcode for the "hero_2" block
 
