@@ -57,6 +57,7 @@
     select {
         font-size: 16px;
         font-weight: 500;
+        border-radius: 0;
     }
 
     input[type="checkbox"] {
@@ -132,7 +133,7 @@
 .subscribe-form {
 
     select {
-        height: 33px;
+        height: 34px;
         line-height: 18px;
         margin: 0;
         padding: 3px;
@@ -194,3 +195,12 @@
     }
 
 }
+
+// Widget stuff ---------------------------------
+
+.ibme-donate-button-wrapper {
+    .side-panel-container .side-panel {
+        max-width: 700px;
+    }
+}
+

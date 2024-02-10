@@ -47,40 +47,40 @@ $white_opacity: rgba(255, 255, 255, 0.7);
 
 @font-face { 
     font-family: "MADE Mirage Regular";
-    src: url('https://dev.clearscopedesign.com/inwardbound/wp-content/themes/ibme-lander-edge/assets/fonts/MADE-Mirage-Regular.woff2') format('woff2'),
-         url('https://dev.clearscopedesign.com/inwardbound/wp-content/themes/ibme-lander-edge/assets/fonts/MADE-Mirage-Regular.woff') format('woff');
+    src: url('https://inwardboundmind.org/wp-content/themes/ibme-lander-edge/assets/fonts/MADE-Mirage-Regular.woff2') format('woff2'),
+         url('https://inwardboundmind.org/wp-content/themes/ibme-lander-edge/assets/fonts/MADE-Mirage-Regular.woff') format('woff');
     font-weight: normal;
     font-style: normal;
 }
 
 @font-face { 
     font-family: "MADE Mirage Black";
-    src: url('https://dev.clearscopedesign.com/inwardbound/wp-content/themes/ibme-lander-edge/assets/fonts/MADE-Mirage-Black.woff2') format('woff2'),
-         url('https://dev.clearscopedesign.com/inwardbound/wp-content/themes/ibme-lander-edge/assets/fonts/MADE-Mirage-Black.woff') format('woff');
+    src: url('https://inwardboundmind.org/wp-content/themes/ibme-lander-edge/assets/fonts/MADE-Mirage-Black.woff2') format('woff2'),
+         url('https://inwardboundmind.org/wp-content/themes/ibme-lander-edge/assets/fonts/MADE-Mirage-Black.woff') format('woff');
     font-weight: normal;
     font-style: normal;
 }
 
 @font-face { 
     font-family: "MADE Mirage Bold";
-    src: url('https://dev.clearscopedesign.com/inwardbound/wp-content/themes/ibme-lander-edge/assets/fonts/MADE-Mirage-Bold.woff2') format('woff2'),
-         url('https://dev.clearscopedesign.com/inwardbound/wp-content/themes/ibme-lander-edge/assets/fonts/MADE-Mirage-Bold.woff') format('woff');
+    src: url('https://inwardboundmind.org/wp-content/themes/ibme-lander-edge/assets/fonts/MADE-Mirage-Bold.woff2') format('woff2'),
+         url('https://inwardboundmind.org/wp-content/themes/ibme-lander-edge/assets/fonts/MADE-Mirage-Bold.woff') format('woff');
     font-weight: normal;
     font-style: normal;
 }
 
 @font-face { 
     font-family: "MADE Mirage Medium";
-    src: url('https://dev.clearscopedesign.com/inwardbound/wp-content/themes/ibme-lander-edge/assets/fonts/MADE-Mirage-Medium.woff2') format('woff2'),
-         url('https://dev.clearscopedesign.com/inwardbound/wp-content/themes/ibme-lander-edge/assets/fonts/MADE-Mirage-Medium.woff') format('woff');
+    src: url('https://inwardboundmind.org/wp-content/themes/ibme-lander-edge/assets/fonts/MADE-Mirage-Medium.woff2') format('woff2'),
+         url('https://inwardboundmind.org/wp-content/themes/ibme-lander-edge/assets/fonts/MADE-Mirage-Medium.woff') format('woff');
     font-weight: normal;
     font-style: normal;
 }
 
 @font-face { 
     font-family: "MADE Mirage Thin";
-    src: url('https://dev.clearscopedesign.com/inwardbound/wp-content/themes/ibme-lander-edge/assets/fonts/MADE-Mirage-Thin.woff2') format('woff2'),
-         url('https://dev.clearscopedesign.com/inwardbound/wp-content/themes/ibme-lander-edge/assets/fonts/MADE-Mirage-Thin.woff') format('woff');
+    src: url('https://inwardboundmind.org/wp-content/themes/ibme-lander-edge/assets/fonts/MADE-Mirage-Thin.woff2') format('woff2'),
+         url('https://inwardboundmind.org/wp-content/themes/ibme-lander-edge/assets/fonts/MADE-Mirage-Thin.woff') format('woff');
     font-weight: normal;
     font-style: normal;
 }
@@ -94,7 +94,8 @@ $white_opacity: rgba(255, 255, 255, 0.7);
     line-height: 0.95em;
     font-weight: normal;
     margin-top: 0;
-    margin-bottom: 0.5em;
+    //margin-bottom: 0.5em;
+    margin-bottom: 22px;
     text-transform: lowercase;
 }
 

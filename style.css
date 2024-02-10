@@ -1,6 +1,6 @@
 @charset "UTF-8";
 /*!
- * Theme Name:  iBme Lander Edge
+ * Theme Name:  Inward Bound
  * Theme URI:   https://www.converticacommerce.com/
  * Description: A mobile-first starter theme built on Hybrid Core. This theme is intended to be used as a child theme. Schema, accessibility, pluggable.
  * Version:	 1.0.1
@@ -41,31 +41,31 @@ input:focus:-ms-input-placeholder, textarea:focus:-ms-input-placeholder {
 /* Font Face Declaration */
 @font-face {
   font-family: "MADE Mirage Regular";
-  src: url("https://dev.clearscopedesign.com/inwardbound/wp-content/themes/ibme-lander-edge/assets/fonts/MADE-Mirage-Regular.woff2") format("woff2"), url("https://dev.clearscopedesign.com/inwardbound/wp-content/themes/ibme-lander-edge/assets/fonts/MADE-Mirage-Regular.woff") format("woff");
+  src: url("https://inwardboundmind.org/wp-content/themes/ibme-lander-edge/assets/fonts/MADE-Mirage-Regular.woff2") format("woff2"), url("https://inwardboundmind.org/wp-content/themes/ibme-lander-edge/assets/fonts/MADE-Mirage-Regular.woff") format("woff");
   font-weight: normal;
   font-style: normal;
 }
 @font-face {
   font-family: "MADE Mirage Black";
-  src: url("https://dev.clearscopedesign.com/inwardbound/wp-content/themes/ibme-lander-edge/assets/fonts/MADE-Mirage-Black.woff2") format("woff2"), url("https://dev.clearscopedesign.com/inwardbound/wp-content/themes/ibme-lander-edge/assets/fonts/MADE-Mirage-Black.woff") format("woff");
+  src: url("https://inwardboundmind.org/wp-content/themes/ibme-lander-edge/assets/fonts/MADE-Mirage-Black.woff2") format("woff2"), url("https://inwardboundmind.org/wp-content/themes/ibme-lander-edge/assets/fonts/MADE-Mirage-Black.woff") format("woff");
   font-weight: normal;
   font-style: normal;
 }
 @font-face {
   font-family: "MADE Mirage Bold";
-  src: url("https://dev.clearscopedesign.com/inwardbound/wp-content/themes/ibme-lander-edge/assets/fonts/MADE-Mirage-Bold.woff2") format("woff2"), url("https://dev.clearscopedesign.com/inwardbound/wp-content/themes/ibme-lander-edge/assets/fonts/MADE-Mirage-Bold.woff") format("woff");
+  src: url("https://inwardboundmind.org/wp-content/themes/ibme-lander-edge/assets/fonts/MADE-Mirage-Bold.woff2") format("woff2"), url("https://inwardboundmind.org/wp-content/themes/ibme-lander-edge/assets/fonts/MADE-Mirage-Bold.woff") format("woff");
   font-weight: normal;
   font-style: normal;
 }
 @font-face {
   font-family: "MADE Mirage Medium";
-  src: url("https://dev.clearscopedesign.com/inwardbound/wp-content/themes/ibme-lander-edge/assets/fonts/MADE-Mirage-Medium.woff2") format("woff2"), url("https://dev.clearscopedesign.com/inwardbound/wp-content/themes/ibme-lander-edge/assets/fonts/MADE-Mirage-Medium.woff") format("woff");
+  src: url("https://inwardboundmind.org/wp-content/themes/ibme-lander-edge/assets/fonts/MADE-Mirage-Medium.woff2") format("woff2"), url("https://inwardboundmind.org/wp-content/themes/ibme-lander-edge/assets/fonts/MADE-Mirage-Medium.woff") format("woff");
   font-weight: normal;
   font-style: normal;
 }
 @font-face {
   font-family: "MADE Mirage Thin";
-  src: url("https://dev.clearscopedesign.com/inwardbound/wp-content/themes/ibme-lander-edge/assets/fonts/MADE-Mirage-Thin.woff2") format("woff2"), url("https://dev.clearscopedesign.com/inwardbound/wp-content/themes/ibme-lander-edge/assets/fonts/MADE-Mirage-Thin.woff") format("woff");
+  src: url("https://inwardboundmind.org/wp-content/themes/ibme-lander-edge/assets/fonts/MADE-Mirage-Thin.woff2") format("woff2"), url("https://inwardboundmind.org/wp-content/themes/ibme-lander-edge/assets/fonts/MADE-Mirage-Thin.woff") format("woff");
   font-weight: normal;
   font-style: normal;
 }
@@ -76,7 +76,7 @@ input:focus:-ms-input-placeholder, textarea:focus:-ms-input-placeholder {
   line-height: 0.95em;
   font-weight: normal;
   margin-top: 0;
-  margin-bottom: 0.5em;
+  margin-bottom: 22px;
   text-transform: lowercase;
 }
 
@@ -1142,11 +1142,13 @@ video {
 
 /* Site Specific CSS */
 /* Generic Styles */
-:link {
+a,
+:link, :visited {
   border-bottom: 1px solid;
   color: #008075;
 }
-:link:hover {
+a:hover,
+:link:hover, :visited:hover {
   border-color: transparent;
   color: #008075;
   text-decoration: none;
@@ -1701,6 +1703,13 @@ input[type="submit"]:hover, input[type="reset"]:hover, input[type="button"]:hove
         color: $black;
     }
 }*/
+.ibme-button.style-3 {
+  color: #000;
+}
+.ibme-button.style-3:hover {
+  color: #000;
+}
+
 .style-3 {
   position: relative;
   /* Hover States for buttons */
@@ -2364,6 +2373,11 @@ input, button, select, textarea {
   padding-left: 0;
   padding-right: 0;
   letter-spacing: 0.15px;
+  color: #000;
+  border: none;
+}
+#menu-primary-items a:hover {
+  color: #000;
 }
 #menu-primary-items .teen-retreats a {
   margin-left: 0;
@@ -2519,6 +2533,7 @@ input, button, select, textarea {
 .ibme #menu-top-nav-extended-menu a {
   padding: 0.382em 0;
   border-bottom: none;
+  color: #000;
 }
 .ibme #menu-top-nav-extended-menu a:hover {
   background-color: transparent;
@@ -2934,17 +2949,35 @@ input, button, select, textarea {
 
 /* hero_2*/
 .hero_2-section {
-  background-repeat: no-repeat;
+  /*background-repeat: no-repeat;
   background-position: center top;
   background-size: 1920px auto;
-  background-attachment: fixed;
+  background-attachment: fixed;*/
 }
-.hero_2-section .title {
-  width: 50%;
-  padding-top: 150px;
+.hero_2-section .landing-section-content {
+  display: flex;
+  align-items: center;
+}
+.hero_2-section .landing-section-content .textual-content {
+  width: calc(100% - 730px);
+  box-sizing: border-box;
+}
+.hero_2-section .landing-section-content .image-content {
+  width: 730px;
+}
+.hero_2-section .landing-section-content .image-content img {
+  border-radius: 5px;
+}
+.hero_2-section .landing-section-content.left-image {
+  flex-direction: row-reverse;
+}
+.hero_2-section .landing-section-content.left-image .textual-content {
+  padding-left: 40px;
+}
+.hero_2-section .landing-section-content.right-image .textual-content {
+  padding-right: 40px;
 }
 .hero_2-section .description {
-  width: 50%;
   padding-top: 1.2em;
 }
 .hero_2-section .barbie-title {
@@ -3359,8 +3392,6 @@ input, button, select, textarea {
 }
 .cta_2_section .none-bg-color {
   background-color: transparent;
-  padding-left: 0;
-  padding-right: 0;
 }
 .cta_2_section .cta_2-item.black-text .header-3 {
   color: #000;
@@ -3445,7 +3476,7 @@ input, button, select, textarea {
 
 .ibme-testimonial-wrap {
   flex: 0 0 100%;
-  transition: transform 1.5s ease;
+  transition: transform 4s ease;
 }
 
 /* Animation */
@@ -3627,24 +3658,22 @@ input, button, select, textarea {
   min-height: 500px;
 }
 
-.cta-3_columns.cta-items-4 .cta-3_column {
+.cta-3_columns.cta-items-4 .cta-3_column,
+.cta-3_columns.cta-items-5 .cta-3_column,
+.cta-3_columns.cta-items-6 .cta-3_column {
   width: 23%;
-  min-width: 280px;
+  max-width: 280px;
   min-height: 500px;
 }
 
 .cta-3_columns.cta-items-3 .cta-3_column {
   width: 30%;
-  min-width: 385px;
+  max-width: 385px;
   min-height: 500px;
 }
 
-.cta-3_columns.cta-items-2 .cta-3_column {
-  width: 47%;
-}
-
 .cta-3_column-content {
-  padding: 0.75em 0.75em 1.618em;
+  padding: 30px;
 }
 .cta-3_column-content .header-3 {
   margin-bottom: 0;
@@ -4841,6 +4870,24 @@ body.ibme .ibme-donate-button {
     width: 100%;
   }
 }
+/* Post Edit Link */
+.ibme.singular .post-edit-link {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  background: rgba(0, 0, 0, 0.25);
+  padding: 5px;
+  z-index: 2;
+  text-decoration: none;
+  border: none;
+  font-size: 13px;
+  text-transform: uppercase;
+  color: #008075;
+}
+.ibme.singular .post-edit-link:hover {
+  color: #008075;
+}
+
 .text-center,
 .center-align {
   text-align: center;
@@ -4891,6 +4938,7 @@ body.ibme .ibme-donate-button {
 .subscribe-form select {
   font-size: 16px;
   font-weight: 500;
+  border-radius: 0;
 }
 .subscribe-form input[type="checkbox"] {
   width: auto;
@@ -4952,7 +5000,7 @@ body.ibme .ibme-donate-button {
 }
 
 .subscribe-form select {
-  height: 33px;
+  height: 34px;
   line-height: 18px;
   margin: 0;
   padding: 3px;
@@ -5006,6 +5054,10 @@ body.ibme .ibme-donate-button {
     background-position: right center;
     padding-right: 30px;
   }
+}
+
+.ibme-donate-button-wrapper .side-panel-container .side-panel {
+  max-width: 700px;
 }
 
 /*# sourceMappingURL=style.css.map */

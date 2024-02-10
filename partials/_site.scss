@@ -2,8 +2,10 @@
 
 /* Generic Styles */
 
-:link {
-    border-bottom: 1px solid;
+
+a,
+:link, :visited {
+    border-bottom: 1px solid; 
     color: $teal;
 
     &:hover {
@@ -706,6 +708,15 @@ input[type="submit"], input[type="reset"], input[type="button"], .button, .butto
         color: $black;
     }
 }*/
+
+.ibme-button.style-3 {
+    color: #000;
+
+    &:hover {
+        color: #000;
+    }
+
+}
 
 .style-3 {
 
@@ -1524,6 +1535,12 @@ input, button, select, textarea {
         padding-left: 0;
         padding-right: 0;
         letter-spacing: 0.15px;
+        color: #000;
+        border: none;
+
+        &:hover {
+            color: #000;
+        }
     }
 
     .teen-retreats a {
@@ -1732,6 +1749,7 @@ input, button, select, textarea {
     a {
         padding: 0.382em 0;
         border-bottom: none;
+        color: #000;
         
         &:hover {
             background-color: transparent;
@@ -2264,18 +2282,47 @@ input, button, select, textarea {
 
 /* hero_2*/
 .hero_2-section {
-    background-repeat: no-repeat;
+    /*background-repeat: no-repeat;
     background-position: center top;
     background-size: 1920px auto;
-    background-attachment: fixed;
-    
-    .title {
-        width: 50%; 
-        padding-top: 150px;
+    background-attachment: fixed;*/
+
+    .landing-section-content {
+        display: flex;
+        align-items: center;
+
+        .textual-content {
+            width: calc(100% - 730px);
+            box-sizing: border-box;
+        }
+
+        .image-content {
+            width: 730px;
+
+            img {
+                border-radius: 5px;
+            }
+        }
+
+        &.left-image {
+            flex-direction: row-reverse;
+
+            .textual-content {
+                padding-left: 40px;
+            }
+        }
+
+        &.right-image {
+
+            .textual-content {
+                padding-right: 40px;
+            }
+        }
     }
 
+
+
     .description {
-        width: 50%; 
         padding-top: 1.2em;
     }
 
@@ -2795,8 +2842,6 @@ input, button, select, textarea {
 
     .none-bg-color {
         background-color: transparent; 
-        padding-left: 0;
-        padding-right: 0;
     }
 
     .cta_2-item {
@@ -2905,7 +2950,7 @@ input, button, select, textarea {
   
 .ibme-testimonial-wrap {
     flex: 0 0 100%;
-    transition: transform 1.5s ease;
+    transition: transform 4s ease;
 }
   
 /* Animation */
@@ -3161,24 +3206,22 @@ input, button, select, textarea {
     min-height: 500px;
 } 
 
-.cta-3_columns.cta-items-4 .cta-3_column {
+.cta-3_columns.cta-items-4 .cta-3_column,
+.cta-3_columns.cta-items-5 .cta-3_column,
+.cta-3_columns.cta-items-6 .cta-3_column {
     width: 23%;
-    min-width: 280px;
+    max-width: 280px;
     min-height: 500px;
 } 
 
 .cta-3_columns.cta-items-3 .cta-3_column {
     width: 30%;
-    min-width: 385px;
+    max-width: 385px;
     min-height: 500px;
 } 
 
-.cta-3_columns.cta-items-2 .cta-3_column {
-    width: 47%;
-} 
-
-.cta-3_column-content {
-    padding: 0.75em 0.75em 1.618em;
+.cta-3_column-content { 
+    padding: 30px;
 
     .header-3 {
         margin-bottom: 0;
@@ -4608,4 +4651,24 @@ body.ibme .ibme-donate-button { //override
 		width: 100%;
 	}
 
+}
+
+/* Post Edit Link */
+
+.ibme.singular .post-edit-link {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    background: rgba(0,0,0,.25);
+    padding: 5px;
+    z-index: 2;
+    text-decoration: none;
+    border: none;
+    font-size: 13px;
+    text-transform: uppercase;
+    color: $teal;
+
+    &:hover {
+        color: $teal;
+    }
 }

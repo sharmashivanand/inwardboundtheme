@@ -55,8 +55,10 @@ function ibme_email_list_shortcode_widget($atts) {
 		$user_agent = 'WordPress could not detect the user-agent. But the form was submitted via WordPress.';
 	}
 
+	$className = __FUNCTION__;
+
 	$form_output = <<<IELS
-	
+	<div class='{$className}'>
 	<a class="ibme-optin-form-trigger blue-btn $btn_class">$btn_text</a>
 
 	<!-- FORM: HEAD SECTION -->
@@ -167,6 +169,7 @@ function ibme_email_list_shortcode_widget($atts) {
 			</div>
 		</div>
 	</div>	
+	</div>	
 IELS;
 // !!! THE ABOVE LINE SHOULD NEVER BE INDENTED !!! ///
 	$form_output = apply_filters( 'ibme_form_recaptcha', $form_output );
@@ -209,8 +212,10 @@ function more_info_shortcode_widget($atts) {
 		$user_agent = 'WordPress could not detect the user-agent. But the form was submitted via WordPress.';
 	}
 
+	$className = __FUNCTION__;
+
 	$form_output = <<<IELS
-	
+	<div class='{$className}'>
 	<a class="ibme-optin-form-trigger ibme-button mint-button style-1 $btn_class">$btn_text</a>
 
 	<!-- FORM: HEAD SECTION -->
@@ -325,6 +330,7 @@ function more_info_shortcode_widget($atts) {
 			</div>
 		</div>
 	</div>	
+	</div>	
 IELS;
 // !!! THE ABOVE LINE SHOULD NEVER BE INDENTED !!! ///
 	// $form_output = apply_filters( 'ibme_form_recaptcha', $form_output );
@@ -367,8 +373,10 @@ function more_info_shortcode_widget_nophone($atts) {
 		$user_agent = 'WordPress could not detect the user-agent. But the form was submitted via WordPress.';
 	}
 
+	$className = __FUNCTION__;
+
 	$form_output = <<<IELS
-	
+	<div class='{$className}'>
 	<a class="ibme-optin-form-trigger blue-btn $btn_class">$btn_text</a>
 
 	<!-- FORM: HEAD SECTION -->
@@ -422,6 +430,7 @@ function more_info_shortcode_widget_nophone($atts) {
 			</div>
 		</div>
 	</div>	
+	</div>	
 IELS;
 // !!! THE ABOVE LINE SHOULD NEVER BE INDENTED !!! ///
 	// $form_output = apply_filters( 'ibme_form_recaptcha', $form_output );
@@ -463,8 +472,10 @@ function test_shortcode_widget($atts) {
 		$user_agent = 'WordPress could not detect the user-agent. But the form was submitted via WordPress.';
 	}
 
+	$className = __FUNCTION__;
+
 	$form_output = <<<IELS
-	
+	<div class='{$className}'>
 	<a class="ibme-optin-form-trigger blue-btn $btn_class">$btn_text</a>
 
 	<!-- FORM: HEAD SECTION -->
@@ -579,6 +590,7 @@ function test_shortcode_widget($atts) {
 			</div>
 		</div>
 	</div>	
+	</div>	
 IELS;
 // !!! THE ABOVE LINE SHOULD NEVER BE INDENTED !!! ///
 	$form_output = apply_filters( 'ibme_form_recaptcha', $form_output );
@@ -616,8 +628,10 @@ function workshop_opt_in_shortcode_widget($atts) {
 		$url_without_query_string = 'WordPress could not detect the URL. But the form was submitted via WordPress.';
 	} 
 
+	$className = __FUNCTION__;
+
 	$form_output = <<<IELS
-	
+	<div class='{$className}'>
 	<a class="ibme-optin-form-trigger blue-btn $btn_class">$btn_text</a>
 
 	<!-- FORM: HEAD SECTION -->
@@ -730,6 +744,7 @@ function workshop_opt_in_shortcode_widget($atts) {
 			</div>
 		</div>
 	</div>	
+	</div>	
 IELS;
 // !!! THE ABOVE LINE SHOULD NEVER BE INDENTED !!! ///
 	$form_output = apply_filters( 'ibme_form_recaptcha', $form_output );
@@ -767,8 +782,10 @@ function event_opt_in_shortcode_widget($atts) {
 		$url_without_query_string = 'WordPress could not detect the URL. But the form was submitted via WordPress.';
 	}
 
+	$className = __FUNCTION__;
+
 	$form_output = <<<IELS
-	
+	<div class='{$className}'>
 	<a class="ibme-optin-form-trigger blue-btn $btn_class">$btn_text</a>
 
 	<!-- FORM: HEAD SECTION -->
@@ -881,6 +898,7 @@ function event_opt_in_shortcode_widget($atts) {
 			</div>
 		</div>
 	</div>	
+	</div>	
 IELS;
 // !!! THE ABOVE LINE SHOULD NEVER BE INDENTED !!! ///
 	$form_output = apply_filters( 'ibme_form_recaptcha', $form_output );
@@ -917,8 +935,10 @@ function app_start_shortcode_widget($atts) {
 		$user_agent = 'WordPress could not detect the user-agent. But the form was submitted via WordPress.';
 	}
 
+	$className = __FUNCTION__;
+
 	$form_output = <<<IELS
-	
+	<div class='{$className}'>
 	<a class="ibme-optin-form-trigger ibme-button mint-button style-3 $btn_class">$btn_text</a>
 
 	<!-- FORM: HEAD SECTION -->
@@ -930,6 +950,7 @@ function app_start_shortcode_widget($atts) {
 		<button class="panel-close" aria-label="Close"><svg width="26" height="26" viewBox="0 0 26 22" xmlns="http://www.w3.org/2000/svg"><path d="M12.808 9.393l7.778-7.778L22 3.03l-7.778 7.779L22 18.586 20.586 20l-7.778-7.778L5.029 20l-1.414-1.414 7.778-7.778-7.778-7.779L5.03 1.615l7.779 7.778z"></path></svg></button>
 			<iframe src="https://ibme.tfaforms.net/389577?c_id=$campaign&tfa_1415=$form_id&tfa_1419=$url" title="iBme Start App Form"></iframe>
 		</div>
+	</div>	
 	</div>	
 IELS;
 // !!! THE ABOVE LINE SHOULD NEVER BE INDENTED !!! ///
@@ -965,8 +986,10 @@ function custom_program_inquiry_widget($atts) {
 		$user_agent = 'WordPress could not detect the user-agent. But the form was submitted via WordPress.';
 	}
 
+	$className = __FUNCTION__;
+
 	$form_output = <<<IELS
-	
+	<div class='{$className}'>
 	<a class="ibme-optin-form-trigger ibme-button mint-button style-1 $btn_class">$btn_text</a>
 
 	<!-- FORM: HEAD SECTION -->
@@ -978,6 +1001,7 @@ function custom_program_inquiry_widget($atts) {
 		<button class="panel-close" aria-label="Close"><svg width="26" height="26" viewBox="0 0 26 22" xmlns="http://www.w3.org/2000/svg"><path d="M12.808 9.393l7.778-7.778L22 3.03l-7.778 7.779L22 18.586 20.586 20l-7.778-7.778L5.029 20l-1.414-1.414 7.778-7.778-7.778-7.779L5.03 1.615l7.779 7.778z"></path></svg></button>
 			<iframe src="https://ibme.tfaforms.net/389876?c_id=$campaign&tfa_1419=$url" title="Custom Program Inquiry Form"></iframe>
 		</div>
+	</div>	
 	</div>	
 IELS;
 // !!! THE ABOVE LINE SHOULD NEVER BE INDENTED !!! ///
@@ -1012,8 +1036,10 @@ function fundraiser_signup_widget($atts) {
 		$user_agent = 'WordPress could not detect the user-agent. But the form was submitted via WordPress.';
 	}
 
+	$className = __FUNCTION__;
+
 	$form_output = <<<IELS
-	
+	<div class='{$className}'>
 	<a class="ibme-optin-form-trigger blue-btn $btn_class">$btn_text</a>
 
 	<!-- FORM: HEAD SECTION -->
@@ -1026,6 +1052,8 @@ function fundraiser_signup_widget($atts) {
 			<iframe src="https://ibme.tfaforms.net/389895" title="Fundraiser Signup Form"></iframe>
 		</div>
 	</div>	
+	</div>	
+	
 IELS;
 // !!! THE ABOVE LINE SHOULD NEVER BE INDENTED !!! ///
 	// $form_output = apply_filters( 'ibme_form_recaptcha', $form_output );

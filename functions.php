@@ -324,12 +324,12 @@ function ibme_button_handler($atts) {
     $atts = shortcode_atts(
         array(
             'link'      				=> '',
-            'text'      				=> '',
+            'text'      				=> 'click here',
             'color'  					=> '',
             'style'     				=> 'style-1', // style-1, style-3, style-4, style-5
             'type'      				=> 'single',
             'button-2-link'    			=> '', // Link for the second button
-            'button-2-text'     		=> '', // Text for the second button
+            'button-2-text'     		=> 'click here', // Text for the second button
             'button-2-color' 			=> '', // BG color for the second button
             'button-2-style' 			=> '', // Style for the second button
             'text-color' 				=> 'black', 
@@ -425,12 +425,12 @@ function ibme_statement_1_handler($atts) {
 			'text-color'      			=> 'black', // black, white
 			'button-type'      			=> 'single',
 			'button-link'      			=> '',
-			'button-text'      			=> '',
+			'button-text'      			=> 'click here',
 			'button-color'  			=> '',
 			'button-style'     			=> 'style-3',
 			'button-text-color'     	=> 'black', // cherry, poppy, blush, barbie, peony, violet, tangerine, marigold, sunflower, forest, teal, mint, ocean, sky, bluejay, lavender, black
 			'button-2-link'      		=> '',
-			'button-2-text'      		=> '',
+			'button-2-text'      		=> 'click here',
 			'button-2-color'  			=> '',
 			'button-2-style'     		=> 'style-4',
 			'button-2-text-color'     		=> 'barbie', // cherry, poppy, blush, barbie, peony, violet, tangerine, marigold, sunflower, forest, teal, mint, ocean, sky, bluejay, lavender, white
@@ -569,7 +569,7 @@ function ibme_cta_2_content_block_handler($atts) {
 			'color'      	=> '', // 'cherry', 'poppy', 'blush', 'barbie', 'peony', 'violet', 'tangerine', 'marigold', 'sunflower', 'forest', 'teal', 'mint', 'ocean', 'sky', 'bluejay', 'lavendar', 'none'
 			'illustration'  => '', // cabin, cloud, embrace, eye, face, fire, flower, heart-hug, heart, journal, music, plant, smiles, sun, sunglasses, talking, two-teens, walking, workshop, yoga
 			'title'         => '', 
-			'button-text'   => '', 
+			'button-text'   => 'click here', 
 			'button-link'   => '', 					
 			'button-color'   => '', 	
 			'new-tab' 					=> 'no', // yes, no
@@ -725,7 +725,7 @@ function ibme_upcoming_events_handler($atts, $content = null) {
 			'image-url'      		=> '',
 			'title'      			=> '',
 			'new-tab' 					=> 'no', // yes, no
-			'button-text'      		=> '', 
+			'button-text'      		=> 'click here', 
 			'button-link'      		=> '', 
 			'button-color'      		=> 'white', 
 			'button-text-color'      		=> 'black', // black, cherry, poppy, blush, barbie, peony, violet, tangerine, marigold, sunflower, forest, teal, mint, ocean, sky, bluejay, lavender
@@ -778,9 +778,9 @@ function ibme_upcoming_event_handler($atts) {
 			'event-name'      			=> '',
 			'event-location'      		=> '', 
 			'button-link'      			=> '', 
-			'button-text'      			=> '', 
+			'button-text'      			=> 'click here', 
 			'button-2-link'      		=> '', 
-			'button-2-text'      		=> '', 
+			'button-2-text'      		=> 'click here', 
 			'new-tab' 					=> 'no', // yes, no
 			'button-2-new-tab' 			=> 'no', // yes, no
 		),
@@ -832,7 +832,7 @@ function ibme_cta_3_content_block_handler($atts) {
 			'title'        			=> '', 
 			'text'          		=> '', 
 			'image-url'     		=> '', 
-			'button-text'   		=> '', 
+			'button-text'   		=> 'click here', 
 			'button-link'   		=> '', 
 			'button-color'   		=> '', 
 			'button-style' 			=> 'style-5', // style-5, style-1
@@ -980,8 +980,8 @@ function hero_1_photo_handler($atts) {
 			'title'         	=> '', 
 			'title-color'       => '', // white, black
 			'button-color'   	=> '', 
-			'button-text'   	=> '', 
-			'button-2-text'   	=> '', 
+			'button-text'   	=> 'click here', 
+			'button-2-text'   	=> 'click here', 
 			'button-link'   	=> '', 			
 			'button-2-link'   	=> '', 		
 			'new-tab' 					=> 'no', // yes, no
@@ -1083,8 +1083,8 @@ function hero_1_slider_handler($atts, $content = null) {
 			'title-color'       => '', // white, black
 			'button-color'   	=> '', 
 			'button-2-color'   	=> 'white', 
-			'button-text'   	=> '', 
-			'button-2-text'   	=> '', 
+			'button-text'   	=> 'click here', 
+			'button-2-text'   	=> 'click here', 
 			'button-link'   	=> '', 			
 			'button-2-link'   	=> '', 			
 			'button-2-text-color'   	=> 'black', //cherry, poppy, blush, barbie, peony, violet, tangerine, marigold, sunflower, forest, teal, mint, ocean, sky, bluejay, lavender, black 	
@@ -1235,11 +1235,11 @@ function impact_1_slide_handler($atts) {
 			'text'   			=> '', 
 			'text-color'   		=> 'black', // black, white
 			'button-type'   	=> '', 
-			'button-text'   	=> '', 
+			'button-text'   	=> 'click here', 
 			'button-color'   	=> '', 
 			'button-text-color'   	=> 'black', // cherry, poppy, blush, barbie, peony, violet, tangerine, marigold, sunflower, forest, teal, mint, ocean, sky, bluejay, lavender, black 
 			'button-link'   	=> '', 
-			'button-2-text'   	=> '', 
+			'button-2-text'   	=> 'click here', 
 			'button-2-color'   	=> '', 
 			'button-2-link'   	=> '', 
 			'button-2-text-color'   	=> 'barbie', // cherry, poppy, blush, barbie, peony, violet, tangerine, marigold, sunflower, forest, teal, mint, ocean, sky, bluejay, lavender, white 
@@ -1428,12 +1428,13 @@ function hero_2_handler($atts) {
 			'text-color'       	=> '', // white, black
 			'button-color'   	=> '', 
 			'button-2-color'   	=> '', 
-			'button-text'   	=> '', 
-			'button-2-text'   	=> '', 
+			'button-text'   	=> 'click here', 
+			'button-2-text'   	=> 'click here', 
 			'button-link'   	=> '', 			
 			'button-2-link'   	=> '',	
 			'new-tab' 					=> 'no', // yes, no
 			'button-2-new-tab' 			=> 'no', // yes, no
+			'orientation' 			=> 'left-image', // left-image, right-image
 		),
 		$atts,
 		'hero_2'
@@ -1452,14 +1453,17 @@ function hero_2_handler($atts) {
 	$button_2_link = esc_url($atts['button-2-link']);
 	$new_tab = esc_attr($atts['new-tab']); 
 	$button_2_new_tab = esc_attr($atts['button-2-new-tab']); 
+	$orientation = esc_attr($atts['orientation']); 
 
 
 	// Generate HTML for the hero_2 block
 
-	$hero_2_html = '<section class="full-width-section landing-section hero_2-section" style="background-image: url(\'' . $image_url . '\')"><div class="inner-wrap"><div class="landing-section-content">';
+	$hero_2_html = '<section class="full-width-section landing-section hero_2-section"><div class="inner-wrap"><div class="landing-section-content '.$orientation.'">';
+	$hero_2_html .= '<div class="textual-content">';
 	$hero_2_html .= '<h2 class="title '.$button_color.'-title">'.$title.'</h2>';
 	$hero_2_html .= do_shortcode('[ibme_button new-tab="'.$new_tab.'" button-2-new-tab="'.$button_2_new_tab.'" type="dual" link="'.$button_link.'" text="'.$button_text.'" color="'.$button_color.'" style="style-3" button-2-link="'.$button_2_link.'" button-2-text="'.$button_2_text.'" button-2-style="style-4" button-2-color="'.$button_2_color.'"]');
-	$hero_2_html .= '<p class="description '.$text_color.'-text">'.$text.'</p>';
+	$hero_2_html .= '<p class="description '.$text_color.'-text">'.$text.'</p></div>';
+	$hero_2_html .= '<div class="image-content"><img src="'.$image_url.'" alt="'.$title.'" /></div>';
 	$hero_2_html .= '</div></div></section>';
 
 	return $hero_2_html;
@@ -1554,7 +1558,7 @@ function ibme_statement_2_handler($atts) {
 			'text'      			=> '', 
 			'text-color'      		=> '', // black, white
 			'bg-color'      		=> '', // 'cherry', 'poppy', 'blush', 'barbie', 'peony', 'violet', 'tangerine', 'marigold', 'sunflower', 'forest', 'teal', 'mint', 'ocean', 'sky', 'bluejay', 'lavendar'
-			'button-text'      		=> '', 
+			'button-text'      		=> 'click here', 
 			'button-link'      		=> '', 
 			'button-color'      		=> 'white', 
 			'button-style'      	=> '', // style-5, style-1
@@ -1668,11 +1672,11 @@ function impact_2_slide_handler($atts) {
 			'text'   			=> '', 
 			'text-color'   		=> 'black', // black, white
 			'button-type'   	=> '', 
-			'button-text'   	=> '', 
+			'button-text'   	=> 'click here', 
 			'button-color'   	=> '', 
 			'button-text-color'   	=> 'black', // cherry, poppy, blush, barbie, peony, violet, tangerine, marigold, sunflower, forest, teal, mint, ocean, sky, bluejay, lavender, black 
 			'button-link'   	=> '', 
-			'button-2-text'   	=> '', 
+			'button-2-text'   	=> 'click here', 
 			'button-2-color'   	=> '', 
 			'button-2-link'   	=> '', 
 			'button-2-text-color'   	=> 'barbie', // cherry, poppy, blush, barbie, peony, violet, tangerine, marigold, sunflower, forest, teal, mint, ocean, sky, bluejay, lavender, white 
@@ -1796,7 +1800,7 @@ function hero_3_handler($atts) {
 			'title-color'       => 'black', // black, white 
 			'text'         		=> '', 
 			'text-color'       	=> 'black', // white, black
-			'button-text'   	=> '', 
+			'button-text'   	=> 'click here', 
 			'button-style'   	=> 'style-5', //style-5, style-1
 			'button-link'   	=> '', 			
 			'button-text-color' => 'black',
@@ -1859,4 +1863,47 @@ function padding_box_handler($atts) {
 	$padding_box_html .= '<div class="padding-box display-mobile" style="padding-top: '.$mobile.'px"></div>';
 
 	return $padding_box_html;
+}
+
+// Previous next post is redundant and also unintentionally creates internal links (copied from iBme.com)
+
+add_action( 'lander_entry_header', 'ibme_post_byline', 11, 2 );
+
+function ibme_post_byline($type, $format) {
+	if(is_front_page() || is_page()) return edit_post_link();
+    global $post;
+    $pub_date = get_the_date( DATE_W3C );
+    $mod_date = get_the_modified_date( DATE_W3C );
+    $image = wp_get_attachment_image_src( get_post_thumbnail_id($post) ,'medium' );
+    ?>
+    <meta itemprop="author" content="iBme" />
+    <meta itemprop="datePublished" content="<?php echo $pub_date ?>" />
+    <meta itemprop="dateModified" content="<?php echo $mod_date ?>" />
+    
+    <meta itemprop="mainEntityOfPage" content="<?php echo get_permalink(); ?>" />
+    <span itemprop="image" itemscope itemtype="https://www.schema.org/ImageObject">
+            <meta itemprop="url" content="<?php echo $image[0] ?>" />
+    </span>
+    <span itemprop="publisher" itemscope itemtype="https://schema.org/Organization">
+        <meta itemprop="name" content="Inward Bound Mindfulness Education" />
+        <span itemprop="logo" itemscope itemtype="https://www.schema.org/ImageObject">
+            <meta itemprop="url" content="" />
+        </span>
+    </span>
+   
+	<p class="entry-byline">
+		<span class="entry-date"><?php echo get_the_date(); ?></span>
+		<?php
+		hybrid_post_terms(
+			array(
+				'taxonomy' => 'category',
+				'text' => esc_html__( 'Posted in %s', 'lander' ),
+			)
+		);
+		?>
+	<?php
+	edit_post_link();
+	?>
+	</p>
+	<?php
 }
