@@ -99,6 +99,8 @@ $white_opacity: rgba(255, 255, 255, 0.7);
     text-transform: lowercase;
 }
 
+h1,
+.tribe-common h1,
 .header-1 {
     font-family: Inter, sans-serif;
     font-weight: 500;
@@ -109,6 +111,8 @@ $white_opacity: rgba(255, 255, 255, 0.7);
     text-transform: lowercase;
 }
 
+h2,
+.tribe-common h2,
 .header-2 {
     font-family: "MADE Mirage Regular";
     font-size: 41px;
@@ -117,6 +121,10 @@ $white_opacity: rgba(255, 255, 255, 0.7);
     font-weight: normal;
 }
 
+h3,
+.tribe-common h3,
+.tribe-common .tribe-common-h3,
+.tribe-common .tribe-common-h5, .tribe-common .tribe-common-h6,
 .header-3 {
     font-family: Inter, sans-serif;
     font-weight: 500;
@@ -126,6 +134,9 @@ $white_opacity: rgba(255, 255, 255, 0.7);
     text-transform: lowercase;
 }
 
+h4,
+.tribe-common h4,
+.tribe-common .tribe-common-h7, .tribe-common .tribe-common-h8,
 .header-4 {
     font-family: Inter, sans-serif;
     font-weight: 500;

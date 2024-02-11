@@ -324,7 +324,7 @@ input[type="submit"], input[type="reset"], input[type="button"], .button, .butto
     justify-content: center;
     text-transform: lowercase;
     font-variant: normal;
-    border: 2px solid;
+    border: 2px solid transparent;
     padding: 0.3em 1em;
     transition: all 0.25s;
     cursor: pointer;
@@ -1388,6 +1388,9 @@ input[type="submit"], input[type="reset"], input[type="button"], .button, .butto
 /* Body Font */
 
 .ibme,
+.wFormContainer,
+.tribe-common .tribe-common-c-btn-border-small, .tribe-common a.tribe-common-c-btn-border-small,
+.tribe-common .tribe-common-b2,
 input, button, select, textarea {
     font-family: Inter, sans-serif;
     font-weight: 300;
@@ -1396,7 +1399,15 @@ input, button, select, textarea {
     letter-spacing: 0.25px;
 }
 
+.wForm textarea, .wForm input,
+.ibme .wFormContainer {
+    font-family: Inter, sans-serif !important; 
+}
  
+.wForm select {
+    border: 2px solid $mint;
+    border-radius: 5px;
+}
 
 /* Structure */
 
@@ -2747,17 +2758,22 @@ input, button, select, textarea {
 
     .cta_2-items {
         display: flex;
-        justify-content: space-between;
+        justify-content: center;
         text-align: center;
     }
 
     .cta-items-4 .cta_2-item {
         width: 22.5%;
         min-width: 280px;
+        margin-left: 20px;
+        margin-right: 20px;
     } 
 
     .cta-items-3 .cta_2-item {
-        width: 30%;
+        width: 22.5%;
+        min-width: 280px;
+        margin-left: 20px;
+        margin-right: 20px;
     } 
 
     .cta_2-item {
@@ -2842,6 +2858,11 @@ input, button, select, textarea {
 
     .none-bg-color {
         background-color: transparent; 
+        min-height: 425px;
+    }
+
+    .no-button {
+        min-height: 350px;
     }
 
     .cta_2-item {
@@ -3174,14 +3195,14 @@ input, button, select, textarea {
         align-items: center;
 
         .content-column {
-            width: 48%;
+            width: 49%;
         }
     }
 }
 
 .cta-3_columns {
     display: flex;
-    justify-content: space-between;
+    //justify-content: center;
     text-align: center;
     flex-wrap: wrap;
 
@@ -3202,8 +3223,10 @@ input, button, select, textarea {
 
 .cta-3_columns.cta-items-2 .cta-3_column {
     width: 47%;
-    min-width: 280px;
+    max-width: 280px;
     min-height: 500px;
+    margin-left: 20px;
+    margin-right: 20px;
 } 
 
 .cta-3_columns.cta-items-4 .cta-3_column,
@@ -3212,13 +3235,60 @@ input, button, select, textarea {
     width: 23%;
     max-width: 280px;
     min-height: 500px;
+    margin-left: 20px;
+    margin-right: 20px;
 } 
 
-.cta-3_columns.cta-items-3 .cta-3_column {
-    width: 30%;
+.cta-3_columns.cta-items-3 .cta-3_column,
+.cta-3_columns.thirds-display .cta-3_column {
+    width: 31%;
     max-width: 385px;
     min-height: 500px;
-} 
+    margin-left: 20px;
+    margin-right: 20px;
+}
+
+.cta-3_columns.fourths-display .cta-3_column{
+    width: 23%;
+    max-width: 280px;
+    min-height: 500px;
+    margin-left: 20px;
+    margin-right: 20px;
+}
+
+.cta-3_columns.thirds-display .cta-3_column:nth-child(3),
+.cta-3_columns.thirds-display .cta-3_column:nth-child(6),
+.cta-3_columns.thirds-display .cta-3_column:nth-child(9),
+.cta-3_columns.thirds-display .cta-3_column:nth-child(12),
+.cta-3_columns.thirds-display .cta-3_column:nth-child(15),
+.cta-3_columns.cta-items-5 .cta-3_column:nth-child(4),
+.cta-3_columns.cta-items-6 .cta-3_column:nth-child(4), 
+.cta-3_columns.fourths-display .cta-3_column:nth-child(4),
+.cta-3_columns.fourths-display .cta-3_column:nth-child(8),
+.cta-3_columns.fourths-display .cta-3_column:nth-child(12), 
+.cta-3_columns.fourths-display .cta-3_column:nth-child(16) { 
+    margin-right: 0;
+}
+
+.cta-3_columns.thirds-display .cta-3_column:nth-child(4),
+.cta-3_columns.thirds-display .cta-3_column:nth-child(7),
+.cta-3_columns.thirds-display .cta-3_column:nth-child(10),
+.cta-3_columns.thirds-display .cta-3_column:nth-child(13),
+.cta-3_columns.cta-items-5 .cta-3_column:nth-child(5),
+.cta-3_columns.cta-items-6 .cta-3_column:nth-child(5), 
+.cta-3_columns.fourths-display .cta-3_column:nth-child(5),
+.cta-3_columns.fourths-display .cta-3_column:nth-child(9), 
+.cta-3_columns.fourths-display .cta-3_column:nth-child(13) {
+    margin-left: 0;
+}
+
+.cta-3_columns .cta-3_column:first-child {
+    margin-left: 0;
+}
+
+.cta-3_columns .cta-3_column:last-child {
+    margin-right: 0;
+}
 
 .cta-3_column-content { 
     padding: 30px;
@@ -3319,48 +3389,308 @@ input, button, select, textarea {
     }
 }
 
-.subscribe-block .title {
-    width: 80%;
+.subscribe-block {
+
+    .title {
+        width: 80%;
+    }
+
+    .black-title {
+        color: #000;
+    }
+
+    .white-title {
+        color: #fff;
+    }
 }
 
-.ibme-subscribe-form {
-    display: flex;
-    flex-wrap: wrap;
-
-    .form-field {
-        width: 50%;
-        
-        input, select, option {
-            padding: 0 0 5px 0;
-            border: none;
-            border-bottom: 3px solid $tangerine;
-            margin-bottom: 40px;
-            font-weight: 500;
-            text-transform: lowercase;
-            font-size: 15px;
+.black-field-color {
+    .subscribe-form {
+        input, select, textarea, .inputWrapper, input[type="text"] {
+            color: #000;
         }
+    } 
+}
 
-        select, option {
-            font-weight: 300;
-            width: 100%;
+.white-field-color {
+    .subscribe-form {
+        input, select, textarea, .inputWrapper, input[type="text"] {
+            color: #fff;
         }
     }
 
-    label {
-        padding: 0 0 5px 0;
-        border-bottom: 3px solid $tangerine;
-        margin-bottom: 40px;
-        font-weight: 500;
-        display: block;
-        font-size: 15px;
-        line-height: 1.68em;
-        text-transform: lowercase;
+    
+    input::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+        color: #fff;
+        opacity: 1; /* Firefox */
     }
 
-    .form-field input::placeholder {
-        font-size: 15px;
-        font-weight: 500;
-        color: #000;
+    input:-ms-input-placeholder { /* Internet Explorer 10-11 */
+        color: #fff;
+    }
+
+    input::-ms-input-placeholder { /* Microsoft Edge */
+        color: #fff;
+    }
+
+    input, select, textarea {
+        color: #fff;
+    }
+
+    input:focus, textarea:focus {
+        color: #fff;
+    }
+}
+
+.black-line-color {
+    .subscribe-form {
+        .form-field input, 
+        .form-field select, 
+        .form-field option {
+            border-color: #000;
+
+            &:focus {
+                border-color: #000;
+            }
+        }
+    }
+}
+
+.white-line-color {
+    .subscribe-form {
+        .form-field input, 
+        .form-field select, 
+        .form-field option {
+            border-color: #fff;
+
+            &:focus {
+                border-color: #fff;
+            }
+        }
+    }
+}
+
+.cherry-line-color {
+    .subscribe-form {
+        .form-field input, 
+        .form-field select, 
+        .form-field option {
+            border-color: $cherry;
+
+            &:focus {
+                border-color: $cherry;
+            }
+        }
+    }
+}
+
+.poppy-line-color {
+    .subscribe-form {
+        .form-field input, 
+        .form-field select, 
+        .form-field option {
+            border-color: $poppy;
+
+            &:focus {
+                border-color: $poppy;
+            }
+        }
+    }
+}
+
+.blush-line-color {
+    .subscribe-form {
+        .form-field input, 
+        .form-field select, 
+        .form-field option {
+            border-color: $blush;
+
+            &:focus {
+                border-color: $blush;
+            }
+        }
+    }
+}
+
+.barbie-line-color {
+    .subscribe-form {
+        .form-field input, 
+        .form-field select, 
+        .form-field option {
+            border-color: $barbie;
+
+            &:focus {
+                border-color: $barbie;
+            }
+        }
+    }
+}
+
+.peony-line-color {
+    .subscribe-form {
+        .form-field input, 
+        .form-field select, 
+        .form-field option {
+            border-color: $peony;
+
+            &:focus {
+                border-color: $peony;
+            }
+        }
+    }
+}
+
+.violet-line-color {
+    .subscribe-form {
+        .form-field input, 
+        .form-field select, 
+        .form-field option {
+            border-color: $violet;
+
+            &:focus {
+                border-color: $violet;
+            }
+        }
+    }
+}
+
+.tangerine-line-color {
+    .subscribe-form {
+        .form-field input, 
+        .form-field select, 
+        .form-field option {
+            border-color: $tangerine;
+
+            &:focus {
+                border-color: $tangerine;
+            }
+        }
+    }
+}
+
+.marigold-line-color {
+    .subscribe-form {
+        .form-field input, 
+        .form-field select, 
+        .form-field option {
+            border-color: $marigold;
+
+            &:focus {
+                border-color: $marigold;
+            }
+        }
+    }
+}
+
+.sunflower-line-color {
+    .subscribe-form {
+        .form-field input, 
+        .form-field select, 
+        .form-field option {
+            border-color: $sunflower;
+
+            &:focus {
+                border-color: $sunflower;
+            }
+        }
+    }
+}
+
+.forest-line-color {
+    .subscribe-form {
+        .form-field input, 
+        .form-field select, 
+        .form-field option {
+            border-color: $forest;
+
+            &:focus {
+                border-color: $forest;
+            }
+        }
+    }
+}
+
+.teal-line-color {
+    .subscribe-form {
+        .form-field input, 
+        .form-field select, 
+        .form-field option {
+            border-color: $teal;
+
+            &:focus {
+                border-color: $teal;
+            }
+        }
+    }
+}
+
+.mint-line-color {
+    .subscribe-form {
+        .form-field input, 
+        .form-field select, 
+        .form-field option {
+            border-color: $mint;
+
+            &:focus {
+                border-color: $mint;
+            }
+        }
+    }
+}
+
+.ocean-line-color {
+    .subscribe-form {
+        .form-field input, 
+        .form-field select, 
+        .form-field option {
+            border-color: $ocean;
+
+            &:focus {
+                border-color: $ocean;
+            }
+        }
+    }
+}
+
+.sky-line-color {
+    .subscribe-form {
+        .form-field input, 
+        .form-field select, 
+        .form-field option {
+            border-color: $sky;
+
+            &:focus {
+                border-color: $sky;
+            }
+        }
+    }
+}
+
+.bluejay-line-color {
+    .subscribe-form {
+        .form-field input, 
+        .form-field select, 
+        .form-field option {
+            border-color: $bluejay;
+
+            &:focus {
+                border-color: $bluejay;
+            }
+        }
+    }
+}
+
+.lavender-line-color {
+    .subscribe-form {
+        .form-field input, 
+        .form-field select, 
+        .form-field option {
+            border-color: $lavender;
+
+            &:focus {
+                border-color: $lavender;
+            }
+        }
     }
 }
 
@@ -4671,4 +5001,36 @@ body.ibme .ibme-donate-button { //override
     &:hover {
         color: $teal;
     }
+}
+
+/* Events Calendar */
+
+//.tribe-common a:not(.tribe-common-anchor--unstyle),
+.tribe-common .tribe-common-anchor-thin,
+.tribe-common a:not(.tribe-common-anchor--unstyle):visited,
+.tribe-events-calendar-list__event-title a {
+    border-bottom: 1px solid $teal !important; 
+    color: $teal !important;
+
+    &:hover {
+        border-color: transparent !important;
+        color: $teal !important;
+        text-decoration: none !important;
+    }
+}
+
+
+/* Contact Form */
+
+.wForm input[type=text]:focus, 
+.wForm input[type=number]:focus,
+.wForm input[type=url]:focus, 
+.wForm input[type=email]:focus, 
+.wForm select:focus, 
+.wForm textarea:focus {
+    border-color: darken($mint, 5%);
+}
+
+.wForm input[type=text], .wForm input[type=time], .wForm input[type=number], .wForm input[type=url], .wForm input[type=email], .wForm input[type=password], .wForm textarea {
+    padding: 0.318em !important;
 }

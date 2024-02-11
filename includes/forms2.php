@@ -124,9 +124,26 @@ IELS;
 
 add_shortcode('subscribe-form', 'subscribe_form_shortcode' );
 
-function subscribe_form_shortcode() {
+function subscribe_form_shortcode($atts) {
 
-	extract( shortcode_atts(array('link' => 'https://inwardboundmind.org/confirmation/mailing-list/'), $atts) );
+	//extract( shortcode_atts(array('link' => 'https://inwardboundmind.org/confirmation/mailing-list/'), $atts) );
+
+	// Extract shortcode attributes
+	$atts = shortcode_atts(
+		array(
+			'field-color' => 'black', //black, white
+			'line-color' => 'sunflower', //black, white
+			'link' => 'https://inwardboundmind.org/confirmation/mailing-list/'
+		),
+		$atts,
+		'ibme_subscribe_block'
+	);
+
+	$link = $atts['link'];
+	$field_color = $atts['field-color'];
+	$line_color = $atts['line-color'];
+	$field_color_class = $field_color.'-field-color';
+	$line_color_class = $line_color.'-line-color';
 
 	$protocol = isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] !== 'off' ? 'https' : 'http';
 	$full_url = $protocol."://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
@@ -144,7 +161,7 @@ function subscribe_form_shortcode() {
 	}
 
 	$form_output = <<<IELS
-
+	<div class="ibme-subscribe-form $field_color_class $line_color_class">
 	<!-- FORM: HEAD SECTION -->
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 
@@ -263,7 +280,7 @@ function subscribe_form_shortcode() {
 					</div>
 
 					<div class="actions">
-						<input type="submit" class="primaryAction" value="Subscribe">
+						<input type="submit" class="primaryAction ibme-button style-1 sunflower-button" value="Subscribe">
 					</div>
 
 				</div>
@@ -281,8 +298,21 @@ function subscribe_form_shortcode() {
 			</form>
 		</div>
 	</div>	
+	</div>	
 IELS;
 // !!! THE ABOVE LINE SHOULD NEVER BE INDENTED !!! ///
 	// $form_output = apply_filters( 'ibme_form_recaptcha', $form_output );
 	return $form_output;
+}
+
+
+/* Shortcode for full-width videos */
+
+add_shortcode('ibme-full-width-video','ibme_full_width_video');
+
+function ibme_full_width_video($atts) {
+	extract( shortcode_atts(array('video_link' => 'https://player.vimeo.com/video/89686223'), $atts) );
+	
+	return '<style>.embed-container { position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%; } .embed-container iframe, .embed-container object, .embed-container embed { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }</style><div class="embed-container"><iframe src="'.$video_link.'" frameborder="0" webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe></div>';
+	
 }

@@ -15,6 +15,13 @@
 	z-index: -1;
 }
 
+.show-page-title .entry .entry-title {
+    text-indent: unset;
+    height: unset;
+    margin: unset;
+    text-align: center;
+}
+
 .subscribe-form {
 
     .form-inputs {
@@ -37,6 +44,12 @@
         margin-bottom: 30px;
     }
 
+    .form-field input:focus, 
+    .form-field select:focus, 
+    .form-field option:focus {
+        border-color: $sunflower;
+    } 
+
     select {
         -moz-appearance: none;
         text-indent: 0.01px;
@@ -56,8 +69,10 @@
     textarea,
     select {
         font-size: 16px;
+        font-size: 15px; // Shiv: as per Frances's instructions (in Figma)
         font-weight: 500;
         border-radius: 0;
+        padding: 6px !important;
     }
 
     input[type="checkbox"] {
@@ -66,8 +81,11 @@
     }
 
     .checkboxes {
+        width: 100%;
+
         .preField {
             font-size: 16px;
+            font-size: 15px; // Shiv: as per Frances's instructions (in Figma)
             font-weight: 500;
         }
         .inputWrapper {
@@ -77,6 +95,8 @@
             label {
                 margin-right: 12px;
                 font-size: 16px;
+                font-size: 15px; // Shiv: as per Frances's instructions (in Figma)
+                line-height: 1em; // Shiv: as per Frances's instructions (in Figma)
             }
         }
         .oneChoice {
@@ -89,7 +109,7 @@
         padding-top: 25px;
     }
 
-    input[type="submit"] {
+    /* input[type="submit"] { // Shiv: added button classes to take care of the styles
         font-size: 18px;
         background: #ffd234;
         color: #000;
@@ -100,7 +120,7 @@
             background: #ffdc3e;
         }
 
-    }
+    }*/
 
     input::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
         color: #000;
@@ -198,9 +218,26 @@
 
 // Widget stuff ---------------------------------
 
-.ibme-donate-button-wrapper {
+.side-panel-container .panel-close,
+.op-side-panel .panel-close {
+    background: #ffd234 !important;
+    &:hover {
+        background: #fff !important;
+    }
+}
+
+.side-panel-container .panel-close svg {
+    filter: none !important;
+}
+
+.ibme-donate-button-wrapper,
+.op-side-panel-container .op-side-panel.full-form {
     .side-panel-container .side-panel {
         max-width: 700px;
     }
+}
+
+.full-form {
+    max-width: 700px !important;
 }
 

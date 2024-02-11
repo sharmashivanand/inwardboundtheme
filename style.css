@@ -80,6 +80,8 @@ input:focus:-ms-input-placeholder, textarea:focus:-ms-input-placeholder {
   text-transform: lowercase;
 }
 
+h1,
+.tribe-common h1,
 .header-1 {
   font-family: Inter, sans-serif;
   font-weight: 500;
@@ -90,6 +92,8 @@ input:focus:-ms-input-placeholder, textarea:focus:-ms-input-placeholder {
   text-transform: lowercase;
 }
 
+h2,
+.tribe-common h2,
 .header-2 {
   font-family: "MADE Mirage Regular";
   font-size: 41px;
@@ -98,6 +102,10 @@ input:focus:-ms-input-placeholder, textarea:focus:-ms-input-placeholder {
   font-weight: normal;
 }
 
+h3,
+.tribe-common h3,
+.tribe-common .tribe-common-h3,
+.tribe-common .tribe-common-h5, .tribe-common .tribe-common-h6,
 .header-3 {
   font-family: Inter, sans-serif;
   font-weight: 500;
@@ -107,6 +115,9 @@ input:focus:-ms-input-placeholder, textarea:focus:-ms-input-placeholder {
   text-transform: lowercase;
 }
 
+h4,
+.tribe-common h4,
+.tribe-common .tribe-common-h7, .tribe-common .tribe-common-h8,
 .header-4 {
   font-family: Inter, sans-serif;
   font-weight: 500;
@@ -1393,7 +1404,7 @@ input[type="submit"], input[type="reset"], input[type="button"], .button, .butto
   justify-content: center;
   text-transform: lowercase;
   font-variant: normal;
-  border: 2px solid;
+  border: 2px solid transparent;
   padding: 0.3em 1em;
   transition: all 0.25s;
   cursor: pointer;
@@ -2262,12 +2273,25 @@ input[type="submit"]:hover, input[type="reset"]:hover, input[type="button"]:hove
 
 /* Body Font */
 .ibme,
+.wFormContainer,
+.tribe-common .tribe-common-c-btn-border-small, .tribe-common a.tribe-common-c-btn-border-small,
+.tribe-common .tribe-common-b2,
 input, button, select, textarea {
   font-family: Inter, sans-serif;
   font-weight: 300;
   font-size: 18px;
   line-height: 1.3em;
   letter-spacing: 0.25px;
+}
+
+.wForm textarea, .wForm input,
+.ibme .wFormContainer {
+  font-family: Inter, sans-serif !important;
+}
+
+.wForm select {
+  border: 2px solid #A4EDC6;
+  border-radius: 5px;
 }
 
 /* Structure */
@@ -3318,15 +3342,20 @@ input, button, select, textarea {
 }
 .cta_2_section .cta_2-items {
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   text-align: center;
 }
 .cta_2_section .cta-items-4 .cta_2-item {
   width: 22.5%;
   min-width: 280px;
+  margin-left: 20px;
+  margin-right: 20px;
 }
 .cta_2_section .cta-items-3 .cta_2-item {
-  width: 30%;
+  width: 22.5%;
+  min-width: 280px;
+  margin-left: 20px;
+  margin-right: 20px;
 }
 .cta_2_section .cta_2-item {
   box-sizing: border-box;
@@ -3392,6 +3421,10 @@ input, button, select, textarea {
 }
 .cta_2_section .none-bg-color {
   background-color: transparent;
+  min-height: 425px;
+}
+.cta_2_section .no-button {
+  min-height: 350px;
 }
 .cta_2_section .cta_2-item.black-text .header-3 {
   color: #000;
@@ -3631,12 +3664,11 @@ input, button, select, textarea {
   align-items: center;
 }
 .ibme_cta-3_subscribe_block .landing-section-content .content-column {
-  width: 48%;
+  width: 49%;
 }
 
 .cta-3_columns {
   display: flex;
-  justify-content: space-between;
   text-align: center;
   flex-wrap: wrap;
 }
@@ -3654,8 +3686,10 @@ input, button, select, textarea {
 
 .cta-3_columns.cta-items-2 .cta-3_column {
   width: 47%;
-  min-width: 280px;
+  max-width: 280px;
   min-height: 500px;
+  margin-left: 20px;
+  margin-right: 20px;
 }
 
 .cta-3_columns.cta-items-4 .cta-3_column,
@@ -3664,12 +3698,59 @@ input, button, select, textarea {
   width: 23%;
   max-width: 280px;
   min-height: 500px;
+  margin-left: 20px;
+  margin-right: 20px;
 }
 
-.cta-3_columns.cta-items-3 .cta-3_column {
-  width: 30%;
+.cta-3_columns.cta-items-3 .cta-3_column,
+.cta-3_columns.thirds-display .cta-3_column {
+  width: 31%;
   max-width: 385px;
   min-height: 500px;
+  margin-left: 20px;
+  margin-right: 20px;
+}
+
+.cta-3_columns.fourths-display .cta-3_column {
+  width: 23%;
+  max-width: 280px;
+  min-height: 500px;
+  margin-left: 20px;
+  margin-right: 20px;
+}
+
+.cta-3_columns.thirds-display .cta-3_column:nth-child(3),
+.cta-3_columns.thirds-display .cta-3_column:nth-child(6),
+.cta-3_columns.thirds-display .cta-3_column:nth-child(9),
+.cta-3_columns.thirds-display .cta-3_column:nth-child(12),
+.cta-3_columns.thirds-display .cta-3_column:nth-child(15),
+.cta-3_columns.cta-items-5 .cta-3_column:nth-child(4),
+.cta-3_columns.cta-items-6 .cta-3_column:nth-child(4),
+.cta-3_columns.fourths-display .cta-3_column:nth-child(4),
+.cta-3_columns.fourths-display .cta-3_column:nth-child(8),
+.cta-3_columns.fourths-display .cta-3_column:nth-child(12),
+.cta-3_columns.fourths-display .cta-3_column:nth-child(16) {
+  margin-right: 0;
+}
+
+.cta-3_columns.thirds-display .cta-3_column:nth-child(4),
+.cta-3_columns.thirds-display .cta-3_column:nth-child(7),
+.cta-3_columns.thirds-display .cta-3_column:nth-child(10),
+.cta-3_columns.thirds-display .cta-3_column:nth-child(13),
+.cta-3_columns.cta-items-5 .cta-3_column:nth-child(5),
+.cta-3_columns.cta-items-6 .cta-3_column:nth-child(5),
+.cta-3_columns.fourths-display .cta-3_column:nth-child(5),
+.cta-3_columns.fourths-display .cta-3_column:nth-child(9),
+.cta-3_columns.fourths-display .cta-3_column:nth-child(13) {
+  margin-left: 0;
+}
+
+.cta-3_columns .cta-3_column:first-child {
+  margin-left: 0;
+}
+
+.cta-3_columns .cta-3_column:last-child {
+  margin-right: 0;
 }
 
 .cta-3_column-content {
@@ -3769,41 +3850,237 @@ input, button, select, textarea {
 .subscribe-block .title {
   width: 80%;
 }
-
-.ibme-subscribe-form {
-  display: flex;
-  flex-wrap: wrap;
-}
-.ibme-subscribe-form .form-field {
-  width: 50%;
-}
-.ibme-subscribe-form .form-field input, .ibme-subscribe-form .form-field select, .ibme-subscribe-form .form-field option {
-  padding: 0 0 5px 0;
-  border: none;
-  border-bottom: 3px solid #FF951F;
-  margin-bottom: 40px;
-  font-weight: 500;
-  text-transform: lowercase;
-  font-size: 15px;
-}
-.ibme-subscribe-form .form-field select, .ibme-subscribe-form .form-field option {
-  font-weight: 300;
-  width: 100%;
-}
-.ibme-subscribe-form label {
-  padding: 0 0 5px 0;
-  border-bottom: 3px solid #FF951F;
-  margin-bottom: 40px;
-  font-weight: 500;
-  display: block;
-  font-size: 15px;
-  line-height: 1.68em;
-  text-transform: lowercase;
-}
-.ibme-subscribe-form .form-field input::placeholder {
-  font-size: 15px;
-  font-weight: 500;
+.subscribe-block .black-title {
   color: #000;
+}
+.subscribe-block .white-title {
+  color: #fff;
+}
+
+.black-field-color .subscribe-form input, .black-field-color .subscribe-form select, .black-field-color .subscribe-form textarea, .black-field-color .subscribe-form .inputWrapper, .black-field-color .subscribe-form input[type="text"] {
+  color: #000;
+}
+
+.white-field-color .subscribe-form input, .white-field-color .subscribe-form select, .white-field-color .subscribe-form textarea, .white-field-color .subscribe-form .inputWrapper, .white-field-color .subscribe-form input[type="text"] {
+  color: #fff;
+}
+.white-field-color input::placeholder {
+  /* Chrome, Firefox, Opera, Safari 10.1+ */
+  color: #fff;
+  opacity: 1;
+  /* Firefox */
+}
+.white-field-color input:-ms-input-placeholder {
+  /* Internet Explorer 10-11 */
+  color: #fff;
+}
+.white-field-color input::-ms-input-placeholder {
+  /* Microsoft Edge */
+  color: #fff;
+}
+.white-field-color input, .white-field-color select, .white-field-color textarea {
+  color: #fff;
+}
+.white-field-color input:focus, .white-field-color textarea:focus {
+  color: #fff;
+}
+
+.black-line-color .subscribe-form .form-field input,
+.black-line-color .subscribe-form .form-field select,
+.black-line-color .subscribe-form .form-field option {
+  border-color: #000;
+}
+.black-line-color .subscribe-form .form-field input:focus,
+.black-line-color .subscribe-form .form-field select:focus,
+.black-line-color .subscribe-form .form-field option:focus {
+  border-color: #000;
+}
+
+.white-line-color .subscribe-form .form-field input,
+.white-line-color .subscribe-form .form-field select,
+.white-line-color .subscribe-form .form-field option {
+  border-color: #fff;
+}
+.white-line-color .subscribe-form .form-field input:focus,
+.white-line-color .subscribe-form .form-field select:focus,
+.white-line-color .subscribe-form .form-field option:focus {
+  border-color: #fff;
+}
+
+.cherry-line-color .subscribe-form .form-field input,
+.cherry-line-color .subscribe-form .form-field select,
+.cherry-line-color .subscribe-form .form-field option {
+  border-color: #FF372F;
+}
+.cherry-line-color .subscribe-form .form-field input:focus,
+.cherry-line-color .subscribe-form .form-field select:focus,
+.cherry-line-color .subscribe-form .form-field option:focus {
+  border-color: #FF372F;
+}
+
+.poppy-line-color .subscribe-form .form-field input,
+.poppy-line-color .subscribe-form .form-field select,
+.poppy-line-color .subscribe-form .form-field option {
+  border-color: #FF5A5A;
+}
+.poppy-line-color .subscribe-form .form-field input:focus,
+.poppy-line-color .subscribe-form .form-field select:focus,
+.poppy-line-color .subscribe-form .form-field option:focus {
+  border-color: #FF5A5A;
+}
+
+.blush-line-color .subscribe-form .form-field input,
+.blush-line-color .subscribe-form .form-field select,
+.blush-line-color .subscribe-form .form-field option {
+  border-color: #FF978C;
+}
+.blush-line-color .subscribe-form .form-field input:focus,
+.blush-line-color .subscribe-form .form-field select:focus,
+.blush-line-color .subscribe-form .form-field option:focus {
+  border-color: #FF978C;
+}
+
+.barbie-line-color .subscribe-form .form-field input,
+.barbie-line-color .subscribe-form .form-field select,
+.barbie-line-color .subscribe-form .form-field option {
+  border-color: #EF5DBF;
+}
+.barbie-line-color .subscribe-form .form-field input:focus,
+.barbie-line-color .subscribe-form .form-field select:focus,
+.barbie-line-color .subscribe-form .form-field option:focus {
+  border-color: #EF5DBF;
+}
+
+.peony-line-color .subscribe-form .form-field input,
+.peony-line-color .subscribe-form .form-field select,
+.peony-line-color .subscribe-form .form-field option {
+  border-color: #FFB9DD;
+}
+.peony-line-color .subscribe-form .form-field input:focus,
+.peony-line-color .subscribe-form .form-field select:focus,
+.peony-line-color .subscribe-form .form-field option:focus {
+  border-color: #FFB9DD;
+}
+
+.violet-line-color .subscribe-form .form-field input,
+.violet-line-color .subscribe-form .form-field select,
+.violet-line-color .subscribe-form .form-field option {
+  border-color: #F2C1E8;
+}
+.violet-line-color .subscribe-form .form-field input:focus,
+.violet-line-color .subscribe-form .form-field select:focus,
+.violet-line-color .subscribe-form .form-field option:focus {
+  border-color: #F2C1E8;
+}
+
+.tangerine-line-color .subscribe-form .form-field input,
+.tangerine-line-color .subscribe-form .form-field select,
+.tangerine-line-color .subscribe-form .form-field option {
+  border-color: #FF951F;
+}
+.tangerine-line-color .subscribe-form .form-field input:focus,
+.tangerine-line-color .subscribe-form .form-field select:focus,
+.tangerine-line-color .subscribe-form .form-field option:focus {
+  border-color: #FF951F;
+}
+
+.marigold-line-color .subscribe-form .form-field input,
+.marigold-line-color .subscribe-form .form-field select,
+.marigold-line-color .subscribe-form .form-field option {
+  border-color: #FFB235;
+}
+.marigold-line-color .subscribe-form .form-field input:focus,
+.marigold-line-color .subscribe-form .form-field select:focus,
+.marigold-line-color .subscribe-form .form-field option:focus {
+  border-color: #FFB235;
+}
+
+.sunflower-line-color .subscribe-form .form-field input,
+.sunflower-line-color .subscribe-form .form-field select,
+.sunflower-line-color .subscribe-form .form-field option {
+  border-color: #FFD234;
+}
+.sunflower-line-color .subscribe-form .form-field input:focus,
+.sunflower-line-color .subscribe-form .form-field select:focus,
+.sunflower-line-color .subscribe-form .form-field option:focus {
+  border-color: #FFD234;
+}
+
+.forest-line-color .subscribe-form .form-field input,
+.forest-line-color .subscribe-form .form-field select,
+.forest-line-color .subscribe-form .form-field option {
+  border-color: #005F47;
+}
+.forest-line-color .subscribe-form .form-field input:focus,
+.forest-line-color .subscribe-form .form-field select:focus,
+.forest-line-color .subscribe-form .form-field option:focus {
+  border-color: #005F47;
+}
+
+.teal-line-color .subscribe-form .form-field input,
+.teal-line-color .subscribe-form .form-field select,
+.teal-line-color .subscribe-form .form-field option {
+  border-color: #008075;
+}
+.teal-line-color .subscribe-form .form-field input:focus,
+.teal-line-color .subscribe-form .form-field select:focus,
+.teal-line-color .subscribe-form .form-field option:focus {
+  border-color: #008075;
+}
+
+.mint-line-color .subscribe-form .form-field input,
+.mint-line-color .subscribe-form .form-field select,
+.mint-line-color .subscribe-form .form-field option {
+  border-color: #A4EDC6;
+}
+.mint-line-color .subscribe-form .form-field input:focus,
+.mint-line-color .subscribe-form .form-field select:focus,
+.mint-line-color .subscribe-form .form-field option:focus {
+  border-color: #A4EDC6;
+}
+
+.ocean-line-color .subscribe-form .form-field input,
+.ocean-line-color .subscribe-form .form-field select,
+.ocean-line-color .subscribe-form .form-field option {
+  border-color: #217490;
+}
+.ocean-line-color .subscribe-form .form-field input:focus,
+.ocean-line-color .subscribe-form .form-field select:focus,
+.ocean-line-color .subscribe-form .form-field option:focus {
+  border-color: #217490;
+}
+
+.sky-line-color .subscribe-form .form-field input,
+.sky-line-color .subscribe-form .form-field select,
+.sky-line-color .subscribe-form .form-field option {
+  border-color: #5FA6E2;
+}
+.sky-line-color .subscribe-form .form-field input:focus,
+.sky-line-color .subscribe-form .form-field select:focus,
+.sky-line-color .subscribe-form .form-field option:focus {
+  border-color: #5FA6E2;
+}
+
+.bluejay-line-color .subscribe-form .form-field input,
+.bluejay-line-color .subscribe-form .form-field select,
+.bluejay-line-color .subscribe-form .form-field option {
+  border-color: #8ECCDC;
+}
+.bluejay-line-color .subscribe-form .form-field input:focus,
+.bluejay-line-color .subscribe-form .form-field select:focus,
+.bluejay-line-color .subscribe-form .form-field option:focus {
+  border-color: #8ECCDC;
+}
+
+.lavender-line-color .subscribe-form .form-field input,
+.lavender-line-color .subscribe-form .form-field select,
+.lavender-line-color .subscribe-form .form-field option {
+  border-color: #9691D8;
+}
+.lavender-line-color .subscribe-form .form-field input:focus,
+.lavender-line-color .subscribe-form .form-field select:focus,
+.lavender-line-color .subscribe-form .form-field option:focus {
+  border-color: #9691D8;
 }
 
 /* Hero_1 Slider Variation */
@@ -4888,6 +5165,35 @@ body.ibme .ibme-donate-button {
   color: #008075;
 }
 
+/* Events Calendar */
+.tribe-common .tribe-common-anchor-thin,
+.tribe-common a:not(.tribe-common-anchor--unstyle):visited,
+.tribe-events-calendar-list__event-title a {
+  border-bottom: 1px solid #008075 !important;
+  color: #008075 !important;
+}
+.tribe-common .tribe-common-anchor-thin:hover,
+.tribe-common a:not(.tribe-common-anchor--unstyle):visited:hover,
+.tribe-events-calendar-list__event-title a:hover {
+  border-color: transparent !important;
+  color: #008075 !important;
+  text-decoration: none !important;
+}
+
+/* Contact Form */
+.wForm input[type=text]:focus,
+.wForm input[type=number]:focus,
+.wForm input[type=url]:focus,
+.wForm input[type=email]:focus,
+.wForm select:focus,
+.wForm textarea:focus {
+  border-color: #8fe9b9;
+}
+
+.wForm input[type=text], .wForm input[type=time], .wForm input[type=number], .wForm input[type=url], .wForm input[type=email], .wForm input[type=password], .wForm textarea {
+  padding: 0.318em !important;
+}
+
 .text-center,
 .center-align {
   text-align: center;
@@ -4903,6 +5209,27 @@ body.ibme .ibme-donate-button {
   z-index: -1;
 }
 
+.show-page-title .entry .entry-title {
+  text-indent: unset;
+  height: unset;
+  margin: unset;
+  text-align: center;
+}
+
+.subscribe-form {
+    /* input[type="submit"] { // Shiv: added button classes to take care of the styles
+        font-size: 18px;
+        background: #ffd234;
+        color: #000;
+        font-variant: none;
+        text-transform: lowercase;
+        font-weight: 500;
+        &:hover {
+            background: #ffdc3e;
+        }
+
+    }*/
+}
 .subscribe-form .form-inputs {
   display: flex;
   flex-wrap: wrap;
@@ -4919,6 +5246,11 @@ body.ibme .ibme-donate-button {
   border: none;
   border-bottom: 3px solid #ffd234;
   margin-bottom: 30px;
+}
+.subscribe-form .form-field input:focus,
+.subscribe-form .form-field select:focus,
+.subscribe-form .form-field option:focus {
+  border-color: #FFD234;
 }
 .subscribe-form select {
   -moz-appearance: none;
@@ -4937,15 +5269,21 @@ body.ibme .ibme-donate-button {
 .subscribe-form textarea,
 .subscribe-form select {
   font-size: 16px;
+  font-size: 15px;
   font-weight: 500;
   border-radius: 0;
+  padding: 6px !important;
 }
 .subscribe-form input[type="checkbox"] {
   width: auto;
   margin-right: 2px;
 }
+.subscribe-form .checkboxes {
+  width: 100%;
+}
 .subscribe-form .checkboxes .preField {
   font-size: 16px;
+  font-size: 15px;
   font-weight: 500;
 }
 .subscribe-form .checkboxes .inputWrapper {
@@ -4956,6 +5294,8 @@ body.ibme .ibme-donate-button {
 .subscribe-form .checkboxes .inputWrapper label {
   margin-right: 12px;
   font-size: 16px;
+  font-size: 15px;
+  line-height: 1em;
 }
 .subscribe-form .checkboxes .oneChoice {
   width: 33.33%;
@@ -4963,17 +5303,6 @@ body.ibme .ibme-donate-button {
 }
 .subscribe-form .actions {
   padding-top: 25px;
-}
-.subscribe-form input[type="submit"] {
-  font-size: 18px;
-  background: #ffd234;
-  color: #000;
-  font-variant: none;
-  text-transform: lowercase;
-  font-weight: 500;
-}
-.subscribe-form input[type="submit"]:hover {
-  background: #ffdc3e;
 }
 .subscribe-form input::placeholder {
   /* Chrome, Firefox, Opera, Safari 10.1+ */
@@ -5056,8 +5385,26 @@ body.ibme .ibme-donate-button {
   }
 }
 
-.ibme-donate-button-wrapper .side-panel-container .side-panel {
+.side-panel-container .panel-close,
+.op-side-panel .panel-close {
+  background: #ffd234 !important;
+}
+.side-panel-container .panel-close:hover,
+.op-side-panel .panel-close:hover {
+  background: #fff !important;
+}
+
+.side-panel-container .panel-close svg {
+  filter: none !important;
+}
+
+.ibme-donate-button-wrapper .side-panel-container .side-panel,
+.op-side-panel-container .op-side-panel.full-form .side-panel-container .side-panel {
   max-width: 700px;
+}
+
+.full-form {
+  max-width: 700px !important;
 }
 
 /*# sourceMappingURL=style.css.map */
