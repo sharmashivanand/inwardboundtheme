@@ -329,16 +329,17 @@ function ibme_button_handler( $atts ) {
 
 	$color_class          = '';
 	$button_2_color_class = '';
+	$button_html ='';
 	// Extract shortcode attributes
 	$atts = shortcode_atts(
 		array(
 			'link'                => '',
-			'text'                => 'click here',
+			'text'                => '',
 			'color'               => '',
 			'style'               => 'style-1', // style-1, style-3, style-4, style-5
 			'type'                => 'single',
 			'button-2-link'       => '', // Link for the second button
-			'button-2-text'       => 'click here', // Text for the second button
+			'button-2-text'       => '', // Text for the second button
 			'button-2-color'      => '', // BG color for the second button
 			'button-2-style'      => '', // Style for the second button
 			'text-color'          => 'black',
@@ -402,12 +403,18 @@ function ibme_button_handler( $atts ) {
 
 			// Generate HTML for the dual buttons
 			$button_html  = '<div class="inline-buttons">';
-			$button_html .= '<a href="' . $link . '" class="ibme-button ' . $color_class . $style . ' ' . $text_color . '-text" ' . $target_attribute . '>' . $text . '</a>';
-			$button_html .= '<a href="' . $button_2_link . '" class="ibme-button ' . $button_2_color_class . $button_2_style . ' ' . $button_2_text_color . '-text" ' . $target_attribute_2 . '>' . $button_2_text . '</a>';
+			if (!empty($link) && !empty($text)) {
+				$button_html .= '<a href="' . $link . '" class="ibme-button ' . $color_class . $style . ' ' . $text_color . '-text" ' . $target_attribute . '>' . $text . '</a>';
+			}
+			if (!empty($button_2_link) && !empty($button_2_text)) {
+				$button_html .= '<a href="' . $button_2_link . '" class="ibme-button ' . $button_2_color_class . $button_2_style . ' ' . $button_2_text_color . '-text" ' . $target_attribute_2 . '>' . $button_2_text . '</a>';
+			}
 			$button_html .= '</div>';
 		} else {
 			// Generate HTML for a single button
-			$button_html = '<a href="' . $link . '" class="ibme-button ' . $color_class . $style . ' ' . $text_color . '-text" ' . $target_attribute . '>' . $text . '</a>';
+			if (!empty($link) && !empty($text)) {
+				$button_html = '<a href="' . $link . '" class="ibme-button ' . $color_class . $style . ' ' . $text_color . '-text" ' . $target_attribute . '>' . $text . '</a>';
+			}
 		}
 	}
 
@@ -432,12 +439,12 @@ function ibme_statement_1_handler( $atts ) {
 			'text-color'          => 'black', // black, white
 			'button-type'         => 'single',
 			'button-link'         => '',
-			'button-text'         => 'click here',
+			'button-text'         => '',
 			'button-color'        => '',
 			'button-style'        => 'style-3',
 			'button-text-color'   => 'black', // cherry, poppy, blush, barbie, peony, violet, tangerine, marigold, sunflower, forest, teal, mint, ocean, sky, bluejay, lavender, black
 			'button-2-link'       => '',
-			'button-2-text'       => 'click here',
+			'button-2-text'       => '',
 			'button-2-color'      => '',
 			'button-2-style'      => 'style-4',
 			'button-2-text-color' => 'barbie', // cherry, poppy, blush, barbie, peony, violet, tangerine, marigold, sunflower, forest, teal, mint, ocean, sky, bluejay, lavender, white
@@ -575,7 +582,7 @@ function ibme_cta_2_content_block_handler( $atts ) {
 			'color'             => '', // 'cherry', 'poppy', 'blush', 'barbie', 'peony', 'violet', 'tangerine', 'marigold', 'sunflower', 'forest', 'teal', 'mint', 'ocean', 'sky', 'bluejay', 'lavendar', 'none'
 			'illustration'      => '', // cabin, cloud, embrace, eye, face, fire, flower, heart-hug, heart, journal, music, plant, smiles, sun, sunglasses, talking, two-teens, walking, workshop, yoga
 			'title'             => '',
-			'button-text'       => 'click here',
+			'button-text'       => '',
 			'button-link'       => '',
 			'button-color'      => '',
 			'new-tab'           => 'no', // yes, no
@@ -744,7 +751,7 @@ function ibme_upcoming_events_handler( $atts, $content = null ) {
 			'image-url'         => '',
 			'title'             => '',
 			'new-tab'           => 'no', // yes, no
-			'button-text'       => 'click here',
+			'button-text'       => '',
 			'button-link'       => '',
 			'button-color'      => 'white',
 			'button-text-color' => 'black', // black, cherry, poppy, blush, barbie, peony, violet, tangerine, marigold, sunflower, forest, teal, mint, ocean, sky, bluejay, lavender
@@ -796,9 +803,9 @@ function ibme_upcoming_event_handler( $atts ) {
 			'event-name'       => '',
 			'event-location'   => '',
 			'button-link'      => '',
-			'button-text'      => 'click here',
+			'button-text'      => '',
 			'button-2-link'    => '',
-			'button-2-text'    => 'click here',
+			'button-2-text'    => '',
 			'new-tab'          => 'no', // yes, no
 			'button-2-new-tab' => 'no', // yes, no
 		),
@@ -852,7 +859,7 @@ function ibme_cta_3_content_block_handler( $atts ) {
 			'title'             => '',
 			'text'              => '',
 			'image-url'         => '',
-			'button-text'       => 'click here',
+			'button-text'       => '',
 			'button-link'       => '',
 			'button-color'      => '',
 			'button-style'      => 'style-5', // style-5, style-1
@@ -957,7 +964,7 @@ function ibme_subscribe_block_handler( $atts ) {
 			'title' => '',
 			'title-color' => 'black', //black, white
 			'field-color' => 'black', //black, white
-			'line-color' => 'sunflower', //black, white
+			'line-color' => 'sunflower', 
 			'link' => 'https://inwardboundmind.org/confirmation/mailing-list/'
 		),
 		$atts,
@@ -1016,8 +1023,8 @@ function hero_1_photo_handler( $atts ) {
 			'title'               => '',
 			'title-color'         => '', // white, black
 			'button-color'        => '',
-			'button-text'         => 'click here',
-			'button-2-text'       => 'click here',
+			'button-text'         => '',
+			'button-2-text'       => '',
 			'button-link'         => '',
 			'button-2-link'       => '',
 			'new-tab'             => 'no', // yes, no
@@ -1119,8 +1126,8 @@ function hero_1_slider_handler( $atts, $content = null ) {
 			'title-color'         => '', // white, black
 			'button-color'        => '',
 			'button-2-color'      => 'white',
-			'button-text'         => 'click here',
-			'button-2-text'       => 'click here',
+			'button-text'         => '',
+			'button-2-text'       => '',
 			'button-link'         => '',
 			'button-2-link'       => '',
 			'button-2-text-color' => 'black', // cherry, poppy, blush, barbie, peony, violet, tangerine, marigold, sunflower, forest, teal, mint, ocean, sky, bluejay, lavender, black
@@ -1271,11 +1278,11 @@ function impact_1_slide_handler( $atts ) {
 			'text'                => '',
 			'text-color'          => 'black', // black, white
 			'button-type'         => '',
-			'button-text'         => 'click here',
+			'button-text'         => '',
 			'button-color'        => '',
 			'button-text-color'   => 'black', // cherry, poppy, blush, barbie, peony, violet, tangerine, marigold, sunflower, forest, teal, mint, ocean, sky, bluejay, lavender, black
 			'button-link'         => '',
-			'button-2-text'       => 'click here',
+			'button-2-text'       => '',
 			'button-2-color'      => '',
 			'button-2-link'       => '',
 			'button-2-text-color' => 'barbie', // cherry, poppy, blush, barbie, peony, violet, tangerine, marigold, sunflower, forest, teal, mint, ocean, sky, bluejay, lavender, white
@@ -1465,8 +1472,8 @@ function hero_2_handler( $atts ) {
 			'text-color'       => '', // white, black
 			'button-color'     => '',
 			'button-2-color'   => '',
-			'button-text'      => 'click here',
-			'button-2-text'    => 'click here',
+			'button-text'      => '',
+			'button-2-text'    => '',
 			'button-link'      => '',
 			'button-2-link'    => '',
 			'new-tab'          => 'no', // yes, no
@@ -1597,7 +1604,7 @@ function ibme_statement_2_handler( $atts ) {
 			'text'              => '',
 			'text-color'        => '', // black, white
 			'bg-color'          => '', // 'cherry', 'poppy', 'blush', 'barbie', 'peony', 'violet', 'tangerine', 'marigold', 'sunflower', 'forest', 'teal', 'mint', 'ocean', 'sky', 'bluejay', 'lavendar'
-			'button-text'       => 'click here',
+			'button-text'       => '',
 			'button-link'       => '',
 			'button-color'      => 'white',
 			'button-style'      => '', // style-5, style-1
@@ -1710,11 +1717,11 @@ function impact_2_slide_handler( $atts ) {
 			'text'                => '',
 			'text-color'          => 'black', // black, white
 			'button-type'         => '',
-			'button-text'         => 'click here',
+			'button-text'         => '',
 			'button-color'        => '',
 			'button-text-color'   => 'black', // cherry, poppy, blush, barbie, peony, violet, tangerine, marigold, sunflower, forest, teal, mint, ocean, sky, bluejay, lavender, black
 			'button-link'         => '',
-			'button-2-text'       => 'click here',
+			'button-2-text'       => '',
 			'button-2-color'      => '',
 			'button-2-link'       => '',
 			'button-2-text-color' => 'barbie', // cherry, poppy, blush, barbie, peony, violet, tangerine, marigold, sunflower, forest, teal, mint, ocean, sky, bluejay, lavender, white
@@ -1838,7 +1845,7 @@ function hero_3_handler( $atts ) {
 			'title-color'       => 'black', // black, white
 			'text'              => '',
 			'text-color'        => 'black', // white, black
-			'button-text'       => 'click here',
+			'button-text'       => '',
 			'button-style'      => 'style-5', // style-5, style-1
 			'button-link'       => '',
 			'button-text-color' => 'black',

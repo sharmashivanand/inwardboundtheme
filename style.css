@@ -2571,6 +2571,7 @@ input, button, select, textarea {
 }
 .menu .support a {
   position: relative;
+  cursor: default;
 }
 .menu .support a:before {
   width: 13px;
@@ -2581,6 +2582,7 @@ input, button, select, textarea {
 }
 .menu .about a {
   position: relative;
+  cursor: default;
 }
 .menu .about a:before {
   width: 13px;
@@ -5040,6 +5042,10 @@ body.ibme .ibme-donate-button {
     background: #ff000080;
   }
 }
+.ibme .wFormContainer.op-side-panel-container {
+  max-width: 100%;
+}
+
 .op-side-panel-container {
   position: fixed;
   top: 0;
@@ -5051,9 +5057,6 @@ body.ibme .ibme-donate-button {
   visibility: hidden;
   transition: visibility 0s 0.6s;
   transform: translate3d(100%, 0, 0);
-}
-.op-side-panel-container p {
-  margin: 0 0 1.318em !important;
 }
 .op-side-panel-container .op-side-panel {
   width: 64%;
@@ -5109,22 +5112,6 @@ body.ibme .ibme-donate-button {
   top: 25px;
   position: sticky;
   left: 84%;
-}
-
-.ibme .op-side-panel-container .op-side-panel .blue-text {
-  text-align: center;
-  margin-bottom: 20px !important;
-  font-size: 23px;
-}
-.ibme .op-side-panel-container .op-side-panel .blue-btn {
-  padding: 12px 30px;
-  background-color: #34657f !important;
-}
-.ibme .op-side-panel-container .op-side-panel .blue-btn:hover {
-  background-color: #2d576d !important;
-}
-.ibme .op-side-panel-container .op-side-panel .actions {
-  width: 100% !important;
 }
 
 .op-side-panel-container.is-visible {
@@ -5192,6 +5179,95 @@ body.ibme .ibme-donate-button {
 
 .wForm input[type=text], .wForm input[type=time], .wForm input[type=number], .wForm input[type=url], .wForm input[type=email], .wForm input[type=password], .wForm textarea {
   padding: 0.318em !important;
+}
+
+/* More Info Sliding Form */
+.more_info_shortcode_widget .form-title {
+  text-align: center;
+  color: #008075;
+  margin-bottom: 0;
+  font-size: 36px;
+  font-family: "MADE Mirage Regular";
+  font-weight: normal;
+  line-height: 34px;
+  text-transform: lowercase;
+  margin-top: 0;
+}
+.more_info_shortcode_widget .form-title:before {
+  content: '';
+  width: 225px;
+  height: 50px;
+  background: url("assets/img/logo.svg") no-repeat center/contain;
+  display: block;
+  margin: 0 auto 50px;
+}
+.more_info_shortcode_widget .form-header {
+  padding: 50px;
+  background-color: #D1F6E2;
+  margin-top: -40px;
+  border-bottom-left-radius: 50px;
+  border-bottom-right-radius: 50px;
+}
+.more_info_shortcode_widget .op-side-panel-container .wForm {
+  padding: 0;
+  background-color: #FFF5F5;
+}
+.more_info_shortcode_widget .op-side-panel-container .form-body-area {
+  padding: 50px;
+}
+.more_info_shortcode_widget .op-side-panel-container .op-side-panel {
+  width: 400px;
+  box-sizing: border-box;
+}
+.more_info_shortcode_widget .bottom-text {
+  color: #008075;
+  font-size: 14px;
+  font-style: italic;
+  text-align: center;
+  line-height: 20px;
+  letter-spacing: 0.1em;
+}
+
+.ibme .more_info_shortcode_widget .wForm input[type="button"],
+.ibme .more_info_shortcode_widget .wForm input[type="submit"] {
+  float: none;
+  font-size: 16px;
+  font-weight: bold;
+  padding: 0.3em 1em;
+  display: table;
+  margin: 0 auto 50px;
+}
+.ibme .more_info_shortcode_widget .wForm .preField {
+  font-weight: 300;
+  font-size: 14px;
+  line-height: 20px;
+  text-transform: none;
+}
+.ibme .more_info_shortcode_widget .reqMark:after {
+  content: '*';
+  color: #008075 !important;
+  padding-left: 3px;
+}
+.ibme .more_info_shortcode_widget .oneField p {
+  margin-top: 5px;
+  margin-bottom: 0;
+}
+.ibme .more_info_shortcode_widget .state-select-field label,
+.ibme .more_info_shortcode_widget .state-select-field select {
+  width: 100%;
+}
+.ibme .more_info_shortcode_widget .state-select-field select {
+  font-size: 14px;
+  padding: 6px;
+  margin-top: 5px;
+  background-color: #F3F8F3;
+  border: 1px solid #000;
+  border-radius: 5px;
+}
+.ibme .more_info_shortcode_widget input[type=date] input[type=datetime-local], .ibme .more_info_shortcode_widget input[type=email], .ibme .more_info_shortcode_widget input[type=file], .ibme .more_info_shortcode_widget input[type=month], .ibme .more_info_shortcode_widget input[type=number], .ibme .more_info_shortcode_widget input[type=password], .ibme .more_info_shortcode_widget input[type=range], .ibme .more_info_shortcode_widget input[type=search], .ibme .more_info_shortcode_widget input[type=tel], .ibme .more_info_shortcode_widget input[type=text], .ibme .more_info_shortcode_widget input[type=time], .ibme .more_info_shortcode_widget input[type=url], .ibme .more_info_shortcode_widget input[type=week], .ibme .more_info_shortcode_widget textarea {
+  background-color: #F3F8F3;
+  border: 1px solid #000;
+  border-radius: 5px;
 }
 
 .text-center,
@@ -5329,8 +5405,6 @@ body.ibme .ibme-donate-button {
 }
 
 .subscribe-form select {
-  height: 34px;
-  line-height: 18px;
   margin: 0;
   padding: 3px;
   background: transparent none no-repeat;
@@ -5405,6 +5479,151 @@ body.ibme .ibme-donate-button {
 
 .full-form {
   max-width: 700px !important;
+}
+
+.ibme.contact-page {
+  /* Form Styles */
+}
+.ibme.contact-page .wFormTitle,
+.ibme.contact-page form br {
+  display: none;
+}
+.ibme.contact-page .wFormContainer {
+  max-width: 1080px;
+}
+.ibme.contact-page .wForm .preField {
+  color: #000;
+  font-weight: 400;
+  font-size: 21px;
+  text-transform: lowercase;
+}
+.ibme.contact-page .wForm .label.reqMark::after {
+  color: #000;
+}
+.ibme.contact-page .wForm .inline div.oneField {
+  display: block;
+}
+.ibme.contact-page .label {
+  width: 35%;
+  color: #000;
+  font-weight: 400;
+  font-size: 21px;
+  text-transform: lowercase;
+}
+.ibme.contact-page .inputWrapper {
+  width: 60%;
+  box-sizing: border-box;
+  max-width: 100%;
+  display: inline-block;
+  vertical-align: top;
+  position: relative;
+  float: right;
+}
+.ibme.contact-page .inputWrapper input {
+  padding: 10px;
+}
+.ibme.contact-page .inputWrapper input[type="text"],
+.ibme.contact-page .inputWrapper input[type="email"],
+.ibme.contact-page .inputWrapper input[type="radio"],
+.ibme.contact-page .inputWrapper textarea,
+.ibme.contact-page .inputWrapper select option {
+  background-color: #f9f9f9;
+  padding: 10px 12px;
+  text-transform: none;
+}
+.ibme.contact-page .inputWrapper select {
+  border: none;
+  padding: 8px;
+}
+.ibme.contact-page .inputWrapper .oneChoice input {
+  width: auto;
+}
+.ibme.contact-page .wForm .oneField {
+  margin-top: 20px;
+}
+.ibme.contact-page .wForm .actions {
+  border: none;
+  padding: 0 0 0 0;
+  margin-top: 25px;
+}
+.ibme.contact-page .wForm input[type="button"],
+.ibme.contact-page .wForm input[type="submit"] {
+  background-color: #ffd234;
+  color: #000;
+  border: none;
+  padding: 15px 65px;
+  float: right;
+  font-family: Inter, sans-serif !important;
+  font-size: 24px;
+  font-weight: 500;
+}
+.ibme.contact-page .wForm input[type="button"]:hover,
+.ibme.contact-page .wForm input[type="submit"]:hover {
+  background-color: #ffcc1b;
+  color: #000;
+}
+.ibme.contact-page #tfa_72-D .postField {
+  width: auto;
+  float: none;
+  font-size: 20px;
+  margin-top: -1px;
+}
+.ibme.contact-page #tfa_14-D {
+  clear: both;
+  padding-top: 20px;
+  margin-top: 0;
+}
+.ibme.contact-page textarea {
+  min-height: 200px;
+}
+.ibme.contact-page .wFormContainer .errMsg {
+  font-weight: 500;
+  color: #ef5dbf;
+}
+.ibme.contact-page .captchaHelp,
+.ibme.contact-page .disabled-explanation {
+  display: none !important;
+}
+.ibme.contact-page .captcha {
+  clear: both;
+  float: right;
+  padding: 2px 0 0 !important;
+  margin: 23px 10px 30px 0;
+}
+.ibme.contact-page .captcha {
+  text-align: center;
+  background: #f9f9f9;
+  border-style: solid;
+  border-color: transparent;
+  border-width: 1px;
+  border-bottom-width: 2px;
+  min-width: 270px;
+  max-width: 270px;
+}
+.ibme.contact-page .captcha .oneField {
+  width: 154px;
+  height: 73px;
+  overflow: hidden;
+  margin: 0 auto;
+}
+.ibme.contact-page .g-recaptcha {
+  position: relative;
+  left: -2px;
+  top: -2px;
+  bottom: 0;
+}
+.ibme.contact-page .primaryAction[disabled="disabled"] {
+  color: #FFF !important;
+}
+.ibme.contact-page .primaryAction:disabled {
+  cursor: default !important;
+  background-color: #ffe381 !important;
+}
+.ibme.contact-page .primaryAction {
+  clear: both;
+}
+.ibme.contact-page .wFormFooter {
+  display: none;
 }
 
 /*# sourceMappingURL=style.css.map */

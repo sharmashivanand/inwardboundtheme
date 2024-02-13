@@ -36,7 +36,7 @@ function ibme_email_list_shortcode_widget($atts) {
 		'btn_text' =>'Sign Up', 
 		'wgt_btn_text' => 'I&#x27;m In!', 
 		'wgt_text' => 'Stay Connected',
-		'link' => 'https://ibme.com/confirmation/mailing-list/'
+		'link' => 'https://inwardboundmind.org/confirmation/mailing-list/'
 		), $atts)
 	);
 	
@@ -75,7 +75,7 @@ function ibme_email_list_shortcode_widget($atts) {
 		<div class="op-side-panel $wgt_class">
 		<button class="panel-close" aria-label="Close"><svg width="26" height="26" viewBox="0 0 26 22" xmlns="http://www.w3.org/2000/svg"><path d="M12.808 9.393l7.778-7.778L22 3.03l-7.778 7.779L22 18.586 20.586 20l-7.778-7.778L5.029 20l-1.414-1.414 7.778-7.778-7.778-7.779L5.03 1.615l7.779 7.778z"></path></svg></button>
 			<div class="wForm" id="322064-WRPR" dir="ltr">
-				<div class="opt-in-icon" style="text-align: center; padding: 0 0 20px;"><img src="https://ibme.com/wp-content/themes/ibme-lander-edge/assets/img/icons/opt-in-mail-icon.png" alt="Join Our Mailing List"/></div>
+				<div class="opt-in-icon" style="text-align: center; padding: 0 0 20px;"><img src="https://inwardboundmind.org/wp-content/themes/ibme-lander-edge/assets/img/icons/opt-in-mail-icon.png" alt="Join Our Mailing List"/></div>
 				<div class="codesection" id="code-322064"></div>
 				<form method="post" action="https://ibme.tfaforms.net/responses/processor" class="hintsBelow labelsAbove" id="322064" role="form">
 					<p class="blue-text bold">$wgt_text</p>
@@ -192,7 +192,7 @@ function more_info_shortcode_widget($atts) {
 		'wgt_footer' => 'Please complete the fields above to subscribe to our emails and receive more details on upcoming programs. Providing your state of residence will help us share regional-specific programs with you. We respect your privacy - your info will not be shared with anyone else.',
 		'campaign' => '', 
 		'status' => '', 
-		'link' => 'https://ibme.com/confirmation/response-received/', 
+		'link' => 'https://inwardboundmind.org/confirmation/response-received/', 
 		'drip' => ''
 		), $atts)
 	);
@@ -232,30 +232,35 @@ function more_info_shortcode_widget($atts) {
 		<div class="op-side-panel $wgt_class">
 		<button class="panel-close" aria-label="Close"><svg width="26" height="26" viewBox="0 0 26 22" xmlns="http://www.w3.org/2000/svg"><path d="M12.808 9.393l7.778-7.778L22 3.03l-7.778 7.779L22 18.586 20.586 20l-7.778-7.778L5.029 20l-1.414-1.414 7.778-7.778-7.778-7.779L5.03 1.615l7.779 7.778z"></path></svg></button>
 			<div class="wForm" id="385752-WRPR" dir="ltr">
+			<div class="form-header"><p class="form-title">$wgt_text</p></div>
 				<div class="codesection" id="code-385752"></div>
-				<form method="post" action="https://ibme.tfaforms.net/responses/processor" class="hintsBelow labelsAbove" id="385752" role="form">
-					<p class="blue-text bold">$wgt_text</p>
+				<form method="post" action="https://ibme.tfaforms.net/responses/processor" class="hintsBelow labelsAbove form-body-area" id="385752" role="form">
 					<div class="form-inputs">
 						<div id="tfa_1-D" class="oneField opt-in-email-field">
-							<p><input type="text" id="tfa_1" name="tfa_1" value="" required placeholder="First Name" class="form-field form-left required"></p>
+							<label id="tfa_1-L" class="label preField reqMark" for="tfa_1">First Name</label>
+							<p><input type="text" id="tfa_1" name="tfa_1" value="" required class="form-field form-left required"></p>
 						</div>
 						<div id="tfa_2-D" class="oneField opt-in-email-field">
-							<p><input type="text" id="tfa_2" name="tfa_2" value="" required placeholder="Last Name" class="form-field form-left required"></p>
+							<label id="tfa_2-L" class="label preField reqMark" for="tfa_2">Last Name</label>
+							<p><input type="text" id="tfa_2" name="tfa_2" value="" required class="form-field form-left required"></p>
 						</div>
 						<div id="tfa_4-D" class="oneField opt-in-email-field">
-							<p><input type="text" id="tfa_4" name="tfa_4" value="" required placeholder="Email" class="validate-email form-field form-left required"></p>
+							<label id="tfa_4-L" class="label preField reqMark" for="tfa_4">Email</label>
+							<p><input type="text" id="tfa_4" name="tfa_4" value="" required class="validate-email form-field form-left required"></p>
 						</div>
 						<div id="tfa_10-D" class="oneField opt-in-email-field">
-							<p><input type="text" id="tfa_10" name="tfa_10" value="" placeholder="Phone (Optional)" class="form-field form-left"></p>
+							<label id="tfa_10-L" class="label preField" for="tfa_10">Phone</label>
+							<p><input type="text" id="tfa_10" name="tfa_10" value="" class="form-field form-left"></p>
 						</div>
 						<div id="tfa_16-D" class="bears oneField opt-in-email-field">
+							<label id="tfa_16-L" class="label preField reqMark" for="tfa_16">State</label>
 							<p><input autocomplete="off" type="text" id="tfa_16" name="tfa_16" value="" placeholder="Other (Optional)" class="form-field form-left"></p>
 						</div>
-						<div id="tfa_272-D" class="oneField">
+						<div id="tfa_272-D" class="oneField state-select-field">
 							<p style="margin-bottom: 25px !important;">
-								<label style="display: none;" id="tfa_272-L" class="label preField " for="tfa_272">State (Optional)</label>
+								<label id="tfa_272-L" class="label preField state-select" for="tfa_272">State</label>
 								<select id="tfa_272" name="tfa_272" title="State" class="">
-								<option value="">State (Optional)</option>
+								<option value="">please select</option>
 								<option value="tfa_273" id="tfa_273" class="calcval-AK">AK</option>
 								<option value="tfa_274" id="tfa_274" class="calcval-AL">AL</option>
 								<option value="tfa_275" id="tfa_275" class="calcval-AR">AR</option>
@@ -311,9 +316,9 @@ function more_info_shortcode_widget($atts) {
 						</div>
 					</div>
 					<div class="actions" id="tfa_0-A">
-						<input type="submit" class="primaryAction form-left blue-btn" value="$wgt_btn_text">
+						<input type="submit" class="primaryAction ibme-button sunflower-button style-1" value="$wgt_btn_text">
 					</div>
-					<div class="bottom-text" style="text-align: center; padding-top: 25px; color: #4c4c4e; font-style: italic;">$wgt_footer</div>
+					<div class="bottom-text">$wgt_footer</div>
 					<input type="hidden" id="tfa_5" name="tfa_5" value="$campaign" class="">
 					<input type="hidden" id="tfa_6" name="tfa_6" value="$status" class="">
 					<input type="hidden" id="tfa_8" name="tfa_8" value="$url_without_query_string?opt-in-success=1" class="">
@@ -353,7 +358,7 @@ function more_info_shortcode_widget_nophone($atts) {
 		'wgt_footer' => 'Please complete the fields above to subscribe to our emails and receive more details on upcoming programs. Providing your state of residence will help us share regional-specific programs with you. We respect your privacy - your info will not be shared with anyone else.',
 		'campaign' => '', 
 		'status' => '', 
-		'link' => 'https://ibme.com/confirmation/response-received/', 
+		'link' => 'https://inwardboundmind.org/confirmation/response-received/', 
 		'drip' => ''
 		), $atts)
 	);
@@ -452,7 +457,7 @@ function test_shortcode_widget($atts) {
 		'wgt_text' => 'Stay Connected',
 		'campaign' => '', 
 		'status' => '', 
-		'link' => 'https://ibme.com/confirmation/response-received/', 
+		'link' => 'https://inwardboundmind.org/confirmation/response-received/', 
 		'drip' => ''
 		), $atts)
 	);
@@ -613,7 +618,7 @@ function workshop_opt_in_shortcode_widget($atts) {
 		'wgt_text' => 'Join Us!',
 		'campaign' => '', 
 		'status' => '', 
-		'link' => 'https://ibme.com/confirmation/meditation-opt-in/', 
+		'link' => 'https://inwardboundmind.org/confirmation/meditation-opt-in/', 
 		'drip' => ''
 		), $atts)
 	);
@@ -767,7 +772,7 @@ function event_opt_in_shortcode_widget($atts) {
 		'wgt_text' => 'Join Us!',
 		'campaign' => '', 
 		'status' => '', 
-		'link' => 'https://ibme.com/confirmation/meditation-opt-in/', 
+		'link' => 'https://inwardboundmind.org/confirmation/meditation-opt-in/', 
 		'drip' => ''
 		), $atts)
 	);

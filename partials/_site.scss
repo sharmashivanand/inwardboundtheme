@@ -1761,6 +1761,7 @@ input, button, select, textarea {
         padding: 0.382em 0;
         border-bottom: none;
         color: #000;
+        //cursor: default;
         
         &:hover {
             background-color: transparent;
@@ -1781,6 +1782,7 @@ input, button, select, textarea {
 
         a {
             position: relative;
+            cursor: default;
         }
 
         a:before {
@@ -1796,6 +1798,7 @@ input, button, select, textarea {
 
         a {
             position: relative;
+            cursor: default;
         }
 
         a:before {
@@ -4835,6 +4838,10 @@ body.ibme .ibme-donate-button { //override
 
 }
 
+.ibme .wFormContainer.op-side-panel-container { //override
+    max-width: 100%;
+}
+
 .op-side-panel-container {
 	position: fixed;
 	top: 0;
@@ -4849,7 +4856,7 @@ body.ibme .ibme-donate-button { //override
 	transform: translate3d(100%, 0, 0);
 
 	p {
-		margin: 0 0 1.318em !important;
+		//margin: 0 0 1.318em !important;
 	}
 
 	.op-side-panel {
@@ -4924,36 +4931,6 @@ body.ibme .ibme-donate-button { //override
 
 	}
 
-}
-
-.ibme {
-
-	.op-side-panel-container {
-
-		.op-side-panel {
-
-			.blue-text {
-				text-align: center;
-				margin-bottom: 20px !important;
-				font-size: 23px;
-			}
-
-			.blue-btn {
-				padding: 12px 30px;
-				background-color: #34657f !important;
-
-				&:hover {
-					background-color: #2d576d !important;
-				}
-			}
-
-			.actions {
-				width: 100% !important;
-			}
-
-		}
-
-	}
 }
 
 .op-side-panel-container.is-visible {
@@ -5034,3 +5011,112 @@ body.ibme .ibme-donate-button { //override
 .wForm input[type=text], .wForm input[type=time], .wForm input[type=number], .wForm input[type=url], .wForm input[type=email], .wForm input[type=password], .wForm textarea {
     padding: 0.318em !important;
 }
+
+/* More Info Sliding Form */
+
+.more_info_shortcode_widget {
+    .form-title {
+        text-align: center;
+        color: $teal;
+        margin-bottom: 0;
+        font-size: 36px;
+        font-family: "MADE Mirage Regular";
+        font-weight: normal;
+        line-height: 34px;
+        text-transform: lowercase;
+        margin-top: 0;
+
+        &:before {
+            content: '';
+            width: 225px;
+            height: 50px;
+            background: url("assets/img/logo.svg") no-repeat center/contain;
+            display: block;
+            margin: 0 auto 50px;
+        }
+    }
+
+    .form-header {
+        padding: 50px;
+        background-color: $mint-tint;
+        margin-top: -40px;
+        border-bottom-left-radius: 50px;
+        border-bottom-right-radius: 50px;
+    }
+
+    .op-side-panel-container .wForm {
+        padding: 0;
+        background-color: $lightcream;
+
+    }
+
+    .op-side-panel-container .form-body-area {
+        padding: 50px;
+    }
+
+    .op-side-panel-container .op-side-panel {
+        width: 400px;
+        box-sizing: border-box;
+    }
+
+
+    .bottom-text {
+        color: $teal;
+        font-size: 14px;
+        font-style: italic;
+        text-align: center;
+        line-height: 20px;
+        letter-spacing: 0.1em;
+    }
+}
+
+.ibme .more_info_shortcode_widget {
+    .wForm input[type="button"],
+    .wForm input[type="submit"] {
+        float: none;
+        font-size: 16px;
+        font-weight: bold;
+        padding: 0.3em 1em;
+        display: table;
+        margin: 0 auto 50px;
+    }
+
+    .wForm .preField {
+        font-weight: 300;
+        font-size: 14px;
+        line-height: 20px;
+        text-transform: none;
+    }
+
+    .reqMark:after {
+        content: '*';
+        color: $teal !important;
+        padding-left: 3px;
+    }
+
+    .oneField p {
+        margin-top: 5px;
+        margin-bottom: 0;
+    }
+
+    .state-select-field label,
+    .state-select-field select {
+        width: 100%;
+    }
+
+    .state-select-field select {
+        font-size: 14px;
+        padding: 6px;
+        margin-top: 5px;
+        background-color: #F3F8F3;
+        border: 1px solid #000;
+        border-radius: 5px;
+    }
+
+    input[type=date] input[type=datetime-local], input[type=email], input[type=file], input[type=month], input[type=number], input[type=password], input[type=range], input[type=search], input[type=tel], input[type=text], input[type=time], input[type=url], input[type=week], textarea {
+        background-color: #F3F8F3;
+        border: 1px solid #000;
+        border-radius: 5px;
+    }
+} 
+
