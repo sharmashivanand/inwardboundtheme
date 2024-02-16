@@ -148,6 +148,14 @@
     }
 }
 
+.ibme {
+    .primaryAction {
+        &:disabled {
+            cursor: default !important;
+        }
+    }
+}
+
 // Cross browser select CSS (http://jsfiddle.net/sstur/fm5Jt/) -------------------------------------------
 
 .subscribe-form {
@@ -220,12 +228,16 @@
 .op-side-panel .panel-close {
     background: #ffd234 !important;
     &:hover {
-        background: #fff !important;
+        background: #ffde40 !important;
+        svg {
+            filter: brightness(0) saturate(100%) invert(22%) sepia(0%) saturate(892%) hue-rotate(136deg) brightness(107%) contrast(87%) !important;
+        }
     }
 }
 
-.side-panel-container .panel-close svg {
-    filter: none !important;
+.side-panel-container .panel-close svg,
+.op-side-panel .panel-close svg {
+    filter: brightness(0) saturate(100%) invert(0%) sepia(96%) saturate(14%) hue-rotate(273deg) brightness(99%) contrast(104%) !important;
 }
 
 .ibme-donate-button-wrapper,
@@ -328,10 +340,10 @@
 			background-color: #ffd234;
             color: #000;
 			border: none;
-			padding: 15px 65px;
+			padding: 0.3em 1em;
 			float: right;
 			font-family: Inter, sans-serif !important;
-			font-size: 24px;
+			font-size: 16px;
 			font-weight: 500;
 		}
 		
@@ -420,3 +432,160 @@
 	}
 
 
+/* Popup message */
+.ibme {
+
+	.pum-overlay {
+		z-index: 0;
+	}
+
+	.pum-container {
+		text-align: center;
+
+		.popmake-title {
+			text-align: center;
+			margin-bottom: 10px;
+			font-size: 30px;
+		}
+
+		.pum-content {
+			text-align: center;
+		}
+
+		h3 {
+			color: #000;
+			font-weight: 500;
+		}
+
+		p {
+			color: #000;
+			font-weight: 500;
+		}
+
+		.white-btn {
+			margin-top: 0;
+			margin-bottom: 0;
+			font-size: 17px;
+			padding: 11px 30px;
+		}
+
+		.opt-in-form {
+			margin-bottom: 5px;
+
+			.oneField {
+				margin-bottom: 0;
+			}
+
+			.two-thirds {
+				margin-left: 0;
+				margin-bottom: 0;
+				float: left;
+				width: 81.90598290598291%;
+			}
+
+			.actions {
+				width: 15.52991%;
+				margin-left: 2.564102564102564%;
+
+				input {
+					padding-top: 13px;
+					padding-bottom: 13px;
+				}
+			}
+		}
+
+		.pum-title {
+			font-weight: 500;
+		}
+
+		h3 {
+			margin-bottom: 15px;
+		}
+
+		.pum-content p:last-child {
+			margin-bottom: 9px;
+		}
+
+		.pum-close {
+			outline: none !important;
+		}
+
+	}
+
+	#pum-10538,
+	#pum-10551,
+	#pum-10761,
+	#pum-10765 {
+
+		.pum-container {
+			padding-top: 40px;
+			padding-bottom: 40px;
+
+			.pum-close {
+				z-index: 0;
+			}
+		}
+
+	}
+
+}
+
+@media all and (max-width: 870px) {
+
+	.ibme {
+
+		.pum-container {
+
+			.popmake-title {
+				font-size: 27px;
+			}
+
+			.opt-in-form {
+
+				.oneField {
+					margin-bottom: 15px;
+				}
+
+				.two-thirds {
+					width: 77.90598290598291%;
+				}
+
+				.actions {
+					width: auto;
+				}
+			}
+
+		}
+
+	}
+
+}
+
+@media all and (max-width: 725px) {
+
+	.ibme {
+
+		.pum-container {
+
+			.popmake-title {
+				font-size: 27px;
+			}
+
+			.opt-in-form {
+
+				.two-thirds {
+					width: auto;
+					float: none;
+				}
+
+				.actions {
+					float: none;
+					margin: 0 auto;
+				}
+			}
+
+		}
+
+	}
+
+}

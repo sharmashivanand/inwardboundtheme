@@ -338,7 +338,7 @@ function more_info_shortcode_widget($atts) {
 	</div>	
 IELS;
 // !!! THE ABOVE LINE SHOULD NEVER BE INDENTED !!! ///
-	// $form_output = apply_filters( 'ibme_form_recaptcha', $form_output );
+	$form_output = apply_filters( 'ibme_form_recaptcha', $form_output );
 	return $form_output;
 }
 

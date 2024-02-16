@@ -1,0 +1,344 @@
+/* Responsive media queries */
+
+@media all and (min-width: 1440px) {
+    .ibme .wrap {
+        width: 1440px;
+        margin: 0 auto;
+    }    
+
+}
+
+@media all and (min-width: 1191px) {
+    .footer-columns {
+        display: flex;
+        justify-content: space-between;
+        text-align: justify;
+        align-items: center;
+        
+        .footer-column {
+            width: 33.33%;
+        }
+        
+    }
+
+    .footer-column-right {
+        text-align: right;
+    }
+
+}
+
+@media all and (min-width: 401px) {
+    .footer-column {
+        .contact-info {
+            a:first-child {
+                margin-right: 28px;
+            }
+        }
+    }
+}
+
+@media all and (max-width: 1340px) {
+    .ibme .wrap {
+        padding-left: 50px;
+        padding-right: 50px;
+    }  
+}
+
+@media all and (max-width: 1280px) {
+    .footer-widgets .footer-widget {
+        width: 30%;
+    }  
+}
+
+@media all and (max-width: 1240px) {
+    .ibme .wrap {
+        padding-left: 25px;
+        padding-right: 25px;
+    } 
+}
+
+@media all and (max-width: 1190px) {
+    .menu-footer-menu-container .menu {
+        justify-content: center;
+    }
+
+    .footer-column-middle {
+        margin-top: 20px;
+        margin-bottom: 20px;
+    }
+
+    .ibme .site-header .wrap {
+        flex-wrap: wrap;
+        justify-content: space-evenly;
+
+        .site-branding {
+            width: 100%;
+        }
+    }
+
+    .ibme .site-title a {
+        margin: 0 auto 1.618em;
+    }
+
+}
+
+@media all and (max-width: 1024px) {
+    .ibme .wrap {
+        padding-left: 15px;
+        padding-right: 15px;
+    } 
+
+    .footer-widgets {
+        flex-wrap: wrap;
+        justify-content: center;
+
+        .footer-widget {
+            width: 45%;
+        }
+    }
+}
+
+@media all and (max-width: 940px) {
+    .site-header .menu-primary {
+        width: 100%;
+        margin-bottom: 15px;
+    }
+
+    #menu-top-nav-extended-menu .support .sub-menu, 
+    #menu-top-nav-extended-menu .support:hover .sub-menu {
+        left: 10px;    
+    }
+
+    #menu-top-nav-extended-menu .about .sub-menu, 
+    #menu-top-nav-extended-menu .about:hover .sub-menu {
+        left: -70px;
+    }
+}
+
+@media all and (max-width: 768px) {
+    .footer-widgets {
+        flex-direction: column;
+        align-items: center;
+
+        .footer-widget {
+            width: 70%;
+            justify-content: center;
+        }
+    }
+
+    .footer-widget-one {
+        margin-bottom: 30px;
+    }
+
+    .footer-widget-one .widget {
+        width: max-content;
+    }
+
+    .widget:last-child {
+        padding-right: 0;
+    }
+
+    .footer-widget-three {
+        padding-top: 30px;
+    }
+}
+
+@media all and (max-width: 540px) {
+    .footer-widgets .footer-widget {
+        width: 100%;
+    }
+
+    .footer-widgets .footer-widget-three {
+        width: 85%;
+    }
+}
+
+@media all and (max-width: 400px) {
+    .footer-column .contact-info a {
+        display: block;
+    }
+}
+
+
+/* Mobile nav */
+@media screen and (max-width: 600px) {
+
+	/* Site Header */
+
+	.ibme .site-header .wrap {
+		padding-left: 0;
+		padding-right: 0;
+		padding-bottom: 0;
+	}
+
+    #menu-primary-items.mobile-menu-items {
+        margin: 0;
+
+        a {
+            margin-left: 0;
+            margin-right: 0;
+            padding-left: 10px;
+            padding-right: 10px;
+
+            &:after,
+            &:before {
+                content: none;
+            }
+        }
+    }
+
+    #menu-primary-items {
+        
+        .teen-retreats a:hover {
+            color: $barbie;
+        }
+
+        .custom-programs a:hover {
+            color: $marigold;
+        }
+
+        .teacher-training a:hover {
+            color: $bluejay;
+        }
+
+        .community-care a:hover {
+            color: $lavender;
+        }
+
+        .support a:hover,
+        .about a:hover,
+        .calendar a:hover,
+        .shop a:hover {
+            color: $mint;
+        }
+
+        .donate a:hover {
+            color: $sky;
+        }
+
+    }
+    
+
+	
+	/* Responsive Menu */
+	
+	.menu-toggle {
+		width: 100% !important;
+        font-variant: normal;
+        text-transform: lowercase;
+	}
+	
+	.menu-toggle,
+	.sub-menu-toggle {
+		display: block;
+		visibility: visible;
+
+        &:hover {
+            background-image: none;
+            background-color: darken($mint,5%);
+        }
+	}
+
+	.menu-toggle:before {
+		content: "\2261";
+		font-size: 26px;
+		font-family: "Times New Roman", Times, serif;
+		position: relative;
+		top: 4px;
+		left: -8px;
+		line-height: 7px;
+	}
+	
+	.sub-menu-toggle:before {
+		content: "+";
+	}
+	
+	.sub-menu-toggle.activated:before {
+		content: "-";
+	}
+	
+	.ibme #menu-primary,
+    .menu-top-nav-extended-menu-container {
+		display: none;
+	}
+	
+	#menu-primary-items > li,
+	#menu-primary-items > li a {
+		width: 100%;
+	}
+
+    #menu-primary-items .menu-item-has-children:hover>.sub-menu {
+        opacity: 0;
+        visibility: hidden;
+    }
+	
+}
+
+@media screen and (min-width: 601px) {
+    #menu-primary-items {
+        .teen-retreats > .sub-menu,
+        .custom-programs > .sub-menu,
+        .teacher-training > .sub-menu,
+        .community-care > .sub-menu {
+            width: 525px;
+            display: flex;
+            border-radius: 5px;
+            min-height: 290px;
+            top: 48px;
+            z-index: 99;
+        }
+    
+        .sub-menu-label:first-child {
+            width: 45%;
+        }
+    
+        .sub-menu-label:last-child {
+            width: 55%;
+        }
+    
+        .teen-retreats:hover,
+        .custom-programs:hover,
+        .teacher-training:hover,
+        .community-care:hover {
+            .sub-menu .sub-menu {
+                opacity: 1;
+                visibility: visible;
+            }
+        }
+        
+        .custom-programs,
+        .custom-programs:hover {
+            .sub-menu {
+                left: -106px;
+            }
+        }
+    
+        .teacher-training,
+        .teacher-training:hover { 
+            .sub-menu {
+                left: -256px;
+            }
+        }
+        
+        .community-care,
+        .community-care:hover {
+            .sub-menu {
+                left: -394px;
+            }
+        }
+    
+        .teen-retreats,
+        .teen-retreats:hover,
+        .custom-programs,
+        .custom-programs:hover,
+        .teacher-training,
+        .teacher-training:hover,
+        .community-care,
+        .community-care:hover {
+            .sub-menu .sub-menu {
+                left: 0;
+            }
+        }
+    
+    }    
+}

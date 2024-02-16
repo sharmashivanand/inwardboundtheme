@@ -30,7 +30,7 @@ input[type=url],
 input[type=week], textarea {
     border: 2px solid $mint-tint;
     border-radius: 5px;
-    text-transform: lowercase;
+    // text-transform: lowercase;
     font-size: 16px;
     font-weight: 500;
 }
@@ -1420,8 +1420,6 @@ input, button, select, textarea {
     }
 
     .wrap {
-        width: 1440px;
-        margin: 0 auto;
         padding-left: 100px;
         padding-right: 100px;
         box-sizing: border-box;
@@ -1538,6 +1536,10 @@ input, button, select, textarea {
     }
 }
 
+.mobile-menu {
+    display: none;
+}
+
 #menu-primary-items {
 
     a {
@@ -1616,7 +1618,7 @@ input, button, select, textarea {
 /* Primary Menu Sub-menu Styles */
 
 #menu-primary-items {
-    .teen-retreats > .sub-menu,
+    /*.teen-retreats > .sub-menu,
     .custom-programs > .sub-menu,
     .teacher-training > .sub-menu,
     .community-care > .sub-menu {
@@ -1626,7 +1628,7 @@ input, button, select, textarea {
         min-height: 290px;
         top: 48px;
         z-index: 99;
-    }
+    }*/
 
     .teen-retreats {
         .sub-menu {
@@ -1671,7 +1673,7 @@ input, button, select, textarea {
     }
 
     .sub-menu-label:first-child {
-        width: 45%;
+        //width: 45%;
 
         .sub-menu {
             border-bottom-left-radius: 5px;
@@ -1679,14 +1681,14 @@ input, button, select, textarea {
     }
 
     .sub-menu-label:last-child {
-        width: 55%;
+        //width: 55%;
 
         .sub-menu {
             border-bottom-right-radius: 5px;
         }
     }
 
-    .teen-retreats:hover,
+    /*.teen-retreats:hover,
     .custom-programs:hover,
     .teacher-training:hover,
     .community-care:hover {
@@ -1728,7 +1730,7 @@ input, button, select, textarea {
         .sub-menu .sub-menu {
             left: 0;
         }
-    }
+    } */
 
     .sub-menu .sub-menu li {
         padding-top: 11px;
@@ -1810,6 +1812,30 @@ input, button, select, textarea {
         }
     }
 
+    .donate {
+        a {
+            margin-left: 0.75em;
+            margin-right: 0.75em;
+            padding-left: 0;
+            padding-right: 0;
+            position: relative;
+
+            &:after {
+                background-color: $sky;
+            }
+
+            &:before {
+                width: 13px;
+                height: 12px;
+                background: url("assets/img/donate-hover.svg") no-repeat center / contain;
+                top: 3px;
+                right: -10px;
+            }
+        }
+    }
+}
+
+#menu-top-nav-extended-menu {
 
     .calendar {
         a {
@@ -1840,31 +1866,6 @@ input, button, select, textarea {
             }
         }
     }
-
-    .donate {
-        a {
-            margin-left: 0.75em;
-            margin-right: 0.75em;
-            padding-left: 0;
-            padding-right: 0;
-            position: relative;
-
-            &:after {
-                background-color: $sky;
-            }
-
-            &:before {
-                width: 13px;
-                height: 12px;
-                background: url("assets/img/donate-hover.svg") no-repeat center / contain;
-                top: 3px;
-                right: -10px;
-            }
-        }
-    }
-}
-
-#menu-top-nav-extended-menu {
 
     .support > .sub-menu,
     .about > .sub-menu {
@@ -2050,6 +2051,8 @@ input, button, select, textarea {
 
     .widget {
         width: 50%;
+        padding-right: 20px;
+        box-sizing: border-box;
     }
 
     .menu {
@@ -2100,16 +2103,9 @@ input, button, select, textarea {
 /* Footer Columns */
 
 .footer-columns {
-    display: flex;
-    justify-content: space-between;
-    text-align: justify;
+
     font-size: 15px;
-    align-items: center;
-
-    .footer-column {
-        width: 33.33%;
-    }
-
+   
     a:hover {
         font-weight: 500;
         opacity: 1;
@@ -2134,15 +2130,7 @@ input, button, select, textarea {
             border-bottom: none;
             color: #000;
         }
-
-        a:first-child {
-            margin-right: 28px;
-        }
     }
-}
-
-.footer-column-right {
-    text-align: right;
 }
 
 .menu-footer-menu-container {
@@ -2223,6 +2211,29 @@ input, button, select, textarea {
 
         &:hover {
             background-image: url("assets/img/icons/tiktok-hover.svg")
+        }
+    }
+    
+}
+
+/* Footer Credits */
+.footer-credits {
+    padding: 50px 12px 0;
+    .widget {
+        margin: 0;
+    }
+    .footer-credits-text {
+        font-size: 14px;
+        color: #000;
+        text-align: center;
+        margin: 0;
+        a {
+            color: #000;
+            border: none;
+            &:hover {
+                color: #000;
+                border-bottom: 1px solid;
+            }
         }
     }
     
@@ -4905,10 +4916,10 @@ body.ibme .ibme-donate-button { //override
 	svg {
 		filter: invert(30%) sepia(99%) saturate(271%) hue-rotate(156deg) brightness(95%) contrast(88%);
 
-		&:hover {
-			filter: invert(65%) sepia(75%) saturate(356%) hue-rotate(152deg) brightness(81%) contrast(89%);
-			//transition: all .05s ease-in-out;
-		}
+		// &:hover {
+		// 	filter: invert(65%) sepia(75%) saturate(356%) hue-rotate(152deg) brightness(81%) contrast(89%);
+		// 	//transition: all .05s ease-in-out;
+		// }
 	}
 
 	.wForm {
@@ -5120,3 +5131,43 @@ body.ibme .ibme-donate-button { //override
     }
 } 
 
+/* Responsive menu button */
+
+.sub-menu-toggle {
+	display: none;
+	visibility: hidden;
+	font-weight: 700;
+	padding: 12px 14px;
+	line-height: 1;
+	border-radius: 0;
+	background-image: none;
+	position: absolute;
+	right: 0;
+	top: 0;
+	background-color: $mint;
+}
+
+.sub-menu-toggle:hover {
+	background-color: darken($mint, 5%);
+}
+
+.menu-toggle {
+	display: none;
+	visibility: hidden;
+	font-weight: 700;
+	padding: 1em;
+	line-height: 1;
+	border: 0;
+	background-image: none;
+	border-radius: 0;
+	background-color: darken($mint, 5%);
+	font-size: 14px;
+}
+
+.menu-toggle:hover {
+	background-color: darken($mint, 8%);
+}
+
+.menu-toggle.activated {
+	border-bottom-width: 0;
+}

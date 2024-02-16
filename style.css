@@ -1180,7 +1180,6 @@ input[type=url],
 input[type=week], textarea {
   border: 2px solid #D1F6E2;
   border-radius: 5px;
-  text-transform: lowercase;
   font-size: 16px;
   font-weight: 500;
 }
@@ -2301,8 +2300,6 @@ input, button, select, textarea {
   margin-bottom: 0;
 }
 .ibme .wrap {
-  width: 1440px;
-  margin: 0 auto;
   padding-left: 100px;
   padding-right: 100px;
   box-sizing: border-box;
@@ -2391,6 +2388,10 @@ input, button, select, textarea {
   padding: 0;
 }
 
+.mobile-menu {
+  display: none;
+}
+
 #menu-primary-items a {
   margin-left: 0.75em;
   margin-right: 0.75em;
@@ -2459,16 +2460,61 @@ input, button, select, textarea {
 }
 
 /* Primary Menu Sub-menu Styles */
-#menu-primary-items .teen-retreats > .sub-menu,
-#menu-primary-items .custom-programs > .sub-menu,
-#menu-primary-items .teacher-training > .sub-menu,
-#menu-primary-items .community-care > .sub-menu {
-  width: 525px;
-  display: flex;
-  border-radius: 5px;
-  min-height: 290px;
-  top: 48px;
-  z-index: 99;
+#menu-primary-items {
+  /*.teen-retreats > .sub-menu,
+  .custom-programs > .sub-menu,
+  .teacher-training > .sub-menu,
+  .community-care > .sub-menu {
+      width: 525px;
+      display: flex;
+      border-radius: 5px;
+      min-height: 290px;
+      top: 48px;
+      z-index: 99;
+  }*/
+    /*.teen-retreats:hover,
+    .custom-programs:hover,
+    .teacher-training:hover,
+    .community-care:hover {
+        .sub-menu .sub-menu {
+            opacity: 1;
+            visibility: visible;
+        }
+    }
+    
+    .custom-programs,
+    .custom-programs:hover {
+        .sub-menu {
+            left: -106px;
+        }
+    }
+
+    .teacher-training,
+    .teacher-training:hover { 
+        .sub-menu {
+            left: -256px;
+        }
+    }
+    
+    .community-care,
+    .community-care:hover {
+        .sub-menu {
+            left: -394px;
+        }
+    }
+
+    .teen-retreats,
+    .teen-retreats:hover,
+    .custom-programs,
+    .custom-programs:hover,
+    .teacher-training,
+    .teacher-training:hover,
+    .community-care,
+    .community-care:hover {
+        .sub-menu .sub-menu {
+            left: 0;
+        }
+    } */
 }
 #menu-primary-items .teen-retreats .sub-menu {
   background-color: #EF5DBF;
@@ -2494,46 +2540,11 @@ input, button, select, textarea {
   box-shadow: none;
   padding-bottom: 35px;
 }
-#menu-primary-items .sub-menu-label:first-child {
-  width: 45%;
-}
 #menu-primary-items .sub-menu-label:first-child .sub-menu {
   border-bottom-left-radius: 5px;
 }
-#menu-primary-items .sub-menu-label:last-child {
-  width: 55%;
-}
 #menu-primary-items .sub-menu-label:last-child .sub-menu {
   border-bottom-right-radius: 5px;
-}
-#menu-primary-items .teen-retreats:hover .sub-menu .sub-menu,
-#menu-primary-items .custom-programs:hover .sub-menu .sub-menu,
-#menu-primary-items .teacher-training:hover .sub-menu .sub-menu,
-#menu-primary-items .community-care:hover .sub-menu .sub-menu {
-  opacity: 1;
-  visibility: visible;
-}
-#menu-primary-items .custom-programs .sub-menu,
-#menu-primary-items .custom-programs:hover .sub-menu {
-  left: -106px;
-}
-#menu-primary-items .teacher-training .sub-menu,
-#menu-primary-items .teacher-training:hover .sub-menu {
-  left: -256px;
-}
-#menu-primary-items .community-care .sub-menu,
-#menu-primary-items .community-care:hover .sub-menu {
-  left: -394px;
-}
-#menu-primary-items .teen-retreats .sub-menu .sub-menu,
-#menu-primary-items .teen-retreats:hover .sub-menu .sub-menu,
-#menu-primary-items .custom-programs .sub-menu .sub-menu,
-#menu-primary-items .custom-programs:hover .sub-menu .sub-menu,
-#menu-primary-items .teacher-training .sub-menu .sub-menu,
-#menu-primary-items .teacher-training:hover .sub-menu .sub-menu,
-#menu-primary-items .community-care .sub-menu .sub-menu,
-#menu-primary-items .community-care:hover .sub-menu .sub-menu {
-  left: 0;
 }
 #menu-primary-items .sub-menu .sub-menu li {
   padding-top: 11px;
@@ -2591,28 +2602,6 @@ input, button, select, textarea {
   top: 3px;
   right: -10px;
 }
-.menu .calendar a {
-  background: url("assets/img/icons/top-nav-calendar.svg") no-repeat center/contain;
-  width: 25px;
-  height: 25px;
-  display: block;
-  text-indent: -9999px;
-  margin-top: 8px;
-}
-.menu .calendar a:hover {
-  opacity: 0.5;
-}
-.menu .shop a {
-  background: url("assets/img/icons/top-nav-cart.svg") no-repeat center/contain;
-  width: 25px;
-  height: 25px;
-  display: block;
-  text-indent: -9999px;
-  margin-top: 8px;
-}
-.menu .shop a:hover {
-  opacity: 0.5;
-}
 .menu .donate a {
   margin-left: 0.75em;
   margin-right: 0.75em;
@@ -2631,6 +2620,28 @@ input, button, select, textarea {
   right: -10px;
 }
 
+#menu-top-nav-extended-menu .calendar a {
+  background: url("assets/img/icons/top-nav-calendar.svg") no-repeat center/contain;
+  width: 25px;
+  height: 25px;
+  display: block;
+  text-indent: -9999px;
+  margin-top: 8px;
+}
+#menu-top-nav-extended-menu .calendar a:hover {
+  opacity: 0.5;
+}
+#menu-top-nav-extended-menu .shop a {
+  background: url("assets/img/icons/top-nav-cart.svg") no-repeat center/contain;
+  width: 25px;
+  height: 25px;
+  display: block;
+  text-indent: -9999px;
+  margin-top: 8px;
+}
+#menu-top-nav-extended-menu .shop a:hover {
+  opacity: 0.5;
+}
 #menu-top-nav-extended-menu .support > .sub-menu,
 #menu-top-nav-extended-menu .about > .sub-menu {
   width: 525px;
@@ -2778,6 +2789,8 @@ input, button, select, textarea {
 }
 .footer-widget-one .widget {
   width: 50%;
+  padding-right: 20px;
+  box-sizing: border-box;
 }
 .footer-widget-one .menu {
   list-style: none;
@@ -2820,14 +2833,7 @@ input, button, select, textarea {
 
 /* Footer Columns */
 .footer-columns {
-  display: flex;
-  justify-content: space-between;
-  text-align: justify;
   font-size: 15px;
-  align-items: center;
-}
-.footer-columns .footer-column {
-  width: 33.33%;
 }
 .footer-columns a:hover {
   font-weight: 500;
@@ -2845,13 +2851,6 @@ input, button, select, textarea {
   text-decoration: none;
   border-bottom: none;
   color: #000;
-}
-.footer-column .contact-info a:first-child {
-  margin-right: 28px;
-}
-
-.footer-column-right {
-  text-align: right;
 }
 
 .menu-footer-menu-container .menu {
@@ -2915,6 +2914,28 @@ input, button, select, textarea {
 }
 .menu-social-menu-container .social-tiktok a:hover {
   background-image: url("assets/img/icons/tiktok-hover.svg");
+}
+
+/* Footer Credits */
+.footer-credits {
+  padding: 50px 12px 0;
+}
+.footer-credits .widget {
+  margin: 0;
+}
+.footer-credits .footer-credits-text {
+  font-size: 14px;
+  color: #000;
+  text-align: center;
+  margin: 0;
+}
+.footer-credits .footer-credits-text a {
+  color: #000;
+  border: none;
+}
+.footer-credits .footer-credits-text a:hover {
+  color: #000;
+  border-bottom: 1px solid;
 }
 
 .ibme.hide-page-title .entry-header {
@@ -5097,9 +5118,6 @@ body.ibme .ibme-donate-button {
 .op-side-panel-container svg {
   filter: invert(30%) sepia(99%) saturate(271%) hue-rotate(156deg) brightness(95%) contrast(88%);
 }
-.op-side-panel-container svg:hover {
-  filter: invert(65%) sepia(75%) saturate(356%) hue-rotate(152deg) brightness(81%) contrast(89%);
-}
 .op-side-panel-container .wForm {
   width: 100%;
   padding: 3.618em;
@@ -5270,6 +5288,46 @@ body.ibme .ibme-donate-button {
   border-radius: 5px;
 }
 
+/* Responsive menu button */
+.sub-menu-toggle {
+  display: none;
+  visibility: hidden;
+  font-weight: 700;
+  padding: 12px 14px;
+  line-height: 1;
+  border-radius: 0;
+  background-image: none;
+  position: absolute;
+  right: 0;
+  top: 0;
+  background-color: #A4EDC6;
+}
+
+.sub-menu-toggle:hover {
+  background-color: #8fe9b9;
+}
+
+.menu-toggle {
+  display: none;
+  visibility: hidden;
+  font-weight: 700;
+  padding: 1em;
+  line-height: 1;
+  border: 0;
+  background-image: none;
+  border-radius: 0;
+  background-color: #8fe9b9;
+  font-size: 14px;
+}
+
+.menu-toggle:hover {
+  background-color: #82e6b1;
+}
+
+.menu-toggle.activated {
+  border-bottom-width: 0;
+}
+
 .text-center,
 .center-align {
   text-align: center;
@@ -5404,6 +5462,10 @@ body.ibme .ibme-donate-button {
   transition: none;
 }
 
+.ibme .primaryAction:disabled {
+  cursor: default !important;
+}
+
 .subscribe-form select {
   margin: 0;
   padding: 3px;
@@ -5465,11 +5527,16 @@ body.ibme .ibme-donate-button {
 }
 .side-panel-container .panel-close:hover,
 .op-side-panel .panel-close:hover {
-  background: #fff !important;
+  background: #ffde40 !important;
+}
+.side-panel-container .panel-close:hover svg,
+.op-side-panel .panel-close:hover svg {
+  filter: brightness(0) saturate(100%) invert(22%) sepia(0%) saturate(892%) hue-rotate(136deg) brightness(107%) contrast(87%) !important;
 }
 
-.side-panel-container .panel-close svg {
-  filter: none !important;
+.side-panel-container .panel-close svg,
+.op-side-panel .panel-close svg {
+  filter: brightness(0) saturate(100%) invert(0%) sepia(96%) saturate(14%) hue-rotate(273deg) brightness(99%) contrast(104%) !important;
 }
 
 .ibme-donate-button-wrapper .side-panel-container .side-panel,
@@ -5551,10 +5618,10 @@ body.ibme .ibme-donate-button {
   background-color: #ffd234;
   color: #000;
   border: none;
-  padding: 15px 65px;
+  padding: 0.3em 1em;
   float: right;
   font-family: Inter, sans-serif !important;
-  font-size: 24px;
+  font-size: 16px;
   font-weight: 500;
 }
 .ibme.contact-page .wForm input[type="button"]:hover,
@@ -5624,6 +5691,388 @@ body.ibme .ibme-donate-button {
 }
 .ibme.contact-page .wFormFooter {
   display: none;
+}
+
+/* Popup message */
+.ibme .pum-overlay {
+  z-index: 0;
+}
+.ibme .pum-container {
+  text-align: center;
+}
+.ibme .pum-container .popmake-title {
+  text-align: center;
+  margin-bottom: 10px;
+  font-size: 30px;
+}
+.ibme .pum-container .pum-content {
+  text-align: center;
+}
+.ibme .pum-container h3 {
+  color: #000;
+  font-weight: 500;
+}
+.ibme .pum-container p {
+  color: #000;
+  font-weight: 500;
+}
+.ibme .pum-container .white-btn {
+  margin-top: 0;
+  margin-bottom: 0;
+  font-size: 17px;
+  padding: 11px 30px;
+}
+.ibme .pum-container .opt-in-form {
+  margin-bottom: 5px;
+}
+.ibme .pum-container .opt-in-form .oneField {
+  margin-bottom: 0;
+}
+.ibme .pum-container .opt-in-form .two-thirds {
+  margin-left: 0;
+  margin-bottom: 0;
+  float: left;
+  width: 81.90598290598291%;
+}
+.ibme .pum-container .opt-in-form .actions {
+  width: 15.52991%;
+  margin-left: 2.564102564102564%;
+}
+.ibme .pum-container .opt-in-form .actions input {
+  padding-top: 13px;
+  padding-bottom: 13px;
+}
+.ibme .pum-container .pum-title {
+  font-weight: 500;
+}
+.ibme .pum-container h3 {
+  margin-bottom: 15px;
+}
+.ibme .pum-container .pum-content p:last-child {
+  margin-bottom: 9px;
+}
+.ibme .pum-container .pum-close {
+  outline: none !important;
+}
+.ibme #pum-10538 .pum-container,
+.ibme #pum-10551 .pum-container,
+.ibme #pum-10761 .pum-container,
+.ibme #pum-10765 .pum-container {
+  padding-top: 40px;
+  padding-bottom: 40px;
+}
+.ibme #pum-10538 .pum-container .pum-close,
+.ibme #pum-10551 .pum-container .pum-close,
+.ibme #pum-10761 .pum-container .pum-close,
+.ibme #pum-10765 .pum-container .pum-close {
+  z-index: 0;
+}
+
+@media all and (max-width: 870px) {
+  .ibme .pum-container .popmake-title {
+    font-size: 27px;
+  }
+  .ibme .pum-container .opt-in-form .oneField {
+    margin-bottom: 15px;
+  }
+  .ibme .pum-container .opt-in-form .two-thirds {
+    width: 77.90598290598291%;
+  }
+  .ibme .pum-container .opt-in-form .actions {
+    width: auto;
+  }
+}
+@media all and (max-width: 725px) {
+  .ibme .pum-container .popmake-title {
+    font-size: 27px;
+  }
+  .ibme .pum-container .opt-in-form .two-thirds {
+    width: auto;
+    float: none;
+  }
+  .ibme .pum-container .opt-in-form .actions {
+    float: none;
+    margin: 0 auto;
+  }
+}
+/* Responsive media queries */
+@media all and (min-width: 1440px) {
+  .ibme .wrap {
+    width: 1440px;
+    margin: 0 auto;
+  }
+}
+@media all and (min-width: 1191px) {
+  .footer-columns {
+    display: flex;
+    justify-content: space-between;
+    text-align: justify;
+    align-items: center;
+  }
+  .footer-columns .footer-column {
+    width: 33.33%;
+  }
+
+  .footer-column-right {
+    text-align: right;
+  }
+}
+@media all and (min-width: 401px) {
+  .footer-column .contact-info a:first-child {
+    margin-right: 28px;
+  }
+}
+@media all and (max-width: 1340px) {
+  .ibme .wrap {
+    padding-left: 50px;
+    padding-right: 50px;
+  }
+}
+@media all and (max-width: 1280px) {
+  .footer-widgets .footer-widget {
+    width: 30%;
+  }
+}
+@media all and (max-width: 1240px) {
+  .ibme .wrap {
+    padding-left: 25px;
+    padding-right: 25px;
+  }
+}
+@media all and (max-width: 1190px) {
+  .menu-footer-menu-container .menu {
+    justify-content: center;
+  }
+
+  .footer-column-middle {
+    margin-top: 20px;
+    margin-bottom: 20px;
+  }
+
+  .ibme .site-header .wrap {
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+  }
+  .ibme .site-header .wrap .site-branding {
+    width: 100%;
+  }
+
+  .ibme .site-title a {
+    margin: 0 auto 1.618em;
+  }
+}
+@media all and (max-width: 1024px) {
+  .ibme .wrap {
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+
+  .footer-widgets {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  .footer-widgets .footer-widget {
+    width: 45%;
+  }
+}
+@media all and (max-width: 940px) {
+  .site-header .menu-primary {
+    width: 100%;
+    margin-bottom: 15px;
+  }
+
+  #menu-top-nav-extended-menu .support .sub-menu,
+  #menu-top-nav-extended-menu .support:hover .sub-menu {
+    left: 10px;
+  }
+
+  #menu-top-nav-extended-menu .about .sub-menu,
+  #menu-top-nav-extended-menu .about:hover .sub-menu {
+    left: -70px;
+  }
+}
+@media all and (max-width: 768px) {
+  .footer-widgets {
+    flex-direction: column;
+    align-items: center;
+  }
+  .footer-widgets .footer-widget {
+    width: 70%;
+    justify-content: center;
+  }
+
+  .footer-widget-one {
+    margin-bottom: 30px;
+  }
+
+  .footer-widget-one .widget {
+    width: max-content;
+  }
+
+  .widget:last-child {
+    padding-right: 0;
+  }
+
+  .footer-widget-three {
+    padding-top: 30px;
+  }
+}
+@media all and (max-width: 540px) {
+  .footer-widgets .footer-widget {
+    width: 100%;
+  }
+
+  .footer-widgets .footer-widget-three {
+    width: 85%;
+  }
+}
+@media all and (max-width: 400px) {
+  .footer-column .contact-info a {
+    display: block;
+  }
+}
+/* Mobile nav */
+@media screen and (max-width: 600px) {
+  /* Site Header */
+  .ibme .site-header .wrap {
+    padding-left: 0;
+    padding-right: 0;
+    padding-bottom: 0;
+  }
+
+  #menu-primary-items.mobile-menu-items {
+    margin: 0;
+  }
+  #menu-primary-items.mobile-menu-items a {
+    margin-left: 0;
+    margin-right: 0;
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+  #menu-primary-items.mobile-menu-items a:after, #menu-primary-items.mobile-menu-items a:before {
+    content: none;
+  }
+
+  #menu-primary-items .teen-retreats a:hover {
+    color: #EF5DBF;
+  }
+  #menu-primary-items .custom-programs a:hover {
+    color: #FFB235;
+  }
+  #menu-primary-items .teacher-training a:hover {
+    color: #8ECCDC;
+  }
+  #menu-primary-items .community-care a:hover {
+    color: #9691D8;
+  }
+  #menu-primary-items .support a:hover,
+  #menu-primary-items .about a:hover,
+  #menu-primary-items .calendar a:hover,
+  #menu-primary-items .shop a:hover {
+    color: #A4EDC6;
+  }
+  #menu-primary-items .donate a:hover {
+    color: #5FA6E2;
+  }
+
+  /* Responsive Menu */
+  .menu-toggle {
+    width: 100% !important;
+    font-variant: normal;
+    text-transform: lowercase;
+  }
+
+  .menu-toggle,
+  .sub-menu-toggle {
+    display: block;
+    visibility: visible;
+  }
+  .menu-toggle:hover,
+  .sub-menu-toggle:hover {
+    background-image: none;
+    background-color: #8fe9b9;
+  }
+
+  .menu-toggle:before {
+    content: "\2261";
+    font-size: 26px;
+    font-family: "Times New Roman", Times, serif;
+    position: relative;
+    top: 4px;
+    left: -8px;
+    line-height: 7px;
+  }
+
+  .sub-menu-toggle:before {
+    content: "+";
+  }
+
+  .sub-menu-toggle.activated:before {
+    content: "-";
+  }
+
+  .ibme #menu-primary,
+  .menu-top-nav-extended-menu-container {
+    display: none;
+  }
+
+  #menu-primary-items > li,
+  #menu-primary-items > li a {
+    width: 100%;
+  }
+
+  #menu-primary-items .menu-item-has-children:hover > .sub-menu {
+    opacity: 0;
+    visibility: hidden;
+  }
+}
+@media screen and (min-width: 601px) {
+  #menu-primary-items .teen-retreats > .sub-menu,
+  #menu-primary-items .custom-programs > .sub-menu,
+  #menu-primary-items .teacher-training > .sub-menu,
+  #menu-primary-items .community-care > .sub-menu {
+    width: 525px;
+    display: flex;
+    border-radius: 5px;
+    min-height: 290px;
+    top: 48px;
+    z-index: 99;
+  }
+  #menu-primary-items .sub-menu-label:first-child {
+    width: 45%;
+  }
+  #menu-primary-items .sub-menu-label:last-child {
+    width: 55%;
+  }
+  #menu-primary-items .teen-retreats:hover .sub-menu .sub-menu,
+  #menu-primary-items .custom-programs:hover .sub-menu .sub-menu,
+  #menu-primary-items .teacher-training:hover .sub-menu .sub-menu,
+  #menu-primary-items .community-care:hover .sub-menu .sub-menu {
+    opacity: 1;
+    visibility: visible;
+  }
+  #menu-primary-items .custom-programs .sub-menu,
+  #menu-primary-items .custom-programs:hover .sub-menu {
+    left: -106px;
+  }
+  #menu-primary-items .teacher-training .sub-menu,
+  #menu-primary-items .teacher-training:hover .sub-menu {
+    left: -256px;
+  }
+  #menu-primary-items .community-care .sub-menu,
+  #menu-primary-items .community-care:hover .sub-menu {
+    left: -394px;
+  }
+  #menu-primary-items .teen-retreats .sub-menu .sub-menu,
+  #menu-primary-items .teen-retreats:hover .sub-menu .sub-menu,
+  #menu-primary-items .custom-programs .sub-menu .sub-menu,
+  #menu-primary-items .custom-programs:hover .sub-menu .sub-menu,
+  #menu-primary-items .teacher-training .sub-menu .sub-menu,
+  #menu-primary-items .teacher-training:hover .sub-menu .sub-menu,
+  #menu-primary-items .community-care .sub-menu .sub-menu,
+  #menu-primary-items .community-care:hover .sub-menu .sub-menu {
+    left: 0;
+  }
 }
 
 /*# sourceMappingURL=style.css.map */

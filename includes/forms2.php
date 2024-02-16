@@ -39,6 +39,17 @@ function my_login_head() {
 	";
 }
 
+/* Dashboard CSS */
+add_action('admin_head', 'my_custom_fonts');
+
+function my_custom_fonts() {
+  echo '<style>
+    .update-nag, .update_nag, #update-nag {display:none;}
+	.notice.notice-warning {display: none;}
+	#adminmenu #toplevel_page_wpmr .awaiting-mod {display: none;}
+  </style>';
+}
+
 
 /* Opt-in w/ out phone - sends through the Email Opt-in (More Info) form */
 
@@ -288,7 +299,7 @@ function subscribe_form_shortcode($atts) {
 				<input type="hidden" id="tfa_5" name="tfa_5" value="" class="">
 				<input type="hidden" id="tfa_7" name="tfa_7" value="$url_without_query_string" class="">
 				<input type="hidden" id="tfa_9" name="tfa_9" value="$user_agent" class="">
-				<input type="hidden" id="tfa_324" name="tfa_324" value="$link" class="">
+				<input type="hidden" id="tfa_324" name="tfa_324" value="$url_without_query_string?mailing-list-success=1" class="">
 				<div style="clear:both"></div>
 				<input type="hidden" value="389906" name="tfa_dbFormId" id="maillinglist_tfa_dbFormId">
 				<input type="hidden" value="" name="tfa_dbResponseId" id="maillinglist_tfa_dbResponseId">
@@ -301,7 +312,7 @@ function subscribe_form_shortcode($atts) {
 	</div>	
 IELS;
 // !!! THE ABOVE LINE SHOULD NEVER BE INDENTED !!! ///
-	// $form_output = apply_filters( 'ibme_form_recaptcha', $form_output );
+	$form_output = apply_filters( 'ibme_form_recaptcha', $form_output );
 	return $form_output;
 }
 

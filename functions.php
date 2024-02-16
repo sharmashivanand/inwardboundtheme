@@ -14,6 +14,7 @@ function ibme_remove_lander_theme_support() {
 	remove_action( 'lander_after_header', 'lander_primary_nav' );
 	add_action( 'lander_after_branding_markup', 'lander_primary_nav' );
 	add_action( 'lander_after_branding_markup', 'ibme_extended_top_nav' );
+	add_action( 'lander_after_branding_markup', 'ibme_mobile_nav' );
 	// Remove default footer
 	remove_action( 'lander_footer', 'lander_footer_content' );
 	add_shortcode( 'ibme_calculator', 'ibme_calculator' );
@@ -51,10 +52,10 @@ function ibme_calculator( $atts ) {
 	?>
 	<form class="ibme_calc_form">
 		<fieldset class="ibme_calc_form_container">
-			<div class="ibme_calc_form_container_title header-3">Annual Family Income</div>
+			<div class="ibme_calc_form_container_title header-3">Annual Household Income</div>
 			<div class="ibme_calc_form_field">
 				<span class="ibme_calc_form_curr_sym">$</span>
-				<input type="number" id="annual_family_income" min='0' placeholder="Enter Your Annual Family Income" />
+				<input type="number" id="annual_family_income" min='0' placeholder="Enter Your Annual Household Income" />
 			</div>
 		</fieldset>
 		<fieldset class="ibme_calc_form_container">
@@ -179,6 +180,18 @@ function ibme_extended_top_nav() {
 	);
 }
 
+function ibme_mobile_nav() {
+	wp_nav_menu(
+		array(
+			'menu'      => 21,
+			'menu_id'      => 'menu-primary-items',
+			'menu_class'      => 'menu-items mobile-menu-items',
+			'container' => 'nav',
+			'container_class' => 'menu menu-primary mobile-menu',
+		)
+	);
+}
+
 /** Creating Custom Footer */
 
 add_action( 'lander_footer', 'ibme_custom_footer_content' );
@@ -224,6 +237,12 @@ function ibme_custom_footer_content() {
 				dynamic_sidebar( 'footer-widget-six' );  }
 			?>
 		</div>
+	</div>
+	<div class="footer-credits">
+		<?php
+		if ( is_active_sidebar( 'footer-widget-credits' ) ) {
+			dynamic_sidebar( 'footer-widget-credits' );  }
+		?>
 	</div>
 	<?php
 }
@@ -286,6 +305,15 @@ if ( function_exists( 'register_sidebar' ) ) {
 		'before_title'  => '<h4 class="widgettitle widget-title">',
 		'after_title'   => '</h4>',
 	);
+	$footer_widget_credits   = array(
+		'name'          => __( 'Footer Widget Credits', 'textdomain' ),
+		'id'            => 'footer-widget-credits',
+		'description'   => __( 'Footer Widget Area (Bottom Credits)', 'textdomain' ),
+		'before_widget' => '<div class="widget %2$s">',
+		'after_widget'  => '</div>',
+		'before_title'  => '<h4 class="widgettitle widget-title">',
+		'after_title'   => '</h4>',
+	);
 
 	register_sidebar( $footer_widget_one );
 	register_sidebar( $footer_widget_two );
@@ -293,7 +321,7 @@ if ( function_exists( 'register_sidebar' ) ) {
 	register_sidebar( $footer_widget_four );
 	register_sidebar( $footer_widget_five );
 	register_sidebar( $footer_widget_six );
-
+	register_sidebar( $footer_widget_credits );
 }
 
 /* Redirect all the pages to homepage; for first review */
@@ -367,7 +395,16 @@ function ibme_button_handler( $atts ) {
 	}
 
 	// Check if the link is external
-	$is_external = ( strpos( $link, home_url() ) === false );
+	//$is_external = ( strpos( $link, home_url() ) === false );
+
+	if (filter_var($link, FILTER_VALIDATE_URL) === FALSE) {
+		// It's not a full URL, treat as internal link
+		$is_external = false;
+	} else {
+		// It's a full URL, now check if it's external
+		$is_external = (strpos($link, home_url()) === false);
+	}
+
 	// Add the target attribute based on whether it's internal or external
 	$target_attribute = $is_external ? 'target="_blank"' : '';
 
@@ -393,7 +430,16 @@ function ibme_button_handler( $atts ) {
 			}
 
 			// Check if the button_2_link is external
-			$is_external_2 = ( strpos( $button_2_link, home_url() ) === false );
+			//$is_external_2 = ( strpos( $button_2_link, home_url() ) === false );
+
+			if (filter_var($button_2_link, FILTER_VALIDATE_URL) === FALSE) {
+				// It's not a full URL, treat as internal link
+				$is_external = false;
+			} else {
+				// It's a full URL, now check if it's external
+				$is_external = (strpos($button_2_link, home_url()) === false);
+			}
+
 			// Add the target attribute based on whether it's internal or external
 			$target_attribute_2 = $is_external_2 ? 'target="_blank"' : '';
 
@@ -1953,4 +1999,56 @@ function ibme_post_byline( $type, $format ) {
 	?>
 	</p>
 	<?php
+}
+
+
+/* Responsive Menu Button */
+
+add_action('wp_head', 'ibme_resp_button');
+
+function ibme_resp_button() {
+	?>
+	<script type="text/javascript">
+		jQuery(document).ready(function($) {
+			$( '.mobile-menu').before( '<button class="menu-toggle menu-toggle-primary" role="button" aria-pressed="false">Menu</button>' ); // Add toggles to menus
+
+			$( '.mobile-menu .sub-menu').before( '<button class="sub-menu-toggle" role="button" aria-pressed="false"></button>' ); // Add toggles to sub menus
+
+			// Show/hide the navigation
+			
+			$( '.menu-toggle, .sub-menu-toggle' ).on( 'click', function() {
+				var $this = $( this );
+				$this.attr( 'aria-pressed', function( index, value ) {
+				return 'false' === value ? 'true' : 'false';
+			});
+
+			$this.toggleClass( 'activated' );
+				$this.next( '.mobile-menu, .mobile-menu .sub-menu' ).slideToggle( 'fast' );
+			});
+		});
+	
+	</script>
+	<?php
+}
+
+/** 404 Page Set-up */
+
+add_action('lander_before','ibme_404_loop');
+
+function ibme_404_loop() {
+	if(is_404()) {
+		remove_action('lander_loop','lander_do_loop');
+		add_action( 'lander_loop','ibme_404_content' );
+	}
+}
+
+function ibme_404_content() {
+	echo do_shortcode('[hero_3 image-url="https://inwardboundmind.org/wp-content/uploads/2024/01/calendar-section-bg.jpg" bg-color="mint" title="page not found" text="Error 404 - looks like this page does not exist! Please check the URL again or explore the resources below for more options." button-text="back to homepage" button-link="https://inwardboundmind.org/"]');
+
+	echo do_shortcode('[ibme_statement_2 orientation="left" title="welcome to our new inward bound mindfulness website" title-color="black" text="We apologize that you\'ve landed on a lost page. Please visit the pages below, explore our website using the menu above, or contact us if you need more support. Thank you!" text-color="black" bg-color="none" button-text="contact us" button-link="https://inwardboundmind.org/contact/" button-style="style-5"]');
+
+	echo do_shortcode('[ibme_cta_3_content_blocks]
+	[ibme_cta_3_content_block color="violet" title="teen retreat experience" text="Explore what happens on retreat, why teens love them, and the overall benefits of our mindfulness retreats." image-url="https://inwardboundmind.org/wp-content/uploads/2024/02/cta-teen-xp.jpg" button-link="https://example.com/" button-text="explore"][ibme_cta_3_content_block color="bluejay" title="teacher training" text-line-break="yes" text="Become certified to teach mindfulness to young people." image-url="https://inwardboundmind.org/wp-content/uploads/2024/02/cta-mtt.jpg" button-link="https://ibme.com/" button-text="learn more"][ibme_cta_3_content_block color="marigold" title="custom programs" text-line-break="yes" text="Let us customize our programs to meet the needs of your community." image-url="https://inwardboundmind.org/wp-content/uploads/2024/02/cta-custom.jpg" button-link="https://ibme.com/" button-text="learn more"][/ibme_cta_3_content_blocks]');
+
+	echo do_shortcode('[padding_box desktop="160" mobile="40"]'); 
 }
