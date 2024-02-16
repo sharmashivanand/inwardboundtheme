@@ -1541,6 +1541,18 @@ input, button, select, textarea {
 }
 
 #menu-primary-items {
+    a {
+        letter-spacing: 0.15px;
+        color: #000;
+        border: none;
+
+        &:hover {
+            color: #000;
+        }
+    }
+}
+
+/*#menu-primary-items {
 
     a {
         margin-left: 0.75em;
@@ -1613,7 +1625,7 @@ input, button, select, textarea {
     background: url("assets/img/lavender-specks.svg") no-repeat center / contain;
     top: 5px;
     left: 0;
-}
+}*/
 
 /* Primary Menu Sub-menu Styles */
 
@@ -1661,14 +1673,11 @@ input, button, select, textarea {
             font-family: "MADE Mirage Regular";
             font-size: 30px;
             margin: 0;
-            padding: 35px 35px 25px;
+            //padding: 35px 35px 25px;
         }
         
         .sub-menu {
-            width: 100%;
-            top: 76px !important;
             box-shadow: none;
-            padding-bottom: 35px;
         }
     }
 
@@ -5133,11 +5142,11 @@ body.ibme .ibme-donate-button { //override
 
 /* Responsive menu button */
 
-.sub-menu-toggle {
+.sub-menu-toggle { 
 	display: none;
 	visibility: hidden;
 	font-weight: 700;
-	padding: 12px 14px;
+	padding: 10px 12px;
 	line-height: 1;
 	border-radius: 0;
 	background-image: none;

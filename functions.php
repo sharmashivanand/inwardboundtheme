@@ -2007,29 +2007,39 @@ function ibme_post_byline( $type, $format ) {
 add_action('wp_head', 'ibme_resp_button');
 
 function ibme_resp_button() {
-	?>
-	<script type="text/javascript">
-		jQuery(document).ready(function($) {
-			$( '.mobile-menu').before( '<button class="menu-toggle menu-toggle-primary" role="button" aria-pressed="false">Menu</button>' ); // Add toggles to menus
+    ?>
+    <script type="text/javascript">
+        jQuery(document).ready(function($) {
+            $( '.mobile-menu').before( '<button class="menu-toggle menu-toggle-primary" role="button" aria-pressed="false">Menu</button>' ); // Add toggles to menus
 
-			$( '.mobile-menu .sub-menu').before( '<button class="sub-menu-toggle" role="button" aria-pressed="false"></button>' ); // Add toggles to sub menus
+            $( '.mobile-menu .sub-menu').before( '<button class="sub-menu-toggle" role="button" aria-pressed="false"></button>' ); // Add toggles to sub menus
 
-			// Show/hide the navigation
-			
-			$( '.menu-toggle, .sub-menu-toggle' ).on( 'click', function() {
-				var $this = $( this );
-				$this.attr( 'aria-pressed', function( index, value ) {
-				return 'false' === value ? 'true' : 'false';
-			});
+            // Show/hide the navigation and add 'active' class to the menu and submenu
+            
+            $( '.menu-toggle' ).on( 'click', function() {
+                var $this = $( this );
+                $this.attr( 'aria-pressed', function( index, value ) {
+                    return 'false' === value ? 'true' : 'false';
+                });
 
-			$this.toggleClass( 'activated' );
-				$this.next( '.mobile-menu, .mobile-menu .sub-menu' ).slideToggle( 'fast' );
-			});
-		});
-	
-	</script>
-	<?php
+                $this.toggleClass( 'activated' ); // Toggle 'activated' class for visual cue
+                $this.next( '.mobile-menu' ).slideToggle( 'fast' ).toggleClass('active'); // Toggle 'active' class on the menu
+            });
+
+            $( '.sub-menu-toggle' ).on( 'click', function() {
+                var $this = $( this );
+                $this.attr( 'aria-pressed', function( index, value ) {
+                    return 'false' === value ? 'true' : 'false';
+                });
+
+                $this.toggleClass( 'activated' ); // Toggle 'activated' class for visual cue
+                $this.next( '.sub-menu' ).slideToggle( 'fast' ).toggleClass('active'); // Toggle 'active' class on the submenu
+            });
+        });
+    </script>
+    <?php
 }
+
 
 /** 404 Page Set-up */
 
