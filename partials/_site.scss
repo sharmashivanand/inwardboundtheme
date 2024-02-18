@@ -2272,8 +2272,6 @@ input, button, select, textarea {
         position: relative;
 
         .inner-wrap {
-            width: 1440px;
-            margin: 0 auto;
             padding-left: 100px;
             padding-right: 100px;
             box-sizing: border-box;
@@ -2300,7 +2298,7 @@ input, button, select, textarea {
     background-attachment: fixed;
     
     .title {
-        width: 50%; 
+        //width: 50%; 
         padding-top: 150px;
         margin-bottom: 22px;
     }
@@ -2447,11 +2445,6 @@ input, button, select, textarea {
     align-items: center;
     text-align: center;
     position: relative;
-
-    .landing-section-content {
-        width: 50%;
-        margin: 0 auto;
-    }
 
     .title {
         margin-bottom: 22px;
@@ -2678,7 +2671,6 @@ input, button, select, textarea {
     .ibme-cta_1-content-block {
         width: 48%;
         margin-bottom: 60px;
-        min-width: 600px;
     }
 
     .inline-buttons {
@@ -2916,7 +2908,7 @@ input, button, select, textarea {
 }
 
 .ibme-testimonial-image-wrap {
-    width: 55%;
+    width: 685px;
     min-height: 613px;
 
     img {
@@ -2927,7 +2919,9 @@ input, button, select, textarea {
 }
 
 .testimonial-content-wrap {
-    width: 34%;
+    width: calc(100% - 685px);
+    box-sizing: border-box;
+    padding-left: 100px;
 }
 
 .testimonial-by:before {
@@ -3042,22 +3036,9 @@ input, button, select, textarea {
     background-position: center top;
     background-size: 1920px auto; 
     background-attachment: fixed;
-    display: flex;
-    align-items: center;
-
-    .landing-section-content {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-    }
-
-    .headline-column {
-        width: 30%;
-    }
 
     .upcoming-events-list {
-        width: 62.5%;
-
+        
         .cherry-color {
             .header-4 {
                 color: $cherry;
@@ -3164,17 +3145,13 @@ input, button, select, textarea {
         background-color: $white;
         padding: 1em 1.618em;
         border-radius: 5px;
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
         margin-bottom: 40px;
         margin-top: 40px;
         min-height: 140px;
     }
 
     .upcoming-event-date {
-        width: 20%;
-
+        
         .header-4 {
             margin-top: 0;
             margin-bottom: 0;
@@ -3183,10 +3160,6 @@ input, button, select, textarea {
         span {
             display: block;
         }
-    }
-
-    .upcoming-event-title-location {
-        width: 50%;
     }
 
     .header-3 {
@@ -3199,13 +3172,12 @@ input, button, select, textarea {
         margin-bottom: 0;
     }
 
-    .upcoming-event-links { 
-        width: 20%;
-
+    .upcoming-event-links {
         .ibme-button:first-child {
             margin-bottom: 10px;
         }
     }
+
 }
 
 .ibme_cta-3_subscribe_block {
@@ -3225,13 +3197,14 @@ input, button, select, textarea {
 
 .cta-3_columns {
     display: flex;
-    //justify-content: center;
+    justify-content: space-between;
     text-align: center;
     flex-wrap: wrap;
 
     .cta-3_column {
         border-radius: 5px;
         margin-top: 2.618em;
+        min-height: 500px;
     }
 
     img {
@@ -3242,41 +3215,36 @@ input, button, select, textarea {
     .aligncenter {
         margin-bottom: 0;
     }
+
+    &.cta-items-2 {
+        flex-wrap: nowrap;
+    }
+
 }
 
 .cta-3_columns.cta-items-2 .cta-3_column {
-    width: 47%;
-    max-width: 280px;
-    min-height: 500px;
+    width: 46%;
+    min-width: 280px;
     margin-left: 20px;
     margin-right: 20px;
 } 
 
+.cta-3_columns.fourths-display .cta-3_column, 
 .cta-3_columns.cta-items-4 .cta-3_column,
 .cta-3_columns.cta-items-5 .cta-3_column,
 .cta-3_columns.cta-items-6 .cta-3_column {
     width: 23%;
-    max-width: 280px;
-    min-height: 500px;
-    margin-left: 20px;
-    margin-right: 20px;
+    min-width: 280px;
+    margin-left: 15px;
+    margin-right: 15px;
 } 
 
 .cta-3_columns.cta-items-3 .cta-3_column,
 .cta-3_columns.thirds-display .cta-3_column {
     width: 31%;
-    max-width: 385px;
-    min-height: 500px;
-    margin-left: 20px;
-    margin-right: 20px;
-}
-
-.cta-3_columns.fourths-display .cta-3_column{
-    width: 23%;
-    max-width: 280px;
-    min-height: 500px;
-    margin-left: 20px;
-    margin-right: 20px;
+    min-width: 385px;
+    margin-left: 15px;
+    margin-right: 15px;
 }
 
 .cta-3_columns.thirds-display .cta-3_column:nth-child(3),
@@ -3746,7 +3714,7 @@ input, button, select, textarea {
 .hero_1-slider-content {
     position: absolute;
     top: 20%;
-    width: 50%;
+    width: 90%;
 
     .title {
         margin-bottom: 22px;
@@ -4307,59 +4275,12 @@ input, button, select, textarea {
 
     &.center-layout {
         text-align: center;
-
-        .landing-section-content {
-            width: 50%;
-            margin: 0 auto;
-            max-width: 450px;
-        }
-
-    }
-
-    &.right-layout,
-    &.left-layout {
-        .landing-section-content {
-            display: flex;
-            //align-items: center;
-
-            .title-column {
-                width: 36%;
-            }
-
-            .text-column {
-                width: 56%;
-            }
-        }
-    }
-
-    &.left-layout {
-        .title-column {
-            margin-right: 4%;
-        }
-
-        .text-column {
-            margin-left: 4%;
-        }
-    }
-
-
-    &.right-layout {
-        .landing-section-content {
-            flex-direction: row-reverse;
-        }
-
-        .title-column {
-            margin-left: 4%;
-        }
-
-        .text-column {
-            margin-right: 4%;
-        }
     }
 
     .ibme-statement-2-text {
         margin-bottom: 0;
         margin-top: 0;
+        padding-top: 15px;
     }
 
     .ibme-statement-2-column .ibme-button {
@@ -4379,6 +4300,7 @@ input, button, select, textarea {
     .black-title {
         color: #000;
     }
+
 }
 
 /* impact_2 */
@@ -4438,8 +4360,6 @@ input, button, select, textarea {
 }
   
 .html-text-block {
-    display: flex;
-    align-items: center;
 
     p {
         margin-bottom: 40px;
@@ -4561,20 +4481,20 @@ input, button, select, textarea {
 /* details block */
 
 .details-block {
-    padding: 60px 40px 0;
+    padding: 60px 40px 1px;
     border-radius: 5px;
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
+    //display: flex;
+    //flex-wrap: wrap;
+    //align-items: center;
     max-width: 860px;
     min-height: 500px;
     margin: 0 auto;
-    justify-content: center;
+    //justify-content: center;
 
     .one-third {
         margin-bottom: 60px;
-        width: 28%;
-        margin-left: 7.33%;
+        //width: 28%;
+        //margin-left: 7.33%;
     }
 
     .one-third.first {
@@ -4684,15 +4604,7 @@ input, button, select, textarea {
     background-color: $lightcream;
     border: none;
     border-radius: 5px;
-    margin-left: 0;
-    margin-right: 0;
-    width: 31%;
     min-height: 540px;
-}
-
-.ibme .campaign-cards .campaign-card-display:nth-child(2) {
-    margin-left: 40px;
-    margin-right: 40px;
 }
 
 .campaign-cards .campaign-card-img img {
@@ -4776,19 +4688,12 @@ body.ibme .ibme-donate-button { //override
 
 	.ibme_calc_form {
 		margin-bottom: 50px;
-        max-width: 640px;
-		margin: 0 auto;
 	}
 
 	.ibme_calc_form_container {
 		padding: 0;
 		border: none;
 		margin-bottom: 1em;
-		display: grid;
-		-webkit-align-items: center;
-		align-items: center;
-		grid-gap: .75em;
-		grid-template-columns: 2fr 3fr;
 	}
 
 	.ibme_calc_form_field {

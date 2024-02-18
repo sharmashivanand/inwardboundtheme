@@ -143,3 +143,29 @@ h4,
     font-size: 20px;
     line-height: 1.45em;
 }
+
+@media screen and (max-width: 600px) {
+    .title, h1, .tribe-common h1, .header-1  {
+        font-size: 60px;
+    }
+
+    h2, .tribe-common h2, .header-2 {
+        font-size: 36px;
+    }
+
+    h3, .tribe-common h3, .tribe-common .tribe-common-h3, .tribe-common .tribe-common-h5, .tribe-common .tribe-common-h6, .header-3 {
+        font-size: 20px;
+    }
+
+    h4, .tribe-common h4, .tribe-common .tribe-common-h7, .tribe-common .tribe-common-h8, .header-4 {
+        font-size: 18px;
+    }
+
+    .ibme,
+    .wFormContainer,
+    .tribe-common .tribe-common-c-btn-border-small, .tribe-common a.tribe-common-c-btn-border-small,
+    .tribe-common .tribe-common-b2,
+    input, button, select, textarea {
+        font-size: 16px;
+    }
+}

@@ -494,8 +494,8 @@ function ibme_statement_1_handler( $atts ) {
 			'button-2-color'      => '',
 			'button-2-style'      => 'style-4',
 			'button-2-text-color' => 'barbie', // cherry, poppy, blush, barbie, peony, violet, tangerine, marigold, sunflower, forest, teal, mint, ocean, sky, bluejay, lavender, white
-			'top-illustration'    => 'face-blush',
-			'bottom-illustration' => 'plant-blush',
+			'top-illustration'    => 'none',
+			'bottom-illustration' => 'none',
 			'new-tab'             => 'no', // yes, no
 			'button-2-new-tab'    => 'no', // yes, no
 		),
@@ -1813,7 +1813,7 @@ function impact_2_slide_handler( $atts ) {
 
 /** Script for impact_2_slider */
 
-add_action( 'wp_footer', 'impact_2_slider_script' );
+//add_action( 'wp_footer', 'impact_2_slider_script' );
 
 function impact_2_slider_script() {
 	?>
@@ -2058,7 +2058,7 @@ function ibme_404_content() {
 	echo do_shortcode('[ibme_statement_2 orientation="left" title="welcome to our new inward bound mindfulness website" title-color="black" text="We apologize that you\'ve landed on a lost page. Please visit the pages below, explore our website using the menu above, or contact us if you need more support. Thank you!" text-color="black" bg-color="none" button-text="contact us" button-link="https://inwardboundmind.org/contact/" button-style="style-5"]');
 
 	echo do_shortcode('[ibme_cta_3_content_blocks]
-	[ibme_cta_3_content_block color="violet" title="teen retreat experience" text="Explore what happens on retreat, why teens love them, and the overall benefits of our mindfulness retreats." image-url="https://inwardboundmind.org/wp-content/uploads/2024/02/cta-teen-xp.jpg" button-link="https://example.com/" button-text="explore"][ibme_cta_3_content_block color="bluejay" title="teacher training" text-line-break="yes" text="Become certified to teach mindfulness to young people." image-url="https://inwardboundmind.org/wp-content/uploads/2024/02/cta-mtt.jpg" button-link="https://ibme.com/" button-text="learn more"][ibme_cta_3_content_block color="marigold" title="custom programs" text-line-break="yes" text="Let us customize our programs to meet the needs of your community." image-url="https://inwardboundmind.org/wp-content/uploads/2024/02/cta-custom.jpg" button-link="https://ibme.com/" button-text="learn more"][/ibme_cta_3_content_blocks]');
+	[ibme_cta_3_content_block color="violet" title="teen retreat experience" text="Explore what happens on retreat, why teens love them, and the overall benefits of our mindfulness retreats." image-url="https://inwardboundmind.org/wp-content/uploads/2024/02/cta-teen-xp.jpg" button-link="https://inwardboundmind.org/teen-retreats/retreat-experience/" button-text="explore"][ibme_cta_3_content_block color="bluejay" title="teacher training" text-line-break="yes" text="Become certified to teach mindfulness to young people." image-url="https://inwardboundmind.org/wp-content/uploads/2024/02/cta-mtt.jpg" button-link="https://inwardboundmind.org/teacher-training/overview/" button-text="learn more"][ibme_cta_3_content_block color="marigold" title="custom programs" text-line-break="yes" text="Let us customize our programs to meet the needs of your community." image-url="https://inwardboundmind.org/wp-content/uploads/2024/02/cta-custom.jpg" button-link="https://inwardboundmind.org/custom-programs/overview/" button-text="learn more"][/ibme_cta_3_content_blocks]');
 
 	echo do_shortcode('[padding_box desktop="160" mobile="40"]'); 
 }

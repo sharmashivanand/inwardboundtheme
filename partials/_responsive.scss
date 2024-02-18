@@ -1,10 +1,17 @@
 /* Responsive media queries */
 
+/** Min width queries **/
+
 @media all and (min-width: 1440px) {
+    .ibme .full-width-section .inner-wrap,
     .ibme .wrap {
         width: 1440px;
         margin: 0 auto;
-    }    
+    }
+
+    .ibme-cta_1-content-blocks .ibme-cta_1-content-block {
+        min-width: 600px;
+    }
 
 }
 
@@ -27,6 +34,311 @@
 
 }
 
+@media all and (min-width: 1121px) {
+    .upcoming-events-section {
+        display: flex;
+        align-items: center;
+
+        .landing-section-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+    
+        .headline-column {
+            width: 30%;
+        }
+
+        .upcoming-events-list {
+            width: 62.5%;
+        }    
+    }
+}
+
+@media all and (min-width: 1025px) {
+    .hero_1_photo-section {
+        .title {
+            width: 50%; 
+        }    
+    }
+
+    .hero_1-slider-content {
+        width: 50%;
+    }
+
+    .ibme-statement-1 {
+        .landing-section-content {
+            width: 50%;
+            margin: 0 auto;
+        }
+    }
+
+}
+
+@media all and (min-width: 769px) {
+    .ibme-statement-2 {
+
+        &.center-layout {
+            .landing-section-content {
+                width: 50%;
+                margin: 0 auto;
+                max-width: 450px;
+            }
+        }
+
+        &.right-layout,
+        &.left-layout {
+            .landing-section-content {
+                display: flex;
+                //align-items: center;
+
+                .title-column {
+                    width: 36%;
+                }
+
+                .text-column {
+                    width: 56%;
+                }
+            }
+        }
+
+        &.left-layout {
+            .title-column {
+                margin-right: 4%;
+            }
+
+            .text-column {
+                margin-left: 4%;
+            }
+        }
+
+        &.right-layout {
+            .landing-section-content {
+                flex-direction: row-reverse;
+            }
+
+            .title-column {
+                margin-left: 4%;
+            }
+
+            .text-column {
+                margin-right: 4%;
+            }
+        }
+    }
+
+    .html-text-block {
+        display: flex;
+        align-items: center;
+    }
+
+    .details-block {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: center;
+    
+        .one-third {
+            width: 28%;
+            margin-left: 7.33%;
+        }
+    }
+
+    .ibme .campaign-cards .campaign-card-display {
+        width: 31%;
+        margin-left: 0;
+        margin-right: 0;
+    }
+
+    .ibme .campaign-cards .campaign-card-display:nth-child(2) {
+        margin-left: 40px;
+        margin-right: 40px;
+    }
+
+    .ibme {
+
+        .ibme_calc_form {
+            max-width: 640px;
+            margin: 0 auto;
+        }
+    
+        .ibme_calc_form_container {
+            display: grid;
+            -webkit-align-items: center;
+            align-items: center;
+            grid-gap: .75em;
+            grid-template-columns: 2fr 3fr;
+        }
+    }    
+}
+
+@media screen and (min-width: 601px) {
+    #menu-primary-items {
+
+        a {
+            margin-left: 0.75em;
+            margin-right: 0.75em;
+            padding-left: 0;
+            padding-right: 0;
+        }
+    
+        .teen-retreats a {
+            margin-left: 0; 
+        }
+        
+        .community-care a {
+            margin-right: 0;
+        }
+    }
+    
+    #menu-primary-items {
+        .sub-menu-label {
+            .sub-menu {
+                width: 100%;
+                top: 76px !important;
+                padding-bottom: 35px;
+            }
+        }
+    }
+    
+    .teen-retreats a:after {
+        background-color: $barbie;
+    }
+    
+    .custom-programs a:after {
+        background-color: $marigold;
+    }
+    
+    .teacher-training a:after {
+        background-color: $bluejay;
+    }
+    
+    .community-care a:after {
+        background-color: $lavender;
+    }
+    
+    .teen-retreats > a:before {
+        width: 72px;
+        height: 35px;
+        background: url("assets/img/barbie-specks.svg") no-repeat center / contain;
+        left: 20px;
+        top: -1px;
+    }
+    
+    .custom-programs > a:before {
+        width: 152px;
+        height: 26px;
+        background: url("assets/img/marigold-specks-new.svg") no-repeat center / contain;
+        left: 0;
+        top: 5px;
+    }
+    
+    .teacher-training > a:before {
+        width: 99px;
+        height: 35px;
+        background: url("assets/img/bluejay-specks-new.svg") no-repeat center / contain;
+        top: -1px;
+        left: 20px;
+    }
+    
+    .community-care > a:before {
+        width: 142px;
+        height: 27px;
+        background: url("assets/img/lavender-specks.svg") no-repeat center / contain;
+        top: 5px;
+        left: 0;
+    }
+
+    #menu-primary-items {
+        .teen-retreats > .sub-menu,
+        .custom-programs > .sub-menu,
+        .teacher-training > .sub-menu,
+        .community-care > .sub-menu {
+            width: 525px;
+            display: flex;
+            border-radius: 5px;
+            min-height: 290px;
+            top: 48px;
+            z-index: 99;
+        }
+    
+        .sub-menu-label:first-child {
+            width: 45%;
+        }
+    
+        .sub-menu-label:last-child {
+            width: 55%;
+        }
+    
+        .teen-retreats:hover,
+        .custom-programs:hover,
+        .teacher-training:hover,
+        .community-care:hover {
+            .sub-menu .sub-menu {
+                opacity: 1;
+                visibility: visible;
+            }
+        }
+        
+        .custom-programs,
+        .custom-programs:hover {
+            .sub-menu {
+                left: -106px;
+            }
+        }
+    
+        .teacher-training,
+        .teacher-training:hover { 
+            .sub-menu {
+                left: -256px;
+            }
+        }
+        
+        .community-care,
+        .community-care:hover {
+            .sub-menu {
+                left: -394px;
+            }
+        }
+    
+        .teen-retreats,
+        .teen-retreats:hover,
+        .custom-programs,
+        .custom-programs:hover,
+        .teacher-training,
+        .teacher-training:hover,
+        .community-care,
+        .community-care:hover {
+            .sub-menu .sub-menu {
+                left: 0;
+            }
+        }
+    
+    } 
+    
+    #menu-primary-items .sub-menu-label>a {
+        padding: 35px 35px 25px;
+    }
+
+    .upcoming-event-item {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    .upcoming-event-date {
+        width: 20%;
+    }
+
+    .upcoming-event-title-location {
+        width: 50%;
+    }
+
+    .upcoming-event-links { 
+        width: 20%;
+    }    
+}
+
 @media all and (min-width: 401px) {
     .footer-column {
         .contact-info {
@@ -37,7 +349,75 @@
     }
 }
 
+
+/** Max width queries **/
+
+@media all and (max-width: 1440px) {
+
+    .ibme .full-width-section .inner-wrap {
+        width: 100%;
+    }
+}
+
+@media all and (max-width: 1439px) {
+
+
+    .cta-3_columns {
+        &.thirds-display,
+        &.cta-items-3,
+        &.fourths-display,
+        &.cta-items-4,
+        &.cta-items-5,
+        &.cta-items-6 {
+            justify-content: center;
+        }
+    }
+
+    .cta-3_columns.thirds-display .cta-3_column:nth-child(3),
+    .cta-3_columns.thirds-display .cta-3_column:nth-child(6),
+    .cta-3_columns.thirds-display .cta-3_column:nth-child(9),
+    .cta-3_columns.thirds-display .cta-3_column:nth-child(12),
+    .cta-3_columns.thirds-display .cta-3_column:nth-child(15),
+    .cta-3_columns.cta-items-5 .cta-3_column:nth-child(4),
+    .cta-3_columns.cta-items-6 .cta-3_column:nth-child(4), 
+    .cta-3_columns.fourths-display .cta-3_column:nth-child(4),
+    .cta-3_columns.fourths-display .cta-3_column:nth-child(8),
+    .cta-3_columns.fourths-display .cta-3_column:nth-child(12), 
+    .cta-3_columns.fourths-display .cta-3_column:nth-child(16) { 
+        margin-right: 15px;
+    }
+
+    .cta-3_columns.thirds-display .cta-3_column:nth-child(4),
+    .cta-3_columns.thirds-display .cta-3_column:nth-child(7),
+    .cta-3_columns.thirds-display .cta-3_column:nth-child(10),
+    .cta-3_columns.thirds-display .cta-3_column:nth-child(13),
+    .cta-3_columns.cta-items-5 .cta-3_column:nth-child(5),
+    .cta-3_columns.cta-items-6 .cta-3_column:nth-child(5), 
+    .cta-3_columns.fourths-display .cta-3_column:nth-child(5),
+    .cta-3_columns.fourths-display .cta-3_column:nth-child(9), 
+    .cta-3_columns.fourths-display .cta-3_column:nth-child(13) {
+        margin-left: 15px;
+    }
+
+    .cta-3_columns .cta-3_column:first-child {
+        margin-left: 15px;
+    }
+
+    .cta-3_columns .cta-3_column:last-child {
+        margin-right: 15px;
+    }
+
+    .cta-3_columns .cta-3_column {
+        min-height: auto;
+    }
+
+    .ibme_cta-3_subscribe_block .landing-section-content .content-column {
+        width: 45%;
+    }
+}
+
 @media all and (max-width: 1340px) {
+    .ibme .full-width-section .inner-wrap,
     .ibme .wrap {
         padding-left: 50px;
         padding-right: 50px;
@@ -47,10 +427,39 @@
 @media all and (max-width: 1280px) {
     .footer-widgets .footer-widget {
         width: 30%;
-    }  
+    }
+
+    .cta_2_section .cta-items-4 {
+        flex-wrap: wrap;
+    }
+
+    .cta_2_section .cta-items-4 .cta_2-item {
+        margin-top: 20px;
+        margin-bottom: 20px;
+    }
+
+    .hero_2-section .landing-section-content {
+        .textual-content {
+            width: 45%;
+        }
+        
+        .image-content {
+            width: 55%;
+        }
+    }
+
+    .ibme_cta-3_subscribe_block .landing-section-content .content-column {
+        width: 42%;
+    }
+
+    .subscribe-block .title {
+        width: 100%;
+    }
+
 }
 
 @media all and (max-width: 1240px) {
+    .ibme .full-width-section .inner-wrap,
     .ibme .wrap {
         padding-left: 25px;
         padding-right: 25px;
@@ -80,13 +489,66 @@
         margin: 0 auto 1.618em;
     }
 
+    .hero_2-section .landing-section-content {
+        align-items: start;
+    }
+
+    .ibme_cta-3_subscribe_block .landing-section-content {
+        flex-direction: column;
+    }
+
+    .ibme_cta-3_subscribe_block .landing-section-content .subscribe-block {
+        width: 100%;
+        margin-top: 40px;
+        margin-bottom: 40px;
+    }
+
+    .ibme_cta-3_subscribe_block .landing-section-content .cta-3_columns.cta-items-2 {
+        width: 100%;
+        justify-content: center;
+    }
+
+    .ibme_cta-3_subscribe_block .cta-3_columns.cta-items-2 .cta-3_column {
+        width: 280px;
+    }
+
+    .ibme-testimonial-wrap {
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    .testimonial-content-wrap {
+        width: 100%;
+        text-align: center;
+        padding-left: 0;
+    }
+
+}
+
+@media all and (max-width: 1120px) {
+    .upcoming-events-section {
+        .inner-wrap {
+            padding-top: 40px;
+            padding-bottom: 40px;
+        }
+
+        .headline-column {
+            text-align: center;
+        }
+    }
 }
 
 @media all and (max-width: 1024px) {
+    
     .ibme .wrap {
         padding-left: 15px;
         padding-right: 15px;
     } 
+
+    .ibme .full-width-section .inner-wrap {
+        padding-left: 25px;
+        padding-right: 25px;
+    }
 
     .footer-widgets {
         flex-wrap: wrap;
@@ -95,6 +557,42 @@
         .footer-widget {
             width: 45%;
         }
+    }
+
+    .hero_2-section .landing-section-content {
+        .textual-content {
+            width: 55%;
+        }
+        
+        .image-content {
+            width: 45%;
+        }
+    }
+
+    .hero_3-section .content-area {
+        width: 80%;
+        max-width: 100%;
+    }
+
+    .impact-section .impact_1-slide,
+    .impact_2-content {
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .impact-section .impact_1-slide .content-column,
+    .impact_2-content .left-column,
+    .impact_2-content .right-column {
+        width: 100%;
+    }
+
+    .impact_1-slider {
+        min-height: 500px;
+    }
+
+    .impact_2-slide {
+        padding-left: 0;
     }
 }
 
@@ -112,6 +610,45 @@
     #menu-top-nav-extended-menu .about .sub-menu, 
     #menu-top-nav-extended-menu .about:hover .sub-menu {
         left: -70px;
+    }
+
+    .ibme-cta_1-content-blocks {
+        justify-content: center;
+    }
+
+    .ibme-cta_1-content-blocks .ibme-cta_1-content-block {
+        width: auto;
+    }
+
+    .hero_2-section .landing-section-content.left-image,
+    .hero_2-section .landing-section-content.right-image {
+        flex-direction: column-reverse;
+    }
+
+    .hero_2-section .landing-section-content {
+        .textual-content {
+            width: 100%;
+        }
+        
+        .image-content {
+            width: 100%;
+        }
+    }
+    .hero_2-section .landing-section-content.left-image .textual-content {
+        padding-left: 0;
+    }
+
+    .hero_2-section .landing-section-content.right-image .textual-content {
+        padding-right: 0;
+    }
+
+    .cta_2_section .cta-items-3 {
+        flex-wrap: wrap;
+    }
+
+    .cta_2_section .cta-items-3 .cta_2-item {
+        margin-top: 20px;
+        margin-bottom: 20px;
     }
 }
 
@@ -141,26 +678,50 @@
     .footer-widget-three {
         padding-top: 30px;
     }
-}
 
-@media all and (max-width: 540px) {
-    .footer-widgets .footer-widget {
+    .upcoming-events-section {
+        
+        .upcoming-event-title-location {
+            width: 40%;
+        }
+
+        .upcoming-event-links {
+            width: 30%;
+            text-align: right;
+        }
+    }
+
+    .ibme_calc_form_container_title {
+        margin-bottom: 15px;
+    }
+
+    .ibme-testimonial-image-wrap {
         width: 100%;
+        min-height: auto;
     }
 
-    .footer-widgets .footer-widget-three {
-        width: 85%;
+    .impact_1-slider {
+        min-height: 600px;
+    }
+
+}
+
+@media all and (max-width: 680px) {
+    .ibme_cta-3_subscribe_block .landing-section-content .cta-3_columns.cta-items-2 {
+        flex-direction: column;
+        align-items: center;
+
+        .cta-3_column {
+            margin-left: 0;
+            margin-right: 0;
+        }
+    }
+
+    .ibme-testimonial-image-wrap img {
+        margin-left: 0;
     }
 }
 
-@media all and (max-width: 400px) {
-    .footer-column .contact-info a {
-        display: block;
-    }
-}
-
-
-/* Mobile nav */
 @media screen and (max-width: 600px) {
 
 	/* Site Header */
@@ -249,6 +810,15 @@
 		width: 100% !important;
         font-variant: normal;
         text-transform: lowercase;
+        color: #000;
+            &:hover {
+                color: #5FA6E2;
+                transition: all 0.4s;
+                &::before {
+                    color: #5FA6E2;
+                    transition: all 0.4s;
+                }
+            }
 	}
 	
 	.menu-toggle,
@@ -278,10 +848,18 @@
 		top: 4px;
 		left: -8px;
 		line-height: 7px;
+        color: #000;
+	}
+
+    .sub-menu-toggle:hover {
+        &:hover:before {
+            color: #5FA6E2;
+        }
 	}
 	
 	.sub-menu-toggle:before {
 		content: "+";
+        color: #000;
 	}
 	
 	.sub-menu-toggle.activated:before {
@@ -320,156 +898,184 @@
     #menu-primary-items .about .sub-menu {
         background-color: $mint;
     }
+
+    .ibme .full-width-section .inner-wrap {
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+
+    .hero_1_photo-section .title {
+        padding-top: 100px;
+    }
+
+    .hero_1-slider-content {
+        top: 10%;
+    }
+
+    .landing-section {
+        min-height: 500px;
+    }
+
+    .ibme-cta_1-textual-content {
+        
+        padding: 20px;
+
+        .inline-buttons {
+            flex-direction: column;
+            align-items: center;
+
+            .ibme-button:first-child {
+                margin-right: 0;
+            }
+        }
+    }
+
+    .inline-buttons {
+        flex-wrap: wrap;
+
+        .ibme-button {
+            margin-bottom: 15px;
+        }
+    }
+
+    .ibme-statement-1 {
+        display: block;
+        padding-top: 30px;
+        padding-bottom: 30px;
+    }
+
+    .upcoming-events-section .upcoming-event-date .header-4 {
+        margin-bottom: 15px;
+    }
+
+    .upcoming-events-section .upcoming-event-title-location {
+        width: 100%;
+        margin-bottom: 15px;
+    }
+
+    .upcoming-events-section .upcoming-event-links {
+        width: 100%;
+        text-align: left;
+
+        .ibme-button:first-child {
+            margin-right: 15px;
+        }
+    }
+
+    .hero_3-section .content-area {
+        width: 90%;
+    }
+
+    .cta-3_columns.thirds-display .cta-3_column:nth-child(3),
+    .cta-3_columns.thirds-display .cta-3_column:nth-child(6),
+    .cta-3_columns.thirds-display .cta-3_column:nth-child(9),
+    .cta-3_columns.thirds-display .cta-3_column:nth-child(12),
+    .cta-3_columns.thirds-display .cta-3_column:nth-child(15),
+    .cta-3_columns.cta-items-5 .cta-3_column:nth-child(4),
+    .cta-3_columns.cta-items-6 .cta-3_column:nth-child(4), 
+    .cta-3_columns.fourths-display .cta-3_column:nth-child(4),
+    .cta-3_columns.fourths-display .cta-3_column:nth-child(8),
+    .cta-3_columns.fourths-display .cta-3_column:nth-child(12), 
+    .cta-3_columns.fourths-display .cta-3_column:nth-child(16) { 
+        margin-right: 0;
+    }
+
+    .cta-3_columns.thirds-display .cta-3_column:nth-child(4),
+    .cta-3_columns.thirds-display .cta-3_column:nth-child(7),
+    .cta-3_columns.thirds-display .cta-3_column:nth-child(10),
+    .cta-3_columns.thirds-display .cta-3_column:nth-child(13),
+    .cta-3_columns.cta-items-5 .cta-3_column:nth-child(5),
+    .cta-3_columns.cta-items-6 .cta-3_column:nth-child(5), 
+    .cta-3_columns.fourths-display .cta-3_column:nth-child(5),
+    .cta-3_columns.fourths-display .cta-3_column:nth-child(9), 
+    .cta-3_columns.fourths-display .cta-3_column:nth-child(13) {
+        margin-left: 0;
+    }
+
+    .cta-3_columns .cta-3_column:first-child {
+        margin-left: 0;
+    }
+
+    .cta-3_columns .cta-3_column:last-child {
+        margin-right: 0;
+    }
+
+    .cta-3_columns.cta-items-3 .cta-3_column, 
+    .cta-3_columns.thirds-display .cta-3_column,
+    .cta-3_columns .cta-3_column {
+        margin-left: 0;
+        margin-right: 0;
+    }
+
+    .impact_1-slider {
+        min-height: 500px;
+    }
 	
 }
 
-@media screen and (min-width: 601px) {
-    #menu-primary-items {
+@media all and (max-width: 540px) {
+    .footer-widgets .footer-widget {
+        width: 100%;
+    }
 
-        a {
-            margin-left: 0.75em;
-            margin-right: 0.75em;
-            padding-left: 0;
-            padding-right: 0;
-        }
-    
-        .teen-retreats a {
-            margin-left: 0; 
-        }
-        
-        .community-care a {
-            margin-right: 0;
-        }
+    .footer-widgets .footer-widget-three {
+        width: 85%;
     }
-    
-    #menu-primary-items {
-        .sub-menu-label {
-            .sub-menu {
-                width: 100%;
-                top: 76px !important;
-                padding-bottom: 35px;
-            }
-        }
+
+    .subscribe-form .checkboxes .inputWrapper {
+        flex-direction: column;
     }
-    
-    .teen-retreats a:after {
-        background-color: $barbie;
+
+    .subscribe-form .checkboxes .oneChoice {
+        width: 100%;
     }
-    
-    .custom-programs a:after {
-        background-color: $marigold;
+
+    .subscribe-form .one-half {
+        width: 100%;
     }
-    
-    .teacher-training a:after {
-        background-color: $bluejay;
+
+    .ibme-testimonial-image-wrap img {
+        margin-top: 50px;
     }
-    
-    .community-care a:after {
-        background-color: $lavender;
+
+    .impact_1-slider {
+        min-height: 560px;
     }
-    
-    .teen-retreats > a:before {
-        width: 72px;
-        height: 35px;
-        background: url("assets/img/barbie-specks.svg") no-repeat center / contain;
-        left: 20px;
-        top: -1px;
+
+    .impact_2-slider {
+        height: 400px;
     }
-    
-    .custom-programs > a:before {
-        width: 152px;
-        height: 26px;
-        background: url("assets/img/marigold-specks-new.svg") no-repeat center / contain;
-        left: 0;
-        top: 5px;
+}
+
+@media all and (max-width: 440px) {
+    .impact_2-slider {
+        height: 400px;
     }
-    
-    .teacher-training > a:before {
-        width: 99px;
-        height: 35px;
-        background: url("assets/img/bluejay-specks-new.svg") no-repeat center / contain;
-        top: -1px;
-        left: 20px;
+}
+
+@media all and (max-width: 400px) {
+    .footer-column .contact-info a {
+        display: block;
     }
-    
-    .community-care > a:before {
-        width: 142px;
-        height: 27px;
-        background: url("assets/img/lavender-specks.svg") no-repeat center / contain;
-        top: 5px;
-        left: 0;
+
+    .impact_1-slider {
+        min-height: 640px;
+    }
+
+    .impact_2-slider {
+        height: 480px;
+    }
+
+    .cta-3_columns.cta-items-3 .cta-3_column, 
+    .cta-3_columns.thirds-display .cta-3_column {
+        min-width: 100%;
+    }
+}
+
+@media all and (max-width: 360px) {
+    .impact_1-slider {
+        min-height: 860px;
     }
 
 
-
-    #menu-primary-items {
-        .teen-retreats > .sub-menu,
-        .custom-programs > .sub-menu,
-        .teacher-training > .sub-menu,
-        .community-care > .sub-menu {
-            width: 525px;
-            display: flex;
-            border-radius: 5px;
-            min-height: 290px;
-            top: 48px;
-            z-index: 99;
-        }
-    
-        .sub-menu-label:first-child {
-            width: 45%;
-        }
-    
-        .sub-menu-label:last-child {
-            width: 55%;
-        }
-    
-        .teen-retreats:hover,
-        .custom-programs:hover,
-        .teacher-training:hover,
-        .community-care:hover {
-            .sub-menu .sub-menu {
-                opacity: 1;
-                visibility: visible;
-            }
-        }
-        
-        .custom-programs,
-        .custom-programs:hover {
-            .sub-menu {
-                left: -106px;
-            }
-        }
-    
-        .teacher-training,
-        .teacher-training:hover { 
-            .sub-menu {
-                left: -256px;
-            }
-        }
-        
-        .community-care,
-        .community-care:hover {
-            .sub-menu {
-                left: -394px;
-            }
-        }
-    
-        .teen-retreats,
-        .teen-retreats:hover,
-        .custom-programs,
-        .custom-programs:hover,
-        .teacher-training,
-        .teacher-training:hover,
-        .community-care,
-        .community-care:hover {
-            .sub-menu .sub-menu {
-                left: 0;
-            }
-        }
-    
-    } 
-    
-    #menu-primary-items .sub-menu-label>a {
-        padding: 35px 35px 25px;
-    }
 }
