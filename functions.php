@@ -1813,7 +1813,7 @@ function impact_2_slide_handler( $atts ) {
 
 /** Script for impact_2_slider */
 
-//add_action( 'wp_footer', 'impact_2_slider_script' );
+add_action( 'wp_footer', 'impact_2_slider_script' );
 
 function impact_2_slider_script() {
 	?>

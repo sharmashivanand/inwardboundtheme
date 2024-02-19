@@ -3693,7 +3693,7 @@ input, button, select, textarea {
   align-items: center;
 }
 .ibme_cta-3_subscribe_block .landing-section-content .content-column {
-  width: 49%;
+  width: 48%;
 }
 
 .cta-3_columns {
@@ -6021,7 +6021,14 @@ body.ibme .ibme-donate-button {
   }
 }
 @media all and (max-width: 1439px) {
-  .cta-3_columns.thirds-display, .cta-3_columns.cta-items-3, .cta-3_columns.fourths-display, .cta-3_columns.cta-items-4, .cta-3_columns.cta-items-5, .cta-3_columns.cta-items-6 {
+  .cta-3_columns.fourths-display .cta-3_column,
+  .cta-3_columns.cta-items-4 .cta-3_column,
+  .cta-3_columns.cta-items-5 .cta-3_column,
+  .cta-3_columns.cta-items-6 .cta-3_column {
+    min-width: auto;
+  }
+
+  .cta-3_columns.thirds-display, .cta-3_columns.cta-items-3 {
     justify-content: center;
   }
 
@@ -6029,34 +6036,25 @@ body.ibme .ibme-donate-button {
   .cta-3_columns.thirds-display .cta-3_column:nth-child(6),
   .cta-3_columns.thirds-display .cta-3_column:nth-child(9),
   .cta-3_columns.thirds-display .cta-3_column:nth-child(12),
-  .cta-3_columns.thirds-display .cta-3_column:nth-child(15),
-  .cta-3_columns.cta-items-5 .cta-3_column:nth-child(4),
-  .cta-3_columns.cta-items-6 .cta-3_column:nth-child(4),
-  .cta-3_columns.fourths-display .cta-3_column:nth-child(4),
-  .cta-3_columns.fourths-display .cta-3_column:nth-child(8),
-  .cta-3_columns.fourths-display .cta-3_column:nth-child(12),
-  .cta-3_columns.fourths-display .cta-3_column:nth-child(16) {
-    margin-right: 15px;
+  .cta-3_columns.thirds-display .cta-3_column:nth-child(15) {
+    margin-right: 20px;
   }
 
   .cta-3_columns.thirds-display .cta-3_column:nth-child(4),
   .cta-3_columns.thirds-display .cta-3_column:nth-child(7),
   .cta-3_columns.thirds-display .cta-3_column:nth-child(10),
-  .cta-3_columns.thirds-display .cta-3_column:nth-child(13),
-  .cta-3_columns.cta-items-5 .cta-3_column:nth-child(5),
-  .cta-3_columns.cta-items-6 .cta-3_column:nth-child(5),
-  .cta-3_columns.fourths-display .cta-3_column:nth-child(5),
-  .cta-3_columns.fourths-display .cta-3_column:nth-child(9),
-  .cta-3_columns.fourths-display .cta-3_column:nth-child(13) {
-    margin-left: 15px;
+  .cta-3_columns.thirds-display .cta-3_column:nth-child(13) {
+    margin-left: 20px;
   }
 
-  .cta-3_columns .cta-3_column:first-child {
-    margin-left: 15px;
+  .cta-3_columns.thirds-display .cta-3_column:first-child,
+  .cta-3_columns.cta-items-3 .cta-3_column:first-child {
+    margin-left: 20px;
   }
 
-  .cta-3_columns .cta-3_column:last-child {
-    margin-right: 15px;
+  .cta-3_columns.thirds-display .cta-3_column:last-child,
+  .cta-3_columns.cta-items-3 .cta-3_column:last-child {
+    margin-right: 20px;
   }
 
   .cta-3_columns .cta-3_column {
@@ -6079,13 +6077,10 @@ body.ibme .ibme-donate-button {
     width: 30%;
   }
 
-  .cta_2_section .cta-items-4 {
-    flex-wrap: wrap;
-  }
-
   .cta_2_section .cta-items-4 .cta_2-item {
-    margin-top: 20px;
-    margin-bottom: 20px;
+    min-width: auto;
+    margin-left: 1.2%;
+    margin-right: 1.2%;
   }
 
   .hero_2-section .landing-section-content .textual-content {
@@ -6164,6 +6159,13 @@ body.ibme .ibme-donate-button {
     width: 100%;
     text-align: center;
     padding-left: 0;
+  }
+
+  .cta-3_columns.fourths-display .cta-3_column,
+  .cta-3_columns.cta-items-4 .cta-3_column,
+  .cta-3_columns.cta-items-5 .cta-3_column,
+  .cta-3_columns.cta-items-6 .cta-3_column {
+    width: 22%;
   }
 }
 @media all and (max-width: 1120px) {
@@ -6278,6 +6280,32 @@ body.ibme .ibme-donate-button {
   .cta_2_section .cta-items-3 .cta_2-item {
     margin-top: 20px;
     margin-bottom: 20px;
+  }
+}
+@media all and (max-width: 900px) {
+  .cta_2_section .cta_2-items {
+    flex-wrap: wrap;
+  }
+
+  .cta_2_section .cta-items-4 .cta_2-item {
+    min-width: 280px;
+    margin: 20px;
+  }
+
+  .cta-3_columns.fourths-display,
+  .cta-3_columns.cta-items-4,
+  .cta-3_columns.cta-items-5,
+  .cta-3_columns.cta-items-6 {
+    justify-content: center;
+  }
+
+  .cta-3_columns.fourths-display .cta-3_column,
+  .cta-3_columns.cta-items-4 .cta-3_column,
+  .cta-3_columns.cta-items-5 .cta-3_column,
+  .cta-3_columns.cta-items-6 .cta-3_column {
+    min-width: 280px;
+    margin-left: 20px !important;
+    margin-right: 20px !important;
   }
 }
 @media all and (max-width: 768px) {
@@ -6604,6 +6632,11 @@ body.ibme .ibme-donate-button {
 
   .impact_1-slider {
     min-height: 500px;
+  }
+
+  .cta_2_section .cta-items-4 .cta_2-item {
+    margin-left: auto;
+    margin-right: auto;
   }
 }
 @media all and (max-width: 540px) {
