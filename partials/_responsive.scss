@@ -422,10 +422,6 @@
         width: 30%;
     }
 
-    .cta_2_section .cta-items-4 {
-        //flex-wrap: wrap; 
-    }
-
     .cta_2_section .cta-items-4 .cta_2-item {
         min-width: auto;
         margin-left: 1.2%;
@@ -448,6 +444,10 @@
 
     .subscribe-block .title {
         width: 100%;
+    }
+
+    .cta-3_columns.cta-items-3 .cta-3_column, .cta-3_columns.thirds-display .cta-3_column {
+        min-width: auto;
     }
 
 }
@@ -679,6 +679,17 @@
         margin-right: 20px !important;
     }
 
+    .cta-3_columns.cta-items-3, 
+    .cta-3_columns.thirds-display {
+
+        flex-wrap: wrap;
+        flex-direction: column;
+        align-items: center;
+
+        .cta-3_column {
+            min-width: 385px;
+        }
+    }
 }
 
 @media all and (max-width: 768px) {
@@ -732,6 +743,13 @@
     .impact_1-slider {
         min-height: 600px;
     }
+
+    .hero_1_photo-section,
+    .upcoming-events-section,
+    .hero_3-section {
+        background-attachment: unset;
+        background-size: cover;
+    } 
 
 }
 
@@ -952,10 +970,6 @@
         .inline-buttons {
             flex-direction: column;
             align-items: center;
-
-            .ibme-button:first-child {
-                margin-right: 0;
-            }
         }
     }
 
@@ -964,7 +978,14 @@
 
         .ibme-button {
             margin-bottom: 15px;
+            margin-left: auto;
+            margin-right: auto;
         }
+
+        .ibme-button:first-child {
+            margin-right: auto;
+        }
+
     }
 
     .ibme-statement-1 {
@@ -1032,8 +1053,8 @@
     .cta-3_columns.cta-items-3 .cta-3_column, 
     .cta-3_columns.thirds-display .cta-3_column,
     .cta-3_columns .cta-3_column {
-        margin-left: 0;
-        margin-right: 0;
+        margin-left: 0 !important;
+        margin-right: 0 !important;
     }
 
     .impact_1-slider {
@@ -1053,7 +1074,12 @@
     }
 
     .footer-widgets .footer-widget-three {
-        width: 85%;
+        width: 75%;
+    }
+
+    .footer-widget-three .donate-block:after {
+        right: -40px;
+        top: 140px;
     }
 
     .subscribe-form .checkboxes .inputWrapper {
@@ -1079,6 +1105,11 @@
     .impact_2-slider {
         height: 400px;
     }
+
+    .ibme-statement-1 .bottom-illustration:after,
+    .ibme-statement-1 .top-illustration:after { 
+        content: none;
+    }
 }
 
 @media all and (max-width: 440px) {
@@ -1103,6 +1134,14 @@
     .cta-3_columns.cta-items-3 .cta-3_column, 
     .cta-3_columns.thirds-display .cta-3_column {
         min-width: 100%;
+    }
+
+    .cta-3_columns.cta-items-3, 
+    .cta-3_columns.thirds-display {
+
+        .cta-3_column {
+            min-width: 100%;
+        }
     }
 }
 

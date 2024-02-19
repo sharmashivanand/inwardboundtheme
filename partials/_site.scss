@@ -3239,6 +3239,11 @@ input, button, select, textarea {
     margin-right: 15px;
 } 
 
+.cta-3_columns.cta-items-3,
+.cta-3_columns.thirds-display {
+    flex-wrap: nowrap;
+}
+
 .cta-3_columns.cta-items-3 .cta-3_column,
 .cta-3_columns.thirds-display .cta-3_column {
     width: 31%;

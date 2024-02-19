@@ -3735,6 +3735,11 @@ input, button, select, textarea {
   margin-right: 15px;
 }
 
+.cta-3_columns.cta-items-3,
+.cta-3_columns.thirds-display {
+  flex-wrap: nowrap;
+}
+
 .cta-3_columns.cta-items-3 .cta-3_column,
 .cta-3_columns.thirds-display .cta-3_column {
   width: 31%;
@@ -6097,6 +6102,10 @@ body.ibme .ibme-donate-button {
   .subscribe-block .title {
     width: 100%;
   }
+
+  .cta-3_columns.cta-items-3 .cta-3_column, .cta-3_columns.thirds-display .cta-3_column {
+    min-width: auto;
+  }
 }
 @media all and (max-width: 1240px) {
   .ibme .full-width-section .inner-wrap,
@@ -6307,6 +6316,17 @@ body.ibme .ibme-donate-button {
     margin-left: 20px !important;
     margin-right: 20px !important;
   }
+
+  .cta-3_columns.cta-items-3,
+  .cta-3_columns.thirds-display {
+    flex-wrap: wrap;
+    flex-direction: column;
+    align-items: center;
+  }
+  .cta-3_columns.cta-items-3 .cta-3_column,
+  .cta-3_columns.thirds-display .cta-3_column {
+    min-width: 385px;
+  }
 }
 @media all and (max-width: 768px) {
   .footer-widgets {
@@ -6353,6 +6373,13 @@ body.ibme .ibme-donate-button {
 
   .impact_1-slider {
     min-height: 600px;
+  }
+
+  .hero_1_photo-section,
+  .upcoming-events-section,
+  .hero_3-section {
+    background-attachment: unset;
+    background-size: cover;
   }
 }
 @media all and (max-width: 680px) {
@@ -6551,15 +6578,17 @@ body.ibme .ibme-donate-button {
     flex-direction: column;
     align-items: center;
   }
-  .ibme-cta_1-textual-content .inline-buttons .ibme-button:first-child {
-    margin-right: 0;
-  }
 
   .inline-buttons {
     flex-wrap: wrap;
   }
   .inline-buttons .ibme-button {
     margin-bottom: 15px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .inline-buttons .ibme-button:first-child {
+    margin-right: auto;
   }
 
   .ibme-statement-1 {
@@ -6626,8 +6655,8 @@ body.ibme .ibme-donate-button {
   .cta-3_columns.cta-items-3 .cta-3_column,
   .cta-3_columns.thirds-display .cta-3_column,
   .cta-3_columns .cta-3_column {
-    margin-left: 0;
-    margin-right: 0;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
   }
 
   .impact_1-slider {
@@ -6645,7 +6674,12 @@ body.ibme .ibme-donate-button {
   }
 
   .footer-widgets .footer-widget-three {
-    width: 85%;
+    width: 75%;
+  }
+
+  .footer-widget-three .donate-block:after {
+    right: -40px;
+    top: 140px;
   }
 
   .subscribe-form .checkboxes .inputWrapper {
@@ -6671,6 +6705,11 @@ body.ibme .ibme-donate-button {
   .impact_2-slider {
     height: 400px;
   }
+
+  .ibme-statement-1 .bottom-illustration:after,
+  .ibme-statement-1 .top-illustration:after {
+    content: none;
+  }
 }
 @media all and (max-width: 440px) {
   .impact_2-slider {
@@ -6688,6 +6727,11 @@ body.ibme .ibme-donate-button {
 
   .impact_2-slider {
     height: 480px;
+  }
+
+  .cta-3_columns.cta-items-3 .cta-3_column,
+  .cta-3_columns.thirds-display .cta-3_column {
+    min-width: 100%;
   }
 
   .cta-3_columns.cta-items-3 .cta-3_column,
