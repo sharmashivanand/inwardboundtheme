@@ -1,4 +1,4 @@
-// Justin's Area.
+// Other CSS
 
 .text-center,
 .center-align {
@@ -254,182 +254,213 @@
 // Contact form ---------------------------------
 .ibme.contact-page {	
 		
-		/* Form Styles */
-		
-		.wFormTitle,
-		form br {
-			display: none;
-		}
-		
-		.wFormContainer {
-			max-width: 1080px;
-		}
-		
-		.wForm .preField {
-			color: #000;
-			font-weight: 400;
-			font-size: 21px;
-            text-transform: lowercase;
-		}
-		
-		.wForm .label.reqMark::after {
-			color: #000;
-		}
-		
-		.wForm .inline div.oneField {
-			display: block;
-		}
-		
-		.label {
-			width: 35%;
-			color: #000;
-			font-weight: 400;
-			font-size: 21px;
-            text-transform: lowercase;
-		}
-		
-		.inputWrapper {
+	/* Form Styles */
+	
+	.wFormTitle,
+	form br {
+		display: none;
+	}
+	
+	.wFormContainer {
+		max-width: 1080px;
+	}
+	
+	.wForm .preField {
+		color: #000;
+		font-weight: 400;
+		font-size: 21px;
+		text-transform: lowercase;
+	}
+	
+	.wForm .label.reqMark::after {
+		color: #000;
+	}
+	
+	.wForm .inline div.oneField {
+		display: block;
+	}
+	
+	.label {
+		width: 35%;
+		color: #000;
+		font-weight: 400;
+		font-size: 21px;
+		text-transform: lowercase;
+	}
+	
+	.inputWrapper {
 
-			width: 60%;
-			box-sizing: border-box;
-			max-width: 100%;
-			display: inline-block;
-			vertical-align: top;
-			position: relative;
-			float: right;
-			
+		width: 60%;
+		box-sizing: border-box;
+		max-width: 100%;
+		display: inline-block;
+		vertical-align: top;
+		position: relative;
+		float: right;
+		
+		input {
+			padding: 10px;
+		}
+
+		input[type="text"],
+		input[type="email"],
+		input[type="radio"],
+		textarea,
+		select option {
+			background-color: #f9f9f9;
+			padding: 10px 12px;
+			text-transform: none;
+		}
+
+		select {
+			border: none;
+			padding: 8px;
+		}
+
+		.oneChoice {
 			input {
-				padding: 10px;
+				width: auto;
 			}
-
-			input[type="text"],
-			input[type="email"],
-			input[type="radio"],
-			textarea,
-			select option {
-				background-color: #f9f9f9;
-				padding: 10px 12px;
-                text-transform: none;
-			}
-
-            select {
-                border: none;
-                padding: 8px;
-            }
-
-            .oneChoice {
-                input {
-                    width: auto;
-                }
-            }
-
 		}
-
-		.wForm .oneField {
-			margin-top: 20px;
-		}
-		
-		.wForm .actions {
-			border: none;
-			padding: 0 0 0 0;
-			margin-top: 25px;
-		}
-		
-		.wForm input[type="button"],
-		.wForm input[type="submit"] {
-			background-color: #ffd234;
-            color: #000;
-			border: none;
-			padding: 0.3em 1em;
-			float: right;
-			font-family: Inter, sans-serif !important;
-			font-size: 16px;
-			font-weight: 500;
-		}
-		
-		.wForm input[type="button"]:hover,
-		.wForm input[type="submit"]:hover {
-			background-color: darken(#ffd234, 5%);
-            color: #000;
-		}
-		
-		#tfa_72-D .postField {
-			width:auto;
-			float:none;
-			font-size:20px;
-			margin-top:-1px;
-		}
-		
-		#tfa_14-D {
-			clear:both;
-			padding-top: 20px;
-			margin-top: 0;
-		}
-
-		textarea {
-			min-height: 200px;
-		}
-
-        .wFormContainer .errMsg {
-            font-weight: 500;
-            color: #ef5dbf;
-        }
-		
-		.captchaHelp,
-		.disabled-explanation {
-			display: none !important;
-		}
-
-		.captcha {
-			clear: both;
-			float: right;
-			padding: 2px 0 0 !important;
-			margin: 23px 10px 30px 0;
-		}
-
-		.captcha {
-			text-align: center;
-			background: #f9f9f9;
-			border-style: solid;
-			border-color: transparent;
-			border-width: 1px;
-			border-bottom-width: 2px;
-			min-width: 270px;
-			max-width: 270px;
-		}
-
-		.captcha .oneField {
-			width: 154px;
-			height: 73px;
-			overflow: hidden;
-			margin: 0 auto;
-		}
-
-		.g-recaptcha{
-			position:relative;
-			left: -2px;
-			top: -2px;
-			bottom: 0;
-		}
-
-		.primaryAction[disabled="disabled"] {
-			color:#FFF !important;
-		}
-		
-		.primaryAction:disabled {
-			cursor: default !important;
-			background-color: lighten(#ffd234, 15%) !important;
-		}
-
-		.primaryAction {
-			clear: both;
-		}
-
-        .wFormFooter {
-            display: none;
-        }
 
 	}
+
+	.wForm .oneField {
+		margin-top: 20px;
+	}
+	
+	.wForm .actions {
+		border: none;
+		padding: 0 0 0 0;
+		margin-top: 25px;
+	}
+	
+	.wForm input[type="button"],
+	.wForm input[type="submit"] {
+		background-color: #ffd234;
+		color: #000;
+		border: none;
+		padding: 0.3em 1em;
+		float: right;
+		font-family: Inter, sans-serif !important;
+		font-size: 16px;
+		font-weight: 500;
+	}
+	
+	.wForm input[type="button"]:hover,
+	.wForm input[type="submit"]:hover {
+		background-color: darken(#ffd234, 5%);
+		color: #000;
+	}
+	
+	#tfa_72-D .postField {
+		width:auto;
+		float:none;
+		font-size:20px;
+		margin-top:-1px;
+	}
+	
+	#tfa_14-D {
+		clear:both;
+		padding-top: 20px;
+		margin-top: 0;
+	}
+
+	textarea {
+		min-height: 200px;
+	}
+
+	.wFormContainer .errMsg {
+		font-weight: 500;
+		color: #ef5dbf;
+	}
+	
+	.captchaHelp,
+	.disabled-explanation {
+		display: none !important;
+	}
+
+	.captcha {
+		clear: both;
+		float: right;
+		padding: 2px 0 0 !important;
+		margin: 23px 10px 30px 0;
+	}
+
+	.captcha {
+		text-align: center;
+		background: #f9f9f9;
+		border-style: solid;
+		border-color: transparent;
+		border-width: 1px;
+		border-bottom-width: 2px;
+		min-width: 270px;
+		max-width: 270px;
+	}
+
+	.captcha .oneField {
+		width: 154px;
+		height: 73px;
+		overflow: hidden;
+		margin: 0 auto;
+	}
+
+	.g-recaptcha{
+		position:relative;
+		left: -2px;
+		top: -2px;
+		bottom: 0;
+	}
+
+	.primaryAction[disabled="disabled"] {
+		color:#FFF !important;
+	}
+	
+	.primaryAction:disabled {
+		cursor: default !important;
+		background-color: lighten(#ffd234, 15%) !important;
+	}
+
+	.primaryAction {
+		clear: both;
+	}
+
+	.wFormFooter {
+		display: none;
+	}
+
+}
+
+
+/* Password page */
+
+.post-password-form {
+
+	max-width: 800px;
+	margin-bottom: 40px;
+
+	input[type=password] {
+		border: 2px solid #A4EDC6;
+		background: #fff;
+		margin-top: 5px;
+		margin-bottom: 10px;
+		max-width: 350px;
+		&:focus {
+			background: #fff;
+			border-color: #8eccdc;
+		}
+	}
+
+	input[type=submit] {
+		background-color: #A4EDC6;
+		color: #000;
+		padding: 8px 15px;
+		&:hover {
+			background-color: #d1f6e2;
+		}
+	}
+
+}
 
 
 /* Popup message */
@@ -439,27 +470,39 @@
 		z-index: 0;
 	}
 
+	.pum-theme-lightbox .pum-container {
+		padding: 50px 80px;
+	}
+
 	.pum-container {
 		text-align: center;
-
-		.popmake-title {
-			text-align: center;
-			margin-bottom: 10px;
-			font-size: 30px;
-		}
+		font-family: Inter, sans-serif !important;
 
 		.pum-content {
 			text-align: center;
 		}
 
-		h3 {
+		.pum-title {
+			font-family: "MADE Mirage Regular";
+			font-weight: normal;
+			font-size: 30px;
+			text-align: center;
+			margin-bottom: 25px;
 			color: #000;
-			font-weight: 500;
+		}
+
+		h3 {
+			font-family: Inter, sans-serif !important;
+			font-weight: 300;
+			font-size: 20px;
+			margin-bottom: 25px;
+			color: #000;
 		}
 
 		p {
 			color: #000;
-			font-weight: 500;
+			font-weight: 300;
+			font-size: 14px;
 		}
 
 		.white-btn {
@@ -494,14 +537,6 @@
 			}
 		}
 
-		.pum-title {
-			font-weight: 500;
-		}
-
-		h3 {
-			margin-bottom: 15px;
-		}
-
 		.pum-content p:last-child {
 			margin-bottom: 9px;
 		}
@@ -533,6 +568,10 @@
 @media all and (max-width: 870px) {
 
 	.ibme {
+
+		.pum-theme-lightbox .pum-container {
+			padding: 30px 40px;
+		}
 
 		.pum-container {
 
@@ -567,10 +606,6 @@
 
 		.pum-container {
 
-			.popmake-title {
-				font-size: 27px;
-			}
-
 			.opt-in-form {
 
 				.two-thirds {
@@ -588,4 +623,12 @@
 
 	}
 
+}
+
+
+// Misc ---------------------------------
+.vid-padding-more {
+	.embed-container {
+		padding-bottom: 57.25%;
+	}
 }

@@ -215,7 +215,7 @@ function more_info_shortcode_widget($atts) {
 	$className = __FUNCTION__;
 
 	$form_output = <<<IELS
-	<div class='{$className}'>
+	<div class='{$className}, more_info_widget_wrap'>
 	<a class="ibme-optin-form-trigger ibme-button mint-button style-1 $btn_class">$btn_text</a>
 
 	<!-- FORM: HEAD SECTION -->
@@ -355,7 +355,7 @@ function more_info_shortcode_widget_nophone($atts) {
 		'btn_text' =>'Sign Up', 
 		'wgt_btn_text' => 'I&#x27;m In!', 
 		'wgt_text' => 'Stay Connected',
-		'wgt_footer' => 'Please complete the fields above to subscribe to our emails and receive more details on upcoming programs. Providing your state of residence will help us share regional-specific programs with you. We respect your privacy - your info will not be shared with anyone else.',
+		'wgt_footer' => 'Please complete the fields above to subscribe to our emails and receive more details on upcoming programs. We respect your privacy - your info will not be shared with anyone else.',
 		'campaign' => '', 
 		'status' => '', 
 		'link' => 'https://inwardboundmind.org/confirmation/response-received/', 
@@ -381,8 +381,8 @@ function more_info_shortcode_widget_nophone($atts) {
 	$className = __FUNCTION__;
 
 	$form_output = <<<IELS
-	<div class='{$className}'>
-	<a class="ibme-optin-form-trigger blue-btn $btn_class">$btn_text</a>
+	<div class='{$className}, more_info_widget_wrap'>
+	<a class="ibme-optin-form-trigger ibme-button mint-button style-1 $btn_class">$btn_text</a>
 
 	<!-- FORM: HEAD SECTION -->
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
@@ -398,27 +398,27 @@ function more_info_shortcode_widget_nophone($atts) {
 		<div class="op-side-panel $wgt_class">
 		<button class="panel-close" aria-label="Close"><svg width="26" height="26" viewBox="0 0 26 22" xmlns="http://www.w3.org/2000/svg"><path d="M12.808 9.393l7.778-7.778L22 3.03l-7.778 7.779L22 18.586 20.586 20l-7.778-7.778L5.029 20l-1.414-1.414 7.778-7.778-7.778-7.779L5.03 1.615l7.779 7.778z"></path></svg></button>
 			<div class="wForm" id="385752-WRPR" dir="ltr">
+			<div class="form-header"><p class="form-title">$wgt_text</p></div>
 				<div class="codesection" id="code-385752"></div>
-				<form method="post" action="https://ibme.tfaforms.net/responses/processor" class="hintsBelow labelsAbove" id="385752" role="form">
-					<p class="blue-text bold">$wgt_text</p>
+				<form method="post" action="https://ibme.tfaforms.net/responses/processor" class="hintsBelow labelsAbove form-body-area" id="385752" role="form">
 					<div class="form-inputs">
 						<div id="tfa_1-D" class="oneField opt-in-email-field">
-							<p><input type="text" id="tfa_1" name="tfa_1" value="" required placeholder="First Name" class="form-field form-left required"></p>
+							<label id="tfa_1-L" class="label preField reqMark" for="tfa_1">First Name</label>
+							<p><input type="text" id="tfa_1" name="tfa_1" value="" required class="form-field form-left required"></p>
 						</div>
 						<div id="tfa_2-D" class="oneField opt-in-email-field">
-							<p><input type="text" id="tfa_2" name="tfa_2" value="" required placeholder="Last Name" class="form-field form-left required"></p>
+							<label id="tfa_2-L" class="label preField reqMark" for="tfa_2">Last Name</label>
+							<p><input type="text" id="tfa_2" name="tfa_2" value="" required class="form-field form-left required"></p>
 						</div>
 						<div id="tfa_4-D" class="oneField opt-in-email-field">
-							<p><input type="text" id="tfa_4" name="tfa_4" value="" required placeholder="Email" class="validate-email form-field form-left required"></p>
-						</div>
-						<div id="tfa_16-D" class="bears oneField opt-in-email-field">
-							<p><input autocomplete="off" type="text" id="tfa_16" name="tfa_16" value="" placeholder="Other (Optional)" class="form-field form-left"></p>
-						</div>
+							<label id="tfa_4-L" class="label preField reqMark" for="tfa_4">Email</label>
+							<p style="margin-bottom: 25px !important;"><input type="text" id="tfa_4" name="tfa_4" value="" required class="validate-email form-field form-left required"></p>
+						</div>			
 					</div>
 					<div class="actions" id="tfa_0-A">
-						<input type="submit" class="primaryAction form-left blue-btn" value="$wgt_btn_text">
+						<input type="submit" class="primaryAction ibme-button sunflower-button style-1" value="$wgt_btn_text">
 					</div>
-					<div class="bottom-text" style="text-align: center; padding-top: 25px; color: #4c4c4e; font-style: italic;">$wgt_footer</div>
+					<div class="bottom-text">$wgt_footer</div>
 					<input type="hidden" id="tfa_5" name="tfa_5" value="$campaign" class="">
 					<input type="hidden" id="tfa_6" name="tfa_6" value="$status" class="">
 					<input type="hidden" id="tfa_8" name="tfa_8" value="$url_without_query_string?opt-in-success=1" class="">
@@ -438,7 +438,7 @@ function more_info_shortcode_widget_nophone($atts) {
 	</div>	
 IELS;
 // !!! THE ABOVE LINE SHOULD NEVER BE INDENTED !!! ///
-	// $form_output = apply_filters( 'ibme_form_recaptcha', $form_output );
+	$form_output = apply_filters( 'ibme_form_recaptcha', $form_output );
 	return $form_output;
 }
 
@@ -964,6 +964,58 @@ IELS;
 }
 
 
+/* Application Step 1 form TEST */
+
+add_shortcode('app-start-test', 'app_start_test' );
+
+function app_start_test($atts) {
+	
+	extract(shortcode_atts(array(
+		'wgt_class' => 'widget-class', 
+		'btn_class' => 'center-button', 
+		'btn_text' =>'Sign Up', 
+		'wgt_btn_text' => 'I&#x27;m In!', 
+		'wgt_text' => 'Stay Connected',
+		'campaign' => '',
+		'form_id' => ''
+		), $atts)
+	);
+	
+	$url = $_SERVER['REQUEST_URI'];
+
+	if(empty($url)) {
+		$url = 'WordPress could not detect the URL. But the form was submitted via WordPress.';
+	}
+	
+	$user_agent = $_SERVER['HTTP_USER_AGENT'];
+	if(empty($user_agent)) {
+		$user_agent = 'WordPress could not detect the user-agent. But the form was submitted via WordPress.';
+	}
+
+	$className = __FUNCTION__;
+
+	$form_output = <<<IELS
+	<div class='{$className}'>
+	<a class="ibme-optin-form-trigger ibme-button mint-button style-3 $btn_class">$btn_text</a>
+
+	<!-- FORM: HEAD SECTION -->
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+	<!-- FORM: BODY SECTION -->
+	<div class="wFormContainer opt-in-form op-side-panel-container"  >
+		<div class="op-side-panel full-form $wgt_class">
+		<button class="panel-close" aria-label="Close"><svg width="26" height="26" viewBox="0 0 26 22" xmlns="http://www.w3.org/2000/svg"><path d="M12.808 9.393l7.778-7.778L22 3.03l-7.778 7.779L22 18.586 20.586 20l-7.778-7.778L5.029 20l-1.414-1.414 7.778-7.778-7.778-7.779L5.03 1.615l7.779 7.778z"></path></svg></button>
+			<iframe src="https://ibme.tfaforms.net/389905?c_id=$campaign&tfa_1415=$form_id&tfa_1419=$url" title="iBme Start App Form"></iframe>
+		</div>
+	</div>	
+	</div>	
+IELS;
+// !!! THE ABOVE LINE SHOULD NEVER BE INDENTED !!! ///
+	// $form_output = apply_filters( 'ibme_form_recaptcha', $form_output );
+	return $form_output;
+}
+
+
 /* Custom Program Inquiry form */
 
 add_shortcode('custom-program-inquiry-widget', 'custom_program_inquiry_widget' );
@@ -1045,7 +1097,7 @@ function fundraiser_signup_widget($atts) {
 
 	$form_output = <<<IELS
 	<div class='{$className}'>
-	<a class="ibme-optin-form-trigger blue-btn $btn_class">$btn_text</a>
+	<a class="ibme-optin-form-trigger ibme-button mint-button style-3 $btn_class">$btn_text</a>
 
 	<!-- FORM: HEAD SECTION -->
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />

@@ -2,7 +2,6 @@
 
 /* Generic Styles */
 
-
 a,
 :link, :visited {
     border-bottom: 1px solid; 
@@ -4912,17 +4911,155 @@ body.ibme .ibme-donate-button { //override
 
 /* Events Calendar */
 
-//.tribe-common a:not(.tribe-common-anchor--unstyle),
-.tribe-common .tribe-common-anchor-thin,
-.tribe-common a:not(.tribe-common-anchor--unstyle):visited,
-.tribe-events-calendar-list__event-title a {
-    border-bottom: 1px solid $teal !important; 
-    color: $teal !important;
+.ibme {
 
-    &:hover {
-        border-color: transparent !important;
+    //.tribe-common a:not(.tribe-common-anchor--unstyle),
+    .tribe-common .tribe-common-anchor-thin,
+    .tribe-common a:not(.tribe-common-anchor--unstyle):visited,
+    .tribe-events-calendar-list__event-title a {
+        border-bottom: 1px solid $teal !important; 
         color: $teal !important;
-        text-decoration: none !important;
+
+        &:hover {
+            border-color: transparent !important;
+            color: $teal !important;
+            text-decoration: none !important;
+        }
+    }
+
+    .tribe-common,
+    .tribe-common p,
+    .tribe-common .tribe-common-b2,
+    .tribe-events-content,
+    .tribe-events-content h2, 
+    .tribe-events-content h3, 
+    .tribe-events-content h4, 
+    .tribe-events-content h5, 
+    .tribe-events-content h6 {
+        font-family: Inter, sans-serif;
+    }
+
+    .tribe-common,
+    .tribe-common p,
+    .tribe-common .tribe-common-b2,
+    .tribe-events-content {
+        font-weight: 300;
+    }
+
+    .tribe-common .tribe-common-b2--bold,
+    .tribe-common .tribe-common-h5, 
+    .tribe-common .tribe-common-h6,
+    .tribe-events-content h2, 
+    .tribe-events-content h3, 
+    .tribe-events-content h4, 
+    .tribe-events-content h5, 
+    .tribe-events-content h6,
+    .tribe-events-single-event-title,
+    .tribe-events-schedule .recurringinfo, 
+    .tribe-events-schedule .tribe-events-cost,
+    .tribe-events-back a, 
+    .tribe-events-back a:visited {
+        font-weight: 500;
+    }
+
+    .single-tribe_events .tribe-events-c-subscribe-dropdown .tribe-events-c-subscribe-dropdown__button-text, 
+    .single-tribe_events .tribe-events-c-subscribe-dropdown button.tribe-events-c-subscribe-dropdown__button-text, 
+    .tribe-events .tribe-events-c-subscribe-dropdown .tribe-events-c-subscribe-dropdown__button-text, 
+    .tribe-events .tribe-events-c-subscribe-dropdown button.tribe-events-c-subscribe-dropdown__button-text {
+        color: $teal;
+    }
+
+    .tribe-common .tribe-common-c-btn-border, 
+    .tribe-common a.tribe-common-c-btn-border {
+        border-color: $teal;
+        font-weight: 500;
+    }
+
+    .single-tribe_events .tribe-events-c-subscribe-dropdown .tribe-events-c-subscribe-dropdown__button-icon, 
+    .tribe-events .tribe-events-c-subscribe-dropdown .tribe-events-c-subscribe-dropdown__button-icon {
+        color: $teal;
+        stroke: $teal;
+    }
+
+    .tribe-events-meta-group a {
+        color: $teal;
+        &:hover {
+            color: $teal;
+        }
+    }
+
+    .single-tribe_events .tribe-events-c-subscribe-dropdown .tribe-events-c-subscribe-dropdown__button.tribe-events-c-subscribe-dropdown__button--active, .single-tribe_events .tribe-events-c-subscribe-dropdown .tribe-events-c-subscribe-dropdown__button:focus, .single-tribe_events .tribe-events-c-subscribe-dropdown .tribe-events-c-subscribe-dropdown__button:focus-within, .single-tribe_events .tribe-events-c-subscribe-dropdown .tribe-events-c-subscribe-dropdown__button:hover, .tribe-events .tribe-events-c-subscribe-dropdown .tribe-events-c-subscribe-dropdown__button.tribe-events-c-subscribe-dropdown__button--active, .tribe-events .tribe-events-c-subscribe-dropdown .tribe-events-c-subscribe-dropdown__button:focus, .tribe-events .tribe-events-c-subscribe-dropdown .tribe-events-c-subscribe-dropdown__button:focus-within, .tribe-events .tribe-events-c-subscribe-dropdown .tribe-events-c-subscribe-dropdown__button:hover {
+        background-color: $teal;
+        color: #fff;
+        .tribe-events-c-subscribe-dropdown__button-text {
+            color: #fff;
+        }
+        .tribe-events-c-subscribe-dropdown__button-icon {
+            color: #fff;
+            stroke: #fff;
+        }
+        .tribe-common-c-svgicon {
+            path {
+                fill: #fff;
+            }
+    }
+    }
+
+    .tribe-common-c-svgicon {
+        path {
+            fill: $teal;
+        }
+    }
+
+    .tribe-common-c-svgicon--cal-export {
+        position: relative;
+        top: 3px;
+    }
+
+    .tribe-common .tribe-common-c-btn-border, 
+    .tribe-common a.tribe-common-c-btn-border {
+        max-width: 240px;
+    }
+
+    .tribe-events-single .tribe-events-sub-nav .tribe-events-nav-next a, 
+    .tribe-events-single .tribe-events-sub-nav .tribe-events-nav-previous a {
+        border: none;
+    }
+
+    .tribe-events-content .inline-buttons .style-4 {
+        border-width: 2px !important;
+        border-style: solid !important;
+    }
+
+    .tribe-events-single > .tribe_events {
+        display: flex;
+        flex-wrap: wrap;
+        overflow: hidden;
+        justify-content: space-between;
+        
+        .tribe-events-event-image,
+        .tribe-events-single-event-description {
+            width: 48%;
+        }
+    }
+
+    .tribe-events-content a:active, 
+    .tribe-events-content a:focus {
+        border: inherit;
+        color: inherit;
+    }
+
+}
+
+@media all and (max-width: 800px) {
+    .ibme {
+        .tribe-events-single > .tribe_events {
+            
+            .tribe-events-event-image,
+            .tribe-events-single-event-description {
+                width: auto;
+            }
+        }
     }
 }
 
@@ -4944,7 +5081,7 @@ body.ibme .ibme-donate-button { //override
 
 /* More Info Sliding Form */
 
-.more_info_shortcode_widget {
+.more_info_widget_wrap {
     .form-title {
         text-align: center;
         color: $teal;
@@ -4976,8 +5113,10 @@ body.ibme .ibme-donate-button { //override
 
     .op-side-panel-container .wForm {
         padding: 0;
-        background-color: $lightcream;
+    }
 
+    .op-side-panel {
+        background-color: $lightcream;
     }
 
     .op-side-panel-container .form-body-area {
@@ -5000,7 +5139,7 @@ body.ibme .ibme-donate-button { //override
     }
 }
 
-.ibme .more_info_shortcode_widget {
+.ibme .more_info_widget_wrap {
     .wForm input[type="button"],
     .wForm input[type="submit"] {
         float: none;

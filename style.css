@@ -5124,20 +5124,128 @@ body.ibme .ibme-donate-button {
 }
 
 /* Events Calendar */
-.tribe-common .tribe-common-anchor-thin,
-.tribe-common a:not(.tribe-common-anchor--unstyle):visited,
-.tribe-events-calendar-list__event-title a {
+.ibme .tribe-common .tribe-common-anchor-thin,
+.ibme .tribe-common a:not(.tribe-common-anchor--unstyle):visited,
+.ibme .tribe-events-calendar-list__event-title a {
   border-bottom: 1px solid #008075 !important;
   color: #008075 !important;
 }
-.tribe-common .tribe-common-anchor-thin:hover,
-.tribe-common a:not(.tribe-common-anchor--unstyle):visited:hover,
-.tribe-events-calendar-list__event-title a:hover {
+.ibme .tribe-common .tribe-common-anchor-thin:hover,
+.ibme .tribe-common a:not(.tribe-common-anchor--unstyle):visited:hover,
+.ibme .tribe-events-calendar-list__event-title a:hover {
   border-color: transparent !important;
   color: #008075 !important;
   text-decoration: none !important;
 }
+.ibme .tribe-common,
+.ibme .tribe-common p,
+.ibme .tribe-common .tribe-common-b2,
+.ibme .tribe-events-content,
+.ibme .tribe-events-content h2,
+.ibme .tribe-events-content h3,
+.ibme .tribe-events-content h4,
+.ibme .tribe-events-content h5,
+.ibme .tribe-events-content h6 {
+  font-family: Inter, sans-serif;
+}
+.ibme .tribe-common,
+.ibme .tribe-common p,
+.ibme .tribe-common .tribe-common-b2,
+.ibme .tribe-events-content {
+  font-weight: 300;
+}
+.ibme .tribe-common .tribe-common-b2--bold,
+.ibme .tribe-common .tribe-common-h5,
+.ibme .tribe-common .tribe-common-h6,
+.ibme .tribe-events-content h2,
+.ibme .tribe-events-content h3,
+.ibme .tribe-events-content h4,
+.ibme .tribe-events-content h5,
+.ibme .tribe-events-content h6,
+.ibme .tribe-events-single-event-title,
+.ibme .tribe-events-schedule .recurringinfo,
+.ibme .tribe-events-schedule .tribe-events-cost,
+.ibme .tribe-events-back a,
+.ibme .tribe-events-back a:visited {
+  font-weight: 500;
+}
+.ibme .single-tribe_events .tribe-events-c-subscribe-dropdown .tribe-events-c-subscribe-dropdown__button-text,
+.ibme .single-tribe_events .tribe-events-c-subscribe-dropdown button.tribe-events-c-subscribe-dropdown__button-text,
+.ibme .tribe-events .tribe-events-c-subscribe-dropdown .tribe-events-c-subscribe-dropdown__button-text,
+.ibme .tribe-events .tribe-events-c-subscribe-dropdown button.tribe-events-c-subscribe-dropdown__button-text {
+  color: #008075;
+}
+.ibme .tribe-common .tribe-common-c-btn-border,
+.ibme .tribe-common a.tribe-common-c-btn-border {
+  border-color: #008075;
+  font-weight: 500;
+}
+.ibme .single-tribe_events .tribe-events-c-subscribe-dropdown .tribe-events-c-subscribe-dropdown__button-icon,
+.ibme .tribe-events .tribe-events-c-subscribe-dropdown .tribe-events-c-subscribe-dropdown__button-icon {
+  color: #008075;
+  stroke: #008075;
+}
+.ibme .tribe-events-meta-group a {
+  color: #008075;
+}
+.ibme .tribe-events-meta-group a:hover {
+  color: #008075;
+}
+.ibme .single-tribe_events .tribe-events-c-subscribe-dropdown .tribe-events-c-subscribe-dropdown__button.tribe-events-c-subscribe-dropdown__button--active, .ibme .single-tribe_events .tribe-events-c-subscribe-dropdown .tribe-events-c-subscribe-dropdown__button:focus, .ibme .single-tribe_events .tribe-events-c-subscribe-dropdown .tribe-events-c-subscribe-dropdown__button:focus-within, .ibme .single-tribe_events .tribe-events-c-subscribe-dropdown .tribe-events-c-subscribe-dropdown__button:hover, .ibme .tribe-events .tribe-events-c-subscribe-dropdown .tribe-events-c-subscribe-dropdown__button.tribe-events-c-subscribe-dropdown__button--active, .ibme .tribe-events .tribe-events-c-subscribe-dropdown .tribe-events-c-subscribe-dropdown__button:focus, .ibme .tribe-events .tribe-events-c-subscribe-dropdown .tribe-events-c-subscribe-dropdown__button:focus-within, .ibme .tribe-events .tribe-events-c-subscribe-dropdown .tribe-events-c-subscribe-dropdown__button:hover {
+  background-color: #008075;
+  color: #fff;
+}
+.ibme .single-tribe_events .tribe-events-c-subscribe-dropdown .tribe-events-c-subscribe-dropdown__button.tribe-events-c-subscribe-dropdown__button--active .tribe-events-c-subscribe-dropdown__button-text, .ibme .single-tribe_events .tribe-events-c-subscribe-dropdown .tribe-events-c-subscribe-dropdown__button:focus .tribe-events-c-subscribe-dropdown__button-text, .ibme .single-tribe_events .tribe-events-c-subscribe-dropdown .tribe-events-c-subscribe-dropdown__button:focus-within .tribe-events-c-subscribe-dropdown__button-text, .ibme .single-tribe_events .tribe-events-c-subscribe-dropdown .tribe-events-c-subscribe-dropdown__button:hover .tribe-events-c-subscribe-dropdown__button-text, .ibme .tribe-events .tribe-events-c-subscribe-dropdown .tribe-events-c-subscribe-dropdown__button.tribe-events-c-subscribe-dropdown__button--active .tribe-events-c-subscribe-dropdown__button-text, .ibme .tribe-events .tribe-events-c-subscribe-dropdown .tribe-events-c-subscribe-dropdown__button:focus .tribe-events-c-subscribe-dropdown__button-text, .ibme .tribe-events .tribe-events-c-subscribe-dropdown .tribe-events-c-subscribe-dropdown__button:focus-within .tribe-events-c-subscribe-dropdown__button-text, .ibme .tribe-events .tribe-events-c-subscribe-dropdown .tribe-events-c-subscribe-dropdown__button:hover .tribe-events-c-subscribe-dropdown__button-text {
+  color: #fff;
+}
+.ibme .single-tribe_events .tribe-events-c-subscribe-dropdown .tribe-events-c-subscribe-dropdown__button.tribe-events-c-subscribe-dropdown__button--active .tribe-events-c-subscribe-dropdown__button-icon, .ibme .single-tribe_events .tribe-events-c-subscribe-dropdown .tribe-events-c-subscribe-dropdown__button:focus .tribe-events-c-subscribe-dropdown__button-icon, .ibme .single-tribe_events .tribe-events-c-subscribe-dropdown .tribe-events-c-subscribe-dropdown__button:focus-within .tribe-events-c-subscribe-dropdown__button-icon, .ibme .single-tribe_events .tribe-events-c-subscribe-dropdown .tribe-events-c-subscribe-dropdown__button:hover .tribe-events-c-subscribe-dropdown__button-icon, .ibme .tribe-events .tribe-events-c-subscribe-dropdown .tribe-events-c-subscribe-dropdown__button.tribe-events-c-subscribe-dropdown__button--active .tribe-events-c-subscribe-dropdown__button-icon, .ibme .tribe-events .tribe-events-c-subscribe-dropdown .tribe-events-c-subscribe-dropdown__button:focus .tribe-events-c-subscribe-dropdown__button-icon, .ibme .tribe-events .tribe-events-c-subscribe-dropdown .tribe-events-c-subscribe-dropdown__button:focus-within .tribe-events-c-subscribe-dropdown__button-icon, .ibme .tribe-events .tribe-events-c-subscribe-dropdown .tribe-events-c-subscribe-dropdown__button:hover .tribe-events-c-subscribe-dropdown__button-icon {
+  color: #fff;
+  stroke: #fff;
+}
+.ibme .single-tribe_events .tribe-events-c-subscribe-dropdown .tribe-events-c-subscribe-dropdown__button.tribe-events-c-subscribe-dropdown__button--active .tribe-common-c-svgicon path, .ibme .single-tribe_events .tribe-events-c-subscribe-dropdown .tribe-events-c-subscribe-dropdown__button:focus .tribe-common-c-svgicon path, .ibme .single-tribe_events .tribe-events-c-subscribe-dropdown .tribe-events-c-subscribe-dropdown__button:focus-within .tribe-common-c-svgicon path, .ibme .single-tribe_events .tribe-events-c-subscribe-dropdown .tribe-events-c-subscribe-dropdown__button:hover .tribe-common-c-svgicon path, .ibme .tribe-events .tribe-events-c-subscribe-dropdown .tribe-events-c-subscribe-dropdown__button.tribe-events-c-subscribe-dropdown__button--active .tribe-common-c-svgicon path, .ibme .tribe-events .tribe-events-c-subscribe-dropdown .tribe-events-c-subscribe-dropdown__button:focus .tribe-common-c-svgicon path, .ibme .tribe-events .tribe-events-c-subscribe-dropdown .tribe-events-c-subscribe-dropdown__button:focus-within .tribe-common-c-svgicon path, .ibme .tribe-events .tribe-events-c-subscribe-dropdown .tribe-events-c-subscribe-dropdown__button:hover .tribe-common-c-svgicon path {
+  fill: #fff;
+}
+.ibme .tribe-common-c-svgicon path {
+  fill: #008075;
+}
+.ibme .tribe-common-c-svgicon--cal-export {
+  position: relative;
+  top: 3px;
+}
+.ibme .tribe-common .tribe-common-c-btn-border,
+.ibme .tribe-common a.tribe-common-c-btn-border {
+  max-width: 240px;
+}
+.ibme .tribe-events-single .tribe-events-sub-nav .tribe-events-nav-next a,
+.ibme .tribe-events-single .tribe-events-sub-nav .tribe-events-nav-previous a {
+  border: none;
+}
+.ibme .tribe-events-content .inline-buttons .style-4 {
+  border-width: 2px !important;
+  border-style: solid !important;
+}
+.ibme .tribe-events-single > .tribe_events {
+  display: flex;
+  flex-wrap: wrap;
+  overflow: hidden;
+  justify-content: space-between;
+}
+.ibme .tribe-events-single > .tribe_events .tribe-events-event-image,
+.ibme .tribe-events-single > .tribe_events .tribe-events-single-event-description {
+  width: 48%;
+}
+.ibme .tribe-events-content a:active,
+.ibme .tribe-events-content a:focus {
+  border: inherit;
+  color: inherit;
+}
 
+@media all and (max-width: 800px) {
+  .ibme .tribe-events-single > .tribe_events .tribe-events-event-image,
+  .ibme .tribe-events-single > .tribe_events .tribe-events-single-event-description {
+    width: auto;
+  }
+}
 /* Contact Form */
 .wForm input[type=text]:focus,
 .wForm input[type=number]:focus,
@@ -5153,7 +5261,7 @@ body.ibme .ibme-donate-button {
 }
 
 /* More Info Sliding Form */
-.more_info_shortcode_widget .form-title {
+.more_info_widget_wrap .form-title {
   text-align: center;
   color: #008075;
   margin-bottom: 0;
@@ -5164,7 +5272,7 @@ body.ibme .ibme-donate-button {
   text-transform: lowercase;
   margin-top: 0;
 }
-.more_info_shortcode_widget .form-title:before {
+.more_info_widget_wrap .form-title:before {
   content: '';
   width: 225px;
   height: 50px;
@@ -5172,25 +5280,27 @@ body.ibme .ibme-donate-button {
   display: block;
   margin: 0 auto 50px;
 }
-.more_info_shortcode_widget .form-header {
+.more_info_widget_wrap .form-header {
   padding: 50px;
   background-color: #D1F6E2;
   margin-top: -40px;
   border-bottom-left-radius: 50px;
   border-bottom-right-radius: 50px;
 }
-.more_info_shortcode_widget .op-side-panel-container .wForm {
+.more_info_widget_wrap .op-side-panel-container .wForm {
   padding: 0;
+}
+.more_info_widget_wrap .op-side-panel {
   background-color: #FFF5F5;
 }
-.more_info_shortcode_widget .op-side-panel-container .form-body-area {
+.more_info_widget_wrap .op-side-panel-container .form-body-area {
   padding: 50px;
 }
-.more_info_shortcode_widget .op-side-panel-container .op-side-panel {
+.more_info_widget_wrap .op-side-panel-container .op-side-panel {
   width: 400px;
   box-sizing: border-box;
 }
-.more_info_shortcode_widget .bottom-text {
+.more_info_widget_wrap .bottom-text {
   color: #008075;
   font-size: 14px;
   font-style: italic;
@@ -5199,8 +5309,8 @@ body.ibme .ibme-donate-button {
   letter-spacing: 0.1em;
 }
 
-.ibme .more_info_shortcode_widget .wForm input[type="button"],
-.ibme .more_info_shortcode_widget .wForm input[type="submit"] {
+.ibme .more_info_widget_wrap .wForm input[type="button"],
+.ibme .more_info_widget_wrap .wForm input[type="submit"] {
   float: none;
   font-size: 16px;
   font-weight: bold;
@@ -5208,26 +5318,26 @@ body.ibme .ibme-donate-button {
   display: table;
   margin: 0 auto 50px;
 }
-.ibme .more_info_shortcode_widget .wForm .preField {
+.ibme .more_info_widget_wrap .wForm .preField {
   font-weight: 300;
   font-size: 14px;
   line-height: 20px;
   text-transform: none;
 }
-.ibme .more_info_shortcode_widget .reqMark:after {
+.ibme .more_info_widget_wrap .reqMark:after {
   content: '*';
   color: #008075 !important;
   padding-left: 3px;
 }
-.ibme .more_info_shortcode_widget .oneField p {
+.ibme .more_info_widget_wrap .oneField p {
   margin-top: 5px;
   margin-bottom: 0;
 }
-.ibme .more_info_shortcode_widget .state-select-field label,
-.ibme .more_info_shortcode_widget .state-select-field select {
+.ibme .more_info_widget_wrap .state-select-field label,
+.ibme .more_info_widget_wrap .state-select-field select {
   width: 100%;
 }
-.ibme .more_info_shortcode_widget .state-select-field select {
+.ibme .more_info_widget_wrap .state-select-field select {
   font-size: 14px;
   padding: 6px;
   margin-top: 5px;
@@ -5235,7 +5345,7 @@ body.ibme .ibme-donate-button {
   border: 1px solid #000;
   border-radius: 5px;
 }
-.ibme .more_info_shortcode_widget input[type=date] input[type=datetime-local], .ibme .more_info_shortcode_widget input[type=email], .ibme .more_info_shortcode_widget input[type=file], .ibme .more_info_shortcode_widget input[type=month], .ibme .more_info_shortcode_widget input[type=number], .ibme .more_info_shortcode_widget input[type=password], .ibme .more_info_shortcode_widget input[type=range], .ibme .more_info_shortcode_widget input[type=search], .ibme .more_info_shortcode_widget input[type=tel], .ibme .more_info_shortcode_widget input[type=text], .ibme .more_info_shortcode_widget input[type=time], .ibme .more_info_shortcode_widget input[type=url], .ibme .more_info_shortcode_widget input[type=week], .ibme .more_info_shortcode_widget textarea {
+.ibme .more_info_widget_wrap input[type=date] input[type=datetime-local], .ibme .more_info_widget_wrap input[type=email], .ibme .more_info_widget_wrap input[type=file], .ibme .more_info_widget_wrap input[type=month], .ibme .more_info_widget_wrap input[type=number], .ibme .more_info_widget_wrap input[type=password], .ibme .more_info_widget_wrap input[type=range], .ibme .more_info_widget_wrap input[type=search], .ibme .more_info_widget_wrap input[type=tel], .ibme .more_info_widget_wrap input[type=text], .ibme .more_info_widget_wrap input[type=time], .ibme .more_info_widget_wrap input[type=url], .ibme .more_info_widget_wrap input[type=week], .ibme .more_info_widget_wrap textarea {
   background-color: #F3F8F3;
   border: 1px solid #000;
   border-radius: 5px;
@@ -5646,28 +5756,64 @@ body.ibme .ibme-donate-button {
   display: none;
 }
 
+/* Password page */
+.post-password-form {
+  max-width: 800px;
+  margin-bottom: 40px;
+}
+.post-password-form input[type=password] {
+  border: 2px solid #A4EDC6;
+  background: #fff;
+  margin-top: 5px;
+  margin-bottom: 10px;
+  max-width: 350px;
+}
+.post-password-form input[type=password]:focus {
+  background: #fff;
+  border-color: #8eccdc;
+}
+.post-password-form input[type=submit] {
+  background-color: #A4EDC6;
+  color: #000;
+  padding: 8px 15px;
+}
+.post-password-form input[type=submit]:hover {
+  background-color: #d1f6e2;
+}
+
 /* Popup message */
 .ibme .pum-overlay {
   z-index: 0;
 }
+.ibme .pum-theme-lightbox .pum-container {
+  padding: 50px 80px;
+}
 .ibme .pum-container {
   text-align: center;
-}
-.ibme .pum-container .popmake-title {
-  text-align: center;
-  margin-bottom: 10px;
-  font-size: 30px;
+  font-family: Inter, sans-serif !important;
 }
 .ibme .pum-container .pum-content {
   text-align: center;
 }
-.ibme .pum-container h3 {
+.ibme .pum-container .pum-title {
+  font-family: "MADE Mirage Regular";
+  font-weight: normal;
+  font-size: 30px;
+  text-align: center;
+  margin-bottom: 25px;
   color: #000;
-  font-weight: 500;
+}
+.ibme .pum-container h3 {
+  font-family: Inter, sans-serif !important;
+  font-weight: 300;
+  font-size: 20px;
+  margin-bottom: 25px;
+  color: #000;
 }
 .ibme .pum-container p {
   color: #000;
-  font-weight: 500;
+  font-weight: 300;
+  font-size: 14px;
 }
 .ibme .pum-container .white-btn {
   margin-top: 0;
@@ -5695,12 +5841,6 @@ body.ibme .ibme-donate-button {
   padding-top: 13px;
   padding-bottom: 13px;
 }
-.ibme .pum-container .pum-title {
-  font-weight: 500;
-}
-.ibme .pum-container h3 {
-  margin-bottom: 15px;
-}
 .ibme .pum-container .pum-content p:last-child {
   margin-bottom: 9px;
 }
@@ -5722,6 +5862,9 @@ body.ibme .ibme-donate-button {
 }
 
 @media all and (max-width: 870px) {
+  .ibme .pum-theme-lightbox .pum-container {
+    padding: 30px 40px;
+  }
   .ibme .pum-container .popmake-title {
     font-size: 27px;
   }
@@ -5736,9 +5879,6 @@ body.ibme .ibme-donate-button {
   }
 }
 @media all and (max-width: 725px) {
-  .ibme .pum-container .popmake-title {
-    font-size: 27px;
-  }
   .ibme .pum-container .opt-in-form .two-thirds {
     width: auto;
     float: none;
@@ -5748,6 +5888,10 @@ body.ibme .ibme-donate-button {
     margin: 0 auto;
   }
 }
+.vid-padding-more .embed-container {
+  padding-bottom: 57.25%;
+}
+
 /* Responsive media queries */
 /** Min width queries **/
 @media all and (min-width: 1440px) {
@@ -6552,6 +6696,10 @@ body.ibme .ibme-donate-button {
   #menu-primary-items .support .sub-menu,
   #menu-primary-items .about .sub-menu {
     background-color: #A4EDC6;
+  }
+
+  .ibme .inner .wrap {
+    padding-top: 0;
   }
 
   .ibme .full-width-section .inner-wrap {

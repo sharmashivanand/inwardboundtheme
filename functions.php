@@ -159,7 +159,7 @@ function ibme_page_content() {
 add_action( 'wp_enqueue_scripts', 'enqueue_google_fonts' );
 
 function enqueue_google_fonts() {
-	wp_enqueue_style( 'google-font', '//fonts.googleapis.com/css2?family=Inter:wght@300;400;500&display=swap">', array(), null );
+	wp_enqueue_style( 'google-font', '//fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap">', array(), null );
 }
 
 /* Add Custom Body Class */
