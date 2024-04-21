@@ -859,14 +859,22 @@
         text-transform: lowercase;
         color: #000;
             &:hover {
-                color: #5FA6E2;
+                color: #000;
                 transition: all 0.4s;
                 &::before {
-                    color: #5FA6E2;
+                    color: #000;
                     transition: all 0.4s;
                 }
             }
 	}
+
+    .menu-toggle.activated {
+        color: #fff;
+
+        &:before {
+            color: #fff; 
+        }
+    }
 	
 	.menu-toggle,
 	.sub-menu-toggle {
@@ -879,14 +887,59 @@
         }
 	}
 
-    .sub-menu .sub-menu-toggle {
+    /*.sub-menu .sub-menu-toggle {
         background-color: rgba(0,0,0,0.25);
 
         &:hover {
             background-color: rgba(0,0,0,0.45);
         }
+    }*/
+
+    .teen-retreats .sub-menu .sub-menu-toggle {
+        background-color: $barbie-tint;
+
+        &:hover {
+            background-color: $barbie-tint;
+        }
     }
 
+    .custom-programs .sub-menu .sub-menu-toggle {
+        background-color: $marigold-tint;
+
+        &:hover {
+            background-color: $marigold-tint;
+        }
+    }
+
+    .teacher-training .sub-menu .sub-menu-toggle {
+        background-color: $sky-tint;
+
+        &:hover {
+            background-color: $sky-tint;
+        }
+    }
+
+    .community-care .sub-menu .sub-menu-toggle {
+        background-color: $lavender-tint;
+
+        &:hover {
+            background-color: $lavender-tint;
+        }
+    }
+
+    .support .sub-menu .sub-menu-toggle,
+    .about .sub-menu .sub-menu-toggle {
+        background-color: $mint-tint;
+
+        &:hover {
+            background-color: $mint-tint;
+        }
+    }
+
+    #menu-primary-items .sub-menu .sub-menu li.current-menu-item a {
+        color: #fff;
+    } 
+    
 	.menu-toggle:before {
 		content: "\2261";
 		font-size: 26px;
@@ -900,9 +953,13 @@
 
     .sub-menu-toggle:hover {
         &:hover:before {
-            color: #5FA6E2;
+            color: #000;
         }
 	}
+
+    .sub-menu-toggle.activated:before {
+        color: #fff;
+    }
 	
 	.sub-menu-toggle:before {
 		content: "+";

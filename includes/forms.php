@@ -186,6 +186,7 @@ function more_info_shortcode_widget($atts) {
 	extract(shortcode_atts(array(
 		'wgt_class' => 'widget-class', 
 		'btn_class' => 'center-button', 
+		'btn_color' => 'mint-button', 
 		'btn_text' =>'Sign Up', 
 		'wgt_btn_text' => 'I&#x27;m In!', 
 		'wgt_text' => 'Stay Connected',
@@ -216,7 +217,7 @@ function more_info_shortcode_widget($atts) {
 
 	$form_output = <<<IELS
 	<div class='{$className}, more_info_widget_wrap'>
-	<a class="ibme-optin-form-trigger ibme-button mint-button style-1 $btn_class">$btn_text</a>
+	<a class="ibme-optin-form-trigger ibme-button style-3 $btn_class $btn_color">$btn_text</a>
 
 	<!-- FORM: HEAD SECTION -->
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
@@ -352,6 +353,7 @@ function more_info_shortcode_widget_nophone($atts) {
 	extract(shortcode_atts(array(
 		'wgt_class' => 'widget-class', 
 		'btn_class' => 'center-button', 
+		'btn_color' => 'mint-button', 
 		'btn_text' =>'Sign Up', 
 		'wgt_btn_text' => 'I&#x27;m In!', 
 		'wgt_text' => 'Stay Connected',
@@ -382,7 +384,7 @@ function more_info_shortcode_widget_nophone($atts) {
 
 	$form_output = <<<IELS
 	<div class='{$className}, more_info_widget_wrap'>
-	<a class="ibme-optin-form-trigger ibme-button mint-button style-1 $btn_class">$btn_text</a>
+	<a class="ibme-optin-form-trigger ibme-button style-3 $btn_class $btn_color">$btn_text</a>
 
 	<!-- FORM: HEAD SECTION -->
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
@@ -921,6 +923,7 @@ function app_start_shortcode_widget($atts) {
 	extract(shortcode_atts(array(
 		'wgt_class' => 'widget-class', 
 		'btn_class' => 'center-button', 
+		'btn_color' => 'mint-button', 
 		'btn_text' =>'Sign Up', 
 		'wgt_btn_text' => 'I&#x27;m In!', 
 		'wgt_text' => 'Stay Connected',
@@ -944,7 +947,7 @@ function app_start_shortcode_widget($atts) {
 
 	$form_output = <<<IELS
 	<div class='{$className}'>
-	<a class="ibme-optin-form-trigger ibme-button mint-button style-3 $btn_class">$btn_text</a>
+	<a class="ibme-optin-form-trigger ibme-button style-3 $btn_class $btn_color">$btn_text</a>
 
 	<!-- FORM: HEAD SECTION -->
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
@@ -1025,6 +1028,7 @@ function custom_program_inquiry_widget($atts) {
 	extract(shortcode_atts(array(
 		'wgt_class' => 'widget-class', 
 		'btn_class' => 'center-button', 
+		'btn_color' => 'mint-button', 
 		'btn_text' =>'Sign Up', 
 		'wgt_btn_text' => 'I&#x27;m In!', 
 		'wgt_text' => 'Stay Connected',
@@ -1047,7 +1051,7 @@ function custom_program_inquiry_widget($atts) {
 
 	$form_output = <<<IELS
 	<div class='{$className}'>
-	<a class="ibme-optin-form-trigger ibme-button mint-button style-1 $btn_class">$btn_text</a>
+	<a class="ibme-optin-form-trigger ibme-button style-3 $btn_class $btn_color">$btn_text</a>
 
 	<!-- FORM: HEAD SECTION -->
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
@@ -1075,6 +1079,7 @@ function fundraiser_signup_widget($atts) {
 	extract(shortcode_atts(array(
 		'wgt_class' => 'widget-class', 
 		'btn_class' => 'center-button', 
+		'btn_color' => 'mint-button', 
 		'btn_text' =>'Sign Up', 
 		'wgt_btn_text' => 'I&#x27;m In!', 
 		'wgt_text' => 'Stay Connected',
@@ -1097,7 +1102,7 @@ function fundraiser_signup_widget($atts) {
 
 	$form_output = <<<IELS
 	<div class='{$className}'>
-	<a class="ibme-optin-form-trigger ibme-button mint-button style-3 $btn_class">$btn_text</a>
+	<a class="ibme-optin-form-trigger ibme-button mint-button style-3 $btn_class $btn_color">$btn_text</a>
 
 	<!-- FORM: HEAD SECTION -->
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />

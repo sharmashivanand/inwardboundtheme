@@ -97,7 +97,15 @@ $white_opacity: rgba(255, 255, 255, 0.7);
     //margin-bottom: 0.5em;
     margin-bottom: 22px;
     text-transform: lowercase;
+}
 
+h1.title,
+h2.title,
+h3.title,
+h4.title,
+h5.title,
+h6.title {
+    font-weight: normal;
 }
 
 h1,

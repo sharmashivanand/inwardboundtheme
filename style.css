@@ -80,6 +80,15 @@ input:focus:-ms-input-placeholder, textarea:focus:-ms-input-placeholder {
   text-transform: lowercase;
 }
 
+h1.title,
+h2.title,
+h3.title,
+h4.title,
+h5.title,
+h6.title {
+  font-weight: normal;
+}
+
 h1,
 .tribe-common h1,
 .header-1 {
@@ -1262,17 +1271,34 @@ input[type=week], textarea {
 .collapsible-content-wrapper.white-text .collapsible-content {
   color: #fff;
 }
-.collapsible-content-wrapper.black-sign .collapsible-heading a:before {
-  background: url("assets/img/cc-plus-black.svg") no-repeat center/contain;
+.collapsible-content-wrapper.black-sign {
+  /*.collapsible-heading a:before {
+      background: url("assets/img/cc-plus-black.svg") no-repeat center / contain;
+  }
+  
+  .collapsible-heading.opened a:before {
+      background: url("assets/img/cc-minus-black.svg") no-repeat center / contain;
+  }*/
 }
-.collapsible-content-wrapper.black-sign .collapsible-heading.opened a:before {
-  background: url("assets/img/cc-minus-black.svg") no-repeat center/contain;
+.collapsible-content-wrapper.black-sign .collapsible-heading a {
+  background: url("assets/img/cc-plus-black.svg") no-repeat;
+  background-position: 15px 18px;
+  background-size: 20px 20px;
 }
-.collapsible-content-wrapper.white-sign .collapsible-heading a:before {
-  background: url("assets/img/cc-plus-white.svg") no-repeat center/contain;
+.collapsible-content-wrapper.black-sign .collapsible-heading.opened a {
+  background: url("assets/img/cc-minus-black.svg") no-repeat;
+  background-position: 15px 25px;
+  background-size: 20px 5px;
 }
-.collapsible-content-wrapper.white-sign .collapsible-heading.opened a:before {
-  background: url("assets/img/cc-minus-white.svg") no-repeat center/contain;
+.collapsible-content-wrapper.white-sign .collapsible-heading a {
+  background: url("assets/img/cc-plus-white.svg") no-repeat;
+  background-position: 15px 18px;
+  background-size: 20px 20px;
+}
+.collapsible-content-wrapper.white-sign .collapsible-heading.opened a {
+  background: url("assets/img/cc-minus-white.svg") no-repeat;
+  background-position: 15px 25px;
+  background-size: 20px 5px;
 }
 .collapsible-content-wrapper.cherry-outline .collapsible-heading a,
 .collapsible-content-wrapper.cherry-outline .collapsible-content {
@@ -1358,6 +1384,7 @@ input[type=week], textarea {
   border-style: solid;
   border-radius: 5px;
   padding: 17px;
+  padding: 17px 17px 17px 42px;
   margin-bottom: 40px;
   display: flex;
   align-items: center;
@@ -1367,27 +1394,26 @@ input[type=week], textarea {
   border-bottom: 0;
   border-bottom-left-radius: 0;
   border-bottom-right-radius: 0;
-}
-
-.collapsible-heading a:before {
-  display: inline-block;
-  content: "";
-  width: 20px;
-  height: 20px;
-  background: url("assets/img/cc-plus-black.svg") no-repeat center/contain;
-  margin-right: 10px;
-}
-
-.collapsible-heading.opened a:before {
-  background: url("assets/img/cc-minus-black.svg") no-repeat center/contain;
+  display: block;
+  background: url("assets/img/cc-minus-black.svg") no-repeat;
+  background-position: 15px 25px;
+  background-size: 20px 5px;
   height: 4px;
 }
 
+/*.collapsible-heading a:before {
+    display: inline-block;
+    content:"";
+    width: 20px;
+    height: 20px;
+    background: url("assets/img/cc-plus-black.svg") no-repeat center / contain;
+    margin-right: 10px;
+}*/
 .collapsible-content {
   border-width: 2px;
   border-style: solid;
   border-radius: 5px;
-  padding: 0 50px 10px;
+  padding: 10px 43px 10px;
   margin-top: -40px;
   margin-bottom: 40px;
   border-top: 0;
@@ -1747,21 +1773,45 @@ input[type="submit"]:hover, input[type="reset"]:hover, input[type="button"]:hove
 
 .style-3 {
   position: relative;
+  /*&:after {
+      content: '';
+      background: url("assets/img/button-specks-left.svg") no-repeat left top / contain;
+      width: 181px;
+      height: 75px;
+      position: absolute;
+      top: -10px;
+      left: -24px;
+      opacity: 0;
+      visibility: hidden;
+      transition: all 0.4s;
+  }*/
   /* Hover States for buttons */
 }
-.style-3:after {
+.style-3:before {
   content: '';
-  background: url("assets/img/button-specks-left.svg") no-repeat left top/contain;
-  width: 181px;
-  height: 75px;
+  background: url("assets/img/left-specks.svg") no-repeat left top/contain;
+  width: 16px;
+  height: 31px;
   position: absolute;
   top: -10px;
-  left: -24px;
+  left: -21px;
   opacity: 0;
   visibility: hidden;
   transition: all 0.4s;
 }
-.style-3:hover:after {
+.style-3:after {
+  content: '';
+  background: url("assets/img/right-specks.svg") no-repeat left top/contain;
+  width: 13px;
+  height: 18px;
+  position: absolute;
+  top: 12px;
+  right: -18px;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.4s;
+}
+.style-3:hover:after, .style-3:hover:before {
   opacity: 1;
   visibility: visible;
 }
@@ -3115,10 +3165,10 @@ input, button, select, textarea {
 .hero_2-section .black-title {
   color: #000;
 }
-.hero_2-section .white-text {
+.hero_2-section .description.white-text {
   color: #fff;
 }
-.hero_2-section .black-text {
+.hero_2-section .description.black-text {
   color: #000;
 }
 
@@ -3145,7 +3195,9 @@ input, button, select, textarea {
 .ibme-statement-1.white-text .title, .ibme-statement-1.white-text p {
   color: #fff;
 }
-.ibme-statement-1 .bottom-illustration:after {
+
+.ibme-statement-1 .bottom-illustration:after,
+.impact-section .bottom-illustration:after {
   content: '';
   width: 134px;
   height: 164px;
@@ -3154,7 +3206,8 @@ input, button, select, textarea {
   bottom: 150px;
   left: 15%;
 }
-.ibme-statement-1 .top-illustration:after {
+.ibme-statement-1 .top-illustration:after,
+.impact-section .top-illustration:after {
   content: '';
   width: 210px;
   height: 174px;
@@ -3163,125 +3216,165 @@ input, button, select, textarea {
   top: 10%;
   left: 75%;
 }
-.ibme-statement-1 .cabin-blue:after {
-  background: url("assets/img/background-illustrations/cabin-blue.svg") no-repeat center/contain;
+.ibme-statement-1 .cabin-blue:after,
+.impact-section .cabin-blue:after {
+  background: url("assets/img/background-illustration/cabin-blue.svg") no-repeat center/contain;
 }
-.ibme-statement-1 .cabin-blush:after {
-  background: url("assets/img/background-illustrations/cabin-blush.svg") no-repeat center/contain;
+.ibme-statement-1 .cabin-blush:after,
+.impact-section .cabin-blush:after {
+  background: url("assets/img/background-illustration/cabin-blush.svg") no-repeat center/contain;
 }
-.ibme-statement-1 .cabin-mint:after {
-  background: url("assets/img/background-illustrations/cabin-mint.svg") no-repeat center/contain;
+.ibme-statement-1 .cabin-mint:after,
+.impact-section .cabin-mint:after {
+  background: url("assets/img/background-illustration/cabin-mint.svg") no-repeat center/contain;
 }
-.ibme-statement-1 .cabin-peony:after {
-  background: url("assets/img/background-illustrations/cabin-peony.svg") no-repeat center/contain;
+.ibme-statement-1 .cabin-peony:after,
+.impact-section .cabin-peony:after {
+  background: url("assets/img/background-illustration/cabin-peony.svg") no-repeat center/contain;
 }
-.ibme-statement-1 .cabin-sunflower:after {
-  background: url("assets/img/background-illustrations/cabin-sunflower.svg") no-repeat center/contain;
+.ibme-statement-1 .cabin-sunflower:after,
+.impact-section .cabin-sunflower:after {
+  background: url("assets/img/background-illustration/cabin-sunflower.svg") no-repeat center/contain;
 }
-.ibme-statement-1 .eye-blue:after {
-  background: url("assets/img/background-illustrations/eye-blue.svg") no-repeat center/contain;
+.ibme-statement-1 .eye-blue:after,
+.impact-section .eye-blue:after {
+  background: url("assets/img/background-illustration/eye-blue.svg") no-repeat center/contain;
 }
-.ibme-statement-1 .eye-blush:after {
-  background: url("assets/img/background-illustrations/eye-blush.svg") no-repeat center/contain;
+.ibme-statement-1 .eye-blush:after,
+.impact-section .eye-blush:after {
+  background: url("assets/img/background-illustration/eye-blush.svg") no-repeat center/contain;
 }
-.ibme-statement-1 .eye-mint:after {
-  background: url("assets/img/background-illustrations/eye-mint.svg") no-repeat center/contain;
+.ibme-statement-1 .eye-mint:after,
+.impact-section .eye-mint:after {
+  background: url("assets/img/background-illustration/eye-mint.svg") no-repeat center/contain;
 }
-.ibme-statement-1 .eye-peony:after {
-  background: url("assets/img/background-illustrations/eye-peony.svg") no-repeat center/contain;
+.ibme-statement-1 .eye-peony:after,
+.impact-section .eye-peony:after {
+  background: url("assets/img/background-illustration/eye-peony.svg") no-repeat center/contain;
 }
-.ibme-statement-1 .eye-sunflower:after {
-  background: url("assets/img/background-illustrations/eye-sunflower.svg") no-repeat center/contain;
+.ibme-statement-1 .eye-sunflower:after,
+.impact-section .eye-sunflower:after {
+  background: url("assets/img/background-illustration/eye-sunflower.svg") no-repeat center/contain;
 }
-.ibme-statement-1 .face-blue:after {
-  background: url("assets/img/background-illustrations/face-blue.svg") no-repeat center/contain;
+.ibme-statement-1 .face-blue:after,
+.impact-section .face-blue:after {
+  background: url("assets/img/background-illustration/face-blue.svg") no-repeat center/contain;
 }
-.ibme-statement-1 .face-blush:after {
-  background: url("assets/img/background-illustrations/face-blush.svg") no-repeat center/contain;
+.ibme-statement-1 .face-blush:after,
+.impact-section .face-blush:after {
+  background: url("assets/img/background-illustration/face-blush.svg") no-repeat center/contain;
 }
-.ibme-statement-1 .face-mint:after {
-  background: url("assets/img/background-illustrations/face-mint.svg") no-repeat center/contain;
+.ibme-statement-1 .face-mint:after,
+.impact-section .face-mint:after {
+  background: url("assets/img/background-illustration/face-mint.svg") no-repeat center/contain;
 }
-.ibme-statement-1 .face-peony:after {
-  background: url("assets/img/background-illustrations/face-peony.svg") no-repeat center/contain;
+.ibme-statement-1 .face-peony:after,
+.impact-section .face-peony:after {
+  background: url("assets/img/background-illustration/face-peony.svg") no-repeat center/contain;
 }
-.ibme-statement-1 .face-sunflower:after {
-  background: url("assets/img/background-illustrations/face-sunflower.svg") no-repeat center/contain;
+.ibme-statement-1 .face-sunflower:after,
+.impact-section .face-sunflower:after {
+  background: url("assets/img/background-illustration/face-sunflower.svg") no-repeat center/contain;
 }
-.ibme-statement-1 .fire-blue:after {
-  background: url("assets/img/background-illustrations/fire-blue.svg") no-repeat center/contain;
+.ibme-statement-1 .fire-blue:after,
+.impact-section .fire-blue:after {
+  background: url("assets/img/background-illustration/fire-blue.svg") no-repeat center/contain;
 }
-.ibme-statement-1 .fire-blush:after {
-  background: url("assets/img/background-illustrations/fire-blush.svg") no-repeat center/contain;
+.ibme-statement-1 .fire-blush:after,
+.impact-section .fire-blush:after {
+  background: url("assets/img/background-illustration/fire-blush.svg") no-repeat center/contain;
 }
-.ibme-statement-1 .fire-mint:after {
-  background: url("assets/img/background-illustrations/fire-mint.svg") no-repeat center/contain;
+.ibme-statement-1 .fire-mint:after,
+.impact-section .fire-mint:after {
+  background: url("assets/img/background-illustration/fire-mint.svg") no-repeat center/contain;
 }
-.ibme-statement-1 .fire-peony:after {
-  background: url("assets/img/background-illustrations/fire-peony.svg") no-repeat center/contain;
+.ibme-statement-1 .fire-peony:after,
+.impact-section .fire-peony:after {
+  background: url("assets/img/background-illustration/fire-peony.svg") no-repeat center/contain;
 }
-.ibme-statement-1 .fire-sunflower:after {
-  background: url("assets/img/background-illustrations/fire-sunflower.svg") no-repeat center/contain;
+.ibme-statement-1 .fire-sunflower:after,
+.impact-section .fire-sunflower:after {
+  background: url("assets/img/background-illustration/fire-sunflower.svg") no-repeat center/contain;
 }
-.ibme-statement-1 .journal-blue:after {
-  background: url("assets/img/background-illustrations/journal-blue.svg") no-repeat center/contain;
+.ibme-statement-1 .journal-blue:after,
+.impact-section .journal-blue:after {
+  background: url("assets/img/background-illustration/journal-blue.svg") no-repeat center/contain;
 }
-.ibme-statement-1 .journal-blush:after {
-  background: url("assets/img/background-illustrations/journal-blush.svg") no-repeat center/contain;
+.ibme-statement-1 .journal-blush:after,
+.impact-section .journal-blush:after {
+  background: url("assets/img/background-illustration/journal-blush.svg") no-repeat center/contain;
 }
-.ibme-statement-1 .journal-mint:after {
-  background: url("assets/img/background-illustrations/journal-mint.svg") no-repeat center/contain;
+.ibme-statement-1 .journal-mint:after,
+.impact-section .journal-mint:after {
+  background: url("assets/img/background-illustration/journal-mint.svg") no-repeat center/contain;
 }
-.ibme-statement-1 .journal-peony:after {
-  background: url("assets/img/background-illustrations/journal-peony.svg") no-repeat center/contain;
+.ibme-statement-1 .journal-peony:after,
+.impact-section .journal-peony:after {
+  background: url("assets/img/background-illustration/journal-peony.svg") no-repeat center/contain;
 }
-.ibme-statement-1 .journal-sunflower:after {
-  background: url("assets/img/background-illustrations/journal-sunflower.svg") no-repeat center/contain;
+.ibme-statement-1 .journal-sunflower:after,
+.impact-section .journal-sunflower:after {
+  background: url("assets/img/background-illustration/journal-sunflower.svg") no-repeat center/contain;
 }
-.ibme-statement-1 .plant-blue:after {
-  background: url("assets/img/background-illustrations/plant-blue.svg") no-repeat center/contain;
+.ibme-statement-1 .plant-blue:after,
+.impact-section .plant-blue:after {
+  background: url("assets/img/background-illustration/plant-blue.svg") no-repeat center/contain;
 }
-.ibme-statement-1 .plant-blush:after {
-  background: url("assets/img/background-illustrations/plant-blush.svg") no-repeat center/contain;
+.ibme-statement-1 .plant-blush:after,
+.impact-section .plant-blush:after {
+  background: url("assets/img/background-illustration/plant-blush.svg") no-repeat center/contain;
 }
-.ibme-statement-1 .plant-mint:after {
-  background: url("assets/img/background-illustrations/plant-mint.svg") no-repeat center/contain;
+.ibme-statement-1 .plant-mint:after,
+.impact-section .plant-mint:after {
+  background: url("assets/img/background-illustration/plant-mint.svg") no-repeat center/contain;
 }
-.ibme-statement-1 .plant-peony:after {
-  background: url("assets/img/background-illustrations/plant-peony.svg") no-repeat center/contain;
+.ibme-statement-1 .plant-peony:after,
+.impact-section .plant-peony:after {
+  background: url("assets/img/background-illustration/plant-peony.svg") no-repeat center/contain;
 }
-.ibme-statement-1 .plant-sunflower:after {
-  background: url("assets/img/background-illustrations/plant-sunflower.svg") no-repeat center/contain;
+.ibme-statement-1 .plant-sunflower:after,
+.impact-section .plant-sunflower:after {
+  background: url("assets/img/background-illustration/plant-sunflower.svg") no-repeat center/contain;
 }
-.ibme-statement-1 .teens-blue:after {
-  background: url("assets/img/background-illustrations/teens-blue.svg") no-repeat center/contain;
+.ibme-statement-1 .teens-blue:after,
+.impact-section .teens-blue:after {
+  background: url("assets/img/background-illustration/teens-blue.svg") no-repeat center/contain;
 }
-.ibme-statement-1 .teens-blush:after {
-  background: url("assets/img/background-illustrations/teens-blush.svg") no-repeat center/contain;
+.ibme-statement-1 .teens-blush:after,
+.impact-section .teens-blush:after {
+  background: url("assets/img/background-illustration/teens-blush.svg") no-repeat center/contain;
 }
-.ibme-statement-1 .teens-mint:after {
-  background: url("assets/img/background-illustrations/teens-mint.svg") no-repeat center/contain;
+.ibme-statement-1 .teens-mint:after,
+.impact-section .teens-mint:after {
+  background: url("assets/img/background-illustration/teens-mint.svg") no-repeat center/contain;
 }
-.ibme-statement-1 .teens-peony:after {
-  background: url("assets/img/background-illustrations/teens-peony.svg") no-repeat center/contain;
+.ibme-statement-1 .teens-peony:after,
+.impact-section .teens-peony:after {
+  background: url("assets/img/background-illustration/teens-peony.svg") no-repeat center/contain;
 }
-.ibme-statement-1 .teens-sunflower:after {
-  background: url("assets/img/background-illustrations/teens-sunflower.svg") no-repeat center/contain;
+.ibme-statement-1 .teens-sunflower:after,
+.impact-section .teens-sunflower:after {
+  background: url("assets/img/background-illustration/teens-sunflower.svg") no-repeat center/contain;
 }
-.ibme-statement-1 .yoga-blue:after {
-  background: url("assets/img/background-illustrations/yoga-blue.svg") no-repeat center/contain;
+.ibme-statement-1 .yoga-blue:after,
+.impact-section .yoga-blue:after {
+  background: url("assets/img/background-illustration/yoga-blue.svg") no-repeat center/contain;
 }
-.ibme-statement-1 .yoga-blush:after {
-  background: url("assets/img/background-illustrations/yoga-blush.svg") no-repeat center/contain;
+.ibme-statement-1 .yoga-blush:after,
+.impact-section .yoga-blush:after {
+  background: url("assets/img/background-illustration/yoga-blush.svg") no-repeat center/contain;
 }
-.ibme-statement-1 .yoga-mint:after {
-  background: url("assets/img/background-illustrations/yoga-mint.svg") no-repeat center/contain;
+.ibme-statement-1 .yoga-mint:after,
+.impact-section .yoga-mint:after {
+  background: url("assets/img/background-illustration/yoga-mint.svg") no-repeat center/contain;
 }
-.ibme-statement-1 .yoga-peony:after {
-  background: url("assets/img/background-illustrations/yoga-peony.svg") no-repeat center/contain;
+.ibme-statement-1 .yoga-peony:after,
+.impact-section .yoga-peony:after {
+  background: url("assets/img/background-illustration/yoga-peony.svg") no-repeat center/contain;
 }
-.ibme-statement-1 .yoga-sunflower:after {
-  background: url("assets/img/background-illustrations/yoga-sunflower.svg") no-repeat center/contain;
+.ibme-statement-1 .yoga-sunflower:after,
+.impact-section .yoga-sunflower:after {
+  background: url("assets/img/background-illustration/yoga-sunflower.svg") no-repeat center/contain;
 }
 
 .ibme-cta_1-content-blocks {
@@ -4253,144 +4346,280 @@ input, button, select, textarea {
   width: 48.5%;
 }
 
+.large-illustration {
+  background-repeat: no-repeat;
+  background-position: left center;
+  background-size: contain;
+}
+
+.large-illustration.cabin-blue,
 .impact-section.cabin-blue {
-  background-image: url("assets/img/background-illustrations/cabin-blue.svg");
+  background-image: url("assets/img/background-illustration/cabin-blue.svg");
+  background-size: 705px 600px;
+  background-position: right center;
 }
 
+.large-illustration.cabin-blush,
 .impact-section.cabin-blush {
-  background-image: url("assets/img/background-illustrations/cabin-blush.svg");
+  background-image: url("assets/img/background-illustration/cabin-blush.svg");
+  background-size: 705px 600px;
+  background-position: right center;
 }
 
+.large-illustration.cabin-mint,
 .impact-section.cabin-mint {
-  background-image: url("assets/img/background-illustrations/cabin-mint.svg");
+  background-image: url("assets/img/background-illustration/cabin-mint.svg");
+  background-size: 705px 600px;
+  background-position: right center;
 }
 
+.large-illustration.cabin-peony,
 .impact-section.cabin-peony {
-  background-image: url("assets/img/background-illustrations/cabin-peony.svg");
+  background-image: url("assets/img/background-illustration/cabin-peony.svg");
+  background-size: 705px 600px;
+  background-position: right center;
 }
 
+.large-illustration.cabin-sunflower,
 .impact-section.cabin-sunflower {
-  background-image: url("assets/img/background-illustrations/cabin-sunflower.svg");
+  background-image: url("assets/img/background-illustration/cabin-sunflower.svg");
+  background-size: 705px 600px;
+  background-position: right center;
 }
 
+.large-illustration.eye-blue,
 .impact-section.eye-blue {
-  background-image: url("assets/img/background-illustrations/eye-blue.svg");
+  background-image: url("assets/img/background-illustration/eye-blue.svg");
+  background-size: 612px 600px;
+  background-position: right center;
 }
 
+.large-illustration.eye-blush,
 .impact-section.eye-blush {
-  background-image: url("assets/img/background-illustrations/eye-blush.svg");
+  background-image: url("assets/img/background-illustration/eye-blush.svg");
+  background-size: 612px 600px;
+  background-position: right center;
 }
 
+.large-illustration.eye-mint,
 .impact-section.eye-mint {
-  background-image: url("assets/img/background-illustrations/eye-mint.svg");
+  background-image: url("assets/img/background-illustration/eye-mint.svg");
+  background-size: 612px 600px;
+  background-position: right center;
 }
 
+.large-illustration.eye-peony,
 .impact-section.eye-peony {
-  background-image: url("assets/img/background-illustrations/eye-peony.svg");
+  background-image: url("assets/img/background-illustration/eye-peony.svg");
+  background-size: 612px 600px;
+  background-position: right center;
 }
 
-.impact-section.eye-sunflower:after {
-  background-image: url("assets/img/background-illustrations/eye-sunflower.svg");
+.large-illustration.eye-sunflower,
+.impact-section.eye-sunflower {
+  background-image: url("assets/img/background-illustration/eye-sunflower.svg");
+  background-size: 612px 600px;
+  background-position: right center;
 }
 
+.large-illustration.face-blue,
 .impact-section.face-blue {
-  background-image: url("assets/img/background-illustrations/face-blue.svg");
+  background-image: url("assets/img/background-illustration/face-blue.svg");
+  background-size: 682px 600px;
+  background-position: right center;
 }
 
+.large-illustration.face-blush,
+.impact-section.face-blush {
+  background-image: url("assets/img/background-illustration/face-blush.svg");
+  background-size: 682px 600px;
+  background-position: right center;
+}
+
+.large-illustration.face-mint,
+.impact-section.face-mint {
+  background-image: url("assets/img/background-illustration/face-mint.svg");
+  background-size: 682px 600px;
+  background-position: right center;
+}
+
+.large-illustration.face-peony,
+.impact-section.face-peony {
+  background-image: url("assets/img/background-illustration/face-peony.svg");
+  background-size: 682px 600px;
+  background-position: right center;
+}
+
+.large-illustration.face-sunflower,
+.impact-section.face-sunflower {
+  background-image: url("assets/img/background-illustration/face-sunflower.svg");
+  background-size: 682px 600px;
+  background-position: right center;
+}
+
+.large-illustration.fire-blue,
+.impact-section.fire-blue {
+  background-image: url("assets/img/background-illustration/fire-blue.svg");
+  background-size: 918px 600px;
+}
+
+.large-illustration.fire-blush,
 .impact-section.fire-blush {
-  background-image: url("assets/img/background-illustrations/fire-blush.svg");
+  background-image: url("assets/img/background-illustration/fire-blush.svg");
+  background-size: 918px 600px;
 }
 
+.large-illustration.fire-mint,
 .impact-section.fire-mint {
-  background-image: url("assets/img/background-illustrations/fire-mint.svg");
+  background-image: url("assets/img/background-illustration/fire-mint.svg");
+  background-size: 918px 600px;
 }
 
+.large-illustration.fire-peony,
 .impact-section.fire-peony {
-  background-image: url("assets/img/background-illustrations/fire-peony.svg");
+  background-image: url("assets/img/background-illustration/fire-peony.svg");
+  background-size: 918px 600px;
 }
 
+.large-illustration.fire-sunflower,
 .impact-section.fire-sunflower {
-  background-image: url("assets/img/background-illustrations/fire-sunflower.svg");
+  background-image: url("assets/img/background-illustration/fire-sunflower.svg");
+  background-size: 918px 600px;
 }
 
+.large-illustration.journal-blue,
 .impact-section.journal-blue {
-  background-image: url("assets/img/background-illustrations/journal-blue.svg");
+  background-image: url("assets/img/background-illustration/journal-blue.svg");
+  background-size: 818px 600px;
 }
 
+.large-illustration.journal-blush,
 .impact-section.journal-blush {
-  background-image: url("assets/img/background-illustrations/journal-blush.svg");
+  background-image: url("assets/img/background-illustration/journal-blush.svg");
+  background-size: 818px 600px;
 }
 
+.large-illustration.journal-mint,
 .impact-section.journal-mint {
-  background-image: url("assets/img/background-illustrations/journal-mint.svg");
+  background-image: url("assets/img/background-illustration/journal-mint.svg");
+  background-size: 818px 600px;
 }
 
+.large-illustration.journal-peony,
 .impact-section.journal-peony {
-  background-image: url("assets/img/background-illustrations/journal-peony.svg");
+  background-image: url("assets/img/background-illustration/journal-peony.svg");
+  background-size: 818px 600px;
 }
 
+.large-illustration.journal-sunflower,
 .impact-section.journal-sunflower {
-  background-image: url("assets/img/background-illustrations/journal-sunflower.svg");
+  background-image: url("assets/img/background-illustration/journal-sunflower.svg");
+  background-size: 818px 600px;
 }
 
+.large-illustration.plant-blue,
 .impact-section.plant-blue {
-  background-image: url("assets/img/background-illustrations/plant-blue.svg");
+  background-image: url("assets/img/background-illustration/plant-blue.svg");
+  background-size: 486px 600px;
+  background-position: 40px center;
 }
 
+.large-illustration.plant-blush,
 .impact-section.plant-blush {
-  background-image: url("assets/img/background-illustrations/plant-blush.svg");
+  background-image: url("assets/img/background-illustration/plant-blush.svg");
+  background-size: 486px 600px;
+  background-position: 40px center;
 }
 
+.large-illustration.plant-mint,
 .impact-section.plant-mint {
-  background-image: url("assets/img/background-illustrations/plant-mint.svg");
+  background-image: url("assets/img/background-illustration/plant-mint.svg");
+  background-size: 486px 600px;
+  background-position: 40px center;
 }
 
+.large-illustration.plant-peony,
 .impact-section.plant-peony {
-  background-image: url("assets/img/background-illustrations/plant-peony.svg");
+  background-image: url("assets/img/background-illustration/plant-peony.svg");
+  background-size: 486px 600px;
+  background-position: 40px center;
 }
 
+.large-illustration.plant-sunflower,
 .impact-section.plant-sunflower {
-  background-image: url("assets/img/background-illustrations/plant-sunflower.svg");
+  background-image: url("assets/img/background-illustration/plant-sunflower.svg");
+  background-size: 486px 600px;
+  background-position: 40px center;
 }
 
+.large-illustration.teens-blue,
 .impact-section.teens-blue {
-  background-image: url("assets/img/background-illustrations/teens-blue.svg");
+  background-image: url("assets/img/background-illustration/teens-blue.svg");
+  background-size: 541px 600px;
+  background-position: 40px center;
 }
 
+.large-illustration.teens-blush,
 .impact-section.teens-blush {
-  background-image: url("assets/img/background-illustrations/teens-blush.svg");
+  background-image: url("assets/img/background-illustration/teens-blush.svg");
+  background-size: 541px 600px;
+  background-position: 40px center;
 }
 
+.large-illustration.teens-mint,
 .impact-section.teens-mint {
-  background-image: url("assets/img/background-illustrations/teens-mint.svg");
+  background-image: url("assets/img/background-illustration/teens-mint.svg");
+  background-size: 541px 600px;
+  background-position: 40px center;
 }
 
+.large-illustration.teens-peony,
 .impact-section.teens-peony {
-  background-image: url("assets/img/background-illustrations/teens-peony.svg");
+  background-image: url("assets/img/background-illustration/teens-peony.svg");
+  background-size: 541px 600px;
+  background-position: 40px center;
 }
 
+.large-illustration.teens-sunflower,
 .impact-section.teens-sunflower {
-  background-image: url("assets/img/background-illustrations/teens-sunflower.svg");
+  background-image: url("assets/img/background-illustration/teens-sunflower.svg");
+  background-size: 541px 600px;
+  background-position: 40px center;
 }
 
+.large-illustration.yoga-blue,
 .impact-section.yoga-blue {
-  background-image: url("assets/img/background-illustrations/yoga-blue.svg");
+  background-image: url("assets/img/background-illustration/yoga-blue.svg");
+  background-size: 840px 496px;
+  background-position: right center;
 }
 
+.large-illustration.yoga-blush,
 .impact-section.yoga-blush {
-  background-image: url("assets/img/background-illustrations/yoga-blush.svg");
+  background-image: url("assets/img/background-illustration/yoga-blush.svg");
+  background-size: 840px 496px;
+  background-position: right center;
 }
 
+.large-illustration.yoga-mint,
 .impact-section.yoga-mint {
-  background-image: url("assets/img/background-illustrations/yoga-mint.svg");
+  background-image: url("assets/img/background-illustration/yoga-mint.svg");
+  background-size: 840px 496px;
+  background-position: right center;
 }
 
+.large-illustration.yoga-peony,
 .impact-section.yoga-peony {
-  background-image: url("assets/img/background-illustrations/yoga-peony.svg");
+  background-image: url("assets/img/background-illustration/yoga-peony.svg");
+  background-size: 840px 496px;
+  background-position: right center;
 }
 
+.large-illustration.yoga-sunflower,
 .impact-section.yoga-sunflower {
-  background-image: url("assets/img/background-illustrations/yoga-sunflower.svg");
+  background-image: url("assets/img/background-illustration/yoga-sunflower.svg");
+  background-size: 840px 496px;
+  background-position: right center;
 }
 
 .impact-section .black-title,
@@ -6615,12 +6844,19 @@ body.ibme .ibme-donate-button {
     color: #000;
   }
   .menu-toggle:hover {
-    color: #5FA6E2;
+    color: #000;
     transition: all 0.4s;
   }
   .menu-toggle:hover::before {
-    color: #5FA6E2;
+    color: #000;
     transition: all 0.4s;
+  }
+
+  .menu-toggle.activated {
+    color: #fff;
+  }
+  .menu-toggle.activated:before {
+    color: #fff;
   }
 
   .menu-toggle,
@@ -6634,11 +6870,52 @@ body.ibme .ibme-donate-button {
     background-color: #8fe9b9;
   }
 
-  .sub-menu .sub-menu-toggle {
-    background-color: rgba(0, 0, 0, 0.25);
+    /*.sub-menu .sub-menu-toggle {
+        background-color: rgba(0,0,0,0.25);
+
+        &:hover {
+            background-color: rgba(0,0,0,0.45);
+        }
+    }*/
+  .teen-retreats .sub-menu .sub-menu-toggle {
+    background-color: #F7AEDF;
   }
-  .sub-menu .sub-menu-toggle:hover {
-    background-color: rgba(0, 0, 0, 0.45);
+  .teen-retreats .sub-menu .sub-menu-toggle:hover {
+    background-color: #F7AEDF;
+  }
+
+  .custom-programs .sub-menu .sub-menu-toggle {
+    background-color: #FFD89A;
+  }
+  .custom-programs .sub-menu .sub-menu-toggle:hover {
+    background-color: #FFD89A;
+  }
+
+  .teacher-training .sub-menu .sub-menu-toggle {
+    background-color: #AFD2F0;
+  }
+  .teacher-training .sub-menu .sub-menu-toggle:hover {
+    background-color: #AFD2F0;
+  }
+
+  .community-care .sub-menu .sub-menu-toggle {
+    background-color: #CAC8EB;
+  }
+  .community-care .sub-menu .sub-menu-toggle:hover {
+    background-color: #CAC8EB;
+  }
+
+  .support .sub-menu .sub-menu-toggle,
+  .about .sub-menu .sub-menu-toggle {
+    background-color: #D1F6E2;
+  }
+  .support .sub-menu .sub-menu-toggle:hover,
+  .about .sub-menu .sub-menu-toggle:hover {
+    background-color: #D1F6E2;
+  }
+
+  #menu-primary-items .sub-menu .sub-menu li.current-menu-item a {
+    color: #fff;
   }
 
   .menu-toggle:before {
@@ -6653,7 +6930,11 @@ body.ibme .ibme-donate-button {
   }
 
   .sub-menu-toggle:hover:hover:before {
-    color: #5FA6E2;
+    color: #000;
+  }
+
+  .sub-menu-toggle.activated:before {
+    color: #fff;
   }
 
   .sub-menu-toggle:before {

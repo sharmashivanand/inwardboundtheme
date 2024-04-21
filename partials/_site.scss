@@ -67,7 +67,7 @@ input[type=week], textarea {
 
 /* Collapsible Content */
 
-.collapsible-content-wrapper {
+.collapsible-content-wrapper { 
     max-width: 1140px;
     margin-left: auto;
     margin-right: auto;
@@ -97,22 +97,40 @@ input[type=week], textarea {
     /* Sign Color */
 
     &.black-sign {
-        .collapsible-heading a:before {
+        /*.collapsible-heading a:before {
             background: url("assets/img/cc-plus-black.svg") no-repeat center / contain;
         }
         
         .collapsible-heading.opened a:before {
             background: url("assets/img/cc-minus-black.svg") no-repeat center / contain;
+        }*/
+
+        .collapsible-heading a {
+            background: url("assets/img/cc-plus-black.svg") no-repeat;
+            background-position: 15px 18px;
+            background-size: 20px 20px;
         }
+
+        .collapsible-heading.opened a {
+            background: url("assets/img/cc-minus-black.svg") no-repeat;
+            background-position: 15px 25px;
+            background-size: 20px 5px;
+        }
+        
+
     }
 
     &.white-sign {
-        .collapsible-heading a:before {
-            background: url("assets/img/cc-plus-white.svg") no-repeat center / contain;
+        .collapsible-heading a {
+            background: url("assets/img/cc-plus-white.svg") no-repeat; 
+            background-position: 15px 18px;
+            background-size: 20px 20px;
         }
         
-        .collapsible-heading.opened a:before {
-            background: url("assets/img/cc-minus-white.svg") no-repeat center / contain;
+        .collapsible-heading.opened a {
+            background: url("assets/img/cc-minus-white.svg") no-repeat;
+            background-position: 15px 25px;
+            background-size: 20px 5px;
         }
     }
 
@@ -255,6 +273,7 @@ input[type=week], textarea {
     border-style: solid;
     border-radius: 5px;
     padding: 17px;
+    padding: 17px 17px 17px 42px;
     margin-bottom: 40px;
     display: flex;
     align-items: center;
@@ -264,27 +283,27 @@ input[type=week], textarea {
     border-bottom: 0;
     border-bottom-left-radius: 0;
     border-bottom-right-radius: 0;
+    display: block;
+    background: url("assets/img/cc-minus-black.svg") no-repeat;
+    background-position: 15px 25px;
+    background-size: 20px 5px;
+    height: 4px;
 }
 
-.collapsible-heading a:before {
+/*.collapsible-heading a:before {
     display: inline-block;
     content:"";
     width: 20px;
     height: 20px;
     background: url("assets/img/cc-plus-black.svg") no-repeat center / contain;
     margin-right: 10px;
-}
+}*/ 
 
-.collapsible-heading.opened a:before {
-    background: url("assets/img/cc-minus-black.svg") no-repeat center / contain;
-    height: 4px;
-}
-
-.collapsible-content {
+.collapsible-content { 
     border-width: 2px;
     border-style: solid;
     border-radius: 5px;
-    padding: 0 50px 10px;
+    padding: 10px 43px 10px;
     margin-top: -40px;
     margin-bottom: 40px;
     border-top: 0;
@@ -721,7 +740,7 @@ input[type="submit"], input[type="reset"], input[type="button"], .button, .butto
 
     position: relative;
 
-    &:after {
+    /*&:after {
         content: '';
         background: url("assets/img/button-specks-left.svg") no-repeat left top / contain;
         width: 181px;
@@ -732,9 +751,36 @@ input[type="submit"], input[type="reset"], input[type="button"], .button, .butto
         opacity: 0;
         visibility: hidden;
         transition: all 0.4s;
+    }*/
+
+    &:before {
+        content: '';
+        background: url("assets/img/left-specks.svg") no-repeat left top / contain;
+        width: 16px;
+        height: 31px;
+        position: absolute;
+        top: -10px;
+        left: -21px;
+        opacity: 0;
+        visibility: hidden;
+        transition: all 0.4s;
     }
 
-    &:hover:after {
+    &:after {
+        content: '';
+        background: url("assets/img/right-specks.svg") no-repeat left top / contain;
+        width: 13px;
+        height: 18px;
+        position: absolute;
+        top: 12px;
+        right: -18px;
+        opacity: 0;
+        visibility: hidden;
+        transition: all 0.4s;
+    }
+
+    &:hover:after,
+    &:hover:before {
         opacity: 1;
         visibility: visible;
     }
@@ -2429,11 +2475,11 @@ input, button, select, textarea {
         color: #000;
     }
 
-    .white-text {
+    .description.white-text {
         color: #fff;
     }
 
-    .black-text {
+    .description.black-text {
         color: #000;
     }
 }
@@ -2469,7 +2515,10 @@ input, button, select, textarea {
             color: #fff;
         }
     }
+}    
 
+.ibme-statement-1,
+.impact-section {
     .bottom-illustration:after {
         content: '';
         width: 134px;
@@ -2495,163 +2544,163 @@ input, button, select, textarea {
     }    
 
     .cabin-blue:after {
-        background: url("assets/img/background-illustrations/cabin-blue.svg") no-repeat center / contain;
+        background: url("assets/img/background-illustration/cabin-blue.svg") no-repeat center / contain;
     }
     
     .cabin-blush:after {
-        background: url("assets/img/background-illustrations/cabin-blush.svg") no-repeat center / contain;
+        background: url("assets/img/background-illustration/cabin-blush.svg") no-repeat center / contain;
     }
     
     .cabin-mint:after {
-        background: url("assets/img/background-illustrations/cabin-mint.svg") no-repeat center / contain;
+        background: url("assets/img/background-illustration/cabin-mint.svg") no-repeat center / contain;
     }
     
     .cabin-peony:after {
-        background: url("assets/img/background-illustrations/cabin-peony.svg") no-repeat center / contain;
+        background: url("assets/img/background-illustration/cabin-peony.svg") no-repeat center / contain;
     }
     
     .cabin-sunflower:after {
-        background: url("assets/img/background-illustrations/cabin-sunflower.svg") no-repeat center / contain;
+        background: url("assets/img/background-illustration/cabin-sunflower.svg") no-repeat center / contain;
     }
     
     .eye-blue:after {
-        background: url("assets/img/background-illustrations/eye-blue.svg") no-repeat center / contain;
+        background: url("assets/img/background-illustration/eye-blue.svg") no-repeat center / contain;
     }
     
     .eye-blush:after {
-        background: url("assets/img/background-illustrations/eye-blush.svg") no-repeat center / contain;
+        background: url("assets/img/background-illustration/eye-blush.svg") no-repeat center / contain;
     }
     
     .eye-mint:after {
-        background: url("assets/img/background-illustrations/eye-mint.svg") no-repeat center / contain;
+        background: url("assets/img/background-illustration/eye-mint.svg") no-repeat center / contain;
     }
     
     .eye-peony:after {
-        background: url("assets/img/background-illustrations/eye-peony.svg") no-repeat center / contain;
+        background: url("assets/img/background-illustration/eye-peony.svg") no-repeat center / contain;
     }
     
     .eye-sunflower:after {
-        background: url("assets/img/background-illustrations/eye-sunflower.svg") no-repeat center / contain;
+        background: url("assets/img/background-illustration/eye-sunflower.svg") no-repeat center / contain;
     }
     
     .face-blue:after {
-        background: url("assets/img/background-illustrations/face-blue.svg") no-repeat center / contain;
+        background: url("assets/img/background-illustration/face-blue.svg") no-repeat center / contain;
     }
     
     .face-blush:after {
-        background: url("assets/img/background-illustrations/face-blush.svg") no-repeat center / contain;
+        background: url("assets/img/background-illustration/face-blush.svg") no-repeat center / contain;
     }
     
     .face-mint:after {
-        background: url("assets/img/background-illustrations/face-mint.svg") no-repeat center / contain;
+        background: url("assets/img/background-illustration/face-mint.svg") no-repeat center / contain;
     }
     
     .face-peony:after {
-        background: url("assets/img/background-illustrations/face-peony.svg") no-repeat center / contain;
+        background: url("assets/img/background-illustration/face-peony.svg") no-repeat center / contain;
     }
     
     .face-sunflower:after {
-        background: url("assets/img/background-illustrations/face-sunflower.svg") no-repeat center / contain;
+        background: url("assets/img/background-illustration/face-sunflower.svg") no-repeat center / contain;
     }
     
     .fire-blue:after {
-        background: url("assets/img/background-illustrations/fire-blue.svg") no-repeat center / contain;
+        background: url("assets/img/background-illustration/fire-blue.svg") no-repeat center / contain;
     }
     
     .fire-blush:after {
-        background: url("assets/img/background-illustrations/fire-blush.svg") no-repeat center / contain;
+        background: url("assets/img/background-illustration/fire-blush.svg") no-repeat center / contain;
     }
     
     .fire-mint:after {
-        background: url("assets/img/background-illustrations/fire-mint.svg") no-repeat center / contain;
+        background: url("assets/img/background-illustration/fire-mint.svg") no-repeat center / contain;
     }
     
     .fire-peony:after {
-        background: url("assets/img/background-illustrations/fire-peony.svg") no-repeat center / contain;
+        background: url("assets/img/background-illustration/fire-peony.svg") no-repeat center / contain;
     }
     
     .fire-sunflower:after {
-        background: url("assets/img/background-illustrations/fire-sunflower.svg") no-repeat center / contain;
+        background: url("assets/img/background-illustration/fire-sunflower.svg") no-repeat center / contain;
     }
     
     .journal-blue:after {
-        background: url("assets/img/background-illustrations/journal-blue.svg") no-repeat center / contain;
+        background: url("assets/img/background-illustration/journal-blue.svg") no-repeat center / contain;
     }
     
     .journal-blush:after {
-        background: url("assets/img/background-illustrations/journal-blush.svg") no-repeat center / contain;
+        background: url("assets/img/background-illustration/journal-blush.svg") no-repeat center / contain;
     }
     
     .journal-mint:after {
-        background: url("assets/img/background-illustrations/journal-mint.svg") no-repeat center / contain;
+        background: url("assets/img/background-illustration/journal-mint.svg") no-repeat center / contain;
     }
     
     .journal-peony:after {
-        background: url("assets/img/background-illustrations/journal-peony.svg") no-repeat center / contain;
+        background: url("assets/img/background-illustration/journal-peony.svg") no-repeat center / contain;
     }
     
     .journal-sunflower:after {
-        background: url("assets/img/background-illustrations/journal-sunflower.svg") no-repeat center / contain;
+        background: url("assets/img/background-illustration/journal-sunflower.svg") no-repeat center / contain;
     }
     
     .plant-blue:after {
-        background: url("assets/img/background-illustrations/plant-blue.svg") no-repeat center / contain;
+        background: url("assets/img/background-illustration/plant-blue.svg") no-repeat center / contain;
     }
     
     .plant-blush:after {
-        background: url("assets/img/background-illustrations/plant-blush.svg") no-repeat center / contain;
+        background: url("assets/img/background-illustration/plant-blush.svg") no-repeat center / contain;
     }
     
     .plant-mint:after {
-        background: url("assets/img/background-illustrations/plant-mint.svg") no-repeat center / contain;
+        background: url("assets/img/background-illustration/plant-mint.svg") no-repeat center / contain;
     }
     
     .plant-peony:after {
-        background: url("assets/img/background-illustrations/plant-peony.svg") no-repeat center / contain;
+        background: url("assets/img/background-illustration/plant-peony.svg") no-repeat center / contain;
     }
     
     .plant-sunflower:after {
-        background: url("assets/img/background-illustrations/plant-sunflower.svg") no-repeat center / contain;
+        background: url("assets/img/background-illustration/plant-sunflower.svg") no-repeat center / contain;
     }
     
     .teens-blue:after {
-        background: url("assets/img/background-illustrations/teens-blue.svg") no-repeat center / contain;
+        background: url("assets/img/background-illustration/teens-blue.svg") no-repeat center / contain;
     }
     
     .teens-blush:after {
-        background: url("assets/img/background-illustrations/teens-blush.svg") no-repeat center / contain;
+        background: url("assets/img/background-illustration/teens-blush.svg") no-repeat center / contain;
     }
     
     .teens-mint:after {
-        background: url("assets/img/background-illustrations/teens-mint.svg") no-repeat center / contain;
+        background: url("assets/img/background-illustration/teens-mint.svg") no-repeat center / contain;
     }
     
     .teens-peony:after {
-        background: url("assets/img/background-illustrations/teens-peony.svg") no-repeat center / contain;
+        background: url("assets/img/background-illustration/teens-peony.svg") no-repeat center / contain;
     }
     
     .teens-sunflower:after {
-        background: url("assets/img/background-illustrations/teens-sunflower.svg") no-repeat center / contain;
+        background: url("assets/img/background-illustration/teens-sunflower.svg") no-repeat center / contain;
     }
     
     .yoga-blue:after {
-        background: url("assets/img/background-illustrations/yoga-blue.svg") no-repeat center / contain;
+        background: url("assets/img/background-illustration/yoga-blue.svg") no-repeat center / contain;
     }
     
     .yoga-blush:after {
-        background: url("assets/img/background-illustrations/yoga-blush.svg") no-repeat center / contain;
+        background: url("assets/img/background-illustration/yoga-blush.svg") no-repeat center / contain;
     }
     
     .yoga-mint:after {
-        background: url("assets/img/background-illustrations/yoga-mint.svg") no-repeat center / contain;
+        background: url("assets/img/background-illustration/yoga-mint.svg") no-repeat center / contain;
     }
     
     .yoga-peony:after {
-        background: url("assets/img/background-illustrations/yoga-peony.svg") no-repeat center / contain;
+        background: url("assets/img/background-illustration/yoga-peony.svg") no-repeat center / contain;
     }
     
     .yoga-sunflower:after {
-        background: url("assets/img/background-illustrations/yoga-sunflower.svg") no-repeat center / contain;
+        background: url("assets/img/background-illustration/yoga-sunflower.svg") no-repeat center / contain;
     }
 }
 
@@ -3836,144 +3885,280 @@ input, button, select, textarea {
     }    
 }
 
+.large-illustration {
+    background-repeat: no-repeat;
+    background-position: left center;
+    background-size: contain;
+}
+
+.large-illustration.cabin-blue,
 .impact-section.cabin-blue {
-    background-image: url("assets/img/background-illustrations/cabin-blue.svg");
+    background-image: url("assets/img/background-illustration/cabin-blue.svg");
+    background-size: 705px 600px;
+    background-position: right center;
 }
 
+.large-illustration.cabin-blush,
 .impact-section.cabin-blush {
-    background-image: url("assets/img/background-illustrations/cabin-blush.svg");
+    background-image: url("assets/img/background-illustration/cabin-blush.svg");
+    background-size: 705px 600px;
+    background-position: right center;
 }
 
+.large-illustration.cabin-mint,
 .impact-section.cabin-mint {
-    background-image: url("assets/img/background-illustrations/cabin-mint.svg");
+    background-image: url("assets/img/background-illustration/cabin-mint.svg");
+    background-size: 705px 600px;
+    background-position: right center;
 }
 
+.large-illustration.cabin-peony,
 .impact-section.cabin-peony {
-    background-image: url("assets/img/background-illustrations/cabin-peony.svg");
+    background-image: url("assets/img/background-illustration/cabin-peony.svg");
+    background-size: 705px 600px;
+    background-position: right center;
 }
 
+.large-illustration.cabin-sunflower,
 .impact-section.cabin-sunflower {
-    background-image: url("assets/img/background-illustrations/cabin-sunflower.svg");
+    background-image: url("assets/img/background-illustration/cabin-sunflower.svg");
+    background-size: 705px 600px;
+    background-position: right center;
 }
 
+.large-illustration.eye-blue,
 .impact-section.eye-blue {
-    background-image: url("assets/img/background-illustrations/eye-blue.svg");
+    background-image: url("assets/img/background-illustration/eye-blue.svg");
+    background-size: 612px 600px;
+    background-position: right center;
 }
 
+.large-illustration.eye-blush,
 .impact-section.eye-blush {
-    background-image: url("assets/img/background-illustrations/eye-blush.svg");
+    background-image: url("assets/img/background-illustration/eye-blush.svg");
+    background-size: 612px 600px;
+    background-position: right center;
 }
 
+.large-illustration.eye-mint,
 .impact-section.eye-mint {
-    background-image: url("assets/img/background-illustrations/eye-mint.svg");
+    background-image: url("assets/img/background-illustration/eye-mint.svg");
+    background-size: 612px 600px;
+    background-position: right center;
 }
 
+.large-illustration.eye-peony,
 .impact-section.eye-peony {
-    background-image: url("assets/img/background-illustrations/eye-peony.svg");
+    background-image: url("assets/img/background-illustration/eye-peony.svg");
+    background-size: 612px 600px;
+    background-position: right center;
 }
 
-.impact-section.eye-sunflower:after {
-    background-image: url("assets/img/background-illustrations/eye-sunflower.svg");
+.large-illustration.eye-sunflower,
+.impact-section.eye-sunflower {
+    background-image: url("assets/img/background-illustration/eye-sunflower.svg");
+    background-size: 612px 600px;
+    background-position: right center;
 }
 
+.large-illustration.face-blue,
 .impact-section.face-blue {
-    background-image: url("assets/img/background-illustrations/face-blue.svg");
+    background-image: url("assets/img/background-illustration/face-blue.svg");
+    background-size: 682px 600px;
+    background-position: right center;
 }
 
+.large-illustration.face-blush,
+.impact-section.face-blush {
+    background-image: url("assets/img/background-illustration/face-blush.svg");
+    background-size: 682px 600px;
+    background-position: right center;
+}
+
+.large-illustration.face-mint,
+.impact-section.face-mint {
+    background-image: url("assets/img/background-illustration/face-mint.svg");
+    background-size: 682px 600px;
+    background-position: right center;
+}
+
+.large-illustration.face-peony,
+.impact-section.face-peony {
+    background-image: url("assets/img/background-illustration/face-peony.svg");
+    background-size: 682px 600px;
+    background-position: right center;
+}
+
+.large-illustration.face-sunflower,
+.impact-section.face-sunflower {
+    background-image: url("assets/img/background-illustration/face-sunflower.svg");
+    background-size: 682px 600px;
+    background-position: right center;
+}
+
+.large-illustration.fire-blue,
+.impact-section.fire-blue {
+    background-image: url("assets/img/background-illustration/fire-blue.svg");
+    background-size: 918px 600px;
+}
+
+.large-illustration.fire-blush,
 .impact-section.fire-blush {
-    background-image: url("assets/img/background-illustrations/fire-blush.svg");
+    background-image: url("assets/img/background-illustration/fire-blush.svg");
+    background-size: 918px 600px;
 }
 
+.large-illustration.fire-mint,
 .impact-section.fire-mint {
-    background-image: url("assets/img/background-illustrations/fire-mint.svg");
+    background-image: url("assets/img/background-illustration/fire-mint.svg");
+    background-size: 918px 600px;
 }
 
+.large-illustration.fire-peony,
 .impact-section.fire-peony {
-    background-image: url("assets/img/background-illustrations/fire-peony.svg");
+    background-image: url("assets/img/background-illustration/fire-peony.svg");
+    background-size: 918px 600px;
 }
 
+.large-illustration.fire-sunflower,
 .impact-section.fire-sunflower {
-    background-image: url("assets/img/background-illustrations/fire-sunflower.svg");
+    background-image: url("assets/img/background-illustration/fire-sunflower.svg");
+    background-size: 918px 600px;
 }
 
+.large-illustration.journal-blue,
 .impact-section.journal-blue {
-    background-image: url("assets/img/background-illustrations/journal-blue.svg");
+    background-image: url("assets/img/background-illustration/journal-blue.svg");
+    background-size: 818px 600px;
 }
 
+.large-illustration.journal-blush,
 .impact-section.journal-blush {
-    background-image: url("assets/img/background-illustrations/journal-blush.svg");
+    background-image: url("assets/img/background-illustration/journal-blush.svg");
+    background-size: 818px 600px;
 }
 
+.large-illustration.journal-mint,
 .impact-section.journal-mint {
-    background-image: url("assets/img/background-illustrations/journal-mint.svg");
+    background-image: url("assets/img/background-illustration/journal-mint.svg");
+    background-size: 818px 600px;
 }
 
+.large-illustration.journal-peony,
 .impact-section.journal-peony {
-    background-image: url("assets/img/background-illustrations/journal-peony.svg");
+    background-image: url("assets/img/background-illustration/journal-peony.svg");
+    background-size: 818px 600px;
 }
 
+.large-illustration.journal-sunflower,
 .impact-section.journal-sunflower {
-    background-image: url("assets/img/background-illustrations/journal-sunflower.svg");
+    background-image: url("assets/img/background-illustration/journal-sunflower.svg");
+    background-size: 818px 600px;
 }
 
+.large-illustration.plant-blue,
 .impact-section.plant-blue {
-    background-image: url("assets/img/background-illustrations/plant-blue.svg");
+    background-image: url("assets/img/background-illustration/plant-blue.svg");
+    background-size: 486px 600px;
+    background-position: 40px center;
 }
 
+.large-illustration.plant-blush,
 .impact-section.plant-blush {
-    background-image: url("assets/img/background-illustrations/plant-blush.svg");
+    background-image: url("assets/img/background-illustration/plant-blush.svg");
+    background-size: 486px 600px;
+    background-position: 40px center;
 }
 
+.large-illustration.plant-mint,
 .impact-section.plant-mint {
-    background-image: url("assets/img/background-illustrations/plant-mint.svg");
+    background-image: url("assets/img/background-illustration/plant-mint.svg");
+    background-size: 486px 600px;
+    background-position: 40px center;
 }
 
+.large-illustration.plant-peony,
 .impact-section.plant-peony {
-    background-image: url("assets/img/background-illustrations/plant-peony.svg");
+    background-image: url("assets/img/background-illustration/plant-peony.svg");
+    background-size: 486px 600px;
+    background-position: 40px center;
 }
 
+.large-illustration.plant-sunflower,
 .impact-section.plant-sunflower {
-    background-image: url("assets/img/background-illustrations/plant-sunflower.svg");
+    background-image: url("assets/img/background-illustration/plant-sunflower.svg");
+    background-size: 486px 600px;
+    background-position: 40px center;
 }
 
+.large-illustration.teens-blue,
 .impact-section.teens-blue {
-    background-image: url("assets/img/background-illustrations/teens-blue.svg");
+    background-image: url("assets/img/background-illustration/teens-blue.svg");
+    background-size: 541px 600px;
+    background-position: 40px center;
 }
 
+.large-illustration.teens-blush,
 .impact-section.teens-blush {
-    background-image: url("assets/img/background-illustrations/teens-blush.svg");
+    background-image: url("assets/img/background-illustration/teens-blush.svg");
+    background-size: 541px 600px;
+    background-position: 40px center;
 }
 
+.large-illustration.teens-mint,
 .impact-section.teens-mint {
-    background-image: url("assets/img/background-illustrations/teens-mint.svg");
+    background-image: url("assets/img/background-illustration/teens-mint.svg");
+    background-size: 541px 600px;
+    background-position: 40px center;
 }
 
+.large-illustration.teens-peony,
 .impact-section.teens-peony {
-    background-image: url("assets/img/background-illustrations/teens-peony.svg");
+    background-image: url("assets/img/background-illustration/teens-peony.svg");
+    background-size: 541px 600px;
+    background-position: 40px center;
 }
 
+.large-illustration.teens-sunflower,
 .impact-section.teens-sunflower {
-    background-image: url("assets/img/background-illustrations/teens-sunflower.svg");
+    background-image: url("assets/img/background-illustration/teens-sunflower.svg");
+    background-size: 541px 600px;
+    background-position: 40px center;
 }
 
+.large-illustration.yoga-blue,
 .impact-section.yoga-blue {
-    background-image: url("assets/img/background-illustrations/yoga-blue.svg");
+    background-image: url("assets/img/background-illustration/yoga-blue.svg");
+    background-size: 840px 496px;
+    background-position: right center;
 }
 
+.large-illustration.yoga-blush,
 .impact-section.yoga-blush {
-    background-image: url("assets/img/background-illustrations/yoga-blush.svg");
+    background-image: url("assets/img/background-illustration/yoga-blush.svg");
+    background-size: 840px 496px;
+    background-position: right center;
 }
 
+.large-illustration.yoga-mint,
 .impact-section.yoga-mint {
-    background-image: url("assets/img/background-illustrations/yoga-mint.svg");
+    background-image: url("assets/img/background-illustration/yoga-mint.svg");
+    background-size: 840px 496px;
+    background-position: right center;
 }
 
+.large-illustration.yoga-peony,
 .impact-section.yoga-peony {
-    background-image: url("assets/img/background-illustrations/yoga-peony.svg");
+    background-image: url("assets/img/background-illustration/yoga-peony.svg"); 
+    background-size: 840px 496px;
+    background-position: right center;
 }
 
+.large-illustration.yoga-sunflower,
 .impact-section.yoga-sunflower {
-    background-image: url("assets/img/background-illustrations/yoga-sunflower.svg");
+    background-image: url("assets/img/background-illustration/yoga-sunflower.svg");
+    background-size: 840px 496px;
+    background-position: right center;
 }
 
 .impact-section {

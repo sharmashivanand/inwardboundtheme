@@ -496,6 +496,7 @@ function ibme_statement_1_handler( $atts ) {
 			'button-2-text-color' => 'barbie', // cherry, poppy, blush, barbie, peony, violet, tangerine, marigold, sunflower, forest, teal, mint, ocean, sky, bluejay, lavender, white
 			'top-illustration'    => 'none',
 			'bottom-illustration' => 'none',
+			'large-illustration'  => 'none',
 			'new-tab'             => 'no', // yes, no
 			'button-2-new-tab'    => 'no', // yes, no
 		),
@@ -516,19 +517,21 @@ function ibme_statement_1_handler( $atts ) {
 	$button_text_color   = esc_attr( $atts['button-text-color'] );
 	$button_2_color      = esc_attr( $atts['button-2-color'] );
 	$button_2_text_color = esc_attr( $atts['button-2-text-color'] );
-	$button_style        = esc_attr( $atts['button-style'] );
 	$button_2_style      = esc_attr( $atts['button-2-style'] );
+	$button_style        = esc_attr( $atts['button-style'] );
 	$top_illustration    = esc_attr( $atts['top-illustration'] );
 	$bottom_illustration = esc_attr( $atts['bottom-illustration'] );
+	$large_illustration = esc_attr( $atts['large-illustration'] );
 
 	$top_illustration_class    = 'top-illustration ' . $top_illustration;
 	$bottom_illustration_class = 'bottom-illustration ' . $bottom_illustration;
+	$large_illustration_class = 'large-illustration ' . $large_illustration;
 
 	$new_tab          = esc_attr( $atts['new-tab'] );
 	$button_2_new_tab = esc_attr( $atts['button-2-new-tab'] );
 
 	// Generate HTML for the statement_1 block
-	$statement_1_html  = '<section class="full-width-section landing-section ' . $text_color . '-text ibme-statement-1"><div class="inner-wrap ' . $top_illustration_class . '"><div class="landing-section-content ' . $bottom_illustration_class . '">';
+	$statement_1_html  = '<section class="full-width-section landing-section ' . $text_color . '-text ibme-statement-1 '. $large_illustration_class .'"><div class="inner-wrap ' . $top_illustration_class . '"><div class="landing-section-content ' . $bottom_illustration_class . '">';
 	$statement_1_html .= '<h3 class="title">' . $title . '</h3>';
 	$statement_1_html .= '<p>' . $text . '</p>';
 	$statement_1_html .= do_shortcode( '[ibme_button new-tab="' . $new_tab . '" button-2-new-tab="' . $button_2_new_tab . '" link="' . $button_link . '" text="' . $button_text . '" color="' . $button_color . '" style="' . $button_style . '" text-color="' . $button_text_color . '" type="' . $button_type . '" button-2-link="' . $button_2_link . '" button-2-text="' . $button_2_text . '" button-2-color="' . $button_2_color . '" button-2-text-color="' . $button_2_text_color . '" button-2-style="' . $button_2_style . '"]' );
@@ -1270,7 +1273,9 @@ function impact_1_slider_handler( $atts, $content = null ) {
 		array(
 			'slide-color'  => '',
 			'dot-color'    => 'black', // black, white
-			'illustration' => 'no-illustration',
+			'top-illustration'    => 'none',
+			'bottom-illustration' => 'none',
+			'large-illustration'  => 'none',
 		),
 		$atts,
 		'impact_1_slider'
@@ -1280,10 +1285,17 @@ function impact_1_slider_handler( $atts, $content = null ) {
 
 	$slide_color  = esc_attr( $atts['slide-color'] );
 	$dot_color    = esc_attr( $atts['dot-color'] );
-	$illustration = esc_attr( $atts['illustration'] );
+	$top_illustration    = esc_attr( $atts['top-illustration'] );
+	$bottom_illustration = esc_attr( $atts['bottom-illustration'] );
+	$large_illustration = esc_attr( $atts['large-illustration'] );
+
+	$top_illustration_class    = 'top-illustration ' . $top_illustration;
+	$bottom_illustration_class = 'bottom-illustration ' . $bottom_illustration;
+	$large_illustration_class = 'large-illustration ' . $large_illustration;
+
 
 	// Generate HTML for the impact_1_slider
-	$impact_1_slider_html = '<section class="full-width-section landing-section impact-section impact_1-section ' . $illustration . '"><div class="inner-wrap"><div class="landing-section-content"><div class="impact_1-slider ' . $slide_color . '-slider"><div class="impact_1-slides">';
+	$impact_1_slider_html = '<section class="full-width-section landing-section impact-section impact_1-section ' . $large_illustration_class . '"><div class="inner-wrap ' . $top_illustration_class . '"><div class="landing-section-content ' . $bottom_illustration_class . '"><div class="impact_1-slider ' . $slide_color . '-slider"><div class="impact_1-slides">';
 
 	// Use a regular expression to match [impact_1_slide] shortcodes
 	preg_match_all( '/\[impact_1_slide(.*?)\]/s', $content, $matches, PREG_SET_ORDER );
@@ -1525,6 +1537,8 @@ function hero_2_handler( $atts ) {
 			'new-tab'          => 'no', // yes, no
 			'button-2-new-tab' => 'no', // yes, no
 			'orientation'      => 'left-image', // left-image, right-image
+			'button-style'        => 'style-3', 
+			'button-2-style'      => 'style-4',
 		),
 		$atts,
 		'hero_2'
@@ -1544,13 +1558,15 @@ function hero_2_handler( $atts ) {
 	$new_tab          = esc_attr( $atts['new-tab'] );
 	$button_2_new_tab = esc_attr( $atts['button-2-new-tab'] );
 	$orientation      = esc_attr( $atts['orientation'] );
+	$button_style        = esc_attr( $atts['button-style'] );
+	$button_2_style      = esc_attr( $atts['button-2-style'] );
 
 	// Generate HTML for the hero_2 block
 
 	$hero_2_html  = '<section class="full-width-section landing-section hero_2-section"><div class="inner-wrap"><div class="landing-section-content ' . $orientation . '">';
 	$hero_2_html .= '<div class="textual-content">';
 	$hero_2_html .= '<h2 class="title ' . $button_color . '-title">' . $title . '</h2>';
-	$hero_2_html .= do_shortcode( '[ibme_button new-tab="' . $new_tab . '" button-2-new-tab="' . $button_2_new_tab . '" type="dual" link="' . $button_link . '" text="' . $button_text . '" color="' . $button_color . '" style="style-3" button-2-link="' . $button_2_link . '" button-2-text="' . $button_2_text . '" button-2-style="style-4" button-2-color="' . $button_2_color . '"]' );
+	$hero_2_html .= do_shortcode( '[ibme_button new-tab="' . $new_tab . '" button-2-new-tab="' . $button_2_new_tab . '" type="dual" link="' . $button_link . '" text="' . $button_text . '" color="' . $button_color . '" style="' . $button_style . '" button-2-link="' . $button_2_link . '" button-2-text="' . $button_2_text . '" button-2-style="' . $button_2_style . '" button-2-color="' . $button_2_color . '"]' );
 	$hero_2_html .= '<p class="description ' . $text_color . '-text">' . $text . '</p></div>';
 	$hero_2_html .= '<div class="image-content"><img src="' . $image_url . '" alt="' . $title . '" /></div>';
 	$hero_2_html .= '</div></div></section>';
@@ -1649,44 +1665,62 @@ function ibme_statement_2_handler( $atts ) {
 			'title-color'       => '', // black, white
 			'text'              => '',
 			'text-color'        => '', // black, white
+			'button-type'         => 'single',
 			'bg-color'          => '', // 'cherry', 'poppy', 'blush', 'barbie', 'peony', 'violet', 'tangerine', 'marigold', 'sunflower', 'forest', 'teal', 'mint', 'ocean', 'sky', 'bluejay', 'lavendar'
 			'button-text'       => '',
 			'button-link'       => '',
 			'button-color'      => 'white',
 			'button-style'      => '', // style-5, style-1
 			'button-text-color' => '', // black, cherry, poppy, blush, barbie, peony, violet, tangerine, marigold, sunflower, forest, teal, mint, ocean, sky, bluejay, lavender
+			'button-2-link'       => '',
+			'button-2-text'       => '',
+			'button-2-color'      => '',
+			'button-2-style'      => '',
+			'button-2-text-color' => '',
 			'new-tab'           => 'no', // yes, no
+			'button-2-new-tab'    => 'no', // yes, no
 		),
 		$atts,
 		'ibme_statement_2'
+	);
+
+	$allowed_tags = array(
+		'br' => array() // Allow <br> tags without any attributes
 	);
 
 	// Sanitize attributes
 	$orientation       = esc_attr( $atts['orientation'] );
 	$title             = esc_html( $atts['title'] );
 	$title_color       = esc_attr( $atts['title-color'] );
-	$text              = esc_html( $atts['text'] );
+	$text 			   = wp_kses($atts['text'], $allowed_tags);
 	$text_color        = esc_attr( $atts['text-color'] );
 	$bg_color          = esc_attr( $atts['bg-color'] );
+	$button_type         = esc_attr( $atts['button-type'] );
 	$button_text       = esc_html( $atts['button-text'] );
 	$button_link       = esc_url( $atts['button-link'] );
 	$button_style      = esc_attr( $atts['button-style'] );
 	$button_text_color = esc_attr( $atts['button-text-color'] );
 	$button_color      = esc_attr( $atts['button-color'] );
+	$button_2_link       = esc_html( $atts['button-2-link'] );
+	$button_2_text       = esc_html( $atts['button-2-text'] );
+	$button_2_color      = esc_attr( $atts['button-2-color'] );
+	$button_2_text_color = esc_attr( $atts['button-2-text-color'] );
+	$button_2_style      = esc_attr( $atts['button-2-style'] );
 	$new_tab           = esc_attr( $atts['new-tab'] );
+	$button_2_new_tab = esc_attr( $atts['button-2-new-tab'] );
 
-	if ( $button_text ) {
+	/*if ( $button_text ) {
 		$button_html = do_shortcode( '[ibme_button new-tab="' . $new_tab . '" color="' . $button_color . '" link="' . $button_link . '" text="' . $button_text . '" style="' . $button_style . '" text-color="' . $button_text_color . '"]' );
 	} else {
 		$button_html = '';
-	}
+	}*/
 
 	// Generate HTML for the ibme_statement_2 block
 
 	$statement_2_html  = '<section class="full-width-section landing-section ' . $bg_color . '-background ibme-statement-2 ' . $orientation . '-layout"><div class="inner-wrap"><div class="landing-section-content">';
 	$statement_2_html .= '<div class="ibme-statement-2-column title-column"><h3 class="header-2 ' . $title_color . '-title">' . $title . '</h3></div>';
 	$statement_2_html .= '<div class="ibme-statement-2-column text-column"><p class="ibme-statement-2-text ' . $text_color . '-text">' . $text . '</p>';
-	$statement_2_html .= $button_html;
+	$statement_2_html .= do_shortcode( '[ibme_button new-tab="' . $new_tab . '" button-2-new-tab="' . $button_2_new_tab . '" link="' . $button_link . '" text="' . $button_text . '" color="' . $button_color . '" style="' . $button_style . '" text-color="' . $button_text_color . '" type="' . $button_type . '" button-2-link="' . $button_2_link . '" button-2-text="' . $button_2_text . '" button-2-color="' . $button_2_color . '" button-2-text-color="' . $button_2_text_color . '" button-2-style="' . $button_2_style . '"]' );
 	$statement_2_html .= '</div>';
 	$statement_2_html .= '</div>';
 	$statement_2_html .= '</div>';
