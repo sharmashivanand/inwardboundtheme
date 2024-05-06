@@ -3483,7 +3483,7 @@ input, button, select, textarea {
 }
 
 .cta_2_section {
-  min-height: 550px;
+  min-height: 350px;
 }
 .cta_2_section .cta_2-items {
   display: flex;
@@ -3515,6 +3515,12 @@ input, button, select, textarea {
 .cta_2_section .header-3 {
   width: 65%;
   margin-bottom: 20px;
+}
+.cta_2_section .header-3.no-lowercase {
+  text-transform: none;
+}
+.cta_2_section .black-bg-color {
+  background-color: #000;
 }
 .cta_2_section .cherry-bg-color {
   background-color: #FF372F;
@@ -3791,14 +3797,14 @@ input, button, select, textarea {
 
 .cta-3_columns {
   display: flex;
-  justify-content: space-between;
   text-align: center;
   flex-wrap: wrap;
+  min-height: 400px;
 }
 .cta-3_columns .cta-3_column {
   border-radius: 5px;
   margin-top: 2.618em;
-  min-height: 500px;
+  min-height: 400px;
 }
 .cta-3_columns img {
   display: block;
@@ -3881,6 +3887,9 @@ input, button, select, textarea {
 .cta-3_column-content .header-3 {
   margin-bottom: 0;
 }
+.cta-3_column-content .header-3.no-lowercase {
+  text-transform: none;
+}
 .cta-3_column-content .header-3.black-text {
   color: #000;
 }
@@ -3961,6 +3970,9 @@ input, button, select, textarea {
   line-height: 1.25em;
   margin-top: 1em;
   margin-bottom: 20px;
+}
+.cta-3_column-text.no-lowercase {
+  text-transform: none;
 }
 .cta-3_column-text.black-text {
   color: #000;
@@ -5832,7 +5844,8 @@ body.ibme .ibme-donate-button {
 }
 
 .ibme-donate-button-wrapper .side-panel-container .side-panel,
-.op-side-panel-container .op-side-panel.full-form .side-panel-container .side-panel {
+.op-side-panel-container .op-side-panel.full-form .side-panel-container .side-panel,
+.campaign-cards .side-panel-container .side-panel {
   max-width: 700px;
 }
 
@@ -6229,8 +6242,8 @@ body.ibme .ibme-donate-button {
 
   .ibme .campaign-cards .campaign-card-display {
     width: 31%;
-    margin-left: 0;
-    margin-right: 0;
+    margin-left: 10px;
+    margin-right: 10px;
   }
 
   .ibme .campaign-cards .campaign-card-display:nth-child(2) {

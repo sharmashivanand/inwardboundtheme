@@ -624,6 +624,7 @@ function ibme_cta_2_content_block_handler( $atts ) {
 	$cta_2_content_block_html = '';
 	$title_line_break_markup = '';
 	$no_button_class = '';
+	$title_formatting_class = '';
 
 	// Extract shortcode attributes
 	$atts = shortcode_atts(
@@ -639,6 +640,7 @@ function ibme_cta_2_content_block_handler( $atts ) {
 			'text-color'        => 'black', // black, white
 			'button-text-color' => 'black', // 'cherry', 'poppy', 'blush', 'barbie', 'peony', 'violet', 'tangerine', 'marigold', 'sunflower', 'forest', 'teal', 'mint', 'ocean', 'sky', 'bluejay', 'lavendar', 'black'
 			'title-line-break'        => 'no',
+			'title-formatting'        => 'yes',
 		),
 		$atts,
 		'ibme_cta_2_content_block'
@@ -656,6 +658,7 @@ function ibme_cta_2_content_block_handler( $atts ) {
 	$button_text_color = esc_attr( $atts['button-text-color'] );
 	$button_color      = esc_attr( $atts['button-color'] );
 	$title_line_break        = esc_attr( $atts['title-line-break'] );
+	$title_formatting        = esc_attr( $atts['title-formatting'] );
 
 	$new_tab = esc_attr( $atts['new-tab'] );
 
@@ -685,11 +688,17 @@ function ibme_cta_2_content_block_handler( $atts ) {
 		$title_line_break_markup = '';
 	}
 
+	if($title_formatting == 'no') {
+		$title_formatting_class = 'no-lowercase';
+	} else {
+		$title_formatting_class = 'lowercase';
+	}
+
 	// Generate HTML for the cta_2 block
 
 	$cta_2_content_block_html .= '<div class="cta_2-item ' . $color . '-bg-color ' . $text_color . '-text '.$no_button_class.'">';
 	$cta_2_content_block_html .= '<p><img class="aligncenter" src="' . get_stylesheet_directory_uri() . $path . $illustration . '.svg" alt="' . $title . '" width="' . $width . '" height="155" /></p>';
-	$cta_2_content_block_html .= '<h3 class="header-3">' . $title . '</h3>' .$title_line_break_markup;
+	$cta_2_content_block_html .= '<h3 class="header-3 '.$title_formatting_class.'">' . $title . '</h3>' .$title_line_break_markup;
 	$cta_2_content_block_html .= do_shortcode( '[ibme_button new-tab="' . $new_tab . '" color="' . $button_color . '" link="' . $button_link . '" text="' . $button_text . '" style="' . $button_style . '" text-color="' . $button_text_color . '"]' );
 	$cta_2_content_block_html .= '</div>';
 
@@ -900,6 +909,8 @@ function ibme_cta_3_content_block_handler( $atts ) {
 
 	$text_line_break_markup = '';
 	$title_line_break_markup = '';
+	$title_formatting_class = '';
+	$text_formatting_class = '';
 
 	// Extract shortcode attributes
 	$atts = shortcode_atts(
@@ -917,15 +928,21 @@ function ibme_cta_3_content_block_handler( $atts ) {
 			'new-tab'           => 'no', // yes, no
 			'text-line-break'        => 'no',
 			'title-line-break'        => 'no',
+			'title-formatting'        => 'yes',
+			'text-formatting'        => 'yes',
 		),
 		$atts,
 		'ibme_cta_3_content_block'
 	);
 
+	$allowed_tags = array(
+		'br' => array() // Allow <br> tags without any attributes
+	);
+
 	// Sanitize attributes
 
 	$color             = esc_attr( $atts['color'] );
-	$title             = esc_html( $atts['title'] );
+	$title			   = wp_kses($atts['title'], $allowed_tags);
 	$text              = esc_html( $atts['text'] );
 	$image_url         = esc_url( $atts['image-url'] );
 	$button_text       = esc_html( $atts['button-text'] );
@@ -937,6 +954,21 @@ function ibme_cta_3_content_block_handler( $atts ) {
 	$new_tab           = esc_attr( $atts['new-tab'] );
 	$text_line_break        = esc_attr( $atts['text-line-break'] );
 	$title_line_break        = esc_attr( $atts['title-line-break'] );
+	$title_formatting        = esc_attr( $atts['title-formatting'] );
+	$text_formatting        = esc_attr( $atts['text-formatting'] );
+
+	if($title_formatting == 'no') {
+		$title_formatting_class = 'no-lowercase';
+	} else {
+		$title_formatting_class = 'lowercase';
+	}
+
+	if($text_formatting == 'no') {
+		$text_formatting_class = 'no-lowercase';
+	} else {
+		$text_formatting_class = 'lowercase';
+	}
+
 
 	if($text_line_break == 'yes') {
 		$text_line_break_markup = '<br>';
@@ -954,8 +986,8 @@ function ibme_cta_3_content_block_handler( $atts ) {
 
 	$cta_3_content_block_html  = '<div class="cta-3_column ' . $color . '-bg-color"><img class="aligncenter" src="' . $image_url . '" alt="' . $title . '" />';
 	$cta_3_content_block_html .= '<div class="cta-3_column-content">';
-	$cta_3_content_block_html .= '<h3 class="header-3 ' . $text_color . '-text">' . $title . '</h3>' .$title_line_break_markup;
-	$cta_3_content_block_html .= '<p class="cta-3_column-text ' . $text_color . '-text">' . $text . '</p>' . $text_line_break_markup;
+	$cta_3_content_block_html .= '<h3 class="header-3 ' . $title_formatting_class . ' ' . $text_color . '-text">' . $title . '</h3>' .$title_line_break_markup;
+	$cta_3_content_block_html .= '<p class="cta-3_column-text ' . $text_formatting_class . ' ' . $text_color . '-text">' . $text . '</p>' . $text_line_break_markup;
 	$cta_3_content_block_html .= do_shortcode( '[ibme_button new-tab="' . $new_tab . '" color="' . $button_color . '" text-color="' . $button_text_color . '" link="' . $button_link . '" text="' . $button_text . '" style="' . $button_style . '"]' );
 	$cta_3_content_block_html .= '</div></div>';
 
