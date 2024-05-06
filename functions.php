@@ -1498,8 +1498,22 @@ function impact_1_slider_script() {
 			const totalSlides = slides.length;
 			const sliderContainer = document.querySelector('.impact_1-slides');
 
+			// Clone the first slide
+			const firstSlide = slides[0];
+			const cloneFirstSlide = firstSlide.cloneNode(true);
+			sliderContainer.appendChild(cloneFirstSlide);
+
 			function updateSlidePosition() {
-				sliderContainer.style.transform = 'translateX(' + (-100 * currentIndex) + '%)';
+				if (currentIndex > totalSlides) { // If we are on the cloned slide
+					currentIndex = 0; // Reset to actual first slide
+					sliderContainer.style.transition = 'none'; // Disable transition for instant reset
+					sliderContainer.style.transform = 'translateX(0%)'; // Reset position instantly
+					setTimeout(() => {
+						sliderContainer.style.transition = 'transform 0.5s ease'; // Re-enable transitions
+					});
+				} else {
+					sliderContainer.style.transform = 'translateX(' + (-100 * currentIndex) + '%)';
+				}
 				dots.forEach((dot, index) => {
 					dot.classList.remove('active');
 					const effectiveIndex = currentIndex % totalSlides;
@@ -1510,7 +1524,7 @@ function impact_1_slider_script() {
 			}
 
 			function nextSlide() {
-				currentIndex = (currentIndex + 1) % totalSlides;
+				currentIndex++;
 				updateSlidePosition();
 			}
 
@@ -1885,59 +1899,78 @@ function impact_2_slider_script() {
 	?>
 	<script type="text/javascript">
 		document.addEventListener('DOMContentLoaded', function () {
-		var slidesContainer = document.querySelector('.impact_2-slides');
+    var slidesContainer = document.querySelector('.impact_2-slides');
+    if (!slidesContainer) {
+        return;
+    }
 
-		if (!slidesContainer) {
-			return;
-		}	
+    // Clone the first slide and append it to the end
+    var firstSlide = document.querySelector('.impact_2-slide');
+    var clonedFirstSlide = firstSlide.cloneNode(true);
+    slidesContainer.appendChild(clonedFirstSlide);
 
-		var totalSlides = document.querySelectorAll('.impact_2-slide').length;
-		var currentSlide = 1;
-		var autoScrollInterval;
+    var totalSlides = document.querySelectorAll('.impact_2-slide').length;
+    var currentSlide = 1;
+    var transitioning = false;
+    var autoScrollInterval;
 
-		// Set up initial state
-		updateSlider();
+    // Set up initial state
+    updateSlider();
 
-		// Function to update the slider based on currentSlide
-		function updateSlider() {
-			slidesContainer.style.transform = 'translateY(' + -100 * (currentSlide - 1) + '%)';
-			updateDots();
-		}
+    // Function to update the slider based on currentSlide
+    function updateSlider() {
+        slidesContainer.style.transition = 'transform 0.5s ease-in-out';
+        slidesContainer.style.transform = 'translateY(' + -100 * (currentSlide - 1) + '%)';
+        updateDots();
+    }
 
-		// Function to update navigation dots
-		function updateDots() {
-			var dots = document.querySelectorAll('.impact_2-dot');
-			dots.forEach(function (dot, index) {
-			dot.classList.toggle('active', index === (currentSlide - 1));
-			});
-		}
+    // Function to update navigation dots
+    function updateDots() {
+        var dots = document.querySelectorAll('.impact_2-dot');
+        dots.forEach(function (dot, index) {
+            dot.classList.toggle('active', index === (currentSlide - 1) % (totalSlides - 1));
+        });
+    }
 
-		// Function to move to a specific slide
-		window.currentImpact2Slide = function (slideNumber) {
-			currentSlide = slideNumber; 
-			updateSlider();
-		};
+    // Automatic scrolling
+    function startAutoScroll() {
+        autoScrollInterval = setInterval(function () {
+            if (!transitioning) {
+                transitioning = true;
+                currentSlide++;
+                updateSlider();
 
-		// Automatic scrolling
-		function startAutoScroll() {
-			autoScrollInterval = setInterval(function () {
-			currentSlide = (currentSlide % totalSlides) + 1;
-			updateSlider();
-			}, 4000); // Adjust the interval (in milliseconds) as needed
-		}
+                // Reset to first slide smoothly
+                if (currentSlide === totalSlides) {
+                    setTimeout(function () {
+                        slidesContainer.style.transition = 'none'; // Disable transition
+                        slidesContainer.style.transform = 'translateY(0)';
+                        currentSlide = 1;
+                        setTimeout(() => {
+                            slidesContainer.style.transition = 'transform 0.5s ease-in-out'; // Re-enable transition
+                            transitioning = false;
+                        }, 50);
+                    }, 500); // Wait for the previous transition to complete
+                } else {
+                    transitioning = false;
+                }
+            }
+        }, 4000);
+    }
 
-		function stopAutoScroll() {
-			clearInterval(autoScrollInterval);
-		}
+    function stopAutoScroll() {
+        clearInterval(autoScrollInterval);
+    }
 
-		// Start auto-scroll on page load
-		startAutoScroll();
+    // Start auto-scroll on page load
+    startAutoScroll();
 
-		// Pause auto-scroll on hover
-		var sliderContainer = document.querySelector('.impact_2-slider');
-		sliderContainer.addEventListener('mouseover', stopAutoScroll);
-		sliderContainer.addEventListener('mouseout', startAutoScroll);
-		});
+    // Pause auto-scroll on hover
+    var sliderContainer = document.querySelector('.impact_2-slider');
+    sliderContainer.addEventListener('mouseover', stopAutoScroll);
+    sliderContainer.addEventListener('mouseout', startAutoScroll);
+});
+
 
 	</script>    
 	<?php
