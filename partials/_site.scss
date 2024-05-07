@@ -3038,6 +3038,62 @@ input, button, select, textarea {
 /* Testimonial Slider */
 
 .ibme-testimonials-slider {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+    min-height: 400px;
+}
+
+.ibme-testimonials-slides {
+    display: flex;
+    transition: transform 0.5s ease;
+}
+
+.ibme-testimonials-slides .ibme-testimonial-wrap {
+    min-width: 100%;
+}
+
+.ibme-testimonial-navigation-dots {
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.ibme-testimonial-dot {
+    height: 12px;
+    width: 12px;
+    margin: 0 5px;
+    border-radius: 50%;
+    display: inline-block;
+    cursor: pointer;
+
+    &.active.teal-testimonial {
+        background-color: $teal;
+    }
+
+    &.active.forest-testimonial {
+        background-color: $forest;
+    }
+
+    &.active.ocean-testimonial {
+        background-color: $ocean;
+    }
+
+    &.active.white-testimonial {
+        background-color: $white;
+    }
+}
+
+.black-dots .ibme-testimonial-dot {
+    background-color: #000;
+}
+
+.white-dots .ibme-testimonial-dot {
+    background-color: #fff;
+}
+
+/*.ibme-testimonials-slider {
     display: flex;
     overflow: hidden;
     width: 100%; 
@@ -3046,11 +3102,11 @@ input, button, select, textarea {
 .ibme-testimonial-wrap {
     flex: 0 0 100%;
     transition: transform 4s ease;
-}
+}*/
   
 /* Animation */
 
-@keyframes slide {
+/*@keyframes slide {
     0%, 100% {
         transform: translateX(0);
     }
@@ -3074,19 +3130,19 @@ input, button, select, textarea {
     100% {
         transform: translateX(-200%);
     }
-}
+}*/
   
   /* Apply animation to the slider */
 
-.ibme-testimonials-slider .ibme-testimonial-wrap {
+/*.ibme-testimonials-slider .ibme-testimonial-wrap {
     animation: slide 25s infinite; /* Adjust the duration as needed */
-}
+//}
 
 /* Pause on hover */
 
-.ibme-testimonials-slider:hover .ibme-testimonial-wrap {
+/*.ibme-testimonials-slider:hover .ibme-testimonial-wrap {
     animation-play-state: paused;
-}
+}*/
 
 .upcoming-events-section {
     background-repeat: no-repeat;

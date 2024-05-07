@@ -771,11 +771,27 @@ function ibme_testimonial_block_handler( $atts ) {
 }
 
 function ibme_testimonials_container_handler( $atts, $content = null ) {
+	// Extract shortcode attributes
+	$atts = shortcode_atts(
+		array(		
+			'dot-color'    => 'black', // black, white
+		),
+
+		$atts,
+		'ibme_testimonials_container'
+	);
+
+	// Sanitize attributes
+
+	$dot_color    = esc_attr( $atts['dot-color'] );
+
+
 	// Generate HTML for the ibme_testimonials_container
-	$testimonials_container_html = '<section class="full-width-section landing-section ibme-testimonial-section"><div class="inner-wrap"><div class="landing-section-content"><div class="ibme-testimonials-slider">';
+	$testimonials_container_html = '<section class="full-width-section landing-section ibme-testimonial-section"><div class="inner-wrap"><div class="landing-section-content"><div class="ibme-testimonials-slider"><div class="ibme-testimonials-slides">';
 
 	// Use a regular expression to match [ibme_testimonial_block] shortcodes
 	preg_match_all( '/\[ibme_testimonial_block(.*?)\]/s', $content, $matches, PREG_SET_ORDER );
+	$slide_count = count( $matches );
 
 	// Process and return the content
 	foreach ( $matches as $match ) {
@@ -783,10 +799,18 @@ function ibme_testimonials_container_handler( $atts, $content = null ) {
 		$content_block_content = do_shortcode( '[ibme_testimonial_block' . $match[1] . ']' ); // Process content within [ibme_testimonial_block]
 
 		// Process and use $params and $content_block_content as needed
-		$testimonials_container_html .= $content_block_content;
+		$testimonials_container_html .= $content_block_content; 
 	}
 
-	$testimonials_container_html .= '</div></div></div></section>';
+	$testimonials_container_html .= '</div>';
+	$testimonials_container_html .= '<div class="ibme-testimonial-navigation-dots  ' . $dot_color . '-dots">';
+
+	// Loop for generating navigation dots
+	for ( $i = 1; $i <= $slide_count; $i++ ) {
+		$testimonials_container_html .= '<span class="ibme-testimonial-dot" onclick="currentTestimonialSlide(' . $i . ')"></span>';
+	}
+
+	$testimonials_container_html .= '</div></div></div></div></section>';
 
 	return $testimonials_container_html;
 }
@@ -796,6 +820,100 @@ add_shortcode( 'ibme_testimonials_container', 'ibme_testimonials_container_handl
 
 // Testimonial block shortcode registration as a nested shortcode within the container
 add_shortcode( 'ibme_testimonial_block', 'ibme_testimonial_block_handler' );
+
+add_action( 'wp_footer', 'testimonial_slider_script' );
+
+function testimonial_slider_script() {
+?>
+<script type="text/javascript">
+    document.addEventListener('DOMContentLoaded', function () {
+        const sliderElement = document.querySelector('.ibme-testimonials-slider');
+        if (!sliderElement) {
+            return;
+        }
+
+        let currentIndex = 0;
+        const slides = document.querySelectorAll('.ibme-testimonials-slider .ibme-testimonial-wrap');
+        const dots = document.querySelectorAll('.ibme-testimonial-dot');
+        const totalSlides = slides.length;
+        const sliderContainer = document.querySelector('.ibme-testimonials-slides');
+
+        // Clone the first slide
+        const firstSlide = slides[0];
+        const cloneFirstSlide = firstSlide.cloneNode(true);
+        sliderContainer.appendChild(cloneFirstSlide);
+
+		function updateSlidePosition() {
+			if (currentIndex > totalSlides) { // If we are on the cloned slide
+				currentIndex = 1; // Set to 1 to avoid flicker and to simulate continuous motion
+				sliderContainer.style.transition = 'none'; // Disable transition for instant reset
+				sliderContainer.style.transform = 'translateX(0)'; // Reset position instantly
+				setTimeout(() => {
+					sliderContainer.style.transition = 'transform 0.5s ease'; // Re-enable transitions
+					sliderContainer.style.transform = 'translateX(' + (-100 * currentIndex) + '%)'; // Move to the first slide again
+				}, 20); // Minimal timeout to allow the 'none' transition to take effect
+			} else {
+				sliderContainer.style.transform = 'translateX(' + (-100 * currentIndex) + '%)';
+			}
+
+			// Update active dot and classes
+			updateDotsAndClasses();
+		}
+
+		function updateDotsAndClasses() {
+			const activeSlide = slides[currentIndex % totalSlides];
+			const activeClasses = activeSlide.className.split(' ').filter(cls => cls.endsWith('-testimonial'));
+
+			dots.forEach((dot, index) => {
+				dot.classList.remove('active', 'teal-testimonial', 'ocean-testimonial', 'forest-testimonial');
+				const effectiveIndex = currentIndex % totalSlides;
+				if (index === effectiveIndex) {
+					dot.classList.add('active');
+					activeClasses.forEach(cls => {
+						dot.classList.add(cls);
+					});
+				}
+			});
+		}
+
+
+        function nextSlide() {
+            currentIndex++;
+            updateSlidePosition();
+        }
+
+        let slideInterval = setInterval(nextSlide, 4000);
+
+        function currentTestimonialSlide(n) {
+            currentIndex = n - 1;
+            updateSlidePosition();
+            resetInterval();
+        }
+
+        function resetInterval() {
+            clearInterval(slideInterval);
+            slideInterval = setInterval(nextSlide, 4000);
+        }
+
+        dots.forEach((dot, index) => {
+            dot.addEventListener('click', () => currentTestimonialSlide(index + 1));
+        });
+
+        // Pause slider on hover
+        sliderElement.addEventListener('mouseenter', function() {
+            clearInterval(slideInterval);
+        });
+
+        // Resume slider on mouse leave
+        sliderElement.addEventListener('mouseleave', function() {
+            resetInterval();
+        });
+
+        window.currentTestimonialSlide = currentTestimonialSlide;
+    });
+</script>    
+<?php
+}
 
 
 // Register the shortcode for the "ibme_upcoming_events" block (parent block) and "ibme_upcoming_event" block (child block)
@@ -1425,63 +1543,6 @@ function impact_1_slide_handler( $atts ) {
 /** Script for impact_1_slider */
 
 add_action( 'wp_footer', 'impact_1_slider_script' );
-
-/*
- function impact_1_slider_script() {
-	?>
-	<script type="text/javascript">
-		document.addEventListener('DOMContentLoaded', function () {
-	const sliderElement = document.querySelector('.impact_1-slider');
-	if (!sliderElement) {
-		return;
-	}
-
-	let currentIndex = 0;
-	const slides = document.querySelectorAll('.impact_1-slide');
-	const dots = document.querySelectorAll('.impact_1-dot');
-	const totalSlides = slides.length;
-	const sliderContainer = document.querySelector('.impact_1-slides');
-
-	function updateSlidePosition() {
-		sliderContainer.style.transform = 'translateX(' + (-100 * currentIndex) + '%)';
-		dots.forEach((dot, index) => {
-			dot.classList.remove('active');
-			const effectiveIndex = currentIndex % totalSlides;
-			if (index === effectiveIndex) {
-				dot.classList.add('active');
-			}
-		});
-	}
-
-	function nextSlide() {
-		currentIndex = (currentIndex + 1) % totalSlides;
-		updateSlidePosition();
-	}
-
-	let slideInterval = setInterval(nextSlide, 4000);
-
-	function currentImpactSlide(n) {
-		currentIndex = n - 1;
-		updateSlidePosition();
-		resetInterval();
-	}
-
-	function resetInterval() {
-		clearInterval(slideInterval);
-		slideInterval = setInterval(nextSlide, 4000);
-	}
-
-	dots.forEach((dot, index) => {
-		dot.addEventListener('click', () => currentImpactSlide(index + 1));
-	});
-
-	window.currentImpactSlide = currentImpactSlide;
-});
-
-
-	</script>
-	<?php
-} */
 
 function impact_1_slider_script() {
 	?>
